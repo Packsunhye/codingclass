@@ -88,10 +88,10 @@
                     가장 기본적인 함수이다.
                     </p>
                     <div class="script"></div>
-     <pre><code class="language-js">    function func(){
-        document.write("함수가 실행되었습니다.1")
-    }
-    func();     </code></pre>   
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다.1")
+}
+func();     </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -110,19 +110,19 @@
                     익명 함수는 변수에 함수 데이터를 저장하여 변수를 마치 함수처럼 사용할 수 있게 만듭니다.
                     </p>
                     <div class="script"></div>
-     <pre><code class="language-js">    // // 데이터 타입(자료형) ----> 타입스크립트
-    // const x = 100
-    // const x1 = "100"
-    // const x2 = [] //배열
-    // const x3 = {} //객체
-    // const x4 = null, undefined
-    // const x5 = function(){}
-    // const x6 = true, false
+<pre><code class="language-js">//데이터 타입(자료형) ----> 타입스크립트
+// const x = 100
+// const x1 = "100"
+// const x2 = [] //배열
+// const x3 = {} //객체
+// const x4 = null, undefined
+// const x5 = function(){}
+// const x6 = true, false
 
-    const func = function(){
-        document.write("함수가 실행되었습니다.2")
-    }
-    func()     </code></pre>   
+const func = function(){
+    document.write("함수가 실행되었습니다.2")
+}
+func()     </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -141,10 +141,10 @@
                         함수를 통해 처리된 결과를 봔환시켜 실행하는 함수이다.
                     </p>
                     <div class="script"></div>
-                    <pre><code class="language-js">   function func(str){           //str은 변수, 인자. 
-        document.write(str);
-    }
-    func("함수가 실행되었습니다.3");   </code></pre>   
+<pre><code class="language-js">function func(str){           //str은 변수, 인자. 
+    document.write(str);
+}
+func("함수가 실행되었습니다.3");   </code></pre>   
                 <div  class="result">           
                     <details>
                         <summary>결과보기</summary>
@@ -163,11 +163,11 @@
                     함수를 통해 처리된 결과를 봔환시켜 실행하는 함수이다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">   function func(){
-        const str = "함수가 실행되었습니다.4"
-        return str;
-    }
-    document.write(func());   </code></pre>   
+<pre><code class="language-js">function func(){
+    const str = "함수가 실행되었습니다.4"
+    return str;
+}
+document.write(func());   </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -186,16 +186,16 @@
                     '=&gt;'을 이용하여 선언적 함수를 간결하게 표현하였다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">   //첫번째 생략
-    func = () => {
-            document.write("함수가 실행되었습니다.5_2");
-    }
-    func();
+<pre><code class="language-js">//첫번째 생략
+func = () => {
+        document.write("함수가 실행되었습니다.5_2");
+}
+func();
 
-    //두번째 생략(괄호 생략)
-    func = () => document.write("함수가 실행되었습니다.5_3");
-    
-    func();   </code></pre>   
+//두번째 생략(괄호 생략)
+func = () => document.write("함수가 실행되었습니다.5_3");
+
+func();   </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -215,16 +215,16 @@
                     '=&gt;'을 이용하여 익명 함수를 간결하게 표현하였다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    //첫번째 생략
-    const func = () => {
-            document.write("함수를 실행되었습니다.6_2");
-    } 
-    func()
+<pre><code class="language-js">//첫번째 생략
+const func = () => {
+        document.write("함수를 실행되었습니다.6_2");
+} 
+func()
+
+//두번째 생략(괄호 생략)
+const func = () => document.write("함수를 실행되었습니다.6_3");
     
-    //두번째 생략(괄호 생략)
-    const func = () => document.write("함수를 실행되었습니다.6_3");
-        
-    func()   </code></pre>   
+func()   </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -244,21 +244,21 @@
                     '=&gt;'을 이용하여 매개변수 함수를 간결하게 표현하였다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    //첫번째 생략
-    func = (str) => {
-            document.write(str);
-    }
-    func("함수가 실행되었습니다.7_2>");
+<pre><code class="language-js">//첫번째 생략
+func = (str) => {
+        document.write(str);
+}
+func("함수가 실행되었습니다.7_2>");
 
-    //두번째 생략(괄호생략01)
-    func = (str) => document.write(str);
-    
-    func("함수가 실행되었습니다.7_3");
+//두번째 생략(괄호생략01)
+func = (str) => document.write(str);
 
-    //두번째 생략(괄호생략02)
-    func = str => document.write(str);
+func("함수가 실행되었습니다.7_3");
 
-    func("함수가 실행되었습니다.7_4");   </code></pre>   
+//두번째 생략(괄호생략02)
+func = str => document.write(str);
+
+func("함수가 실행되었습니다.7_4");   </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -279,11 +279,11 @@
                     '=&gt;'을 이용하여 리턴값 함수를 간결하게 표현하였다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    func = () => {
-            const str = "함수가 실행되었습니다.8_2";
-            return str;
-    }
-    document.write(func());   </code></pre>   
+<pre><code class="language-js">func = () => {
+    const str = "함수가 실행되었습니다.8_2";
+    return str;
+}
+document.write(func());   </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -302,10 +302,10 @@
                     여러 함수를 화살표 함수로 합치며 생략한다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">   const func = (str) => {
-            return str;
-    }
-    document.write(func("함수가 실행되었습니다.09")) </code></pre>   
+<pre><code class="language-js">const func = (str) => {
+    return str;
+}
+document.write(func("함수가 실행되었습니다.09")) </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -324,10 +324,10 @@
                     여러 함수를 화살표 함수로 합치며 생략하고, 괄호까지 생략한다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    const func = str => {
-            return str;
-    }
-    document.write(func("함수가 실행되었습니다.10")); </code></pre>   
+<pre><code class="language-js">const func = str => {
+    return str;
+}
+document.write(func("함수가 실행되었습니다.10")); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -346,9 +346,9 @@
                     여러 함수를 화살표 함수로 합치며 괄호와 리턴을 생략한다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    const func = str => str;
-            
-    document.write(func("함수가 실행되었습니다.11 ")); </code></pre>   
+<pre><code class="language-js">const func = str => str;
+        
+document.write(func("함수가 실행되었습니다.11 ")); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -367,9 +367,9 @@
                     여러 함수를 화살표 함수로 합치며 괄호와 리턴을 생략한다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다.12 <br>")); </code></pre>   
+<pre><code class="language-js">func = str => str;
+        
+document.write(func("함수가 실행되었습니다.12 <br>")); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -388,13 +388,13 @@
                     
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(num, str1, str2){
-            document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
-    }
+<pre><code class="language-js">function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
+}
 
-    func("1","함수","실행"); 
-    func("2","자바스크립트","실행")
-    func("3","제이쿼리","실행") //3개의 문장이 다 나온다. 함수를 재활용 하였기 때문.  </code></pre>   
+func("1","함수","실행"); 
+func("2","자바스크립트","실행")
+func("3","제이쿼리","실행") //3개의 문장이 다 나온다. 함수를 재활용 하였기 때문.  </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -415,21 +415,21 @@
                     
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(num, str1, str2){
-        document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
-    }
+<pre><code class="language-js">function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
+}
 
-    const youNum1 = 1;
-    const youNum2 = 2;
-    const youNum3 = 3;
-    const youStr1 = "함수";
-    const youStr2 = "자바스크립트";
-    const youStr3 = "제이쿼리";
-    const youCom1 = "실행";
+const youNum1 = 1;
+const youNum2 = 2;
+const youNum3 = 3;
+const youStr1 = "함수";
+const youStr2 = "자바스크립트";
+const youStr3 = "제이쿼리";
+const youCom1 = "실행";
 
-    func(youNum1,youStr1,youCom1);
-    func(youNum2,youStr2,youCom1);
-    func(youNum3,youStr3,youCom1);  </code></pre>   
+func(youNum1,youStr1,youCom1);
+func(youNum2,youStr2,youCom1);
+func(youNum3,youStr3,youCom1);  </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -448,31 +448,31 @@
                     <h3>15. 함수 유형 : 함수와 배열, 객체를 이용한 형태</h3>
                     <p>  </p>
                     <div class="script"></div>
-            <pre><code class="language-js">   function func(num, str1, str2){
-        document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
-    }
+<pre><code class="language-js">function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가" + str2 +"되었습니다.<br>")
+}
 
-    const info = [
-        {
-            num : "1",
-            name : "함수",
-            com : "실행"
-        },
-        {
-            num : "2", 
-            name : "자바스크립트",
-            com : "실행"
-        },
-        {
-            num : "3",
-            name : "제이쿼리",
-            com : "실행"
-        }
-    ]
-    
-    func(info[0].num,info[0].name,info[0].com);
-    func(info[1].num,info[1].name,info[1].com);
-    func(info[2].num,info[2].name,info[2].com); </code></pre>   
+const info = [
+    {
+        num : "1",
+        name : "함수",
+        com : "실행"
+    },
+    {
+        num : "2", 
+        name : "자바스크립트",
+        com : "실행"
+    },
+    {
+        num : "3",
+        name : "제이쿼리",
+        com : "실행"
+    }
+]
+
+func(info[0].num,info[0].name,info[0].com);
+func(info[1].num,info[1].name,info[1].com);
+func(info[2].num,info[2].name,info[2].com); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -492,31 +492,31 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    const info = {
-        num1 : 1,
-        name1 : "함수",
-        word1 : "실행",
-        num2 : 2,
-        name2 : "자바스크립트",
-        word2 : "실행",
-        num3 : 3,
-        name3 : "제이쿼리",
-        word3 : "실행",
+<pre><code class="language-js">const info = {
+    num1 : 1,
+    name1 : "함수",
+    word1 : "실행",
+    num2 : 2,
+    name2 : "자바스크립트",
+    word2 : "실행",
+    num3 : 3,
+    name3 : "제이쿼리",
+    word3 : "실행",
 
-        result1 : function(){
-            document.write(info.num1 + ". " + info.name1 + "가 " + info.word1 + "되었습니다.<br>" )
-        },
-        result2 : function(){
-            document.write(info.num2 + ". " + info.name2 + "가 " + info.word2 + "되었습니다.<br>" )
-        },
-        result3 : function(){
-            document.write(info.num3 + ". " + info.name3 + "가 " + info.word3 + "되었습니다.<br>" )
-        }
+    result1 : function(){
+        document.write(info.num1 + ". " + info.name1 + "가 " + info.word1 + "되었습니다.<br>" )
+    },
+    result2 : function(){
+        document.write(info.num2 + ". " + info.name2 + "가 " + info.word2 + "되었습니다.<br>" )
+    },
+    result3 : function(){
+        document.write(info.num3 + ". " + info.name3 + "가 " + info.word3 + "되었습니다.<br>" )
     }
-    
-    info.result1();
-    info.result2();
-    info.result3(); </code></pre>   
+}
+
+info.result1();
+info.result2();
+info.result3(); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -536,29 +536,29 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(num,name,word){
-        this.num = num;
-        this.name = name;
-        this.word = word; //재활용이 가능한 this
+<pre><code class="language-js">function func(num,name,word){
+    this.num = num;
+    this.name = name;
+    this.word = word; //재활용이 가능한 this
 
-        this.result = function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
-        }
+    this.result = function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
     }
+}
 
-    //인스턴스 생성
-    const info1 = new func("1","함수","실행");
-    const info2 = new func("2","자바스크립트","실행");
-    const info3 = new func("3","제이쿼리","실행");
+//인스턴스 생성
+const info1 = new func("1","함수","실행");
+const info2 = new func("2","자바스크립트","실행");
+const info3 = new func("3","제이쿼리","실행");
 
-    // func("1","함수","실행");
-    // func("2","자바스크립트","실행");
-    // func("3","제이쿼리","실행");
+// func("1","함수","실행");
+// func("2","자바스크립트","실행");
+// func("3","제이쿼리","실행");
 
-    //실행
-    info1.result();
-    info2.result();
-    info3.result(); </code></pre>   
+//실행
+info1.result();
+info2.result();
+info3.result(); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -578,26 +578,26 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(num,name,word){
-        this.num = num;
-        this.name = name;
-        this.word = word; //재활용이 가능한 this
+<pre><code class="language-js">function func(num,name,word){
+    this.num = num;
+    this.name = name;
+    this.word = word; //재활용이 가능한 this
 
-    }
+}
 
-    func.prototype.result = function(){
-        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
-    }
+func.prototype.result = function(){
+    document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
+}
 
-    //인스턴스 생성
-    const info1 = new func("1","함수","실행");
-    const info2 = new func("2","자바스크립트","실행");
-    const info3 = new func("3","제이쿼리","실행");
+//인스턴스 생성
+const info1 = new func("1","함수","실행");
+const info2 = new func("2","자바스크립트","실행");
+const info3 = new func("3","제이쿼리","실행");
 
-    //실행
-    info1.result();
-    info2.result();
-    info3.result(); </code></pre>   
+//실행
+info1.result();
+info2.result();
+info3.result(); </code></pre>   
             <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -617,34 +617,34 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(num,name,word){
-        this.num = num;
-        this.name = name;
-        this.word = word; //재활용이 가능한 this
-    
+<pre><code class="language-js">function func(num,name,word){
+    this.num = num;
+    this.name = name;
+    this.word = word; //재활용이 가능한 this
+
+}
+
+func.prototype = {
+    result1 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
+    },
+    result2 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
+    },
+    result3 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
     }
+}
 
-    func.prototype = {
-        result1 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
-        },
-        result2 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
-        },
-        result3 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.<br>" );
-        }
-    }
+//인스턴스 생성
+const info1 = new func("1","함수","실행");
+const info2 = new func("2","자바스크립트","실행");
+const info3 = new func("3","제이쿼리","실행");
 
-    //인스턴스 생성
-    const info1 = new func("1","함수","실행");
-    const info2 = new func("2","자바스크립트","실행");
-    const info3 = new func("3","제이쿼리","실행");
-
-    //실행
-    info1.result1();
-    info2.result2();
-    info3.result3(); </code></pre>   
+//실행
+info1.result1();
+info2.result2();
+info3.result3(); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -665,14 +665,14 @@
                         function에서 실행문을 지우며 화살표 함수를 사용해 정리하는 것 입니다.
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(){
-        document.write("실행")
-    }
-    func();
+<pre><code class="language-js">function func(){
+    document.write("실행")
+}
+func();
 
-    (() => {
-        document.write("실행")
-    })(); </code></pre>   
+(() => {
+    document.write("실행")
+})(); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -690,15 +690,15 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">    function func(str){
-        document.write(str)
-    }
-    func("실행");
+<pre><code class="language-js">function func(str){
+    document.write(str)
+}
+func("실행");
 
-    function func(str = "실행"){
-        document.write(str)
-    }
-    func(str); </code></pre>   
+function func(str = "실행"){
+    document.write(str)
+}
+func(str); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -717,11 +717,11 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-            <pre><code class="language-js">   function func(a, b){
-        document.write(arguments[0]);
-        document.write(arguments[1]);
-    }
-    func("실행","실행2"); </code></pre>   
+<pre><code class="language-js">function func(a, b){
+    document.write(arguments[0]);
+    document.write(arguments[1]);
+}
+func("실행","실행2"); </code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -741,27 +741,27 @@
                         재귀함수 : 동시에 여러개 실행
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    // 반복적으로
-    function func(num){
-        if(num &lt;= 1){
-            document.write("함수가 실행됩니다." + num)
-        }else {
-            document.write("함수가 실행됩니다." + num)
-            func(num -1)
-        }
-        // func()
+<pre><code class="language-js">// 반복적으로
+function func(num){
+    if(num &lt;= 1){
+        document.write("함수가 실행됩니다." + num)
+    }else {
+        document.write("함수가 실행됩니다." + num)
+        func(num -1)
     }
-    func(10)
+    // func()
+}
+func(10)
 
 
-    // 애니메이션
-    function animation(){
-        document.write("함수가 실행됩니다.")
-    
-        requestAnimationFrame(animation);
-        // func()
-    }
-    animation()</code></pre>   
+// 애니메이션
+function animation(){
+    document.write("함수가 실행됩니다.")
+
+    requestAnimationFrame(animation);
+    // func()
+}
+animation()</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -785,14 +785,14 @@
                         콜백함수 : 첫번째 함수가 실행 -> 두번째 함수가 실행
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    function func(){
-        document.write("함수가 실행됩니다. 2");
-    }
-    function callback(str){
-        document.write("함수가 실행됩니다. 1");
-        str();
-    }
-    callback(func);</code></pre>   
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행됩니다. 2");
+}
+function callback(str){
+    document.write("함수가 실행됩니다. 1");
+    str();
+}
+callback(func);</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -812,15 +812,15 @@
                         콜백함수 : 반복문을 사용해 콜백 함수 출력하기
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    function func(index){
-        document.write("함수가 실행됩니다." + index);
+<pre><code class="language-js">function func(index){
+    document.write("함수가 실행됩니다." + index);
+}
+function callback(num){
+    for(let i = 1; i &lt;=10; i++){
+        num(i);
     }
-    function callback(num){
-        for(let i = 1; i &lt;=10; i++){
-            num(i);
-        }
-    }
-    callback(func);</code></pre>   
+}
+callback(func);</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -845,82 +845,82 @@
                        
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    //1번째
-    function funcA(){
-        document.write("funcA가 실행되었습니다.")
-    }
-    function funcB(){
-        document.write("funcB가 실행되었습니다.")
-    }
-    funcA();
-    funcB();
+<pre><code class="language-js">//1번째
+function funcA(){
+document.write("funcA가 실행되었습니다.")
+}
+function funcB(){
+document.write("funcB가 실행되었습니다.")
+}
+funcA();
+funcB();
 
-    //02번째
-    function funcA(){
-       setTimeout( () => {
-            console.log("funcA가 실행되었습니다.")
-       }, 1000);
-    }
-    function funcB(){
-        console.log("funcB가 실행되었습니다.")
-    }
-    funcA();
-    funcB();
-    // b
-    // a
+//02번째
+function funcA(){
+setTimeout( () => {
+    console.log("funcA가 실행되었습니다.")
+}, 1000);
+}
+function funcB(){
+console.log("funcB가 실행되었습니다.")
+}
+funcA();
+funcB();
+// b
+// a
 
-    //03번째
-    function funcA(callback){
-       setTimeout( () => {
-            console.log("funcA가 실행되었습니다.") //로딩소스
-            callback();
-       }, 1000);
-    }
-    function funcB(){
-        console.log("funcB가 실행되었습니다.")
-    }
+//03번째
+function funcA(callback){
+setTimeout( () => {
+    console.log("funcA가 실행되었습니다.") //로딩소스
+    callback();
+}, 1000);
+}
+function funcB(){
+console.log("funcB가 실행되었습니다.")
+}
 
-    funcA(function(){
-        funcB();
-    })
-    //a
-    //b
+funcA(function(){
+funcB();
+})
+//a
+//b
 
-    function funcA(callback){
-        setTimeout( () => {
-             console.log("funcA가 실행되었습니다. <br>") //로딩소스
-             callback();
-        }, 1000);
-     }
-     function funcB(callback){
-        setTimeout( () => {
-             console.log("funcB가 실행되었습니다. <br>") //로딩소스
-             callback();
-        }, 1000);
-     }
-     function funcC(callback){
-        setTimeout( () => {
-             console.log("funcC가 실행되었습니다. <br>") //로딩소스
-             callback();
-        }, 1000);
-     }
-     function funcD(){
-        setTimeout( () => {
-             console.log("funcD가 실행되었습니다. <br>") //로딩소스
-        }, 1000);
-     }
+function funcA(callback){
+setTimeout( () => {
+        console.log("funcA가 실행되었습니다.") //로딩소스
+        callback();
+}, 1000);
+}
+function funcB(callback){
+setTimeout( () => {
+        console.log("funcB가 실행되었습니다.") //로딩소스
+        callback();
+}, 1000);
+}
+function funcC(callback){
+setTimeout( () => {
+        console.log("funcC가 실행되었습니다.") //로딩소스
+        callback();
+}, 1000);
+}
+function funcD(){
+setTimeout( () => {
+        console.log("funcD가 실행되었습니다.") //로딩소스
+}, 1000);
+}
 
-     funcA(function(){
-         funcB(function(){
-             funcC(function(){
-                 funcD();
-             })
-         });
-     })
-     //a
-     //b
-     //c
-     //d</code></pre>   
+funcA(function(){
+    funcB(function(){
+        funcC(function(){
+            funcD();
+        })
+    });
+})
+//a
+//b
+//c
+//d</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -966,17 +966,17 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    function func(){
-        function funcA(){
-            document.write("함수가 실행 되었습니다.");
-        }
-        funcA();
-        function funcB(){
-            document.write("함수가 실행 되었습니다.");
-        }
-        funcB();
+<pre><code class="language-js">function func(){
+    function funcA(){
+        document.write("함수가 실행 되었습니다.");
     }
-    func();</code></pre>   
+    funcA();
+    function funcB(){
+        document.write("함수가 실행 되었습니다.");
+    }
+    funcB();
+}
+func();</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -995,23 +995,23 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    class study {
-        constructor(num, name, job){
-            this.num = num;
-            this.name = name;
-            this.job = job;
-        }
-
-        result(){
-            document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
-        }
+<pre><code class="language-js">class study {
+    constructor(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
     }
 
-    const info1 = new study("1","마뇽","백수");
-    const info2 = new study("2","냠냠이","고양이");
-    
-    info1.result();
-    info2.result();</code></pre>   
+    result(){
+        document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
+    }
+}
+
+const info1 = new study("1","마뇽","백수");
+const info2 = new study("2","냠냠이","고양이");
+
+info1.result();
+info2.result();</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>
@@ -1030,33 +1030,33 @@
                     <p> 
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">    class study {
-        constructor(num, name, job){
-            this.num = num;
-            this.name = name;
-            this.job = job;
-        }
-
-        result(){
-            document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
-        }
-    }
-     class study2 extends study{
-        constructor(num, name, job,age){
-           super(num, name, job);
-           this.age = age;
-        }
-        result2(){
-            document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 이며 나이는 " + this.age + "살 입니다.");
-        }
+<pre><code class="language-js">class study {
+    constructor(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
     }
 
-    const info1 = new study("1","마뇽","백수");
-    const info2 = new study2("2","냠냠이","고양이",587);
+    result(){
+        document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
+    }
+}
+    class study2 extends study{
+    constructor(num, name, job,age){
+        super(num, name, job);
+        this.age = age;
+    }
+    result2(){
+        document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 이며 나이는 " + this.age + "살 입니다.");
+    }
+}
 
-    info1.result();
-    info2.result();
-    info2.result2();</code></pre>   
+const info1 = new study("1","마뇽","백수");
+const info2 = new study2("2","냠냠이","고양이",587);
+
+info1.result();
+info2.result();
+info2.result2();</code></pre>   
                 <div  class="result">           
                 <details>
                     <summary>결과보기</summary>

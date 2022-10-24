@@ -116,30 +116,30 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        //01
-        const arrNum = [100,200,300,400,500];
+<pre><code>//01
+const arrNum = [100,200,300,400,500];
 
-        document.querySelector(".sample01_N1").innerHTML = "1";
-        document.querySelector(".sample01_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample01_M1").innerHTML = "length";
-        document.querySelector(".sample01_P1").innerHTML = arrNum.length;
+document.querySelector(".sample01_N1").innerHTML = "1";
+document.querySelector(".sample01_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample01_M1").innerHTML = "length";
+document.querySelector(".sample01_P1").innerHTML = arrNum.length;
 
-        //02
-        const arrTxt = ['a','b','c','d','f'];
+//02
+const arrTxt = ['a','b','c','d','f'];
 
-        document.querySelector(".sample01_N2").innerHTML = "2";
-        document.querySelector(".sample01_Q2").innerHTML = "['a','b','c','d','f']";
-        document.querySelector(".sample01_M2").innerHTML = "length";
-        document.querySelector(".sample01_P2").innerHTML = arrTxt.length;       // 문자든 숫자든 상관없이 갯수를 센다.
+document.querySelector(".sample01_N2").innerHTML = "2";
+document.querySelector(".sample01_Q2").innerHTML = "['a','b','c','d','f']";
+document.querySelector(".sample01_M2").innerHTML = "length";
+document.querySelector(".sample01_P2").innerHTML = arrTxt.length;       // 문자든 숫자든 상관없이 갯수를 센다.
 
-        //03
-        const arr = [1,2,['a','b']];
+//03
+const arr = [1,2,['a','b']];
 
-        document.querySelector(".sample01_N3").innerHTML = "3";
-        document.querySelector(".sample01_Q3").innerHTML = "[1,2,['a','b']]"; 
-        document.querySelector(".sample01_M3").innerHTML = "length"; 
-        document.querySelector(".sample01_P3").innerHTML = arr.length;          //객체 안의 배열은 세질 못한다.
-        </code></pre>   
+document.querySelector(".sample01_N3").innerHTML = "3";
+document.querySelector(".sample01_Q3").innerHTML = "[1,2,['a','b']]"; 
+document.querySelector(".sample01_M3").innerHTML = "length"; 
+document.querySelector(".sample01_P3").innerHTML = arr.length;          //객체 안의 배열은 세질 못한다.
+</code></pre>   
                 </div>   
                 <!-- /01번 --> 
     
@@ -192,11 +192,11 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const text1 = arrNum.join('')
-        const text2 = arrNum.join(' ')
-        const text3 = arrNum.join('♡')
-        const text4 = arrNum.join('-') </code></pre>   
+<pre><code>const arrNum = [100,200,300,400,500];
+const text1 = arrNum.join('')
+const text2 = arrNum.join(' ')
+const text3 = arrNum.join('♡')
+const text4 = arrNum.join('-') </code></pre>   
                 </div>   
                 <!-- /02번 --> 
     
@@ -241,25 +241,25 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        //01  
-        const arrNum = [100,200,300,400,500];
-        const arrPush = arrNum.push(600);
-    
-        document.querySelector(".sample03_N1").innerHTML = "1";
-        document.querySelector(".sample03_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample03_M1").innerHTML = "push(600)";
-        document.querySelector(".sample03_P1").innerHTML = arrPush; //600을 추가하고 숫자를 셈
-        document.querySelector(".sample03_A1").innerHTML = arrNum; //600을 추가하고 한 글자가 됨
-    
-        //02
-        const arrNum2 = [100,200,300,400,500];
-        const arrPush2 = arrNum2.pop();
-    
-        document.querySelector(".sample03_N2").innerHTML = "2";
-        document.querySelector(".sample03_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample03_M2").innerHTML = "pop()";
-        document.querySelector(".sample03_P2").innerHTML = arrPush2; //500을 삭제하기 때문에 500이 나와야함
-        document.querySelector(".sample03_A2").innerHTML = arrNum2; //500이 삭제 되었기 때문에 100,200,300,400이 나옴 </code></pre>   
+<pre><code>//01  
+const arrNum = [100,200,300,400,500];
+const arrPush = arrNum.push(600);
+
+document.querySelector(".sample03_N1").innerHTML = "1";
+document.querySelector(".sample03_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample03_M1").innerHTML = "push(600)";
+document.querySelector(".sample03_P1").innerHTML = arrPush; //600을 추가하고 숫자를 셈
+document.querySelector(".sample03_A1").innerHTML = arrNum; //600을 추가하고 한 글자가 됨
+
+//02
+const arrNum2 = [100,200,300,400,500];
+const arrPush2 = arrNum2.pop();
+
+document.querySelector(".sample03_N2").innerHTML = "2";
+document.querySelector(".sample03_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample03_M2").innerHTML = "pop()";
+document.querySelector(".sample03_P2").innerHTML = arrPush2; //500을 삭제하기 때문에 500이 나와야함
+document.querySelector(".sample03_A2").innerHTML = arrNum2; //500이 삭제 되었기 때문에 100,200,300,400이 나옴 </code></pre>   
                 </div>   
                 <!-- /03번 --> 
 
@@ -304,23 +304,23 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrUnshift = arrNum.unshift(600);
-        
-        document.querySelector(".sample04_N1").innerHTML = "1";
-        document.querySelector(".sample04_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample04_M1").innerHTML = "unshift(600)";
-        document.querySelector(".sample04_P1").innerHTML = arrUnshift; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
-        document.querySelector(".sample04_A1").innerHTML = arrNum; //600,100,200,300,400,500이 나온다.
-        
-        const arrNum2 = [100,200,300,400,500];
-        const arrShift = arrNum2.shift();
-        
-        document.querySelector(".sample04_N2").innerHTML = "2";
-        document.querySelector(".sample04_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample04_M2").innerHTML = "shift()";
-        document.querySelector(".sample04_P2").innerHTML = arrShift; //맨 앞의 숫자를 삭제하기 때문에 100이 나온다.
-        document.querySelector(".sample04_A2").innerHTML = arrNum2; //100을 삭제해서 200,300,400,500 이 나온다. </code></pre>   
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrUnshift = arrNum.unshift(600);
+
+document.querySelector(".sample04_N1").innerHTML = "1";
+document.querySelector(".sample04_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample04_M1").innerHTML = "unshift(600)";
+document.querySelector(".sample04_P1").innerHTML = arrUnshift; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
+document.querySelector(".sample04_A1").innerHTML = arrNum; //600,100,200,300,400,500이 나온다.
+
+const arrNum2 = [100,200,300,400,500];
+const arrShift = arrNum2.shift();
+
+document.querySelector(".sample04_N2").innerHTML = "2";
+document.querySelector(".sample04_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample04_M2").innerHTML = "shift()";
+document.querySelector(".sample04_P2").innerHTML = arrShift; //맨 앞의 숫자를 삭제하기 때문에 100이 나온다.
+document.querySelector(".sample04_A2").innerHTML = arrNum2; //100을 삭제해서 200,300,400,500 이 나온다. </code></pre>   
                 </div>   
                 <!-- /04번 --> 
 
@@ -385,55 +385,55 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrReverse = arrNum.reverse();
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrReverse = arrNum.reverse();
 
-        document.querySelector(".sample05_N1").innerHTML = "1";
-        document.querySelector(".sample05_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample05_M1").innerHTML = "reverse()";
-        document.querySelector(".sample05_P1").innerHTML = arrReverse; // 500,400,300,200,100
-
-
-        const arrNum2 = [100,200,300,400,500];
-        const arrSort = arrNum2.sort();
-
-        document.querySelector(".sample05_N2").innerHTML = "2";
-        document.querySelector(".sample05_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample05_M2").innerHTML = "sort()";
-        document.querySelector(".sample05_P2").innerHTML = arrSort; //100,200,300,400,500
-
-        const arrNum3 = [100,200,300,400,500];
-        const arrSort2 = arrNum3.sort(function(a,b){return b-a});
-
-        document.querySelector(".sample05_N3").innerHTML = "3";
-        document.querySelector(".sample05_Q3").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample05_M3").innerHTML = "sort(function(a,b){return b-a})";
-        document.querySelector(".sample05_P3").innerHTML = arrSort2; //500,400,300,200,100
-
-        const arrNum4 = [200,500,600,100,300,400];
-        const arrSort3 = arrNum4.sort(function(a,b){return a-b});
-
-        document.querySelector(".sample05_N4").innerHTML = "4";
-        document.querySelector(".sample05_Q4").innerHTML = "[200,500,600,100,300,400]";
-        document.querySelector(".sample05_M4").innerHTML = "sort(function(a,b){return a-b})";
-        document.querySelector(".sample05_P4").innerHTML = arrSort3; //100,200,300,400,500
+document.querySelector(".sample05_N1").innerHTML = "1";
+document.querySelector(".sample05_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample05_M1").innerHTML = "reverse()";
+document.querySelector(".sample05_P1").innerHTML = arrReverse; // 500,400,300,200,100
 
 
-        const arrNum5 = ['w','d','u','g','a'];
-        const arrSort4 = arrNum5.sort(function(a,b){return a.localeCompare(b)});
+const arrNum2 = [100,200,300,400,500];
+const arrSort = arrNum2.sort();
 
-        document.querySelector(".sample05_N5").innerHTML = "5";
-        document.querySelector(".sample05_Q5").innerHTML = "['w','d','u','g','a]";
-        document.querySelector(".sample05_M5").innerHTML = "sort(function(a,b){return a.localeCompare(b)})";
-        document.querySelector(".sample05_P5").innerHTML = arrSort4; //a,d,g,u,w
+document.querySelector(".sample05_N2").innerHTML = "2";
+document.querySelector(".sample05_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample05_M2").innerHTML = "sort()";
+document.querySelector(".sample05_P2").innerHTML = arrSort; //100,200,300,400,500
 
-        const arrNum6 = ['w','d','u','g','a'];
-        const arrSort5 = arrNum5.sort(function(a,b){return b.localeCompare(a)});
+const arrNum3 = [100,200,300,400,500];
+const arrSort2 = arrNum3.sort(function(a,b){return b-a});
 
-        document.querySelector(".sample05_N6").innerHTML = "6";
-        document.querySelector(".sample05_Q6").innerHTML = "['w','d','u','g','a]";
-        document.querySelector(".sample05_M6").innerHTML = "sort(function(a,b){return b.localeCompare(a)})";
-        document.querySelector(".sample05_P6").innerHTML = arrSort5; //w,u,g,d,a</code></pre>   
+document.querySelector(".sample05_N3").innerHTML = "3";
+document.querySelector(".sample05_Q3").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample05_M3").innerHTML = "sort(function(a,b){return b-a})";
+document.querySelector(".sample05_P3").innerHTML = arrSort2; //500,400,300,200,100
+
+const arrNum4 = [200,500,600,100,300,400];
+const arrSort3 = arrNum4.sort(function(a,b){return a-b});
+
+document.querySelector(".sample05_N4").innerHTML = "4";
+document.querySelector(".sample05_Q4").innerHTML = "[200,500,600,100,300,400]";
+document.querySelector(".sample05_M4").innerHTML = "sort(function(a,b){return a-b})";
+document.querySelector(".sample05_P4").innerHTML = arrSort3; //100,200,300,400,500
+
+
+const arrNum5 = ['w','d','u','g','a'];
+const arrSort4 = arrNum5.sort(function(a,b){return a.localeCompare(b)});
+
+document.querySelector(".sample05_N5").innerHTML = "5";
+document.querySelector(".sample05_Q5").innerHTML = "['w','d','u','g','a]";
+document.querySelector(".sample05_M5").innerHTML = "sort(function(a,b){return a.localeCompare(b)})";
+document.querySelector(".sample05_P5").innerHTML = arrSort4; //a,d,g,u,w
+
+const arrNum6 = ['w','d','u','g','a'];
+const arrSort5 = arrNum5.sort(function(a,b){return b.localeCompare(a)});
+
+document.querySelector(".sample05_N6").innerHTML = "6";
+document.querySelector(".sample05_Q6").innerHTML = "['w','d','u','g','a]";
+document.querySelector(".sample05_M6").innerHTML = "sort(function(a,b){return b.localeCompare(a)})";
+document.querySelector(".sample05_P6").innerHTML = arrSort5; //w,u,g,d,a</code></pre>   
                  </div>   
                 <!-- /05번 --> 
 
@@ -474,22 +474,22 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300];
-        const arrNum2 = [400,500,600];
+<pre><code>const arrNum = [100,200,300];
+const arrNum2 = [400,500,600];
 
-        const arrConcat = arrNum.concat(arrNum2);
+const arrConcat = arrNum.concat(arrNum2);
 
-        document.querySelector(".sample06_N1").innerHTML = "1";
-        document.querySelector(".sample06_Q1").innerHTML = "[100,200,300],[400,500,600] ";
-        document.querySelector(".sample06_M1").innerHTML = "arrNum.concat(arrNum2)";
-        document.querySelector(".sample06_P1").innerHTML = arrConcat; // 100,200,300,400,500,600
+document.querySelector(".sample06_N1").innerHTML = "1";
+document.querySelector(".sample06_Q1").innerHTML = "[100,200,300],[400,500,600] ";
+document.querySelector(".sample06_M1").innerHTML = "arrNum.concat(arrNum2)";
+document.querySelector(".sample06_P1").innerHTML = arrConcat; // 100,200,300,400,500,600
 
-        const arrNumSpered = [...arrNum, ...arrNum2];
+const arrNumSpered = [...arrNum, ...arrNum2];
 
-        document.querySelector(".sample06_N2").innerHTML = "2";
-        document.querySelector(".sample06_Q2").innerHTML = "[100,200,300],[400,500,600] ";
-        document.querySelector(".sample06_M2").innerHTML = "[...arrNum, ...arrNum2]";
-        document.querySelector(".sample06_P2").innerHTML = arrNumSpered; // 100,200,300,400,500,600 </code></pre>   
+document.querySelector(".sample06_N2").innerHTML = "2";
+document.querySelector(".sample06_Q2").innerHTML = "[100,200,300],[400,500,600] ";
+document.querySelector(".sample06_M2").innerHTML = "[...arrNum, ...arrNum2]";
+document.querySelector(".sample06_P2").innerHTML = arrNumSpered; // 100,200,300,400,500,600 </code></pre>   
                 </div>   
                 <!-- /06번 --> 
 
@@ -548,65 +548,65 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrReduce = arrNum.reduce(Element => Element);
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrReduce = arrNum.reduce(Element => Element);
 
-        document.querySelector(".sample07_N1").innerHTML = "1";
-        document.querySelector(".sample07_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample07_M1").innerHTML = "arrNum.reduce(Element => Element)";
-        document.querySelector(".sample07_P1").innerHTML = arrReduce; //100
+document.querySelector(".sample07_N1").innerHTML = "1";
+document.querySelector(".sample07_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample07_M1").innerHTML = "arrNum.reduce(Element => Element)";
+document.querySelector(".sample07_P1").innerHTML = arrReduce; //100
 
-        const arrNum2 = [100,200,300,400,500];
-        const arrReduce2 = arrNum2.reduce((p,c) => p + c);
+const arrNum2 = [100,200,300,400,500];
+const arrReduce2 = arrNum2.reduce((p,c) => p + c);
 
-        document.querySelector(".sample07_N2").innerHTML = "2";
-        document.querySelector(".sample07_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample07_M2").innerHTML = "arrNum2.reduce((p,c) => p + c)";
-        document.querySelector(".sample07_P2").innerHTML = arrReduce2; //1500
+document.querySelector(".sample07_N2").innerHTML = "2";
+document.querySelector(".sample07_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample07_M2").innerHTML = "arrNum2.reduce((p,c) => p + c)";
+document.querySelector(".sample07_P2").innerHTML = arrReduce2; //1500
 
-        //for문으로 값 더하기
-        let sum = 0;
-        let arrNum3 = [11,12,13,14,15];
+//for문으로 값 더하기
+let sum = 0;
+let arrNum3 = [11,12,13,14,15];
 
-        for(let i = 0; i &lt; arrNum3.length; i++){
-        sum = sum + arrNum3[i]; 
+for(let i = 0; i &lt; arrNum3.length; i++){
+sum = sum + arrNum3[i]; 
+}
+
+document.querySelector(".sample07_N3").innerHTML = "3";
+document.querySelector(".sample07_Q3").innerHTML = "[11,12,13,14,15]";
+document.querySelector(".sample07_M3").innerHTML = "for()";
+document.querySelector(".sample07_P3").innerHTML = sum; //1500
+
+
+const arrNum4 = [[100,200],[300,400]];
+const arrReduce4 = arrNum4.reduce((p,c) => p.concat(c));
+
+document.querySelector(".sample07_N4").innerHTML = "4";
+document.querySelector(".sample07_Q4").innerHTML = "[[100,200],[300,400]]";
+document.querySelector(".sample07_M4").innerHTML = "arrNum4.reduce((p,c) => p.concat(c))";
+document.querySelector(".sample07_P4").innerHTML = arrReduce4; //1500
+
+const arrNum5 = ['javascrpt','react','vue'];
+const arrReduce5 = arrNum5.reduceRight((p,c) => p+c);
+
+document.querySelector(".sample07_N5").innerHTML = "5";
+document.querySelector(".sample07_Q5").innerHTML = "['javascrpt','react','vue']";
+document.querySelector(".sample07_M5").innerHTML = "arrNum5.reduceRight((p,c) => p+c)";
+document.querySelector(".sample07_P5").innerHTML = arrReduce5; //1500
+
+//for문으로 짝수 값 더하기
+function func(){
+    let sum = 0;
+    let arrNum2 = [11,12,13,14,15];
+
+    for(let i = 0; i &lt; arrNum2.length; i++){
+        if(arrNum2[i] % 2 == 0 ){
+        sum = sum + arrNum2[i]; 
         }
-    
-        document.querySelector(".sample07_N3").innerHTML = "3";
-        document.querySelector(".sample07_Q3").innerHTML = "[11,12,13,14,15]";
-        document.querySelector(".sample07_M3").innerHTML = "for()";
-        document.querySelector(".sample07_P3").innerHTML = sum; //1500
-
-
-        const arrNum4 = [[100,200],[300,400]];
-        const arrReduce4 = arrNum4.reduce((p,c) => p.concat(c));
-
-        document.querySelector(".sample07_N4").innerHTML = "4";
-        document.querySelector(".sample07_Q4").innerHTML = "[[100,200],[300,400]]";
-        document.querySelector(".sample07_M4").innerHTML = "arrNum4.reduce((p,c) => p.concat(c))";
-        document.querySelector(".sample07_P4").innerHTML = arrReduce4; //1500
-
-        const arrNum5 = ['javascrpt','react','vue'];
-        const arrReduce5 = arrNum5.reduceRight((p,c) => p+c);
-
-        document.querySelector(".sample07_N5").innerHTML = "5";
-        document.querySelector(".sample07_Q5").innerHTML = "['javascrpt','react','vue']";
-        document.querySelector(".sample07_M5").innerHTML = "arrNum5.reduceRight((p,c) => p+c)";
-        document.querySelector(".sample07_P5").innerHTML = arrReduce5; //1500
-
-        //for문으로 짝수 값 더하기
-        function func(){
-            let sum = 0;
-            let arrNum2 = [11,12,13,14,15];
-
-            for(let i = 0; i &lt; arrNum2.length; i++){
-                if(arrNum2[i] % 2 == 0 ){
-                sum = sum + arrNum2[i]; 
-                }
-            }
-            document.write(sum);
-        }
-        func();</code></pre>   
+    }
+    document.write(sum);
+}
+func();</code></pre>   
                 </div>   
                 <!-- /07번 --> 
 
@@ -671,53 +671,53 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrResult = arrNum.slice(2);
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrResult = arrNum.slice(2);
 
-        document.querySelector(".sample08_N1").innerHTML = "1";
-        document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2)";
-        document.querySelector(".sample08_P1").innerHTML = arrResult; 
+document.querySelector(".sample08_N1").innerHTML = "1";
+document.querySelector(".sample08_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M1").innerHTML = "arrNum.slice(2)";
+document.querySelector(".sample08_P1").innerHTML = arrResult; 
 
-        const arrNum2 = [100,200,300,400,500];
-        const arrResult2 = arrNum2.slice(2,3);
+const arrNum2 = [100,200,300,400,500];
+const arrResult2 = arrNum2.slice(2,3);
 
-        document.querySelector(".sample08_N2").innerHTML = "2";
-        document.querySelector(".sample08_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M2").innerHTML = "arrNum.slice(2,3)";
-        document.querySelector(".sample08_P2").innerHTML = arrResult2; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
+document.querySelector(".sample08_N2").innerHTML = "2";
+document.querySelector(".sample08_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M2").innerHTML = "arrNum.slice(2,3)";
+document.querySelector(".sample08_P2").innerHTML = arrResult2; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
 
-        const arrNum3 = [100,200,300,400,500];
-        const arrResult3 = arrNum3.slice(2,4);
+const arrNum3 = [100,200,300,400,500];
+const arrResult3 = arrNum3.slice(2,4);
 
-        document.querySelector(".sample08_N3").innerHTML = "3";
-        document.querySelector(".sample08_Q3").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M3").innerHTML = "arrNum.slice(2,4)";
-        document.querySelector(".sample08_P3").innerHTML = arrResult3; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
+document.querySelector(".sample08_N3").innerHTML = "3";
+document.querySelector(".sample08_Q3").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M3").innerHTML = "arrNum.slice(2,4)";
+document.querySelector(".sample08_P3").innerHTML = arrResult3; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
 
-        const arrNum4 = [100,200,300,400,500];
-        const arrResult4 = arrNum4.slice(2,5);
+const arrNum4 = [100,200,300,400,500];
+const arrResult4 = arrNum4.slice(2,5);
 
-        document.querySelector(".sample08_N4").innerHTML = "4";
-        document.querySelector(".sample08_Q4").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M4").innerHTML = "arrNum3.slice(2,5)";
-        document.querySelector(".sample08_P4").innerHTML = arrResult4; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
+document.querySelector(".sample08_N4").innerHTML = "4";
+document.querySelector(".sample08_Q4").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M4").innerHTML = "arrNum3.slice(2,5)";
+document.querySelector(".sample08_P4").innerHTML = arrResult4; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
 
-        const arrNum5 = [100,200,300,400,500];
-        const arrResult5 = arrNum5.slice(-2);
+const arrNum5 = [100,200,300,400,500];
+const arrResult5 = arrNum5.slice(-2);
 
-        document.querySelector(".sample08_N5").innerHTML = "5";
-        document.querySelector(".sample08_Q5").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M5").innerHTML = "arrNum.slice(-2)";
-        document.querySelector(".sample08_P5").innerHTML = arrResult5; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
+document.querySelector(".sample08_N5").innerHTML = "5";
+document.querySelector(".sample08_Q5").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M5").innerHTML = "arrNum.slice(-2)";
+document.querySelector(".sample08_P5").innerHTML = arrResult5; // 600을 맨 앞에 추가해서, 숫자 6이 나온다
 
-        const arrNum6 = [100,200,300,400,500];
-        const arrResult6 = arrNum6.slice(-2,5);
+const arrNum6 = [100,200,300,400,500];
+const arrResult6 = arrNum6.slice(-2,5);
 
-        document.querySelector(".sample08_N6").innerHTML = "6";
-        document.querySelector(".sample08_Q6").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample08_M6").innerHTML = "arrNum.slice(-2,5)";
-        document.querySelector(".sample08_P6").innerHTML = arrResult6; // 600을 맨 앞에 추가해서, 숫자 6이 나온다 </code></pre>   
+document.querySelector(".sample08_N6").innerHTML = "6";
+document.querySelector(".sample08_Q6").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample08_M6").innerHTML = "arrNum.slice(-2,5)";
+document.querySelector(".sample08_P6").innerHTML = arrResult6; // 600을 맨 앞에 추가해서, 숫자 6이 나온다 </code></pre>   
                 </div>   
                 <!-- /08번 --> 
 
@@ -790,59 +790,59 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrResult = arrNum.splice(2);
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrResult = arrNum.splice(2);
 
-        document.querySelector(".sample09_N1").innerHTML = "1";
-        document.querySelector(".sample09_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M1").innerHTML = "arrNum.splice(2)";
-        document.querySelector(".sample09_P1").innerHTML = arrResult; 
-        document.querySelector(".sample09_A1").innerHTML = arrNum; 
+document.querySelector(".sample09_N1").innerHTML = "1";
+document.querySelector(".sample09_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M1").innerHTML = "arrNum.splice(2)";
+document.querySelector(".sample09_P1").innerHTML = arrResult; 
+document.querySelector(".sample09_A1").innerHTML = arrNum; 
 
-        const arrNum2 = [100,200,300,400,500];
-        const arrResult2 = arrNum2.splice(2,3);
+const arrNum2 = [100,200,300,400,500];
+const arrResult2 = arrNum2.splice(2,3);
 
-        document.querySelector(".sample09_N2").innerHTML = "2";
-        document.querySelector(".sample09_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M2").innerHTML = "arrNum2.splice(2,3)";
-        document.querySelector(".sample09_P2").innerHTML = arrResult2; 
-        document.querySelector(".sample09_A2").innerHTML = arrNum2; 
+document.querySelector(".sample09_N2").innerHTML = "2";
+document.querySelector(".sample09_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M2").innerHTML = "arrNum2.splice(2,3)";
+document.querySelector(".sample09_P2").innerHTML = arrResult2; 
+document.querySelector(".sample09_A2").innerHTML = arrNum2; 
 
-        const arrNum3 = [100,200,300,400,500];
-        const arrResult3 = arrNum3.splice(2,3,'javascript');
+const arrNum3 = [100,200,300,400,500];
+const arrResult3 = arrNum3.splice(2,3,'javascript');
 
-        document.querySelector(".sample09_N3").innerHTML = "3";
-        document.querySelector(".sample09_Q3").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M3").innerHTML = "arrNum3.splice(2,3,'javascript')";
-        document.querySelector(".sample09_P3").innerHTML = arrResult3; 
-        document.querySelector(".sample09_A3").innerHTML = arrNum3; 
+document.querySelector(".sample09_N3").innerHTML = "3";
+document.querySelector(".sample09_Q3").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M3").innerHTML = "arrNum3.splice(2,3,'javascript')";
+document.querySelector(".sample09_P3").innerHTML = arrResult3; 
+document.querySelector(".sample09_A3").innerHTML = arrNum3; 
 
-        const arrNum4 = [100,200,300,400,500];
-        const arrResult4 = arrNum4.splice(1,1,'javascript');
+const arrNum4 = [100,200,300,400,500];
+const arrResult4 = arrNum4.splice(1,1,'javascript');
 
-        document.querySelector(".sample09_N4").innerHTML = "4";
-        document.querySelector(".sample09_Q4").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M4").innerHTML = "arrNum4.splice(1,1'javascript')";
-        document.querySelector(".sample09_P4").innerHTML = arrResult4; 
-        document.querySelector(".sample09_A4").innerHTML = arrNum4; 
+document.querySelector(".sample09_N4").innerHTML = "4";
+document.querySelector(".sample09_Q4").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M4").innerHTML = "arrNum4.splice(1,1'javascript')";
+document.querySelector(".sample09_P4").innerHTML = arrResult4; 
+document.querySelector(".sample09_A4").innerHTML = arrNum4; 
 
-        const arrNum5 = [100,200,300,400,500];
-        const arrResult5 = arrNum5.splice(1,0,'javascript');
+const arrNum5 = [100,200,300,400,500];
+const arrResult5 = arrNum5.splice(1,0,'javascript');
 
-        document.querySelector(".sample09_N5").innerHTML = "5";
-        document.querySelector(".sample09_Q5").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M5").innerHTML = "arrNum5.splice(1,0,'javascript')";
-        document.querySelector(".sample09_P5").innerHTML = arrResult5; 
-        document.querySelector(".sample09_A5").innerHTML = arrNum5; 
+document.querySelector(".sample09_N5").innerHTML = "5";
+document.querySelector(".sample09_Q5").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M5").innerHTML = "arrNum5.splice(1,0,'javascript')";
+document.querySelector(".sample09_P5").innerHTML = arrResult5; 
+document.querySelector(".sample09_A5").innerHTML = arrNum5; 
 
-        const arrNum6 = [100,200,300,400,500];
-        const arrResult6 = arrNum6.splice(0,4,'javascript');
+const arrNum6 = [100,200,300,400,500];
+const arrResult6 = arrNum6.splice(0,4,'javascript');
 
-        document.querySelector(".sample09_N6").innerHTML = "6";
-        document.querySelector(".sample09_Q6").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample09_M6").innerHTML = "arrNum6.splice(10,4,'javascript')";
-        document.querySelector(".sample09_P6").innerHTML = arrResult6; 
-        document.querySelector(".sample09_A6").innerHTML = arrNum6; </code></pre>   
+document.querySelector(".sample09_N6").innerHTML = "6";
+document.querySelector(".sample09_Q6").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample09_M6").innerHTML = "arrNum6.splice(10,4,'javascript')";
+document.querySelector(".sample09_P6").innerHTML = arrResult6; 
+document.querySelector(".sample09_A6").innerHTML = arrNum6; </code></pre>   
                 </div>   
                 <!-- /09번 --> 
 
@@ -966,54 +966,54 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        // const arrResult = arrNum.find(function(Element){
-        //     return Element === 300;
-        // });
+<pre><code>const arrNum = [100,200,300,400,500];
+// const arrResult = arrNum.find(function(Element){
+//     return Element === 300;
+// });
 
-        // const arrResult = arrNum.find((Element)=>{
-        //     return Element === 300;
-        // });
+// const arrResult = arrNum.find((Element)=>{
+//     return Element === 300;
+// });
 
-        // const arrResult = arrNum.find(Element=>{
-        //     return Element === 300;
-        // });
+// const arrResult = arrNum.find(Element=>{
+//     return Element === 300;
+// });
 
-        const arrResult = arrNum.find( e => e === 300 );
+const arrResult = arrNum.find( e => e === 300 );
 
-        document.querySelector(".sample11_N1").innerHTML = "1";
-        document.querySelector(".sample11_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample11_M1").innerHTML = "arrNum.find( e => e === 300 )";
-        document.querySelector(".sample11_P1").innerHTML = arrResult; //100
+document.querySelector(".sample11_N1").innerHTML = "1";
+document.querySelector(".sample11_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample11_M1").innerHTML = "arrNum.find( e => e === 300 )";
+document.querySelector(".sample11_P1").innerHTML = arrResult; //100
 
-        const arrResult2 = arrNum.find( e => e === 600 );
+const arrResult2 = arrNum.find( e => e === 600 );
 
-        document.querySelector(".sample11_N2").innerHTML = "2";
-        document.querySelector(".sample11_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample11_M2").innerHTML = "arrNum.find( e => e === 600 )";
-        document.querySelector(".sample11_P2").innerHTML = arrResult2; //100
+document.querySelector(".sample11_N2").innerHTML = "2";
+document.querySelector(".sample11_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample11_M2").innerHTML = "arrNum.find( e => e === 600 )";
+document.querySelector(".sample11_P2").innerHTML = arrResult2; //100
 
-        const arrText = ['javascript','jquey','react'];
-        const arrResult3 = arrText.find( el => el === 'javascript' );
+const arrText = ['javascript','jquey','react'];
+const arrResult3 = arrText.find( el => el === 'javascript' );
 
-        document.querySelector(".sample11_N3").innerHTML = "3";
-        document.querySelector(".sample11_Q3").innerHTML = "['javascript','jquey','react']";
-        document.querySelector(".sample11_M3").innerHTML = "arrText.find( el => el === 'javascript' )";
-        document.querySelector(".sample11_P3").innerHTML = arrResult3; //100
+document.querySelector(".sample11_N3").innerHTML = "3";
+document.querySelector(".sample11_Q3").innerHTML = "['javascript','jquey','react']";
+document.querySelector(".sample11_M3").innerHTML = "arrText.find( el => el === 'javascript' )";
+document.querySelector(".sample11_P3").innerHTML = arrResult3; //100
 
-        const arrResult4 = arrText.findIndex( el => el === 'javascript' );
+const arrResult4 = arrText.findIndex( el => el === 'javascript' );
 
-        document.querySelector(".sample11_N4").innerHTML = "4";
-        document.querySelector(".sample11_Q4").innerHTML = "['javascript','jquey','react']";
-        document.querySelector(".sample11_M4").innerHTML = "arrText.findIndex( el => el === 'javascript' )";
-        document.querySelector(".sample11_P4").innerHTML = arrResult4; //100
+document.querySelector(".sample11_N4").innerHTML = "4";
+document.querySelector(".sample11_Q4").innerHTML = "['javascript','jquey','react']";
+document.querySelector(".sample11_M4").innerHTML = "arrText.findIndex( el => el === 'javascript' )";
+document.querySelector(".sample11_P4").innerHTML = arrResult4; //100
 
-        const arrResult5 = arrText.find( el => el === 'html' );
+const arrResult5 = arrText.find( el => el === 'html' );
 
-        document.querySelector(".sample11_N5").innerHTML = "5";
-        document.querySelector(".sample11_Q5").innerHTML = "['javascript','jquey','react']";
-        document.querySelector(".sample11_M5").innerHTML = "arrText.findIndex( el => el === 'html' )";
-        document.querySelector(".sample11_P5").innerHTML = arrResult5; //100</code></pre>   
+document.querySelector(".sample11_N5").innerHTML = "5";
+document.querySelector(".sample11_Q5").innerHTML = "['javascript','jquey','react']";
+document.querySelector(".sample11_M5").innerHTML = "arrText.findIndex( el => el === 'html' )";
+document.querySelector(".sample11_P5").innerHTML = arrResult5; //100</code></pre>   
                 </div>   
                 <!-- /11번 --> 
 
@@ -1060,29 +1060,29 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrResult = arrNum.filter(el => el === 300);
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrResult = arrNum.filter(el => el === 300);
 
-        document.querySelector(".sample12_N1").innerHTML = "1";
-        document.querySelector(".sample12_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample12_M1").innerHTML = "arrNum.filter(el => el === 300)";
-        document.querySelector(".sample12_P1").innerHTML = arrResult; 
+document.querySelector(".sample12_N1").innerHTML = "1";
+document.querySelector(".sample12_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample12_M1").innerHTML = "arrNum.filter(el => el === 300)";
+document.querySelector(".sample12_P1").innerHTML = arrResult; 
 
-        const arrNum2 = [100,200,300,400,500];
-        const arrResult2 = arrNum2.filter(el => el === 600);
+const arrNum2 = [100,200,300,400,500];
+const arrResult2 = arrNum2.filter(el => el === 600);
 
-        document.querySelector(".sample12_N2").innerHTML = "2";
-        document.querySelector(".sample12_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample12_M2").innerHTML = "arrNum2.filter(el => el === 600)";
-        document.querySelector(".sample12_P2").innerHTML = arrResult2; 
+document.querySelector(".sample12_N2").innerHTML = "2";
+document.querySelector(".sample12_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample12_M2").innerHTML = "arrNum2.filter(el => el === 600)";
+document.querySelector(".sample12_P2").innerHTML = arrResult2; 
 
-        const arrNum3 = [100,200,300,400,500];
-        const arrResult3 = arrNum3.filter(el => el >= 300);
+const arrNum3 = [100,200,300,400,500];
+const arrResult3 = arrNum3.filter(el => el >= 300);
 
-        document.querySelector(".sample12_N3").innerHTML = "3";
-        document.querySelector(".sample12_Q3").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample12_M3").innerHTML = "arrNum3.filter(el => el >= 300)";
-        document.querySelector(".sample12_P3").innerHTML = arrResult3; </code></pre>   
+document.querySelector(".sample12_N3").innerHTML = "3";
+document.querySelector(".sample12_Q3").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample12_M3").innerHTML = "arrNum3.filter(el => el >= 300)";
+document.querySelector(".sample12_P3").innerHTML = arrResult3; </code></pre>   
                 </div>   
                 <!-- /12번 --> 
 
@@ -1135,37 +1135,37 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrNum = [100,200,300,400,500];
-        const arrResult = arrNum.map(el => el);
+<pre><code>const arrNum = [100,200,300,400,500];
+const arrResult = arrNum.map(el => el);
 
-        document.querySelector(".sample13_N1").innerHTML = "1";
-        document.querySelector(".sample13_Q1").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample13_M1").innerHTML = "arrNum.map(el => el)";
-        document.querySelector(".sample13_P1").innerHTML = arrResult; //100
+document.querySelector(".sample13_N1").innerHTML = "1";
+document.querySelector(".sample13_Q1").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample13_M1").innerHTML = "arrNum.map(el => el)";
+document.querySelector(".sample13_P1").innerHTML = arrResult; //100
 
-        const arrNum2 = [100,200,300,400,500];
-        const arrResult2 = arrNum2.map(el => el + "J");
+const arrNum2 = [100,200,300,400,500];
+const arrResult2 = arrNum2.map(el => el + "J");
 
-        document.querySelector(".sample13_N2").innerHTML = "2";
-        document.querySelector(".sample13_Q2").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample13_M2").innerHTML = "arrNum2.(el => el + J)";
-        document.querySelector(".sample13_P2").innerHTML = arrResult2; //100
+document.querySelector(".sample13_N2").innerHTML = "2";
+document.querySelector(".sample13_Q2").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample13_M2").innerHTML = "arrNum2.(el => el + J)";
+document.querySelector(".sample13_P2").innerHTML = arrResult2; //100
 
-        const arrNum3 = [100,200,300,400,500];
-        const arrResult3 = arrNum3.map(el => el + 100);
+const arrNum3 = [100,200,300,400,500];
+const arrResult3 = arrNum3.map(el => el + 100);
 
-        document.querySelector(".sample13_N3").innerHTML = "3";
-        document.querySelector(".sample13_Q3").innerHTML = "[100,200,300,400,500]";
-        document.querySelector(".sample13_M3").innerHTML = "arrNum3.(el => el + 100)";
-        document.querySelector(".sample13_P3").innerHTML = arrResult3; //100
+document.querySelector(".sample13_N3").innerHTML = "3";
+document.querySelector(".sample13_Q3").innerHTML = "[100,200,300,400,500]";
+document.querySelector(".sample13_M3").innerHTML = "arrNum3.(el => el + 100)";
+document.querySelector(".sample13_P3").innerHTML = arrResult3; //100
 
-        const arrNum4 = [{a:100}, {a:200}, {a:300}];
-        const arrResult4 = arrNum4.map(el => el.a);
+const arrNum4 = [{a:100}, {a:200}, {a:300}];
+const arrResult4 = arrNum4.map(el => el.a);
 
-        document.querySelector(".sample13_N4").innerHTML = "4";
-        document.querySelector(".sample13_Q4").innerHTML = "[{a:100}, {a:200}, {a:300}]";
-        document.querySelector(".sample13_M4").innerHTML = "arrNum34.map(el => el.a)";
-        document.querySelector(".sample13_P4").innerHTML = arrResult4; //100</code></pre>   
+document.querySelector(".sample13_N4").innerHTML = "4";
+document.querySelector(".sample13_Q4").innerHTML = "[{a:100}, {a:200}, {a:300}]";
+document.querySelector(".sample13_M4").innerHTML = "arrNum34.map(el => el.a)";
+document.querySelector(".sample13_P4").innerHTML = arrResult4; //100</code></pre>   
                 </div>   
                 <!-- /13번 --> 
 
@@ -1212,32 +1212,32 @@
                         </table>
                     </div>
                     <div class="script"></div>
-        <pre><code>        const arrText = "javascript";
-        const arrResult = Array.from(arrText);
-        
-        document.querySelector(".sample14_N1").innerHTML = "1";
-        document.querySelector(".sample14_Q1").innerHTML = "javascript";
-        document.querySelector(".sample14_M1").innerHTML = "Array.from(arrText)";
-        document.querySelector(".sample14_P1").innerHTML = arrResult; //10
-        console.log(arrResult);
+<pre><code>const arrText = "javascript";
+const arrResult = Array.from(arrText);
 
-        const arrText2 = "javascript";
-        const arrResult2 = Array.from(arrText2 , el => el + "10");
-        
-        document.querySelector(".sample14_N2").innerHTML = "2";
-        document.querySelector(".sample14_Q2").innerHTML = "javascript";
-        document.querySelector(".sample14_M2").innerHTML = "Array.from(arrText2 , el => el + '10')";
-        document.querySelector(".sample14_P2").innerHTML = arrResult2; //10
-        console.log(arrResult2);
+document.querySelector(".sample14_N1").innerHTML = "1";
+document.querySelector(".sample14_Q1").innerHTML = "javascript";
+document.querySelector(".sample14_M1").innerHTML = "Array.from(arrText)";
+document.querySelector(".sample14_P1").innerHTML = arrResult; //10
+console.log(arrResult);
 
-        const arrText3 = "javascript";
-        const arrResult3 = [...arrText3].map(el => el);
-        
-        document.querySelector(".sample14_N3").innerHTML = "3";
-        document.querySelector(".sample14_Q3").innerHTML = "javascript";
-        document.querySelector(".sample14_M3").innerHTML = "[...arrText3].map(el => el)";
-        document.querySelector(".sample14_P3").innerHTML = arrResult3; //10
-        console.log(arrResult3); </code></pre>   
+const arrText2 = "javascript";
+const arrResult2 = Array.from(arrText2 , el => el + "10");
+
+document.querySelector(".sample14_N2").innerHTML = "2";
+document.querySelector(".sample14_Q2").innerHTML = "javascript";
+document.querySelector(".sample14_M2").innerHTML = "Array.from(arrText2 , el => el + '10')";
+document.querySelector(".sample14_P2").innerHTML = arrResult2; //10
+console.log(arrResult2);
+
+const arrText3 = "javascript";
+const arrResult3 = [...arrText3].map(el => el);
+
+document.querySelector(".sample14_N3").innerHTML = "3";
+document.querySelector(".sample14_Q3").innerHTML = "javascript";
+document.querySelector(".sample14_M3").innerHTML = "[...arrText3].map(el => el)";
+document.querySelector(".sample14_P3").innerHTML = arrResult3; //10
+console.log(arrResult3); </code></pre>   
                 </div>   
                 <!-- /14번 --> 
 
