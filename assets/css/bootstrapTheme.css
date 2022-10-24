@@ -3695,8 +3695,9 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-    font-size: 33px;
-  color: #000;
+  font-size: 33px;
+  /* background-color: #000; */
+  color: #a195a1;
     font-family: Abel;;
 }
 .navbar .brand:hover,

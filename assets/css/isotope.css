@@ -72,11 +72,11 @@
   margin-bottom: 1%;
   float: left;
 
-  border-bottom: 3px solid #a5d5fa;
+  border-bottom: 3px solid #c0b3f8;
   background-color: #fff;
 }
 .color-shape:first-child:hover {
-    border-bottom: 3px solid #a92c76;
+    border-bottom: 3px solid #7c68d3;
 }
 .color-shape:nth-child(2):hover {
     border-bottom: 3px solid #82c60a;
@@ -88,7 +88,7 @@
     border-bottom: 3px solid #ff860d;
 }
 .color-shape:nth-child(5):hover {
-    border-bottom: 3px solid #934414;
+    border-bottom: 3px solid #491493;
 }
 .color-shape:nth-child(6):hover {
     border-bottom: 3px solid #f04b3e;
