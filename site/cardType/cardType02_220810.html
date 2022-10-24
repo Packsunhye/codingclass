@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .nexon {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card_inner {
+            display: flex;
+            justify-content: space-between;  /* 가운데 정렬로 맞추기*/
+        }
+        .card {
+            width: 275px;
+            height: 380px;
+            margin-bottom: 50px;
+            object-fit: contain;
+            flex-wrap: wrap;
+        }
+        .card_body .cat_containar{
+            display: flex;
+            
+        }
+        .card_body .tit {
+            width: 205px;
+            height: 32px;
+            margin: 20px 0 10px ;
+            font-size: 28px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000;
+            flex-wrap: wrap;
+        }
+        .card_body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-align: left;
+        }
+        .card_body .btn {
+            width: 10px;
+            height: 24px;
+            margin: 24px 0 14px 44px;
+            object-fit: contain;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card_wrap nexon section">
+        <h2>낮잠을 자야하는 이유</h2>
+        <p>지금도 눈이 감긴다 감겨 비오는 날은 왜이리 심한지 아주 그냥 고양이 뱃살에 묻혀서 <br>
+            잠을 자고싶당 왜냐하면 걘 따뜻하고 에어컨은 시원하고 극락이에요
+            </p>
+        
+        <div class="card_inner container">
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg01.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg02.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg03.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg04.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article> 
+        </div>
+        <div class="card_inner container">
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg05.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg06.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg07.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="../cardType/img/card_type_bg08.jpg" alt="이불 쏘옥 고양이">
+                </figure>
+                <div class="card_body ">
+                    <div class="cat_containar">
+                        <h3 class="tit"> 이불 쏘옥 고양이 </h3>
+                        <a href="/" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="24" rx="5" fill="#C1B1FF"/>
+                                    <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM4 13L18 13L18 11L4 11L4 13Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. </p>
+                </div>
+            </article> 
+        </div>
+    </section>
+</body>
+</html>     

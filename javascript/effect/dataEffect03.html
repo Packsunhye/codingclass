@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 이펙트 03</title>
+    <link rel="stylesheet" href="../assets/css/data.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <link href="https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css" rel="stylesheet">
+    <style> 
+        .testTable tr td {
+         border:  1px solid #000;
+             }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="dataEffect01.html">1</a></li>
+                <li><a href="dataEffect02.html">2</a></li>
+                <li class="active"><a href="dataEffect03.html">3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <h2>테이블 출력하기</h2>
+            <div class="test_box">
+                <h3 class="title">1.1 for을 이용하여 테이블을 출력하세요.</h3>
+                <div class="code">
+<pre><code class="line-numbers language-js">let table = "&lt;table&gt;";
+
+    for( let i = 0; i &lt; 10; i ++){
+        table += "&lt;tr&gt;"
+            for(let j = 0; j &lt; 10; j++){
+                table += "&lt;td&gt;♬&lt;/td&gt;"
+            }
+        table += "&lt;/tr&gt;"       
+    }
+    table += "&lt;/table&gt;";
+
+document.write(table);</code></pre>
+                </div>
+                        <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <script>
+                                {
+let table = "<table class = 'testTable'>";
+
+for( let i = 0; i < 10; i ++){
+    table += "<tr>"
+        for(let j = 0; j < 10; j++){
+            table += "<td>♬</td>"
+        }
+    table += "</tr>"       
+}
+table += "</table>";
+
+document.write(table);
+                                }
+                         </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="../assets/js/prism.js"></script>
+    <!-- //main -->
+    <script>
+        
+    </script>
+</body>
+</html>

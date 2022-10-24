@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 지역변수/전역변수
+    </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+        <h2 class="t_tit">지역변수 / 전역변수</h2>
+        <p class="t_box">
+            변수는 함수 블록{}을 기준으로 변수의 선언 위치에 따라 '전역 변수'와 '지역 변수'로 나눠집니다.<br>
+            <i>'전역 변수'는 함수 블록{} 밖이나 안에서 자유롭게 사용 가능하지만 '지역 변수'는 함수 블록{}내에서만 사용</i>할 수 있습니다.
+         </p>
+
+        <h3 class="t_tit2">전역 변수와 지역 변수의 선언 위치</h3> 
+        <table class="t_table">
+            <thead>
+            <tr>
+                <th>지역 변수</th>
+                <th>전역변수</th>
+            </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                    <td>
+                    <pre><code>var 변수 ;
+function 함수(){ 
+}</code></pre>
+                    </td>
+                    <td>
+                    <pre><code>function 함수(){
+    var 변수;
+}</code></pre>
+                    </td>
+                 </tr>
+            </tbody>
+        </table><br>
+        <p class="t_desc">
+        아래 예시에서 함수 블록{}안에 있는 kor 변수는 전역변수이다. 따라서 getScore()함수를 호출하게 되면 변수 값이 90에서 100으로 바뀐다.</p>
+
+        <div class="t_code">
+<pre><code class="language-js">  var kor = 90; 
+    function getScore(){ 
+        kor = 100;                   //전역변수 
+        document.write(kor);   //100 
+    } 
+    getScore(); 
+    document.write(kor);      //100    </code></pre>
+        <div  class="resul">           
+          <details>
+              <summary>결과보기</summary>
+              <div class="sample01_result">
+                  <script>
+                    {
+                        var kor = 90; 
+                        function getScore(){ 
+                            kor = 100; //전역변수 
+                            document.write(kor,"<br>"); //100 
+                        } 
+                        getScore(); 
+                        document.write(kor,"<br>"); //100
+                    }
+                  </script>   
+              </div>
+          </details><br>
+          </div>    
+        </div>
+  
+   
+        <p class="t_desc">
+            아래 예시에서 함수 블록{}안에 있는 kor 변수를 var로 정의, 함수 블록{}안에서 var로 선언된 함수는 지역 변수가 되며 밖의 전역 변수 kor과 다른 별도의 변수가 된다. <br>
+            <i>함수 블록{}안에 지역 변수는 반드시 var로 선언해 줘야하며 함수 블록{} 밖에서 사용할 수 없다.</i></p>
+
+            <div class="t_code">
+                <pre><code class="language-js">   var kor = 90; 
+    function getScore(){ 
+        var kor = 100;      //지역변수
+        console.log(kor);  //100 
+    } 
+    getScore(); 
+    console.log(kor);     //100   </code></pre>
+                        <div  class="resul">           
+                          <details>
+                              <summary>결과보기</summary>
+                              <div class="sample02_result">
+                                  <script>
+                                    {
+                                        var kor = 90; 
+                                        function getScore(){ 
+                                            var kor = 100; //전역변수 
+                                            document.write(kor,"<br>"); //100 
+                                        } 
+                                        getScore(); 
+                                        document.write(kor,"<br>"); //100
+                                    }
+                                  </script>   
+                              </div>
+                          </details><br>
+                          </div>    
+                        </div>
+            
+
+            <h4 class="t_tit3">블록에 의해 변수 범위가 달라지는 예시</h4>
+            <p class="t_desc">아래처럼 변수 범위가 달라지는 것을 <i>변수의 scope</i>라고 합니다. 전역 변수는 블록{}내외에서 사용 할 수 있기 때문레 자칫 동일한 이름으로 덫어질 수 있습니다. 
+            이런 이유로  전역 변수보다는 지역 변수가 안전하다.</p>
+            <p class="t_box">
+                function getScore(){ <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;var kor = 100; //지역변수 <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;console.log(kor); //100 <br>
+                } <br> 
+                getScore(); <br> 
+                <i>console.log(kor); //에러</i>
+            </p><br>
+
+            <h3 class="t_tit2">함수 레벨 스코프와 블록 레벨 스코프</h3> 
+            <p class="t_desc">
+                var는 함수 블록{}에서만 지역 변수가 존재하며 블록{}이나 제어문{}에서는 지역 변수가 존재하지 않습니다. ECMAscript2015(ES6)에서 새로 추가된 <i>let 과 const</i>
+                는 불록{}이나 제어문 블록{}에서도 지역 변수를 선언할 수 있다.
+            </p>
+            <p class="t_box">
+                var num = 10;<br>
+                {<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;var num = 20; //num은 전역 변수입니다.<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;console.log(num); //20<br>
+                }<br>
+                console.log(num); //20
+            </p>
+            <p class="t_box">
+                let num = 10;<br>
+                {<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;let num = 20; //num은 지역 변수입니다.<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;console.log(num); //20<br>
+                }<br>
+                console.log(num); //10
+            </p>
+            <p class="t_box">
+                const num = 10;<br>
+                {<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;const num = 20; //num은 지역 변수입니다.<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;console.log(num); //20<br>
+                }<br>
+                console.log(num); //10
+            </p><br>
+            <p class="t_desc">
+                블록{} 안에서 let과 const로 선언한 변수는 위에 처럼 블록{}의 지역 변수로 인식합니다.
+            </p>
+
+            <p class="t_box">
+                var num = 10;<br>
+                if(num ===10){<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;var sum = 20; //전역 변수<br>
+                }<br>
+                console.log(sum); //20
+            </p>
+            <p class="t_box">
+                let num = 10;<br>
+                if(num ===10){<br>
+                &nbsp; &nbsp; &nbsp; &nbsp;let sum = 20; //전역 변수<br>
+                }<br>
+                console.log(sum); //20
+            </p><br>
+
+            <p class="t_desc">
+                var는 제어문 블록{}에서 전역 변수로만 존재하기 때문에 위의 예시와 같이 sum변수를 블록{} 밖에서도 호출할 수 있지만,
+                <i>제어문 블록{}안에서 let으로 선언된 변수는 지역 변수이기 때문에 제어문 블록{} 밖에서도 선언할 수 있다.</i>
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">   // 함수의 전역변수
+    var sum1 = 10;
+    function add1(){
+        sum1 = 20;
+    }
+    add1();
+    document.write('전역'+sum1);
+
+    //함수의 지역변수
+    var sum2 = 30;
+    function add2() {
+        var sum2 = 40;
+        document.write('지역'+sum2);
+    }
+    add2();
+    document.write('전역'+sum1);
+    
+    //함수의 지역변수
+    var sum2 = 30;
+    document.write('전역'+sum2);
+
+    //블록의 지역변수 
+    var num1 = 50;
+    if (num1 === 50){
+        var num1 = 60;
+    }
+    document.write('전역' + num1);
+    let num2 = 70;
+    if (num2 === 70){
+        let num2 = 80;
+        document.write('지역' + num2);
+    }
+    document.write('전역'+num2); </code></pre> 
+                        <div  class="resul">           
+                          <details>
+                              <summary>결과보기</summary>
+                              <div class="sample03_result">
+                                전역20<br>
+                                지역40<br>
+                                전역20<br>
+                                전역30<br>
+                                전역60<br>
+                                지역80<br>
+                                전역70<br>
+                              </div>
+                          </details>
+                          </div>    
+                        </div>
+            
+            <h3 class="t_tit2">var, let, const 비교 정리</h3> 
+            <table class="t_table">
+               <thead>
+                <tr>
+                    <th>변수 범위</th>
+                    <th>변수 선언</th>
+                    <th>특징</th>
+                </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                        <td class="ce">함수 레벨 스코프</td>
+                        <td class="ce">var</td>
+                        <td>
+                            - <i>변수를 중복해서 선언</i>할 수 있다. <br>
+                            - <i>함수 블록{}내에서만 지역 변수가 존재</i>합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">블록 레벨 스코프</td>
+                        <td class="ce">let</td>
+                        <td>
+                            - var와 같지만 같은 블록{}에서는 <i>이미 선언한 존재를 중복해서 선언할 수 없습니다.</i> <br>
+                            - <i>블록{}, 제어문 블록{}에서도 지역 변수가 존재</i>합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">const</td>
+                        <td>
+                            - var와 같지만 같은 블록{}에서는 이미 선언한 <i>변수를 중복해서 선언할 수 없고 저장된 값을 변경할 수도 없습니다.</i> <br>
+                            - <i>블록{}, 제어문 블록{}에서도 지역 변수가 존재</i>합니다.
+                        </td>
+                    </tr>
+               </tbody>
+            </table>           
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

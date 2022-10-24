@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> mouse Effect 01 </h2>
+            <p class="t_desc"> 마우스를 hover 했을 때, 지정한 위치에 따라 마우스 커서가 변화하는 이펙트를 공부해보았습니다.
+            </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 마우스를 올렸을 때 변화하는 글귀를 작성했습니다.</p>
+            <details>
+                <summary> 👾 HTML 의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;header id="header" class="arir"&gt;
+    &lt;h1 class="Nix"&gt;Javascript Mouse Effect 01&lt;/h1&gt;
+    &lt;p&gt;마우스 이펙트 - 트랜지션 효과&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li class="active"&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/header&gt;
+  
+  &lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+      &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+      &lt;div class="mouse__wrap"&gt;
+        &lt;p class="Nix"&gt;Numbing the &lt;span class="style1"&gt;pain&lt;/span&gt; for a while will &lt;span class="style2"&gt;make it worse&lt;/span&gt; when you &lt;span class="style3"&gt;finally feel it.&lt;/span&gt; &lt;/p&gt;
+        &lt;p class="arir"&gt;&lt;span class="style4"&gt;고통&lt;/span&gt;을 잠시라도 &lt;span class="style5"&gt;모른 척&lt;/span&gt;하면, 나중에 정말 고통을 느낄 때 더 &lt;span class="style6"&gt;악화되는 법&lt;/span&gt;이란다.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt; px &lt;/li&gt;
+        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt; px &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+  &lt;/main&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 글귀의 위치마다 style을 바꿔, 여러가지 효과가 나오도록 하였습니다.</p>
+            <details>
+                <summary> 👾 CSS의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-css">.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+  }
+
+  .mouse__wrap p {
+    font-size: 1.5vw;
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  .mouse__wrap p:last-child {
+    font-size: 1.8vw;
+    font-weight: 500;
+  }
+
+  .mouse__wrap p span {
+    border-bottom: 0.05vw solid rgb(219, 73, 146);
+    color: rgb(219, 73, 146);
+  }
+  
+
+  @media( max-width : 800px){
+      .mouse__wrap p {
+          padding: 0 20px;
+          font-size: 18px;
+          line-height: 1.5;
+          text-align: center;
+          margin-bottom: 10px;
+      }
+
+      .mouse__wrap p:last-child {
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+      }
+  }
+
+  .mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: rgba(255,255,255,0.1);
+    
+    user-select: none;  /* 포인터로 선택할 수 없게 만듬 */
+    pointer-events: none;
+    transition: 
+    background-color 0.3s,
+    border-color 0.3s,
+    transform 0.6s,
+    rotate 0.3s,
+    border-radius 0.3s ;
+  }
+
+  .mouse__cursor.style1 {
+    background-color: rgba(238, 43, 173, 0.199);
+    border-color: rgb(238, 43, 173);
+  }
+
+  .mouse__cursor.style2 {
+    background-color: rgba(68, 56, 180, 0.247);
+    border-color: rgb(68, 56, 180);
+    transform: scale(2) rotateX(720deg);
+  }
+
+  .mouse__cursor.style3 {
+    background-color: rgba(252, 217, 60, 0.219);
+    border-color: rgb(252, 217, 60);
+    transform: scale(1.5) rotateY(350deg);
+  }
+
+  .mouse__cursor.style4 {
+    background-color: rgba(94, 201, 250, 0.178);
+    border-color: rgb(94, 201, 250);
+    transform: scale(3) rotateX(720deg);
+  }
+
+  .mouse__cursor.style5 {
+    background-color: rgba(104, 241, 111, 0.192);
+    border-color: rgb(104, 241, 111);
+    transform: scale(2) rotate(720deg);
+  }
+
+  .mouse__cursor.style6 {
+    background-color: rgba(60, 105, 252, 0.171);
+    border-color: rgb(60, 105, 252);
+    border-radius: 0;
+  }
+
+  .mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 10px;
+  }</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> 마우스를 움직였을 때, 상대값 절대값 등의 위치 값이 나오도록 하였으며, 감싸진 span의 스타일 값에 따라 마우스를 hover 하였을 때 변화하도록 하였습니다. </p>
+            <details>
+                <summary> 👾 Javascript의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">//마우스 위치 구하기
+window.addEventListener("mousemove",(event) => {
+    document.querySelector(".clientX").innerText = event.clientX
+    document.querySelector(".clientY").innerText = event.clientY
+    document.querySelector(".offsetX").innerText = event.offsetX
+    document.querySelector(".offsetY").innerText = event.offsetY
+    document.querySelector(".pageX").innerText = event.pageX
+    document.querySelector(".pageY").innerText = event.pageY
+    document.querySelector(".screenX").innerText = event.screenX
+    document.querySelector(".screenY").innerText = event.screenY
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+window.addEventListener("mousemove",(e) => {
+
+cursor.style.left = e.clientX - 25 + "px" ;
+cursor.style.top = e.clientY - 25 + "px";
+
+});
+
+//getAttribute 
+document.querySelectorAll(".mouse__wrap span").forEach((span)=>{
+    let attr = span.getAttribute("class")
+
+    span.addEventListener("mouseover", ()=>{
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", ()=>{
+        cursor.classList.remove(attr);
+    });
+    
+});</code></pre>
+            </div>
+            </details>
+           <br>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/mouseEffect01.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/mouseEffect01.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/mouseEffect01.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

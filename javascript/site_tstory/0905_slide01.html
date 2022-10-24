@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 슬라이드 유형 01 </h2>
+            <p class="t_desc"> 버튼을 눌렀을 때 슬라이드가 가능한 유형을 제작해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. figma </h3>
+            <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1097%253A521" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2"> 02. HTML </h3>
+            <p class="t_desc"> HTML 입니다. 슬라이드 유형은 사용할 svg 와, 이미지와 글씨가 있습니다.</p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="sliderType" class="slider__wrap nexon"&gt;
+    &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+    &lt;div class="slider__inner"&gt;
+        &lt;div class="slider"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="desc"&gt;
+                    &lt;span&gt;DEVELOPER&lt;/span&gt;
+                    &lt;h3&gt;CAT PROJECT&lt;/h3&gt;
+                    &lt;p&gt;
+                        고양이들이 가득 있어요 구경해주세요!&lt;br&gt;
+                        여러 종과 여러 색상이 있답니다.
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__arrow"&gt;
+                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="rigth"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt; </code></pre>
+            </div>
+            
+            <h3 class="t_tit2"> 03. css </h3>
+            <p class="t_desc"> 글자색이라던가, 크기만 조정해주면 푸터 타입은 완성입니다. </p>
+            <div class="t_code">
+<pre><code class="language-css">.slider__inner {
+    margin-top: 70px;
+}
+.slider {
+    position: relative;
+}
+.slider__img {
+    background: url(../../../slideType/img/slider_bg01.jpg) no-repeat center / cover;
+}
+.slider__img .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+.slider__img .desc span{
+    font-size: 16px;
+    background-color: #fff;
+    padding: 1px 14px 0 14px;
+    border-radius: 30px;
+    text-transform:uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+
+}
+.slider__img .desc h3{
+    font-size: 110px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+}
+.slider__img .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 130px;
+}
+.slider__img .desc .btn {
+
+}
+.slider__img .desc .btn a{
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.slider__img .desc .btn a.black {
+    background: #000;
+    color: #fff;
+}
+.slider__arrow a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 56px;
+    background-image: url(../../../slideType/img/slider_icon.svg);
+}
+
+.slider__arrow a.left {
+    left: 20px;
+}
+.slider__arrow a.rigth {
+    right: 20px;
+    background-position: -50px 0px;
+}
+
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+
+.slider__dot a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../../../slideType/img/slider_icon.svg);
+    background-position: -20px -70px ;
+}
+
+.slider__dot a.active {
+    background-position: 0px -70px;
+}
+
+.slider__dot a.play {
+    background-position: -40px -70px;
+}
+
+.slider__dot a.stop {
+    background-position: -60px -70px;
+}</code></pre>
+            </div><br>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/site/site01/index.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/site/site01/index.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/site/site01/index.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

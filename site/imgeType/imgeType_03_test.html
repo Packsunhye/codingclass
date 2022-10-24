@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/leferi/LeferiBase.css');
+        .lfre {
+            font-family: 'LeferiBase';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1720px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1720px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* imageType */
+
+        .ad__01 {
+            width: 49.5%;
+            height: 500px;
+            background-color: #666;
+
+            position: relative;
+            
+        }   
+        
+            /* flex-wrap: wrap; */
+        
+        .ad__01 .main__fon {
+            padding: 20px;
+            position: absolute;
+            top: 390px;  
+        }
+        .omg__img {
+            position: relative;
+        }
+        .cont02 {
+            display: flex;
+        }
+        .omg__img:hover .more {
+            display: block;
+            transition: all 0.5s ease-in-out;
+        }
+        .more {
+          justify-content: flex-end;
+          width: 26px;
+          height: 26px;
+          position: absolute;
+          top: 20px; 
+          right: 20px;
+          transition: all 0.3s ease-in-out;
+
+          display: none;
+        }
+
+        .main__fon > h2 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .main__fon > p {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        
+        /* ad01 */
+        .ad__02 {
+            width: 49.5%;
+            height: 500px;
+        }
+
+        .ad__02 .first__box {
+            height: 240px;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        /* fb01 */
+        .first__box .fb__inner01 {
+            width: 49%;
+            position: relative;
+        }
+        .fb__inner01 .fb01__fon {
+            padding: 20px;
+            position: absolute;
+            top: 140px;  
+        }
+        .fb01__fon > h2 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        } 
+        .fb01__fon > p {
+            font-size: 14px;
+            color: #fff;
+        } 
+       
+        /* fb02 */
+        .first__box .fb__inner02 {
+            width: 49%;
+            position: relative;
+        }
+        .fb__inner02 .fb02__fon {
+            padding: 20px;
+            position: absolute;
+            top: 140px;  
+        }
+        .fb02__fon > h2 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        } 
+        .fb02__fon > p {
+            font-size: 14px;
+            color: #fff;
+        } 
+
+        /* ad02 */
+        .ad__02 .second__box {
+            height: 240px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        /* sd01 */
+        .second__box .sb__inner01 {
+            width: 49%;
+            position: relative;
+
+        }
+        .sb__inner01 .sb01__fon {
+            padding: 20px;
+            position: absolute;
+            top: 140px;  
+        }
+        .sb01__fon > h2 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        } 
+        .sb01__fon > p {
+            font-size: 14px;
+            color: #fff;
+        } 
+
+
+
+        /* sd02 */
+        .second__box .sb__inner02 {
+            width: 49%;   
+            position: relative;
+        }
+        .sb__inner02 .sb02__fon {
+            padding: 20px;
+            position: absolute;
+            top: 140px;  
+        }
+        .sb02__fon > h2 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        } 
+        .sb02__fon > p {
+            font-size: 14px;
+            color: #fff;
+        } 
+
+       
+    </style>
+</head>
+<body>
+    <section id="imageType01" class="image__wrap lfre section">
+        <h2>귀여운 해파리들이 가득 </h2>
+        <p>말랑거리는 해파리들이 있는 심해 그 저편으로 한번 모두 다같이 이번 기회에 신나게 떠나볼까요?</p>
+        <div class="image__inner container">
+            <article class="ad__01 cont02">
+                <div class="omg__img">
+                    <img src="img/img_type_test01.jpg" alt="해파리" class="main__img">
+                    <div class="more">
+                        <img src="img/fbook.svg" alt="">
+                        <img src="img/twt.svg" alt="">
+                        <img src="img/goole.svg" alt="">
+                        <img src="img/youtu.svg" alt="">
+                    </div> 
+                </div>
+               <div class="main__fon">
+                <h2>심해 해파리</h2>
+                <p>Deep sea Jelly fish</p>
+               </div>
+            </article>
+            <article class="ad__02">
+                <article class="first__box">
+                    <div class="fb__inner01">
+                        <img src="img/img_type_test02.jpg" alt="해파리">
+                        <div class="fb01__fon">
+                            <h2>외로운 해파리</h2>
+                            <p>alone Jelly fish</p>
+                        </div>
+                    </div>
+                    <div class="fb__inner02">
+                        <img src="img/img_type_test05.jpg" alt="">
+                        <div class="fb02__fon">
+                            <h2>해파리 수영</h2>
+                            <p>Swimming Jelly fish</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="second__box">
+                    <div class="sb__inner01">
+                        <img src="img/img_type_test03.jpg" alt="">
+                        <div class="sb01__fon">
+                            <h2>해파리 무리</h2>
+                            <p>Many Jelly fish</p>
+                        </div>
+                    </div>
+                    <div class="sb__inner02">
+                        <img src="img/img_type_test04.jpg" alt="">
+                        <div class="sb02__fon">
+                            <h2>블루문 해파리</h2>
+                            <p>Moon Jelly fish</p>
+                        </div>
+                    </div>
+                </article>
+            </article>
+
+        </div>
+        
+    </section>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> search Effect 04 </h2>
+            <p class="t_desc"> find() 와 map()을 이용하여  검색도 가능하지만, 속성을 클릭 했을 때 설명이 나오는 이펙트를 공부해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 설명이 나오는 곳과 검색하는 곳을 구분해줍니다. </p>
+            <details>
+                <summary>🦢 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="search__box"&gt;
+    &lt;label for="search"&gt;검색하기&lt;/label&gt;
+    &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 검색해주세요."&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="search__desc"&gt;
+    &lt;div class="desc"&gt;속성을 검색하시면 설명이 표시 됩니다.&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="search__info"&gt;
+    &lt;div&gt; 전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt; &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="search__list"&gt;
+   
+  &lt;/div&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 구분하기 위해 본래의 디자인과 잘 어울리도록 작성해줍니다.</p>
+            <details>
+                <summary>🦢 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.search__desc {
+    border: 2px solid var(--htmlColor);
+    padding: 20px 40px 20px 60px;
+    border-radius: 50px;
+    background-color: var(--htmlColor);
+    width: 80%;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='11' r='8' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.5 16.958L21.5 21.958' stroke='%23FFFFFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: 22px 16px;
+}
+.desc { 
+    color: #fff;
+
+}
+.desc strong {
+    color: #fff;
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc">배열에 있는 속성은 매개변수러 블러와 find로 조건을 걸어 찾아줍니다. </p>
+            <details>
+                <summary>🦢 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js">const cssProperty = [ 
+...]
+const searchList = document.querySelector(".search__list")        
+const searchNum = document.querySelector(".search__info .num");       
+const searchBox = document.querySelector(".search__box input")             
+const searchDesc = document.querySelector(".search__desc .desc")             
+
+//출력하기
+cssProperty.map((el,index)=>{
+searchNum.innerHTML = index + 1;
+searchList.innerHTML += `&lt;span&gt;${el.name}&lt;/span&gt;`;
+})
+
+//전체속성 갯수
+
+//입력하기
+searchBox.addEventListener("keyup", ()=>{
+const searchWord = searchBox.value; 
+// console.log(searchWord);
+findProperty(searchWord); // 매개변수로 만들기
+});
+
+const searchList2 = document.querySelectorAll(".search__list span")        
+
+
+//속성 찾기
+function findProperty(searchData){ // 불러옴 searchWord -> searchData로 불러오기
+const targetData = cssProperty.find((data) => data.name === searchData);
+
+if(targetData == null ){
+    searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요 :3"
+    return; // 결과값을 출력하는 의미도 있지만 종료의 의미도 있다. 밑에 있는 실행이 무조건 실행이 되기 때문에 return으로 값이 없을 때 끝내주는 것.
+}
+
+searchDesc.textContent = targetData.desc;       
+}
+
+//버튼을 클릭하면 설명이 나오게 만들어주기
+
+searchList2.forEach((e, i) => { //여러개니까 forEach 로 불러오기
+    // console.log(e)
+    e.addEventListener("click", () => {
+        const searchWord = e.innerText;
+        // console.log(e.value)
+        findProperty(searchWord);
+    });
+})
+</code></pre>
+            </div>
+            </details>
+           <br>
+           
+           <h3 class="t_tit2"> 04. 이미지로 한눈에 알아봅시다. </h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/searchEffect04.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/searchEffect04.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/searchEffect04.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

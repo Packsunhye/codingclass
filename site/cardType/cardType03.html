@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+            
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 300;
+        }
+        
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* blind */
+        .blind {
+            position: absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+        
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+        
+        /* cardType03 */
+
+        body {
+            background-color: #6738ed;
+        }
+        .card_inner {
+            display: flex;
+        }
+        .card_inner .card {
+            padding: 26px;
+            width: 33.3333%;
+            
+            background-color: #fff;
+
+        }
+        .card_inner .card:nth-child(1) {
+            border-right : 1px solid #eee;
+        }
+        .card_inner .card:nth-child(2) {
+            border-right : 1px solid #eee;
+        }
+        
+        .card {}
+        .card .card_header {
+            position: relative;
+        }
+        .card .card_header img{
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .card .card_header figcaption{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            padding: 1px 16px;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #1df0ca;
+            font-size: 12px;
+            color: #6738ed;
+        }
+
+        .card .card_contents {}
+        .card .card_contents h3{
+            font-weight: 700;
+            line-height: 1.4;
+            font-style: 20px;
+            margin-bottom: 10px;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+        .card .card_contents p{
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+
+        .card .card_footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .card .card_footer span {
+            width: 40px;
+            height: 40px;   
+            /* background: #000; */
+            /* border-radius: 50%; */
+            overflow: hidden;
+            display: block;
+            margin-left: 10px;
+            margin-top: 3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+        }
+       
+        .card .card_footer h4{
+            text-align: right;
+            color: #666;
+        }
+        .card .card_footer em{
+            display: block;
+            font-style: normal;
+        }
+        
+        
+      
+    </style>
+</head>
+<body>
+    <section id="cardType03" class="card_wrap score section">
+        <h2 class="blind">바다의 세계</h2> <!--안보이게 처리-->
+       <div class="card_inner container">
+        <article class="card">
+            <figure class="card_header">
+                <img src="img/card_bg03_01.jpg" alt="Click">
+                <figcaption>Click</figcaption>
+            </figure>
+            <div class="card_contents">
+                <h3>이 바다처럼 우리 교실도 <br>
+                    침수되고 있다 너무너무 웃겨</h3>
+                <p>네네.. 우리 교실 물떨어져요 네.. 진짜 웃겨요 우리층 6층인데 빗물떨어져요 
+                    우산써야할지 모르겠어요 두명은 컴퓨터도 꺼졌대요~ 비오는 날에 이래도 되는거임? 컴퓨터 학원도??</p>
+            </div>
+            <div class="card_footer">
+                <h4>Sunhye <em>6 Resources</em></h4>
+                <span><img src="img/card_bg03_04.png" alt="cat"></span>
+            </div>
+        </article>
+        <article class="card">
+            <figure class="card_header">
+                <img src="img/card_bg03_02.jpg" alt="Click">
+                <figcaption>Click</figcaption>
+            </figure>
+            <div class="card_contents">
+                <h3> 노을진 바다가 이쁘면서  <br>
+                    역시 바캉스는 집에서 쉬어야지</h3>
+                <p> 바다에 가고싶다.. BUT ! ! 집에 있는게 짱이야.. , 그러나 ! ! 튜브도 타고 싶다.. 하우웨버 ! ! 
+                    집에도 에어컨이 있어... 네버어쩌구 ! ! 짠물기운이 좋다.,. 물론 마시면 퉤퉤퉤</p>
+            </div>
+            <div class="card_footer">
+                <h4>Manyong <em>6 Resources</em></h4>
+                <span><img src="img/card_bg03_05.png" alt="cat"></span>
+            </div>
+        </article>
+        <article class="card">
+            <figure class="card_header">
+                <img src="img/card_bg03_03.jpg" alt="Click">
+                <figcaption>Click</figcaption>
+            </figure>
+            <div class="card_contents">
+                <h3>파도가 넘쳐 흐르면서 <br>
+                    비가 새는건 딴 곳인 우리 학원</h3>
+                <p>부셔진 벽은 딴 곳이면서 우째서 천장에서 물이 떨어지는 걸까 건물의 신기함 
+                    헉 그럼 사이는 이미 빗물이 가득한걸까? 걸레로 빡빡 닦아야만 .... 물론 다음날 멀쩡해졌다 ! ! !</p>
+            </div>
+            <div class="card_footer">
+                <h4>LaLayong <em>12 Resources</em></h4>
+                <span><img src="img/card_bg03_06.png" alt="cat"></span>
+            </div>
+        </article>
+       </div>
+    </section>
+</body>
+</html>

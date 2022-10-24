@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            padding: 20px;
+            margin: 20px;
+            background: #755dce;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("div").width(150).height(150);
+            console.log("width" + $("div").width());
+            console.log("height " + $("div").height());
+            console.log("innerWidth " + $("div").innerWidth());
+            console.log("innerHeight " + $("div").innerHeight());
+            console.log("outerWidth " + $("div").outerWidth(true));
+            console.log("outerHeight " + $("div").outerHeight(true));
+        });
+    </script>
+</head>
+<body>
+    <div>내용</div>
+</body>
+</html>

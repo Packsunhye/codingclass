@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log($("#site > a:eq(0)").attr("href"));
+            $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site a").attr("title", function () {
+                return "새창";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="site">
+        <a href="http://www.daum.net" target="_blank">다음</a>
+        <a href="http://www.naver.com" target="_blank">네이버</a>
+        <a href="http://www.nate.com" target="_blank">네이트</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+
+
+.text__wrap {
+    
+    background-color: rgb(238, 240, 247);
+
+}
+
+.box__gm {
+    display: flex;
+}
+
+.text__font {
+    padding-right: 100px;
+    
+}
+.text__font > h2 {
+    font-size: 50px;    
+    text-align-last: left;
+    font-weight: bold;
+    width: 255px;
+    margin-bottom: 20px;
+
+}
+.text__font .top_font {
+    width: 180px;
+    height: 26px;
+    border-radius: 50px;
+    /* padding: 5px 48px; */
+    background-color: #bfbbf3;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+
+.text__font .bottom_font {
+    font-weight: 500;
+    text-align: left;
+    width: 255px;
+    font-size: 18px;
+}
+
+
+/* text__inner */
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.box__twx01 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.box__twx02 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;    
+}
+
+/* twwt  */
+.twwt {
+    width: 373px;
+    height: 211px;
+    margin-right: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+.twwt:hover {
+    background-color: #e4e7f0;
+}
+
+.twwt .img__svg {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #666;
+    margin-bottom: 10px;
+
+    background-size: 600px;
+    background: url(../../img/Group\ 5.svg) no-repeat;
+}
+.text__inner .img01 {
+    background-position: -100px;
+} 
+
+.text__inner .img02 {
+    background-position: -300px;
+}
+.text__inner .img03 {
+    
+}
+.text__inner .img04 {
+    background-position: -500px;
+}
+
+.twwt .text__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.twwt .text__desc {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.4;
+    font-weight: 300;
+    text-align: left;
+    width: 333px;
+}
+@media (max-width: 1320px) {
+    .text__font {
+        padding-left: 20px;
+    }
+    .box__gm {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+@media (max-width: 980px) {
+    .text__wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+    .box__gm {
+        flex-direction: column;
+    }
+    .text__font {
+        margin: 0 auto;
+        padding: 0;
+    }
+    .text__inner {
+        justify-content: center
+    }
+    .bottom_font {
+        margin-bottom: 20px;
+    }
+    .twwt {
+        margin: 0;
+    }
+}
+@media (max-width: 800px) {
+    .twwt {
+        padding: 0;
+    }
+}
+@media (max-width: 640px) {
+    .box__twx01 {
+        margin: 0 auto;
+        flex-direction: column;
+
+    }
+    .box__twx02 {
+        margin: 0 auto;
+        flex-direction: column;
+
+    }
+}
+        

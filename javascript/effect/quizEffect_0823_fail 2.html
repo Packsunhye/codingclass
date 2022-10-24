@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트05</title>
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/tway/TwayAir.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html"> Quiz </a><em>객관식 (여러) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz_wrap">
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // const num = [100,200,300,400,500]
+
+        // num.forEach((el) => {
+        //     document.querySelector(".quiz_wrap").textContent += el;
+        // });
+
+        const quizInfo = [
+            { //01
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "7. ",
+                answerAsk: "디자인 원리 중 균형(balance)에 해당하지 않는 것은?",
+                answerChoice: {
+                    1: "대칭",
+                    2: "비례",
+                    3: "율동",
+                    4: "주도와 종속"
+                },
+                answerResult: "3",
+                answerEx: "디자인의 기본 원리에는 통일, 강조, 균형, 반복, 비례, 반복, 변화, 조화, 대비, 율동, 리듬, 대칭, 스케일 등이 있고, 균형에 해당하는 것은 대칭(완전한 대칭), 비대칭(숨겨진 균형), 방사형 균형(중심에서 밖으로 퍼짐)이 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "8",
+                answerAsk: "디자인의 형식적 요소에 포함되지 않는 것은?",
+                answerChoice: {
+                    1: "형",
+                    2: "색",
+                    3: "질감",
+                    4: "용도"
+                },
+                answerResult: "4",
+                answerEx: "디자인의 형식적 요소는 총 6가지로 형태, 점, 선, 면, 입체, 색이 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "9",
+                answerAsk: "다음에 해당하는 디자인의 기본조건은? → 창조는 기존의 디자인을 바탕으로 보다 나은 디자인을 만드는 것이다.",
+                answerChoice: {
+                    1: "합목적성",
+                    2: "심미성",
+                    3: "경제성",
+                    4: "독창성"
+                },
+                answerResult: "4",
+                answerEx: "디자인의 기본조건에는 합목적성, 심미성, 독창성, 경제성, 질서성이 있으며 독창성의 주요 키워드는 디자인의 핵심, 아이디어 독창적, 이미지, 인상적인, 독특함, 개성, 차별성, 문제점 개선 등이 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "10",
+                answerAsk: "유채색에서 볼 수 있는 대비로 연속대비라고도 하며, 잔상 효과와 가장 밀접한 관련이 있는 것은?",
+                answerChoice: {
+                    1: "동시대비",
+                    2: "계시대비",
+                    3: "채도대비",
+                    4: "명도대비"
+                },
+                answerResult: "2",
+                answerEx: "유채색에서 볼 수 있는 대비로 연속대비라고도 하며, 잔상 효과와 가장 밀접한 관련이 있는 것은 '계시대비'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "15",
+                answerAsk: "감산혼합에 사용되는 Cyan, Magenta, Yellow 의 3원색으로 만들 수 없는 색은?",
+                answerChoice: {
+                    1: "파랑(Blue)",
+                    2: "흰색(White)",
+                    3: "빨강(Red)",
+                    4: "초록(Green)"
+                },
+                answerResult: "2",
+                answerEx: "감산혼합은 섞을수록 어두워지므로 흰색을 만들 수 없습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "18",
+                answerAsk: "색의 동시대비 중 색상대비에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1: "명도와 채도가 비슷한 두 가지 이상의 색이 인접해 있을 때 색상의 차이가 커 보이는 현상이다.",
+                    2: "색상대비는 보색일 경우에 더욱 크게 나타난다.",
+                    3: "자극이 약한 색상은 자극이 강한 색상에 영향을 받게 된다.",
+                    4: "색상이 가깝게 인접해 있을수록 대비현상이 약하게 나타나고, 서로 멀리 떨어지면 강하게 나타난다."
+                },
+                answerResult: "4",
+                answerEx: "어떤 색이 다른 색의 영향으로 인하여 실제와는 다른 색으로 변해 보이는 현상을 색의 대비라고 하는데, 인접해 있을수록 대비현상이 강하게 나타나고, 멀리 떨어지면 약하게 나타납니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "21",
+                answerAsk: "인터넷 검색엔진에 속하지 않는 것은?",
+                answerChoice: {
+                    1: "오페라(Opera)",
+                    2: "심마니(Simmani)",
+                    3: "알타비스타(Altavista)",
+                    4: "구글(Google)"
+                },
+                answerResult: "1",
+                answerEx: "오페라(Opera)는 웹 브라우저 입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "22",
+                answerAsk: "자바스크립트의 함수 중 사용자로부터 임의의 문자를 입력받기 위한 창을 화면에 띄워 입력한 문자열을 사용할 수 있도록 하는 것은?",
+                answerChoice: {
+                    1: "prompt()",
+                    2: "eval()",
+                    3: "confirm()",
+                    4: "alert()"
+                },
+                answerResult: "1",
+                answerEx: "자바스크립트의 함수 중 사용자로부터 임의의 문자를 입력받기 위한 창을 화면에 띄워 입력한 문자열을 사용할 수 있도록 하는 것은 'promt()'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "24",
+                answerAsk: "개방형 시스템의 상호접속을 위한 참조모델로 ISO에서 제정한 것은?",
+                answerChoice: {
+                    1: "OSI 7 Layer",
+                    2: "Kermit",
+                    3: "Proxy",
+                    4: "Archie"
+                },
+                answerResult: "1",
+                answerEx: "개방형 시스템의 상호접속을 위한 참조모델로 ISO에서 제정한 것은 'OSI 7 Layer'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "25",
+                answerAsk: "다음 중 웹 브라우저의 기능이 아닌 것은?",
+                answerChoice: {
+                    1: "웹 페이지 열기",
+                    2: "자주 방문하는 URL의 기억 및 관리",
+                    3: "소스파일(HTML) 보기",
+                    4: "실시간 동영상 캡쳐 및 전송"
+                },
+                answerResult: "4",
+                answerEx: "웹 브라우저에서 GIF, JPG 등의 그래픽 파일과 WAV, AU등의 음성 파일, MPEG, AVI, MOV등의 동영상 파일을 지원하지만 실시간 동영상 캡쳐 및 전송은 할 수 없습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "26",
+                answerAsk: "자바스크립트(Javascript)에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1: "자바스크립트를 지원하는 브라우저만 있으면 모든 운영체제에서 실행된다.",
+                    2: "자바스크립트는 소스프로그램을 컴파일 한 후 HTML문서에 삽입한다.",
+                    3: "자바스크립트 객체는 자신의 프로토타입 객체에 있는 프로퍼티를 상속 받는다.",
+                    4: "클라이언트측 자바스크립트는 HTML문서 내에 적용하여 브라우저를 제어하는데 사용된다."
+                },
+                answerResult: "2",
+                answerEx: "HTML 문서에 JavaScript 삽입 방법은 내부 코드/외부 코드 적용이 있습니다. 내부코드는 script 태그를 이용하는 방법이고, 외부 코드는 JavaScript 파일을 만든 후 문서에 연결하는 방법입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "28",
+                answerAsk: "지역 간 또는 국가 간과 같이 지리적으로 완전하게 떨어진 곳을 연결한 통신망은?",
+                answerChoice: {
+                    1: "VAN",
+                    2: "WAN",
+                    3: "MAN",
+                    4: "LAN"
+                },
+                answerResult: "2",
+                answerEx: "지역 간 또는 국가 간과 같이 지리적으로 완전하게 떨어진 곳을 연결한 통신망은 광역네트워크(WAN)입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "31",
+                answerAsk: "동시 접속자 수가 많아서 서비스 요청에 응답할 수 없는 경우에 발생하는 웹 브라우저 오류메시지는?",
+                answerChoice: {
+                    1: "HTTP 406 Forbidden",
+                    2: "HTTP 404 Not Found",
+                    3: "HTTP 500 Internal Server Error",
+                    4: "HTTP 503 Service Unavailable"
+                },
+                answerResult: "4",
+                answerEx: "동시 접속자 수가 많아서 서비스 요청에 응답할 수 없는 경우에 발생하는 웹 브라우저 오류메시지는 'HTTP 503 Service Unavailable'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "32",
+                answerAsk: "DHTML의 구성요소를 옳게 나열한 것은?",
+                answerChoice: {
+                    1: "HTML, CSS, JavaScript",
+                    2: "HTML, JSS, JavaScript",
+                    3: "HTML, CSS, JSS, JavaScript",
+                    4: "HTML, CSS, JSS, JavaScript, VBScript"
+                },
+                answerResult: "1",
+                answerEx: "DHTML의 구성요소를 옳게 나열한 것은 'HTML, CSS, JavaScript'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "34",
+                answerAsk: "TCP/IP 프로토콜에 대한 설명으로 옳은 것은?",
+                answerChoice: {
+                    1: "IP는 에러를 검사하여 에러가 있을 때 송신측으로 재전송을 요구한다.",
+                    2: "TCP는 통신 경로를 담당한다.",
+                    3: "TCP/IP 프로토콜이 설치된 컴퓨터에서 인터넷을 이용할 수 있다.",
+                    4: "TCP/IP는 파일전송 프로토콜로써 재전송 기능이 없다."
+                },
+                answerResult: "3",
+                answerEx: "TCP/IP 프로토콜은 애플리케이션 계층, 전송 계층, 네트워크 계층, 네트워크 인터페이스 계층, 하드웨어입니다. TCP/IP 프로토콜이 설치된 컴퓨터에서 인터넷을 사용할 수 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "37",
+                answerAsk: "VRML(Virtual Reality Modeling Language)에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1: "VRML은 그래픽 기능뿐만 아니라 텍스트, 이미지, 애니메이션, 사운드 등 각종 멀티미디어 데이터를 2차원적 공간에 통합하여 서로상호작용 할 수 있다.",
+                    2: "VRML 은 상당한 인력과 고급 컴퓨터를 이용한 오랜 시간의 그래픽 렌더링이 필요한 프로그램 언어이다.",
+                    3: "VRML은 웹 상에 가상공간을 구축할 수 있게 함으로써 원격지의 사용자와 함께 가상공간을 공유할 수 있다.",
+                    4: "VRML은 HTML과의 결합뿐만 아니라, 기존의 실시간 멀티미디어 전송 기술과 자바 등의 새로운 언어 체계도 수용 할 수 있다."
+                },
+                answerResult: "1",
+                answerEx: "VRML은 3차원 인터렉티브 벡터 그래픽을 표현하는 표준 파일 형식으로, 월드 와이드 웹을 염두에 두고 만들어 졌습니다. 현재는 X3D로 대체되었습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "38",
+                answerAsk: "자바스크립트에서 사용자의 특정한 행동에 대해 어떤 처리를 해줄 것인가를 정의하는 것은?",
+                answerChoice: {
+                    1: "event",
+                    2: "object",
+                    3: "event handler",
+                    4: "event provider"
+                },
+                answerResult: "3",
+                answerEx: "자바스크립트에서 사용자의 특정한 행동에 대해 어떤 처리를 해줄 것인가를 정의하는 것은 'event handler'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "39",
+                answerAsk: "검색엔진의 유형 중 다른 검색엔진들과 연계하여 검색어를 찾는 방식은?",
+                answerChoice: {
+                    1: "통합형 검색엔진 방식",
+                    2: "웹 인덱스 검색엔진 방식",
+                    3: "웹 디렉터리 검색엔진 방식",
+                    4: "메뉴 검색엔진 방식"
+                },
+                answerResult: "1",
+                answerEx: "검색엔진의 유형 중 다른 검색엔진들과 연계하여 검색어를 찾는 방식은 '통합형 검색엔진 방식' 입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "41",
+                answerAsk: "웹 컬러 디자인의 목적과 거리가 가장 먼 것은?",
+                answerChoice: {
+                    1: "정보전달의 목적",
+                    2: "레이아웃의 목적",
+                    3: "심미적인 목적",
+                    4: "상징적인 목적"
+                },
+                answerResult: "2",
+                answerEx: "웹 컬러 디자인의 목적으로는 정보전달, 심미적, 상징적 등이 있습니다. 레이아웃의 목적은 해당하지 않습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "43",
+                answerAsk: "벡터(Vector)이미지에 대한 설명으로 틀린 것은?",
+                answerChoice: {
+                    1: "선과 도형으로 그린 이미지를 저장하는 방식이다.",
+                    2: "단순한 도형의 표현에 적합하다.",
+                    3: "이미지를 확대하거나 축소해도 손상이 없다.",
+                    4: "벡터기반 프로그램으로는 photoshop이 있다."
+                },
+                answerResult: "4",
+                answerEx: "photoshop은 비트맵 기반 프로그램입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "44",
+                answerAsk: "1인치당 픽셀의 수를 나타내는 단위는?",
+                answerChoice: {
+                    1: "LPI",
+                    2: "EPI",
+                    3: "PPI",
+                    4: "DPI"
+                },
+                answerResult: "3",
+                answerEx: "1인치당 픽셀의 수를 나타내는 단위는 'PPI'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "45",
+                answerAsk: "다음이 설명하고 있는 것은? → 기존 HTML의 단점을 개선하여 동적인 웹페이지를 만들 수 있도록 하기 위한 기술. 문서의 각 요소를 하나의 객체로서 위치와 스타일을 지정할 수 있고, 또한 사용자와의 상호작용을 첨가하거나 움직임이 가능함. 자바스크립트를 기반으로 함.",
+                answerChoice: {
+                    1: "CGI",
+                    2: "JAVA",
+                    3: "DHTML",
+                    4: "CSS"
+                },
+                answerResult: "3",
+                answerEx: "위에서 설명하고 있는 내용은 'DHTML'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "46",
+                answerAsk: "오려낸 그림을 2차원 평면상에서 한 프레임씩 움직이면서 촬영하는 스톱 애니메이션을 말한다. 클레이 애니메이션이나 인형 애니메이션과 비슷하지만 3차원이 아닌 2차원이라는 점에서 구분되는 애니메이션은?",
+                answerChoice: {
+                    1: "셀 애니메이션",
+                    2: "종이 애니메이션",
+                    3: "모래 애니메이션",
+                    4: "컷 아웃 애니메이션"
+                },
+                answerResult: "4",
+                answerEx: "컷 아웃 애니메이션은 오려낸 그림을 2차원 평면상에서 한 프레임씩 움직이면서 촬영하는 스톱 애니메이션을 말합니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "47",
+                answerAsk: "내비게이션 디자인(Navigation design) 구조와 관계가 없는 것은?",
+                answerChoice: {
+                    1: "Protocol structure",
+                    2: "Grid structure",
+                    3: "Hierarchical structure",
+                    4: "Sequential structure"
+                },
+                answerResult: "1",
+                answerEx: "protocol은 컴퓨터 내부에서, 또는 컴퓨터 사이에서 데이터의 교환 방식을 정의하는 규칙 체계로 내비게이션 디자인과 관계가 없습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "50",
+                answerAsk: "명령어를 일일이 입력하는 번거로움을 없애주며, 사용자들로 하여금 아이콘을 선택하여 원하는 프로그램을 실행할 수 있게 사용되는 컴퓨터 조작기법이 아닌 것은?",
+                answerChoice: {
+                    1: "드래깅",
+                    2: "포인팅",
+                    3: "클릭킹",
+                    4: "더블 클릭킹"
+                },
+                answerResult: "1",
+                answerEx: "드래깅이란 그래픽 사용자 인터페이스를 제공하는 컴퓨터의 화면상에 있는 아이콘이나 기타의 이미지 등을 움직이는 것과 관련되는 용어이며, 마우스가 움직이고 있는 동안 마우스 단추를 누르는 동작을 가리키는데 사용되기도 합니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "51",
+                answerAsk: "웹 페이지에 들어갈 그림, 사진, 글자, 음악 등을 종이위에 표현하여 줄거리가 전개되듯이 표현하는 기법은?",
+                answerChoice: {
+                    1: "스토리보드(story board)",
+                    2: "사이트 맵(site map)",
+                    3: "레이아웃(layout)",
+                    4: "내비게이션(navigation)"
+                },
+                answerResult: "1",
+                answerEx: "웹 페이지에 들어갈 그림, 사진, 글자, 음악 등을 종이위에 표현하여 줄거리가 전개되듯이 표현하는 기법은 '스토리보드'입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "53",
+                answerAsk: "동영상 관련 포맷 방식이 아닌 것은?",
+                answerChoice: {
+                    1: "*.wav",
+                    2: "*.asf",
+                    3: "*.avi",
+                    4: "*.rm"
+                },
+                answerResult: "1",
+                answerEx: "*.wav는 비압축 오디오 포맷입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 04회",
+                answerNum: "54",
+                answerAsk: "웹에서 타이포를 이용한 애니메이션을 구현할 수 있는 프로그램으로 적절하지 않는 것은?",
+                answerChoice: {
+                    1: "Swish",
+                    2: "Photoshop",
+                    3: "Flash",
+                    4: "Flax"
+                },
+                answerResult: "2",
+                answerEx: "타이포그래피(Typography)는 활자(Type)와 기술(Graphy)를 합친 용어입니다. 활자를 배치하고 배열하고 효과적인 메시지를 전달하는 전반적인 활동을 의미합니다. 타이포를 이용한 애니메이션을 구현할 수 있는 프로그램으로 photoshop은 적절하지 않습니다."
+            },
+        
+            ];
+        
+        //선택자
+        const quizWrap = document.querySelector(".quiz_wrap");
+
+
+        function updateQuiz(){
+            const exam = [];
+
+            quizInfo.forEach((question, number)=>{
+                exam.push(`
+                            <div class="quiz">
+                            <span class="quiz_type">${question.answerType}</span>
+                            <h2 class="quiz_question">
+                                <span class="number">${question.answerNum}</span>
+                                <div class="ask">${question.answerAsk}</div>
+                            </h2>
+                            <div class="quiz_view">
+                                <div class="true">정답입니다.</div>
+                                <div class="false">틀렸습니다.</div>
+                                <div class="dog">
+                                    <div class="head">
+                                        <div class="ears"></div>
+                                        <div class="face"></div>
+                                        <div class="eyes">
+                                            <div class="teardrop"></div>
+                                        </div>
+                                        <div class="nose"></div>
+                                        <div class="mouth">
+                                            <div class="tongue"></div>
+                                        </div>
+                                        <div class="chin"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="tail"></div>
+                                        <div class="legs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz_answer">
+                               <div class="quiz_selects">
+                                <label for="select1${number}">
+                                    <input type="radio" id="select1${number}" class = "select" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class = "select" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class = "select" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class = "select" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                               </div>
+                            </div>
+                        </div>
+                `);
+            });
+            
+            exam.push(`
+                <div class ="quiz_confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>
+                </div>
+            `)
+
+            quizWrap.innerHTML = exam.join(``);
+        }
+        updateQuiz();
+
+       
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz_selects");    //보기
+            const quizView = document.querySelectorAll(".quiz_view");          //강아지
+            //사용자가 체크한 라디오 박스  == 문제 정답
+            quizInfo.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const quizView = document.querySelectorAll(".quiz_view");
+                console.log(quizSelects)
+                if(userAnswer == question.answerResult){
+                    console.log("정답")
+                    quizView[number].classList.add("like");
+                } else {
+                    console.log("오답")
+                    quizView[number].classList.add("dislike");
+                    const div = document.createElement("div");
+                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                }
+            });
+        }
+        document.querySelector(".quiz_confirm .check").addEventListener("click", answerQuiz);
+    </script>
+</body>
+
+</html>

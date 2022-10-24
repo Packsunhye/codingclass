@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Parallax Effect 02 </h2>
+            <p class="t_desc"> 슬라이드를 할 때 사이드 버튼이 active 되는 것과, 버튼을 눌렀을 시 부드럽게 움직이는 이펙트를 제작하였습니다. <br>
+            먼저 기본 사이트를 제작하는 법 이후, Parallax 사이트를 만들 때 사용하는 메서드나 스크립트를 알려드리겠습니다.</p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 이름을 가졌던 메뉴들이 이번엔 dot으로 변했습니다. 그것을 span으로 감싸, 텍스트가 나오지 않게 만들어줍니다.</p>
+            <details>
+                <summary> 🦠 HTML 의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;nav id="parallax__dot"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴 1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴 2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴 3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴 4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴 5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴 6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴 7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴 8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴 9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> dot들이 구조나 active가 되었을 때 어떻게 변하는지 css로 작성했습니다. 또한, 선택되었을 때엔 애니메이션을 줍니다.</p>
+            <details>
+                <summary> 🦠 CSS의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-css">#parallax__dot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    background: rgba(90, 90, 90, 0.466);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+#parallax__dot li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 12px 8px;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0);
+    transition: box-shadow 0.2s ease;
+}
+#parallax__dot li a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+#parallax__dot li.active {
+    box-shadow: 0 0 0 2px rgba(255,255,255,1);
+}
+#parallax__dot li.active a {
+    transform: scale(0.4);
+}
+#parallax__dot li span {
+    display: none;
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> parallax의 첫번째와 비슷하지만, 다른 점들은 아래에서 설명해보겠습니다. </p>
+            <details>
+                <summary> 🦠 Javascript의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js"> document.querySelectorAll("#parallax__dot a").forEach(el =>{
+    el.addEventListener("click", e => {
+        e.preventDefault();
+
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior : "smooth"});
+
+        // window.scroll(0, 1000);
+        // window.scroll({left:0 , top:2000});
+        // window.scroll({left:0 , top:2000, behavior : "smooth"}); 
+
+        // window.scrollTo(0, 1000);
+        // window.scrollTo({left:0 , top:2000});
+        // window.scrollTo({left:0 , top:2000, behavior : "smooth"}); //절대적 기준 //눌러도 같은 곳만 이동
+
+        // window.scrollBy(0, 1000);
+        // window.scrollBy({left:0 , top:2000});
+        // window.scrollBy({left:0 , top:2000, behavior : "smooth"}); //상대적 기준 //누르면 그 값에서 누른 값을 더해, 이동이 되긴 함
+
+
+    });
+});
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach((e,i)=>{
+        if(scrollTop >= e.offsetTop -10 ){
+            document.querySelectorAll("#parallax__dot li").forEach( li => {
+                li.classList.remove("active")
+            });
+            document.querySelector("#parallax__dot li:nth-child("+ (i + 1) +")").classList.add("active");
+        }
+    })
+
+})</code></pre>
+            </div>
+            </details>
+           <br>
+
+            <h2 class="t_tit"> 사용된 스크립트 </h2>
+            <h3 class="t_tit2"> 01 ) 이벤트를 없애주는 스크립트 </h3>
+            <p class="t_box">
+                이벤트.preventDefault()
+            </p>
+            <p class="t_desc">  </p>
+
+            <h3 class="t_tit2"> 02 ) 요소를 불러오는 방법 </h3>
+            <p class="t_box">
+                el.getAttribute("href")
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect02.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/parallaxEffect02.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect02.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

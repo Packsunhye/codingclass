@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 유형01</title>
+</head>
+
+<link rel="stylesheet" href="../assets/css/stlyle.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">레이아웃</h2>
+            <p class="t_desc">
+                레이아웃을 정리하는 방식에는 <i>float</i>,<i>flex</i>,<i>grid</i>인 총 3가지 방식이 있다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">01. float</h3>
+            <p class="t_desc2">
+                float란 float 속성은 해당 HTML 요소가 주변의 <i>다른 요소들과 자연스럽게 어울리도록</i> 만들어 줍니다.
+                이 속성은 본래 위와 같은 목적으로 만들어졌지만, 현재는 웹 페이지의 레이아웃(layout)을 작성할 때 자주 사용됩니다.
+            </p>
+            <p class="t_desc">
+                float를 레이아웃에 사용할 때에 붙여놓아야 하는 쪽에 <i>'flotat: left;'</i>를 사용하고,<br> 
+                이를 감싸는 아래쪽에 <i>'flotat: left;'</i>를 사용하면 좋다.<br>
+                아래는 이를 사용한 예시이다.<br>
+            </p>
+
+            <h4 class="t_tit3">01) float01 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="VwXzbvv" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/VwXzbvv">
+                Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+
+            <h4 class="t_tit3">02) float01 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYdjyGY" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/LYdjyGY">
+                float_01_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+           
+            <h4 class="t_tit3">03) float02 _ 기본형</h4>
+            <p class="t_desc">이 때부터는 부모박스로 감싸 해결하는 방식을 사용한다.</p>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="mdxMWEZ" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/mdxMWEZ">
+                Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">04) float02 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="vYRJmGG" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/vYRJmGG">
+                float02_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+
+            <h4 class="t_tit3">05) float03 _ 기본형</h4>
+            <p class="t_desc">4개 이상의 박스를 정렬해야 하기에 clearfix를 사용한다.</p>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNzEjoM" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/WNzEjoM">
+                float03_01</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">06) float03 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="poLrPRO" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/poLrPRO">
+                float03_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+
+            <hr>
+
+            <h3 class="t_tit2">02. flex</h3>
+            <p class="t_desc2">
+                flexbox 레이아웃은, 말 그대로 박스를 유연하게 늘리고 줄이는 방법을 토대로 레이아웃을 잡는다. flex는 부모 박스에 <i>display: flex</i>를 적용해줌으로, 자식 박스의 방향과 크기를 결정한다.
+                부모 박스를 "Flex Container"라고 부르고, 자식 박스들을 "Flex Item"이라 한다.
+                
+                flex의 속성들은 <i>부모 박스에 적용하는 속성과 자식박스에 적용하는 속성</i>으로 나눌 수 있다.
+            </p>
+            <h3 class="t_tit2">02-1. 부모박스에 적용할 수 있는 속성</h3><br>
+
+            <h4 class="t_tit3">01. display: flex;</h4>
+            <p class="t_desc">
+                기본적으로, flex가 적용된 부모 박스의 자식 박스는 왼쪽으로 차례대로 붙게 된다.
+                자식박스의 너비는 내용물의 너비만큼 설정되고, 높이는 부모 박스의 높이 만큼 늘어난다.
+            </p>
+            <h4 class="t_tit3">02. 방향 (flex-direction)</h4>
+            <details>
+                <summary>설명보기</summary>
+                <p class="t_desc">
+                    기본적으로 flexbox는 박스가 수직으로 분할되지만, flex-direction을 쓰면 수평으로도 분할할 수 있다. 
+                    이 속성도 부모 박스에 적용하며, 자식 박스에 특별한 속성을 주지 않아도 된다.<br>
+                    - row : 왼쪽 수직 정렬 (defalut값)<br>
+                    - row-reverse : 오른쪽 수직 정렬<br>
+                    - column : 위쪽 수평 정렬<br>
+                    - column-reverse : 아래쪽 수평 정렬<br>
+                </p>
+            </details>
+            <h4 class="t_tit3">03. 줄넘김(flex-wrap)</h4>
+            <details>
+                <summary>설명보기</summary>
+                <p class="t_desc">
+                    부모박스가 더 이상 자식박스들을 한 줄에 담을 공간이 없을 때 자식박스의 줄바꿈을 결정하는 속성이다.<br>
+                    nowrap : 줄바꿈을 하지 않음 (defalut 값)<br>
+                    wrap : 줄바꿈을 함<br>
+                    wrap-reverse : 자식박스들을 역순 배치하여 줄바꿈을 함<br>
+                </p>
+            </details>
+            <h4 class="t_tit3">04. 메인축 방향 정렬 (justify-content)</h4>
+            <details>
+                <summary>설명보기</summary>
+                <p class="t_desc">
+                    flex-start : 자식 박스들을 시작점으로 정렬 (defalut값)<br>
+                    flex-direction이 row(가로 배치)일 때는 왼쪽, column(세로 배치)일 때는 위이다.<br>
+                    flex-end : 자식 박스들을 끝점으로 정렬이다.<br>
+                    flex-direction이 row(가로 배치)일 때는 오른쪽, column(세로 배치)일 때는 아래이다.<br>
+                    center : 자식 박스들을 가운데로 정렬이다.<br>
+                    space-between : 자식 박스들의 “사이(between)”에 균일한 간격으로 정렬이다.<br>
+                    space-around : 자식 박스들의 “둘레(around)”에 균일한 간격을 만들어 정렬이다.<br>
+                </p>
+            </details>
+            <h4 class="t_tit3">05. 수직축 방향 정렬 (align-items)</h4>
+            <details>
+                <summary>설명보기</summary>
+                <p class="t_desc">
+                    stretch : 자식 박스들이 수직축 방향으로 끝까지 늘어남 (defalut값)<br>
+                    flex-start : 자식 박스들을 시작점으로 정렬<br>
+                    flex-direction이 row(가로 배치)일 때는 위, column(세로 배치)일 때는 왼쪽.<br>
+                    flex-end : 자식 박스들을 끝으로 정렬<br>
+                    flex-direction이 row(가로 배치)일 때는 위, column(세로 배치)일 때는 왼쪽.<br>
+                    center : 자식 박스들을 가운데로 정렬<br>
+                    baseline : 자식 박스들을 텍스트 베이스라인 기준으로 정렬.<br>
+                </p>
+            </details>
+            <h4 class="t_tit3">06. 수직축 여러 행 정렬(align-content)</h4>
+            <p class="t_desc">
+                flex-wrap: wrap;이 설정된 상태에서, 자식 박스들의 행이 2줄 이상 되었을 때의 수직축 방향 정렬을 결정하는 속성.
+            </p>
+           
+            <h3 class="t_tit2">02-2. 자식박스에 적용할 수 있는 속성</h3><br>
+
+            <h4 class="t_tit3">01. flex</h4>
+            <p class="t_desc">
+                flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 속성이다.<br>
+                flew: grow(팽창 지수), shrink(수축 지수), basis(기본 크기)
+                자식 박스에 어떠한 속성도 주지 않으면, 그저 오른쪽으로 컨텐츠 크기만큼 배치된다.
+            </p>
+            <h4 class="t_tit3">02. grow 속성</h4>
+            <h4 class="t_tit3">03. shrink 속성</h4>
+            <h4 class="t_tit3">04. basis 속성</h4><br>
+
+            <p class="t_desc">아래는 이를 사용한 예시이다.</p><br>
+
+            <h4 class="t_tit3">01) flex01 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="oNqeWaz" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/oNqeWaz">
+                flex01_01</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">02) flex01 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="RwMZVqZ" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/RwMZVqZ">
+                flex01_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+
+            <h4 class="t_tit3">03) flex02 _ 기본형</h4>
+            <p class="t_desc">이 때부터는 부모박스로 감싸 해결하는 방식을 사용한다.</p>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNzEjLa" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/WNzEjLa">
+                flex02_01</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">04) flex02 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYdjyqR" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/LYdjyqR">
+                flex02_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+            
+            <h4 class="t_tit3">05) flex03 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ZExJKwg" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/ZExJKwg">
+                flex03_01</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">06) flex03 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="poLrPYB" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/poLrPYB">
+                flex03_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https:// cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+
+            <hr>
+
+            <h3 class="t_tit2">03. grid</h3>
+            <p class="t_desc2">
+                그리드 레이아웃(Grid Layout)은 페이지를 여러 주요 영역으로 나누거나, 
+                크기와 위치 및 문서 계층 구조의 관점에서 HTML 기본 요소로 작성된 콘트롤 간의 관계를 정의하는 데 아주 탁월하다.
+            </p><br>
+
+            <p class="t_desc">아래는 이를 사용한 예시이다.</p><br>
+
+            <h4 class="t_tit3">01) grid01 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PoRKmre" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/PoRKmre">
+                grid01_1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">02) grid01 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PoRKmMe" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/PoRKmMe">
+                grid01_2</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+            <h4 class="t_tit3">03) grid02 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="xxWLrKO" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/xxWLrKO">
+                Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">04) grid02 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="rNdzwaV" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/rNdzwaV">
+                grid02_2</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br><br>
+            <h4 class="t_tit3">05) grid03 _ 기본형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjLyJdb" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/JjLyJdb">
+                grid03_1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><br>
+            <h4 class="t_tit3">06) grid03 _ 반응형</h4>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="jOzLwPR" data-user="packsunhye" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/packsunhye/pen/jOzLwPR">
+                grid03_2</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            
+            </div>
+        </main>
+</body>
+</html>

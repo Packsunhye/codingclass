@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> mouseenter | movesover 의 차이점 </h2>
+            <p class="t_desc2">
+                mouseOver or mouseOut  : 지정된 태그 요소(혹은 자신)는 물론이며, 자식 요소가 있다면 해당 <i>자식요소의 영역까지 포함</i>됩니다. <br>
+                mouseEnter or mouseLeave : 지정된 태그 요소(혹은 자신)의 영역에만 해당되며, 만약 자식요소가 있다면 해당 <i>자식요소의 영역은 제외</i>됩니다. 
+            </p><br>
+            
+            <p class="t_desc"> 이를 더 쉽게 표현하기 위해 코드펜으로 예시를 가져와 보았습니다.</p>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="0905" src="https://codepen.io/packsunhye/embed/bGMNMPG?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/bGMNMPG">
+                    0905</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+
+            <h3 class="t_tit2"> 01. mouseover | mouseout 이벤트 </h3>
+            <p class="t_desc"> 
+                1번의 경우는 마우스를 우선 회보라색 div 범위내에 올리면 p 태그로 감싸여 있는 글씨 부분의 배경이 보라색으로 변하는걸 확인하실 수 있습니다. <br>
+                그리고 다시 보라색 영역인 p 태그 영역으로 마우스를 가져다 놓으면 최종적으로 파란색 선이 생기는걸 확인하실 수 있습니다. <br>
+                결론은 <i>회보라색 div 영역에만 마우스 이벤트가 발생</i> 된다는것을 확인할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2"> 02. mouseenter | mouseleave 이벤트 </h3>
+            <p class="t_desc"> 
+                2번의 경우는 우선 마우스를 올리면 글씨 부분의 배경이 바뀌는게 1번과 똑같습니다. 그러나 글씨 부분까지 마우스가 들어가도 변하지 않습니다. <br>
+                2번의 div를 완전히 빠져나와야 마우스가 나갔을 때의 이벤트가 실행됩니다. 결론은 <i>p 태그까지도 영향을 끼친다는 것을 확인</i>할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2"> 결론 : 자식요소까지 영역을 넓히려면 mouseenter/mouseleave 이(가) 아닌, mouseover/mouseout 를 사용해야 한다는 것을 알 수 있습니다. </h3>
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

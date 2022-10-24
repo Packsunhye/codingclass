@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  요소 크기 메서드 정리  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 요소 크기 메서드 정리 </h2>
+            <p class="t_desc"> 요소의 크기나 위치 속성이나 메서드를 알려주는 자바스크립트와 제이쿼리를 알려드리겠습니다. </p>
+
+            <h3 class="t_tit2">01. 요소의 가로값 | 세로값 : 패딩/보더/마진 미포함 </h3>
+            <p class="t_box">
+                //하려는 방법 <br>
+                const x = document.querySelector(".class") <br>
+                document.querySelector(".class").innerHTML = x.<i>clientWidth or clientHeight</i> //가로값 or 세로값
+            </p>
+
+            <h3 class="t_tit2">02. 요소의 X축값 | Y축값 : 부모기준 </h3>
+            <p class="t_box">
+                //하려는 방법 <br>
+                const x = document.querySelector(".class") <br>
+                document.querySelector(".class").innerHTML = x.<i>clientLeft or clientTop</i> //X축값 or Y축값
+            </p>
+
+            <h3 class="t_tit2">03. 요소의 가로값 | 세로값 : 패딩/보더 포함 | 마진 미포함 </h3>
+            <p class="t_box">
+                //하려는 방법 <br>
+                const x = document.querySelector(".class") <br>
+                document.querySelector(".class").innerHTML = x.<i>offsetWidth or offsetHeight</i> //가로값 or 세로값
+            </p>
+
+            <h3 class="t_tit2">04. 요소의 X축값 | Y축값 : 문서기준 </h3>
+            <p class="t_box">
+                //하려는 방법 <br>
+                const x = document.querySelector(".class") <br>
+                document.querySelector(".class").innerHTML = x.<i>offsetLeft or offsetTop</i> //X축값 or Y축값
+            </p>
+
+            <h3 class="t_tit2">05. 요소의 top, left, right, bottom, x, y, width, height 방법 </h3>
+            <p class="t_box">
+                //하려는 방법 <br>
+                const x = document.querySelector(".class") <br>
+                console.log( x.<i>getBoundingClientRect()</i>) //top, left, right, bottom, x, y, width, height
+            </p><br>
+
+            <div class="main_sample">
+
+                <div class="sample">
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col style="width : 12%">
+                                <col style="width : 25%">
+                                <col style="width : 35%">
+                                <col style="width : 28%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="10" class="ce">Dimensions</td>
+                                    <td>Width()</td>
+                                    <td> - </td>
+                                    <td> 요소의 가로 (패딩/보더/마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>Height()</td>
+                                    <td> - </td>
+                                    <td> 요소의 세로 (패딩/보더/마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>innerWidth()</td>
+                                    <td> clientWidth </td>
+                                    <td> 요소의 가로 (패딩 포함 | 보더/마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>innerHeight()</td>
+                                    <td> clientHeight </td>
+                                    <td> 요소의 세로 (패딩 포함 | 보더/마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth()</td>
+                                    <td> offsetWidth </td>
+                                    <td> 요소의 가로 (패딩/보더 포함 | 마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight()</td>
+                                    <td> offsetHeight </td>
+                                    <td> 요소의 세로 (패딩/보더 포함 | 마진 미포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>outerWidth(true)</td>
+                                    <td>-</td>
+                                    <td> 요소의 가로 (패딩/보더/마진 포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>outerHeight(true)</td>
+                                    <td>-</td>
+                                    <td> 요소의 세로 (패딩/보더/마진 포함) </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>$(window).width()</td>
+                                    <td>innerWidth / outerWidth</td>
+                                    <td> 브라우저의 가로값 (스크롤바 미포함 / 포함) </td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).height()</td>
+                                    <td>innerHeight / outerHeight</td>
+                                    <td> 브라우저의 세로값 (스크롤바 미포함 / 포함) </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="hum" src="https://codepen.io/packsunhye/embed/bGMbMVb?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/bGMbMVb">
+                    hum</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+
+
+
+
+            
+    
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

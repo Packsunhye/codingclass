@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이미지 슬라이드 유형 01 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 이미지 슬라이드 유형 01 </h2>
+            <p class="t_desc"> setInterval()를  이용하여 몇 초마다 5개의 이미지가 변하는 유형을 제작하였습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 이미지 위에 두번의 부모를 감쌌습니다. 첫번째 부모는 모두 같은 class를 주었습니다.</p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-html">     &lt;div class="slider__img"&gt;
+        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_01-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_02-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_03-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_04-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_05-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;/div&gt; </code></pre>   
+        </div>
+
+        <h3 class="t_tit2"> 02. javascript </h3>
+        <p class="t_desc"> 아래는 자바 스크립트 입니다. 선택자를 부여하고 약 3000 = 3초에 slider.length인 이미지의 갯수를 움직이면 됩니다.</p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    const sliderWrap = document.querySelector(".slider__wrap")
+    const sliderImg = sliderWrap.querySelector(".slider__img")
+    const slider = sliderWrap.querySelectorAll(".slider") 
+    
+    let currentIndex = 0;              // 현재 보이는 이미지 
+    let sliderCount = slider.length;   //이미지 갯수
+
+    setInterval(()=>{
+        let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지
+        //1,2,3,4,0,1,2,3,4,0.....
+
+        slider[currentIndex].style.opacity = "0" //첫번째 이미지 안보이게
+        slider[nextIndex].style.opacity = "1" //두번째 이미지 보이게
+
+        currentIndex = nextIndex; 
+
+
+        // slider[0].style.opacity = "0" //첫번째 이미지 안보이게
+        // slider[1].style.opacity = "1" //두번째 이미지 보이게
+
+        // slider[1].style.opacity = "0" //두번째 이미지 안보이게
+        // slider[2].style.opacity = "1" //세번째 이미지 보이게
+
+        // slider[2].style.opacity = "0" //세번째 이미지 안보이게
+        // slider[3].style.opacity = "1" //네번째 이미지 보이게
+
+        // slider[3].style.opacity = "0" //네번째 이미지 안보이게
+        // slider[4].style.opacity = "1" //다섯번째 이미지 보이게
+
+        // slider[4].style.opacity = "0" //다섯번째 이미지 안보이게
+        // slider[0].style.opacity = "1" //첫번째 이미지 보이게
+
+    },3000) </code></pre>   
+    </div><br>
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/javascript/effect/sliderEffect01.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/sliderEffect01.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/javascript/effect/sliderEffect01.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

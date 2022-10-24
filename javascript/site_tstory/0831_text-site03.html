@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 애니메이션 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+
+            <h2 class="t_tit"> 텍스트 사이트 03 </h2>
+            <p class="t_desc"> 텍스트와 아이콘을 활용하여 웹 사이트를 디자인 해보았습니다. </p>
+
+
+            <h3 class="t_tit2"> 01. figma </h3>
+            <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D914%253A341" allowfullscreen></iframe>
+            </div>
+            <p class="t_desc"> 이때, 스프라이트로 아이콘을 작업해줄꺼기 때문에 이미지 스프라이트로 준비하였습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D919%253A417" allowfullscreen></iframe>
+            </div>
+            <h3 class="t_tit2"> 02. HTML </h3>
+
+            <p class="t_desc"> HTML 입니다. css에서 작업을 display : flex 으로 작업을 할 예정이기 때문에 구조를 잘 잡아야 합니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-html">    &lt;section id="textTyle03" class="text__wrap eland section"&gt;
+        &lt;h2&gt;스터디 후기&lt;/h2&gt;
+        &lt;p&gt;웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자 멤버를 소개합니다.&lt;/p&gt;
+        &lt;div class="text__inner container"&gt;
+            &lt;article class="twwt"&gt;
+                &lt;div class="box__block"&gt;
+                    &lt;p class="text__desc"&gt;
+                        불과 3달전만해도 여러 원인들로 인해 자존감이 및바닥이였던 
+                        저에게 이 스터디는 너무 소중한 시간이었어요. 
+                        매일 마음속으로 울고싶다를 외치던 저였는데 이제는 조금이나마 
+                        이겨 낼 수 있을 것 같네요. 다음에 선생님 만났을 때는 
+                        많이 발전해 있는 제가 되었으면 좋겠네요....
+                    &lt;/p&gt;
+                    &lt;div class="line"&gt;&lt;/div&gt;
+                    &lt;div class="box__bottom"&gt;
+                        &lt;span class="img__svg img01"&gt;&lt;/span&gt;
+                        &lt;div class="hive"&gt;
+                            &lt;h3 class="name__bottom"&gt;이태용&lt;/h3&gt;
+                            &lt;img src="../site_img/stra_5.svg" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="wed__24"&gt;웹스 24기&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="line02"&gt;&lt;/div&gt;
+                    &lt;div class="link__go"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="twwt"&gt;
+                &lt;div class="box__block"&gt;
+                    &lt;p class="text__desc"&gt;
+                        진심 학교나 학원보다 더 많이 배운거라고 생각하고, 
+                        무지하고 말안듣고 자존감 바닥인 저를 팩폭도 해주시고, 
+                        버리지 않아주셔서 감사....합니다 쌤!!!!!!!!!
+                        회사에서 잘리지 않고,.. 존버하겠습니다!!!!!!!!
+                    &lt;/p&gt;
+                    &lt;div class="line"&gt;&lt;/div&gt;
+                    &lt;div class="box__bottom"&gt;
+                        &lt;span class="img__svg img02"&gt;&lt;/span&gt;
+                        &lt;div class="hive"&gt;
+                            &lt;h3 class="name__bottom"&gt;이희진&lt;/h3&gt;
+                            &lt;img src="../site_img/stra_5.svg" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="wed__24"&gt;웹스 24기&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="line02"&gt;&lt;/div&gt;
+                    &lt;div class="link__go"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="twwt"&gt;
+                &lt;div class="box__block"&gt;
+                    &lt;p class="text__desc"&gt;
+                        제가 게을러서 의도치않게 자꾸 말을 안듣는 학생이 되어있었지만 
+                        정말 선생님 말씀 틀린거 하나도 없었다는거 잘 알고 있습니다.. ㅎㅎ
+                        아 그리고 마지막 하고 싶은 말은 저 새벽 5~6시에 가는 ㄹㅇ 
+                        올빼미형인간인데... 쌤이랑 두달 공부했다고...
+                    &lt;/p&gt;
+                    &lt;div class="line"&gt;&lt;/div&gt;
+                    &lt;div class="box__bottom"&gt;
+                        &lt;span class="img__svg img03"&gt;&lt;/span&gt;
+                        &lt;div class="hive"&gt;
+                            &lt;h3 class="name__bottom"&gt;이태용&lt;/h3&gt;
+                            &lt;img src="../site_img/stra_5.svg" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="wed__24"&gt;웹스 24기&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="line02"&gt;&lt;/div&gt;
+                    &lt;div class="link__go"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/article&gt;
+        &lt;/div&gt;
+       
+    &lt;/section&gt;</code></pre>   
+        </div>
+
+        <h3 class="t_tit2"> 03. css </h3>
+        <p class="t_desc"> 공통된 요소가 있으므로 그것을 제외한 뒤 작성하였습니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-css">    /* line */
+
+    .line {
+        border-bottom: 1px solid rgb(199, 199, 199);
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .line02 {
+        border-bottom: 1px solid rgb(199, 199, 199);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    /* text__inner */
+    .text__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box__block {
+        padding: 30px;
+    }
+
+    /* twwt */
+    .twwt {
+        width: 355px;
+        height: 390px;
+        background-color: #fff;
+        border-radius: 14px;
+        margin-left: 20px;
+    }
+    .twwt .text__desc {
+        font-size: 16px;
+        /* padding: 30px 30px 20px 30px; */
+        font-weight: 300;
+        line-height: 1.4;
+        letter-spacing: -0.36px;
+        text-align: left;
+
+        height: 175px;
+        width: 283px;
+
+    }
+    .twwt .box__bottom {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .box__bottom  .img__svg {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #000;
+
+        background-size: 200px;
+        background: url(../site_img/Group\ 3.svg) no-repeat;
+    }
+
+    .text__inner .img02 {
+        background-position: -50px;
+        background-position-y: revert;
+    }
+
+    .text__inner .img03 {
+        background-position: -100px;
+        background-position-y: revert;
+    }
+
+
+    .box__bottom  .hive {
+        margin-left: 10px;
+    }
+    .box__bottom .hive .name__bottom {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .box__bottom  .hive > img {
+        width: 72px;
+        height: 12px;
+    }
+    .box__bottom  .wed__24 {
+        margin-top: 3px;
+        font-size: 14px;
+        color: #666;
+    }
+    
+
+    .twwt .link__go {
+        text-align: center;   
+        margin-top: 30px;
+        
+    }
+    .twwt .link__go a {
+        width: 110px;
+        height: 26px;
+        border-radius: 50px;
+        background-color: #5a87fd;
+        color: #fff;
+        padding: 8px 11px 8px;
+    }</code></pre>   
+    </div>
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/site/textType/textType_0830_03.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/site/textType/textType_0830_03.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/site/textType/textType_0830_03.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+    
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

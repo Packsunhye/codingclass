@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+
+    <!-- SEO -->
+    <meta name="author" content="sunhye">
+    <meta name="description" content="지옥의 사이트 만들기">
+    <meta name="keyword" content="사이트, 지옥, 힘들다, 가보자고">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css_0914/fonts.css">
+    <link rel="stylesheet" href="assets/css_0914/reset.css">
+    <link rel="stylesheet" href="assets/css_0914/common.css">
+
+    <link rel="stylesheet" href="assets/css_0914/swiper.css">
+
+    <!-- style(섹션별로) -->
+    <link rel="stylesheet" href="assets/css_0914/headerType.css">
+    <link rel="stylesheet" href="assets/css_0914/sliderType.css">
+    <link rel="stylesheet" href="assets/css_0914/imgType.css">
+    <link rel="stylesheet" href="assets/css_0914/imgTextType.css">
+    <link rel="stylesheet" href="assets/css_0914/cardType.css">
+    <link rel="stylesheet" href="assets/css_0914/bannerType.css">
+    <link rel="stylesheet" href="assets/css_0914/textType.css">
+    <link rel="stylesheet" href="assets/css_0914/footerType.css">
+
+
+</head>
+<body>
+    <div id="skip">
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#imgeTextType">이미지/텍스트 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType" class="header__wrap nexon">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Jelly <em>Fish</em></a> 
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#sliderType">슬라이드 영역</a></li>
+                    <li><a href="#imageType">이미지 영역</a></li>
+                    <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#bannerType">배너 영역</a></li>
+                    <li><a href="#textType">텍스트 영역</a></li>
+                    <li><a href="#footerType">푸터 영역</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- //hraderType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap nexon scroll">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <!-- <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="rigth"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div> -->
+                
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide img1">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide img2">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide img3">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+
+
+            </div>
+        </section>    
+        <!-- //sliderType -->
+
+        <section id="imageType" class="image__wrap nexon section scroll">
+            <h2>해파리들이 둥둥 떠다니는 모습</h2>
+            <p>정해진 갈 길 없이 흘러가는 대로 움직이다보면 새로운 만남이 있어요.</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <h3 class="image__title">화려한 모습의 해파리</h3>
+                    <p class="image__desc">색감과 그 화려한 치마와 같은 구완들이 바다속에서 자유롭게 있어요, <br> 만지면 돌이킬 수 없을 정도로 아프니 주의합시다.</p>
+                    <a class="image__btn" href="#" title="자세히 보기">자세히 보기</a>
+                </article>
+                <article class="image img2">
+                    <h3 class="image__title">동그란 모습의 해파리</h3>
+                    <p class="image__desc">콕, 찔러보아 젤리처럼 부드럽게 흐물거리는 모습을 보고싶지만 <br>해파리 주변엔 해파리들이 가득있어요 바라보기만 합시다.</p>
+                    <a class="image__btn yellow" href="#" title="자세히 보기">자세히 보기</a>
+                </article>
+            </div>
+        </section>
+        <!-- //imgeType -->
+
+        <section id="imgTextType" class="imgText__wrap nexon section black scroll">
+            <h2 class="blind">해파리의 신비한 빛깔</h2>
+            <div class="imgText__inner container">
+                <div class="imgText__txt">
+                    <span>jellu fisf color</span>
+                    <h3> 해파리의 <br>신비한 빛깔 </h3>
+                    <p> 빛에 따라 달라지지만, 어떠한 색깔도 잘 어울리는 모습을 보입니다.</p>
+                    <ul>
+                        <li><a href="#">노무라입깃해파리</a></li>
+                        <li><a href="#">보름달물해파리</a></li>
+                        <li><a href="#">사자갈기해파리</a></li>
+                        <li><a href="#">스티기오메두사</a></li>
+                        <li><a href="#">숲뿌리해파리</a></li>
+                        <li><a href="#">범피</a></li>
+                    </ul>
+                </div>
+                <div class="imgText__img img1">
+                    <a href="#">대양해파리</a>
+                </div>
+                <div class="imgText__img img2">
+                    <a href="#" class="blue">커튼원양해파리</a>
+                </div>
+            </div>
+        </section> 
+        <!-- //imgTextType -->
+
+        <section id="cardType" class="card_wrap nexon section scroll">
+            <h2>해파리가 흘러갑니다 - ଳ</h2>
+            <p>흔들흔들 , 사람들이 일상에 치이는 것처럼 해파리도 물살에 치여 움직인답니다.</p>
+            
+            <div class="card_inner container">
+                <article class="card">
+                    <figure class="card_header">
+                        <img src="../site_img/card_bg01.jpg" alt="고양이가 가만히 있을 때">
+                    </figure>
+                    <div class="card_body">
+                        <h3 class="tit">넙적한 해파리</h3>
+                        <p class="desc">넙적한 상산이 작은 촉수들과 어울려 바다에서 흔들립니다. 파란색 해파리를 멍하게 바라보다 보면 어느샌가 시간이 엄청 지나가있어요, 그렇지만 빠져들게 되지 않나요?</p>
+                        <a href="/" class="btn">
+                            더 자세히 보기 
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card_header">
+                        <img src="../site_img/card_bg02.jpg" alt="고양이가 자고 있을 때">
+                    </figure>
+                    <div class="card_body">
+                        <h3 class="tit">조그마한 해파리</h3>
+                        <p class="desc">바쁜듯 열심히 구완을 흩날리고 있지만 사실은 해파리는 흘러가고 있답니다. 하루에 할일이 지나다니는 것 뿐이라니 부러워요 저도 요 조그마한 해파리 처럼 가만히 즐기고 싶다.</p>
+                        <a href="/" class="btn">
+                            더 자세히 보기
+                            <span aria-hidden="true">  <!-- 이미지 읽지 않기 표시 -->
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card_header">
+                        <img src="../site_img/card_bg03.jpg" alt="고양이 사진이 너무 잘찍혔을 때">
+                    </figure>
+                    <div class="card_body">
+                        <h3 class="tit">풍선같은 해파리</h3>
+                        <p class="desc">보자마자 풍선같은 생김새에 웃음이 나와요. 후 바람을 부르면 하늘로 올라같 것 같습니다. 사실은 바다가 제 2의 하늘이 아닐까요? 높이 높이 올라가렴 작은 풍선 해파리야</p>
+                        <a href="/" class="btn">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //cardType -->
+
+        <section id="bannerType" class="banner__wrap nexon scroll">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">해파리 사이트</h3>
+                <p class="desc">해파리들이 얼마나 아름다운지 알리는 사이트  
+                    <a href="#" title="해파리 보러가기">어떠신가요?</a>
+                </p>
+                <span class="small">배너 유형 01</span>
+            </div>
+        </section>    
+        <!-- //bannerType -->
+
+        <section id="textType" class="text__wrap nexon section scroll">
+            <span>텍스트 유형 01</span>
+            <h2 class="mb70">해파리의 신기한 이야기들</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">말랑해보인다.</h3>
+                    <p class="text__desc">자주 이야기 하지만, 말랑해보이지 않나요? 돌고래의 놀이감이 되는 이유가 있습니다.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">보는 것 만으로 즐겁다.</h3>
+                    <p class="text__desc">흔들리는 것 만으로도 마치 마리모를 보는 것과 같이 마음의 평화를 얻을 수 있어요.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">온도에 따라 나타난다.</h3>
+                    <p class="text__desc">보통 따뜻할 때에 나타나지만, 깊은 심해속에서도 살 수 있으니 차가운 물에 등장하는 아이도 있답니다.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">혼자서 증식이 가능하다</h3>
+                    <p class="text__desc">놀랍게도 갈라진다면 세포분열을 통해 재생하여 증식해 별개의 해파리가 된답니다. 놀랍지 않나요?</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">영원히 사는 종이 있다.</h3>
+                    <p class="text__desc">'작은보호탑 해파리'는 생존에 부적절한 환경이 되면 몸을 뒤집어 세포 분열을 통해 어린 상태로 되돌아간대요</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">스스로 빛을 낼 수 있다.</h3>
+                    <p class="text__desc">어두운 심해에서 먹이를 유혹하거나, 천적에게 위협을 가하기 위해 빛을 낼 수 있습니다.</p>
+                    <a class="text_btn" href="#">더보기</a>
+                </div>
+            </div>
+          
+        </section> 
+        <!-- //textType -->
+
+    </main>
+    <!-- //mainType -->
+
+    <footer id="footerType" class="footer__wrap nexon section gray scroll">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                        <li><a href="#">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="#">슬라이드 유형01</a></li>
+                        <li><a href="#">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형01</a></li>
+                        <li><a href="#">이미지 유형02</a></li>
+                        <li><a href="#">이미지/텍스트 유형01</a></li>
+                        <li><a href="#">이미지/텍스트 유형02</a></li>
+                        <li><a href="#">텍스트 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텍츠 영역</h3>
+                    <ul>
+                        <li><a href="#">카드 유형01</a></li>
+                        <li><a href="#">카드 유형02</a></li>
+                        <li><a href="#">카드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">푸터 메뉴 유형01</a></li>
+                        <li><a href="#">푸터 컨택트 유형02</a></li>
+                        <li><a href="#">푸터 이메일 유형03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__rigth">
+                2022 Manyong. Portfolio is Power<br>
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- //footerType -->
+
+    <script src="../site01/assets/js/swiper-bundle.min.js"></script>
+     <!-- Initialize Swiper -->
+     <script>
+          var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+
+        });
+        document.querySelector(".swiper-button-play").addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+
+        })
+
+        btnMenuList.forEach((List)=>{
+            List.addEventListener("click", ()=>{
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            })
+        })
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+
+            }
+        });
+
+        document.querySelectorAll("a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                });
+            });
+        });
+        
+
+      </script>
+    <script>
+        // window.addEventListener("scroll", ()=>{
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        //     document.querySelectorAll(".section").forEach((e,i)=>{
+        //         if(scrollTop >= e.offsetTop - 2 ){
+        //             document.querySelectorAll(".header__menu li").forEach(li => {
+        //                 li.classList.remove("active")
+        //             });
+        //             document.querySelector(".header__menu li:nth-child("+ (i+1) +")").classList.add("active");
+        //         }
+        //     });
+        // });
+
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+        //     //forEach 문
+        //     document.querySelectorAll(".scroll").forEach((e,i)=>{
+        //         if(scrollTop >=  e.offsetTop-500 ){ //scrollTop이 id값 이상이면
+        //             document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+        //                 li.classList.remove("active");
+        //             });
+        //             document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
+        //         }; 
+                
+        //     });
+        // });
+
+        // document.querySelectorAll(".header__menu li a").forEach( li => {
+        //     li.addEventListener("click", e => {
+        //         e.preventDefault();
+        //         document.querySelector(li.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        //     });
+        // });
+        
+
+
+    </script>
+</body>
+</html>

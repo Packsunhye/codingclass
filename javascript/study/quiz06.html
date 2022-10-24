@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 유형 05</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        
+    </header> 
+    <!-- //header -->
+
+        <main id="main"> 
+            <div class="document">
+             <h2 class="t_tit"> 06. 퀴즈 유형 </h2>
+             <p class="t_desc">
+                객관식 문제로 답을 선택하고 정답을 확인했을 때에 여러 문제 중 정답을 맞춘 갯수가 무엇인지, 또한 정답의 갯수가 합격점인지 확인해보았습니다.</p><br>
+           
+            <p class="t_desc">자바스크립트입니다. 확인 버튼을 누르고 정답을 확인하면서 몇 문제가 정답인지 또 36문제 이상을 맞춰서 합격인지 아닌지 스크립트를 짜보았습니다. 
+            </p>
+            <div class="script">
+                <div class="t_code">
+    <pre><code class="language-js">        const quizQuestion = document.querySelector(".quiz_question")           //문제 번호와 질문 
+        const quizSelects = document.querySelector(".quiz_selects")             //객관식 보기
+        const quizType = document.querySelector(".quiz_type")                   //문제타입
+        const quizResult = document.querySelector(".quiz_answer .result")       //해설
+        const quizConfirm = document.querySelector(".quiz_answer .confirm")     //정답확인버튼
+        const quizView = document.querySelector(".quiz_view")     // 강아지
+    
+    
+        let quizCount = 0;
+        let quizScore = "";
+    
+        //문제 출력
+        const updateQuiz = (index) => {
+            // const typeTag = `&lt;span class="quiz_type"&gt;${quizInfo[0].answerType}&lt;/span&gt;`
+    
+            const questionTag = `
+                &lt;span class="number"&gt;${quizInfo[index].answerNum}&lt;/span&gt;
+                &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt;`
+    
+            const choiceTag  = `
+                &lt;label for="select1"&gt;
+                    &lt;input type="radio" id="select1" class = "select" name="select" value="1"&gt;
+                    &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select2"&gt;
+                    &lt;input type="radio" id="select2" class = "select" name="select" value="2"&gt;
+                    &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select3"&gt;
+                    &lt;input type="radio" id="select3" class = "select" name="select" value="3"&gt;
+                    &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label for="select4"&gt;
+                    &lt;input type="radio" id="select4" class = "select" name="select" value="4"&gt;
+                    &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+                &lt;/label&gt;
+    
+            //문제 출력
+            quizQuestion.innerHTML = questionTag;  
+            quizSelects.innerHTML = choiceTag;  
+            // document.querySelector(".quiz_type").innerHTML = ${quizInfo[0].answerType}
+            quizType.innerHTML = quizInfo[index].answerType 
+            quizResult.innerHTML = quizInfo[index].answerEx 
+            
+            const quizChoice = quizSelects.querySelectorAll(".choice");
+    
+            for(let i=0; i&lt;quizChoice.length; i++){
+                quizChoice[i].setAttribute("onclick" , "choiceSelected(this)")
+            }
+    
+            // 문제, 해설 숨기기
+            quizResult.style.display = "none";
+            quizConfirm.style.display = "none";
+    
+        }
+        updateQuiz(quizCount);
+    
+        const choiceSelected = (answer) => {
+            let userAnswer = answer.textContent;
+            let currentAnswer = quizInfo[quizCount].answerResult; 
+    
+            if(userAnswer == currentAnswer){
+                console.log("정답")
+                quizView.classList.add("like")
+                quizScore++
+            }else {
+                console.log("오답")
+                quizView.classList.add("dislike")
+                quizResult.style.display = "block";
+            }
+            quizConfirm.style.display = "block";
+        }
+    
+        // if(100/quizInfo.length*quizScore >= 60){
+        //     quizConfirm.textContent = `합격입니다.`
+        // }else{
+        //     quizConfirm.textContent = `불합격입니다.`
+        // }
+    
+        //정답 확인 버튼
+        const answerQuiz = () => {
+            //마지막 문제
+            if(quizInfo.length -1 == quizCount ){
+                if(100/quizInfo.length*quizScore >= 60){
+                    quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 합격입니다.`
+                }else{
+                    quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 불합격입니다.`
+                }
+            };
+    
+            quizCount++
+            updateQuiz(quizCount);
+            quizView.classList.remove("like","dislike")
+        
+        }
+    
+        quizConfirm.addEventListener("click",answerQuiz); </code></pre> 
+                </div>
+            </div>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/quizEffect06.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/quizEffect06.html">원본 소스 보여주기</a>
+            </div>
+            </div>
+        </main>
+        
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

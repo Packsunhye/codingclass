@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 검색 유형 01 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 검색 유형 01 </h2>
+            <p class="t_desc"> indexOf()를 이용하여 단어를 검색하였을 때 정보가 나오도록 작업하는 방식 입니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 먼저 HTML 입니다. 정리를 해주는건 리스트로 만드는 것은 같지만 <br>
+                데이터가 어떤 것인지 구별하기 위해 <i>data-name</i> 을 넣어 지정해 줄 수 있도록 하였습니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-html">     &lt;div class="search__wrap"&gt;
+        &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+        
+        &lt;h1&gt; HTML 태그 검색하기 &lt;/h1&gt;
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="HTML 태그를 검색해주세요."&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="search__list"&gt;
+            &lt;div class="css"&gt;
+                &lt;ul&gt;
+                    &lt;li data-name="accent-color"&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : accent-color 태그는 일부 요소에서 생성된 사용자 인터페이스 컨트롤의 강조 색상을 설정 합니다.&lt;/li&gt;
+                    &lt;li data-name="align-content"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 태그는 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="align-items"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 태그는 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="align-self"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 태그는 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="all"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 태그는 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-delay"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 태그는 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-direction"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 태그는 애니메이션 움직임 방향을 설정합니다..&lt;/li&gt;
+                    &lt;li data-name="animation-duration"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 태그는 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-fill-mode"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-fill-mode 태그는 애니메이션이 끝난 후의 상태를 설정합니다.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; </code></pre>   
+        </div>
+
+        <h3 class="t_tit2"> 02. javascript </h3>
+        <p class="t_desc"> 아래는 자바 스크립트 입니다. 선택자를 만드는 방식은 퀴즈 이펙트 01의 유형과 똑같지만 forEach문에 'keyup'작업을 넣어 검색하였을 때에 
+            <i>if문에서 사용자가 쓴 키워드가 indexOf()로 구별하여 일치하였을 때에 검색값이 나오도록</i> 하였습니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    // 선택자 
+    const searchBox = document.querySelector(".search__box input");      //검색 영역
+    const searchList = document.querySelectorAll(".search__list ul li")       //목록 리스트
+
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+        searchList.forEach(el => {
+            const cssName = el.dataset.name;
+
+            if(cssName.indexOf(searchWord)){
+                el.classList.add("hide")
+            } else {
+                el.classList.remove("hide") //indexOf()없이 0이 되는 값만 hide를 지워줍니다.
+            }
+
+        });
+    }); </code></pre>   
+    </div>
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/javascript/effect/searchEffect01.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/searchEffect01_css.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/javascript/effect/searchEffect01.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

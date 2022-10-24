@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 배너 유형 01 </h2>
+
+            <h3 class="t_tit2"> 01. figma </h3>
+            <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1095%253A243" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2"> 02. HTML </h3>
+            <p class="t_desc"> HTML 입니다. 배너 타입은 그저 이미지 위에 글씨만 올리는 타입이라 html도 간단합니다. </p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;section id="bannerType" class="banner__wrap nexon"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;고양이 사이트&lt;/h3&gt;
+        &lt;p class="desc"&gt;세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다. 
+            &lt;a href="#" title="고양이 보러가기"&gt;다들 고양이 자랑과 이미지 보고 가세요.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형 01&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/section&gt; </code></pre>
+            </div>
+            
+            <h3 class="t_tit2"> 03. css </h3>
+            <p class="t_desc"> 글자색이라던가, 크기만 조정해주면 배너타입은 완성입니다. </p>
+            <div class="t_code">
+<pre><code class="language-css">.banner__inner {
+    background-image: url(../../../bannerType/img/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+
+.banner__inner .small {
+    font-size: 16px;
+    text-decoration: underline;
+}</code></pre>
+            </div><br>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/site/site01/index.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/site/site01/index.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/site/site01/index.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

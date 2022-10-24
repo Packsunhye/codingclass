@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> html_site_Imge02 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Imge type 02 </h2><br>
+            <p class="t_desc">피그마에서 디자인 하여, zeplin을 참고해 만든 이미지 타입 사이트 입니다. 아래는 피그마를 이용해 먼저 디자인 하였습니다.</p>
+        <div class="t_iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D741%253A106" allowfullscreen></iframe>       
+        </div>
+        <p class="t_desc">이후 코드로 작성하였습니다.</p>
+        <h3 class="t_tit2"> HTML </h3>
+        <p class="t_desc"> 카드들은 컨테이너를 부여해 display : flex 를 주기 쉽게 하였습니다. </p>
+        <div class="t_code">
+<pre><code class="language-html"> &lt;section id="imageType02" class="image__wrap gmarket section"&gt;
+    &lt;h1&gt;해파리의 떠다니는 모습들&lt;/h1&gt;
+    &lt;p&gt;투명한 해파리들이 다채로운 바다상에서 깊게 유영하고 다니며 영롱한 색상을 드러내고 있어요&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imgType02_01.jpg" alt="북극곰"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;파란색 해파리&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imgType02_02.jpg" alt="북극곰"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;보라색 해파리&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img3"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imgType02_03.jpg" alt="북극곰"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;투명한 해파리&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt; </code></pre>
+        </div><br>
+
+        <h3 class="t_tit2"> CSS </h3>
+        <details>
+            <summary>공통 요소</summary>
+            <div class="t_code">
+    <pre><code class="language-css">         /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center; 
+        margin-bottom: 70px;
+        }
+                
+</code></pre>
+                        </div>
+        </details>
+<div class="t_code"> <pre><code class="language-css">     /* imageType */
+    .image__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .image {
+        width: 32%;
+        position: relative;
+        overflow: hidden;
+        
+    }
+    .image__box {
+        height: 100%;
+    }
+    .image__box img {
+        transition: all 0.5s ease-in-out;
+    }
+    .image__desc {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;     /* image__desc 박스 안넘치게 하기 */
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease-in-out;
+    }
+    .img1 .image__desc {
+        background-color: #052b6469;
+    }
+    .image__desc h3 {
+        color: #fff;
+    }
+    .image__desc .more {
+        color: #fff;
+    }
+    .img2 .image__desc {
+        background-color: #2c217360;
+    }
+    
+    .img3 .image__desc {
+        background-color: #111d2e62;
+    }
+    
+    .img1 .image__desc {
+        bottom: -100px;
+    }
+    .img1:hover .image__desc {
+        bottom: 0;
+    }
+    .img2 .image__desc {
+        bottom: -100px;
+    }
+    .img2:hover .image__desc {
+        bottom: 0;
+    }
+    .img3 .image__desc {
+        bottom: -100px;
+    }
+    .img3:hover .image__desc {
+        bottom: 0;
+    }
+    .image:hover .image__box img {
+        transform: scale(1.05);
+    }
+    .image__desc h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .image__desc .more {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .image__desc .more:hover {
+        text-decoration: underline;
+    } </code></pre>
+        </div>
+
+        <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <iframe src="https://packsunhye.github.io/coding/site/imgeType/imgeType02_0817.html"></iframe>
+        </div>
+        
+        <div class="t_link">
+            <a href="https://github.com/Packsunhye/coding/blob/main/site/imgeType/imgeType02_0817.html">원본 소스 보여주기</a>
+        </div> 
+        <div class="t_link">
+            <a href="https://packsunhye.github.io/coding/site/imgeType/imgeType02_0817.html">원본 사이트 보여주기</a>
+        </div> 
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

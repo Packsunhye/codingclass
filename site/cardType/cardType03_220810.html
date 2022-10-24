@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 03</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sunn/SUIT.css');
+
+        .SUIT {
+            font-family: 'SUIT';
+            font-weight: 300;
+        }
+ 
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 65px 0;
+        }
+
+
+        /* cardType03 */
+
+        .top {
+            width: 1159px;
+            height: 25px;
+            background-color: #24ffd8;
+        }
+
+        .left {
+            width: 32.5px;
+            height: 550px;
+            background-color: #6738ed;
+            
+        }
+        .right {
+            width: 32.5px;
+            height: 550px;
+            background-color: #6738ed;
+        }
+        
+        .card {
+            border: 1px solid #eee;
+            padding: 19px;
+        }
+
+        .card_inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card_inner .card {
+            width: 28%;
+           
+        }
+        .card_inner .card img {
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+        }
+        .card_inner .card .tit {
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-align: left;
+        }
+        .card_inner .card .desc{
+            font-size: 16px;
+            font-weight: 200;
+            text-align: left;
+            margin-bottom: 30px;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .card_inner .card .mioo {
+            width: 70px;
+            height: 20px;
+            padding: 4px 19px 4px 23px;
+            border-radius: 30px;
+            background-color: #1df0ca;
+            color: #6738ed;
+            text-align: left;
+            width: 28px;
+            height: 12px;
+        }
+
+        /* .card_inner .card .mge{
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.4;
+            text-align: right;
+        } */
+
+        /* .card_inner .card .meu  {
+            width: 45px;
+            height: 45px;   
+            display: block;
+            position: absolute;
+            top: 500px;
+        } */
+
+        .vixx {
+            display: flex;
+            justify-content: flex-end;
+           
+        }
+        .vixx ul {
+            list-style: none;
+            text-align: right;
+            font-weight: 100;
+            font-size: 15px;
+            margin-right: 16px;
+        }
+        .vixx img {
+           width: 36.5px;
+           height: 36.5px;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="cardType03" class="card_wrap SUIT section">
+    <div class="card_inner container">
+        <div class="top"></div>
+        <div class="left"></div>
+            <article class="card">
+                <img src="img/card_bg03_01.jpg" alt="바다">
+                <h3 class="tit">이 바다처럼 우리 교실도 <br>
+                    침수되고 있다 너무너무 웃겨</h3>
+                <p class="desc">네네.. 우리 교실 물떨어져요 네.. 진짜 웃겨요 우리층 6층인데 빗물떨어져요 
+                    우산써야할지 모르겠어요 두명은 컴퓨터도 꺼졌대요~ 비오는 날에..</p>
+                <div class="vixx">
+                    <ul>
+                        <li>Sunhye</li>
+                        <li>9 Resources</li>
+                    </ul>
+                    <img src="img/card_bg03_04.jpg" alt="">
+                </div>
+                <div class="mioo"><a href="#">click</a></div>
+            </article>
+            <article class="card">
+                <img src="img/card_bg03_02.jpg" alt="바다">
+                <h3 class="tit">
+                    노을진 바다가 이쁘면서  <br>
+                    역시 바캉스는 집에서 쉬어야지</h3>
+                <p class="desc">바다에 가고싶다.. BUT ! ! 집에 있는게 짱이야.. , 그러나 ! ! 튜브도 타고 싶다.. 하우웨버 ! ! 
+                    집에도 에어컨이 있어... 네버어쩌구 ! ! 짠물기운이 좋다.,.</p>
+                <div class="vixx">
+                    <ul>
+                        <li>Manyong</li>
+                        <li>6 Resources</li>
+                    </ul>
+                    <img src="img/card_bg03_05.jpg" alt="">
+                </div>
+                <div class="mioo"><a href="#">click</a></div>
+            </article>
+            <article class="card">
+                <img src="img/card_bg03_03.jpg" alt="바다">
+                <h3 class="tit">
+                    파도가 넘쳐 흐르면서 <br>
+                    비가 새는건 딴 곳인 우리 학원
+                </h3>
+                <p class="desc">부셔진 벽은 딴 곳이면서 우째서 천장에서 물이 떨어지는 걸까 건물의 신기함 
+                    헉 그럼 사이는 이미 빗물이 가득한걸까? 걸레로 빡빡 닦아야만 ....</p>
+                <div class="vixx">
+                    <ul>
+                        <li>LaLayong</li>
+                        <li>12 Resources</li>
+                    </ul>
+                    <img src="img/card_bg03_06.jpg" alt="">
+                </div>
+                <div class="mioo"><a href="#">click</a></div>
+            </article>
+            <div class="right"></div>
+        </div>
+    </section>
+</body>
+</html>

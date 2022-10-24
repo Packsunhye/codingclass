@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0919 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Wave Animation </h2>
+            <p class="t_desc"> codepen에서 원들이 웨이브를 하는 애니메이션을 만들었습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> pug를 사용해 for문으로 많은 박스를 만들어줍니다.</p>
+            <div class="t_code">
+<pre><code class="language-html">div.circle-wrap
+- for (var x =1; x &lt;= 12; x++)
+    div.row
+    - for (var y = 1; y &lt;= 12; y++)
+        div.circle
+</code></pre>  
+            </div>
+        
+            <h3 class="t_tit2"> 02. css </h3>
+            <p class="t_desc"> 원들 에게 애니메이션을 줄 때, 한번에 많은 수를 움직이는 것을 해야하니 scss로 for문을 사용해 여러개의 nth-child를 한 문장으로 해결할 수 있게 하였습니다.</p>
+            <div class="t_code">
+<pre><code class="language-css">@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body {
+    @include center;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+  }
+  .row {
+    display: flex;
+    .circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 5px 10px;
+      background: #fff;
+      transform-origin: top center;
+      animation: spin 1s linear infinite;
+    }
+  }
+  @keyframes spin {
+      0% {transform: scale(1.1) rotate(0deg)}
+      50% {transform: scale(0.1) rotate(180deg)}
+      100% {transform: scale(1.1) rotate(360deg)}
+    }
+    // .row:nth-child(1) .circle {
+    //   animation-delay: 100ms
+    // }
+    // .row:nth-child(2) .circle {
+    //   animation-delay: 200ms
+    // }
+    // .row:nth-child(3) .circle {
+    //   animation-delay: 300ms
+    // }
+    // .row:nth-child(4) .circle {
+    //   animation-delay: 400ms
+    // }
+    @for $i from 1 through 12 {
+      .row:nth-child(#{$i}) .circle {
+        animation-delay: 100ms * $i
+      }
+    }</code></pre>   
+                </div>
+        
+            
+        
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="0919_ani" src="https://codepen.io/packsunhye/embed/GRdmOGW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/GRdmOGW">
+                    0919_ani</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            
+        </div>        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

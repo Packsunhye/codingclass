@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 애니메이션 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+
+            <h2 class="t_tit"> 텍스트 사이트 02 </h2>
+            <p class="t_desc"> 텍스트와 아이콘을 활용하여 웹 사이트를 디자인 해보았습니다. </p>
+
+
+            <h3 class="t_tit2"> 01. figma </h3>
+            <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D914%253A129" allowfullscreen></iframe>
+            </div>
+            <p class="t_desc"> 이때, 스프라이트로 아이콘을 작업해줄꺼기 때문에 이미지 스프라이트로 준비하였습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D914%253A188" allowfullscreen></iframe>
+            </div>
+            <h3 class="t_tit2"> 02. HTML </h3>
+
+            <p class="t_desc"> HTML 입니다. css에서 작업을 display : flex 으로 작업을 할 예정이기 때문에 구조를 잘 잡아야 합니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-html">    &lt;section id="textTyle02" class="text__wrap Sans section box__gm"&gt;
+        &lt;div class="text__font"&gt;
+            &lt;p class="top_font"&gt;CUTE CAT&lt;/p&gt;
+            &lt;h2&gt;고양이가&lt;br&gt; 깜찍하다고&lt;/h2&gt;
+            &lt;p class="bottom_font"&gt;그 이유를 한번씩 알아봅시다 &lt;br&gt;
+            이유를 알 수록 빠져들거에요.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="text__inner"&gt;
+            &lt;div class="box__twx01"&gt;
+                &lt;article class="twwt"&gt;
+                    &lt;span class="img__svg img01"&gt;&lt;/span&gt;
+                    &lt;h3 class="text__title "&gt;귀가 쫑긋 거린다&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;쫑긋 거리는 귀는 만지면 만질 수록 짜증을 나타내지만 
+                        그래도 그게 너무 귀여워서 참을 수 없다 뒤집으면 팔랑거려요&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;article class="twwt"&gt;
+                    &lt;span class="img__svg img02"&gt;&lt;/span&gt;
+                    &lt;h3 class="text__title "&gt;발바닥이 말랑거린다&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;고양이의 발바닥은 마치 라이크 젤리이다. 그 젤리를 만져보았나요?
+                         맬렁맬렁하지만 역시 바닥을 딛기위해 쪼금 단단함.. 최고.&lt;/p&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+            &lt;div class="box__twx02"&gt;
+                &lt;article class="twwt"&gt;
+                    &lt;span class="img__svg img03"&gt;&lt;/span&gt;
+                    &lt;h3 class="text__title "&gt;털이 부드럽다&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;고양이는 아주 보드라운 털을 말랑거리는 살 위에 덮어져있다. 
+                        한번도 만져보지 못한 사람은 있어도 한번만 만지는 사람은 없다&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;article class="twwt"&gt;
+                    &lt;span class="img__svg img04"&gt;&lt;/span&gt;
+                    &lt;h3 class="text__title "&gt;은근히 집사를 좋아한다&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;우리집 애기는 내가 있으면 관심없는 척 반경 1m이내에 있는데 
+                        내가 오면 후다닥 달려와서 이제 왔냐고 화를 낸다...&lt;/p&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;</code></pre>   
+        </div>
+
+        <h3 class="t_tit2"> 03. css </h3>
+        <p class="t_desc"> 공통된 요소가 있으므로 그것을 제외한 뒤 작성하였습니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-css">    .text__font {
+        padding-right: 100px;
+        
+    }
+    .text__font > h2 {
+        font-size: 50px;    
+        text-align-last: left;
+        font-weight: bold;
+        width: 255px;
+        margin-bottom: 20px;
+
+    }
+    .text__font .top_font {
+        width: 180px;
+        height: 26px;
+        border-radius: 50px;
+        /* padding: 5px 48px; */
+        background-color: #bfbbf3;
+        color: #fff;
+        text-align: center;
+        line-height: 26px;
+        margin-bottom: 20px;
+    }
+
+    .text__font .bottom_font {
+        font-weight: 500;
+        text-align: left;
+        width: 255px;
+        font-size: 18px;
+    }
+
+
+    /* text__inner */
+    .text__inner {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .box__twx01 {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .box__twx02 {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;    
+    }
+
+    /* twwt  */
+    .twwt {
+        width: 373px;
+        height: 211px;
+        margin-right: 20px;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .twwt:hover {
+        background-color: #f5f5f5;
+    }
+
+    .twwt .img__svg {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #666;
+        margin-bottom: 10px;
+
+        background-size: 600px;
+        background: url(../site_img/Group\ 5.svg) no-repeat;
+    }
+    .text__inner .img01 {
+        background-position: -100px;
+    } 
+
+    .text__inner .img02 {
+        background-position: -300px;
+    }
+    .text__inner .img03 {
+       
+    }
+    .text__inner .img04 {
+        background-position: -500px;
+    }
+
+    .twwt .text__title {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .twwt .text__desc {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.4;
+        font-weight: 300;
+        text-align: left;
+        width: 333px;
+    }</code></pre>   
+    </div>
+
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/site/textType/textType_0830_02.html"></iframe>
+        <iframe src="https://packsunhye.github.io/newcoding/site/headerType/headerType.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/site/textType/textType_0830_02.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/site/textType/textType_0830_02.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+    
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

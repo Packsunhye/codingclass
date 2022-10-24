@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트06</title>
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/tway/TwayAir.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <style>
+        pre code.hljs {
+            background-color: #0F0F13 !important;
+            border-radius: 0px !important;
+            overflow: auto !important;
+            font-size: 14px;
+            padding: 10px !important;
+
+        }
+
+        
+    </style>
+    
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html"> Quiz </a> <em>객관식(여러문제) 확인하기 : 슬라이드 형식</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="screen__btn">소스 보기</div>
+        <div class="quiz_wrap">
+            <div class="quiz">
+                <span class="quiz_type"></span>
+                <h2 class="quiz_question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz_view">
+                    <div class="true">정답입니다.</div>
+                    <div class="false">틀렸습니다.</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz_answer">
+                   <div class="quiz_selects">
+                    <!-- <label for="select1">
+                        <input type="radio" id="select1" class = "select" name="select" value="1">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select2">
+                        <input type="radio" id="select2" class = "select" name="select" value="2">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select3">
+                        <input type="radio" id="select3" class = "select" name="select" value="3">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select4">
+                        <input type="radio" id="select4" class = "select" name="select" value="4">
+                        <span class="choice"></span>
+                    </label> -->
+                   </div>
+
+
+                   <button class="confirm"> 다음 문제 </button>
+                    <div class="result"></div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <div class="screen">
+        
+        <div class="window">
+            <div class="title-bar">
+              <div class="minimize">
+                <div class="symbol"></div>
+              </div>
+              <div class="maximize">
+                <div class="symbol"></div>
+              </div>
+              <div class="close">
+                <div class="symbol"></div>
+              </div>
+            </div>
+            <div class="menu-bar">
+                <span class="active">Javascript</span>
+                <span>Html</span>
+                <span>Css</span>
+            </div>
+            <div class="content-container">
+              <div class="content">
+                <div class="main">
+                    <div class="active">
+                        <pre><code class="language-js">   const choiceSelected = (answer) => {
+        let userAnswer = answer.textContent;
+        let currentAnswer = quizInfo[quizCount].answerResult; 
+
+        if(userAnswer == currentAnswer){
+            console.log("정답")
+            quizView.classList.add("like")
+            quizScore++
+        }else {
+            console.log("오답")
+            quizView.classList.add("dislike")
+            quizResult.style.display = "block";
+        }
+        quizConfirm.style.display = "block";
+    }
+
+    // if(100/quizInfo.length*quizScore >= 60){
+    //     quizConfirm.textContent = `합격입니다.`
+    // }else{
+    //     quizConfirm.textContent = `불합격입니다.`
+    // }
+
+    //정답 확인 버튼
+    const answerQuiz = () => {
+        //마지막 문제
+        if(quizInfo.length -1 == quizCount ){
+            if(100/quizInfo.length*quizScore >= 60){
+                quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 합격입니다.`
+            }else{
+                quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 불합격입니다.`
+            }
+        };
+
+        quizCount++
+        updateQuiz(quizCount);
+        quizView.classList.remove("like","dislike")
+    
+    }
+
+    quizConfirm.addEventListener("click",answerQuiz); </code></pre>
+                    </div>
+                    <div>
+                        <pre><code class="language-html">&lt;div class="quiz_wrap"&gt;
+&lt;/div&gt; </code></pre>
+                    </div>
+                    <div>
+                        <pre><code class="language-css">.quiz_wrap {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 150px;
+        flex-wrap: wrap;
+    }
+
+    .quiz {
+        max-width: 500px;
+        width: 100%;
+        background-color: #fff;
+        border: 8px ridge #cacaca;
+        margin: 10px;
+    }
+
+    .quiz_type {
+        background-color: #cacaca;
+        text-align: center;
+        display: block;
+        /*span이라 inline이어서*/
+        font-size: 16px;
+        border: 3px ridge #cacaca;
+        color: #3b3b3b;
+        font-family: "DungGeunMo";
+        padding: 4px;
+    }
+
+    .quiz_question {
+        border-top: 6px ridge #cacaca;
+        border-bottom: 6px ridge #cacaca;
+        padding: 20px;
+        font-family: "TwayAir";
+        line-height: 1.3;
+    }
+
+    .quiz_question .number {
+        color: #b771f8;
+    }
+
+    .quiz_question .ask {
+        display: inline;
+    }
+
+    .quiz_answer {
+        border-top: 6px ridge #cacaca;
+        padding: 10px;
+        background-color: #f5f5f5;
+    }
+
+    .quiz_answer .confirm {
+        border: 6px ridge #cacaca;
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        background-color: #d6d6d6;
+        font-family: "TwayAir";
+        cursor: pointer;
+    }
+
+    .quiz_answer .result {
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        border: 6px ridge #cacaca;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "TwayAir";
+        line-height: 1.3;
+    }
+    .quiz_answer .input {
+        width: 100%;
+        border: 6px ridge #cacaca;
+        font-size: 22px;
+        padding: 13px 20px;
+        background-color: #fff;
+        font-family: "TwayAir";
+        margin-bottom: 10px;
+    }
+    .quiz_view {
+        background-color: #f5f5f5;
+        font-family: "TwayAir";
+        position: relative;
+        overflow: hidden;
+    }
+    .quiz_view .true {
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        background-color: #8beeff;
+        color: rgb(60, 68, 136);
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+        left: 70%;
+        top: 100px;
+        opacity: 0;
+    }
+    .quiz_view .false {
+        width: 120px;
+        height: 120px;
+        background-color: rgb(255, 205, 68);
+        color: rgb(82, 39, 22);
+        line-height: 120px;
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+        right: 70%;
+        top: 100px;
+        opacity: 0;
+    }
+    .quiz_view.like .true{
+        opacity: 1;
+        animation: wobble 0.6s;
+    }
+    .quiz_view.dislike .false{
+        opacity: 1;
+        animation: wobble 0.6s; /*wobble 좌우로 흔드는 애니메이션*/
+    }
+
+    .quiz_selects {
+        margin: 5px 0;
+    }
+
+    .quiz_selects label {
+        display: flex;
+    }
+    .quiz_selects label input {
+        position: absolute;
+        left: -9999px;
+    }
+    .quiz_selects label span {
+        font-size: 20px;
+        line-height: 1.3 ;
+        font-family: "TwayAir";
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .quiz_selects label span::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        margin-right: 15px;
+        flex-shrink: 0;
+        box-shadow: inset 0px 0px 0px 4px #b781e9;
+        transition: all 0.25s;
+    }
+
+    .quiz_selects label input:checked + span {
+        background-color: rgb(228, 224, 235);
+    }
+
+    .quiz_selects label input:checked + span::before {
+        box-shadow: inset 0px 0px 0px 10px #b781e9;
+    }
+
+    .quiz_confirm {
+        width: 100%;
+        text-align: center;
+    }
+    .quiz_confirm .check {
+        font-size: 22px;
+        line-height: 1.3;
+        padding: 13px 60px;
+        border: 6px ridge #cacaca;
+        box-sizing: border-box;
+        text-align: center; 
+        font-family: "TwayAir";
+        cursor: pointer;
+        margin: 40px 0;
+        transition: background 0.3s;
+    }
+
+    .quiz_confirm .check:hover {
+        background: #b080fd;
+    }
+
+    .quiz_confirm .ex {
+        font-family: "DungGeunMo";
+        font-size: 28px;
+        font-weight: 500;
+
+    } </code></pre>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="footer"></div>
+          </div>
+    </div>
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/sceen-98.js"></script>
+    <script>
+    //문제 정보
+
+    const quizInfo = [
+            { //01
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "1. ",
+                answerAsk : "저드(D.Judd)의 색채 조화의 원리에 해당하지 않는 것은?",
+                answerChoice : [
+                    "질서의 원리",
+                    "유사의 원리",
+                    "친근감의 원리",
+                    "연속성의 원리"
+                ],
+                answerResult : "연속성의 원리" ,
+                answerEx : "저드는 색채 조화 원리에서 질서의 원리,유사의 원리,친근감의 원리,명료성의 원리를 주장했습니다." 
+            },
+            { //02
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "2. ",
+                answerAsk : "율동(rhythm)의 요소로 볼 수 없는 것은?",
+                answerChoice : [
+                    "점증",
+                    "반복",
+                    "변칙",
+                    "대칭"
+                ],
+                answerResult : "대칭" ,
+                answerEx : "대칭은 균형의 요소입니다"
+            },
+            { //03
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "3. ",
+                answerAsk : "디자인 조건 중 최소의 재료에 의해 최대의 효과를 얻고자하는 인간의 활동과 가장 밀접한 관계가 있는 것은?",
+                answerChoice : [
+                    "심미성",
+                    "질서성",
+                    "경제성",
+                    "독창성"
+                ],
+                answerResult : "경제성" ,
+                answerEx : "최소의 재료로 최대의 효과를 얻기 위한 것은 경제적인 요소와 관계있으므로 경제성입니다."
+            },
+            { //04
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "4. ",
+                answerAsk : "책을 열심히 보다가 시선을 돌리면 검정색 활자가 흰색 활자로 나타나는 현상은?",
+                answerChoice : [
+                    "부의 잔상",
+                    "정의 잔상",
+                    "동화 현상",
+                    "매스 효과"
+                ],
+                answerResult : "부의 잔상" ,
+                answerEx : "원래의 색과 반대로 보이는 잔상이 생기는 것 입니다."
+            },
+            { //05
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "5. ",
+                answerAsk : "지역 간 또는 국가 간과 같이 지리적으로 완전하게 떨어진곳을 연결하는 통신망은?",
+                answerChoice : [
+                    "VAN",
+                    "WAN",
+                    "MAN",
+                    "LAN"
+                ],
+                answerResult : "WAN" ,
+                answerEx : "VAN는 기간통신사업자로부터 회선을 임대/임차하여 고품질의 정보서비스를 제공하는 통신망이며, MAN은 도시와 도시를 연결하는 통신망으로 도시권정보통신망,LAN은 가까운 거리 및 제한된 지역 및 건물 등의 통신망입니다."
+            },
+            { //06
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "6. ",
+                answerAsk : "OSI 7 계층 중 프로세스 간의 대화 제어 및 동기점을 이용한 효율적인 데이터 복구를 제공하는 계층은?",
+                answerChoice : [
+                    "세션 계층",
+                    "네트워크 계층",
+                    "물리 계층",
+                    "전송 계층"
+                ],
+                answerResult : "세션 계층" ,
+                answerEx : "네트워크 계층은 별개의 네트워크 간에 데이터 패킷을 주고 받음으로써 이러한 연결이 만들어지는 인터넷 통신 프로세스의 일부이며, 물리 계층은 컴퓨터 네트워킹의 OSI 7계층 모델에서 가장 낮은 첫 번째 계층이고, 전송 계층은 계층 구조의 네트워크 구성요소와 프로토콜 내에서 송신자와 수신자를 연결하는 통신 서비스를 제공을 뜻합니다."
+            },
+            { //07
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "7. ",
+                answerAsk : "다음 중 LAN의 물리적 통신망 구조가 아닌 것은?",
+                answerChoice : [
+                    "성(star)형",
+                    "버스(bus)형",
+                    "십자(cross)형",
+                    "링(ring)형"
+                ],
+                answerResult : "십자(cross)형" ,
+                answerEx : "LAN의 물리적 구조 : 스타형, 버스형, 링형 등등이 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "2",
+                answerAsk: "디자인의 원리에서 율동에 해당되는 것은?",
+                answerChoice: [
+                     "유사, 대비",
+                     "대칭, 비례",
+                     "통일, 변화",
+                     "점이, 반복"
+                ],
+                answerResult: "점이, 반복",
+                answerEx: "율동의 원리는 반복과 교차, 점이(점증), 방사가 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "3",
+                answerAsk: "불투명한 물체가 빛을 반사시킴으로써 나타나는 물체의 색을 의미하는 것은?",
+                answerChoice: 
+                   [ "광원색",
+                    "조명색",
+                    "경영색",
+                    "표면색"]
+                ,
+                answerResult: "표면색",
+                answerEx: "불투명한 물체가 빛을 반사시킴으로써 나타나는 물체의 색을 의미하는 것은 표면색입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "4",
+                answerAsk: "부분과 부분 또는 부분과 전체 사이에 안정된 관련성을 지니며 서로 함께 속해있는 것처럼 보이는 디자인 원리는?",
+                answerChoice:
+                    ["비례",
+                    "조화",
+                    "균형",
+                    "강조"]
+                ,
+                answerResult: "조화",
+                answerEx: "부분과 부분 또는 부분과 전체 사이에 안정된 관련성을 지니며 서로 함께 속해있는 것처럼 보이는 디자인 원리는 조화입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "7",
+                answerAsk: "지루함을 잊게 해 줄 수 있는 대기실이나 병원 실내의 벽에 대한 배색 계통으로 가장 적당한 것은?",
+                answerChoice: 
+                    ["난색",
+                    "한색",
+                    "중성색",
+                    "무채색"]
+                ,
+                answerResult: "한색",
+                answerEx: "난색은 따뜻하고 여유로운 느낌을 주고, 한색은 시원한 느낌과 긴장감을 줍니다. 지루함을 잊게 해주기 위해서는 한색이 적합합니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "8",
+                answerAsk: "다음 중 사회 변화에 따른 디자인의 변화에 대한 설명으로 맞는 것은?",
+                answerChoice: 
+                   [ "농경 사회 : 의식주, 생존개념, 생활 수공예",
+                    "정보화 사회 : 공업의 발달 및 빛의 개념, 디자인 성장",
+                    "산업 사회 : 기술의 첨단화, 즐기는 개념, 디자인 성숙",
+                    "후기 산업사회 : 대량생산, 성장개념, 디자인 태동"]
+                ,
+                answerResult: "농경 사회 : 의식주, 생존개념, 생활 수공예",
+                answerEx: "공업의 발달은 산업 사회에 해당하며, 기술의 첨단화는 후기 산업사회 및 정보화 사회에 해당하는 설명입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "10",
+                answerAsk: "'빨강 기미의 노랑'과 같이 기본 색명에다 색상, 명도, 채도를 나타내는 수식어를 붙인 색명은?",
+                answerChoice: 
+                    ["관용색명",
+                    "고유색명",
+                    "일반색명",
+                    "기본색명"]
+                ,
+                answerResult: "일반색명",
+                answerEx: "일반색명은 기본색명에 형용사나 수식어를 덧붙여서 색명을 표현한 것으로, 관용색명의 단점을 보완한 것입니다. '흐린 초록', '칠흑 같은 빨강' 등이 그 예시입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2015년 2회",
+                answerNum: "16",
+                answerAsk: "새로운 예술이라는 뜻으로 19세기 말과 20세기 초에 걸쳐 프랑스를 중심으로 전 유럽에서 유행한 장식적인 양식은?",
+                answerChoice: 
+                    ["아르누보",
+                    "아르데코",
+                    "큐비즘",
+                    "다다이즘"]
+                ,
+                answerResult: "아르누보",
+                answerEx: "아르누보는 '새로운 미술'이라는 뜻으로, 빅토르 오르타와 헨리반데 벨데가 19세기 말 ~ 20세기 초에 걸쳐 벨기에와 프랑스를 중심으로 전 유럽에 유행시킨 장식적인 양식을 말합니다."
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+
+    ];
+
+    const quizQuestion = document.querySelector(".quiz_question")           //문제 번호와 질문 
+    const quizSelects = document.querySelector(".quiz_selects")             //객관식 보기
+    const quizType = document.querySelector(".quiz_type")                   //문제타입
+    const quizResult = document.querySelector(".quiz_answer .result")       //해설
+    const quizConfirm = document.querySelector(".quiz_answer .confirm")     //정답확인버튼
+    const quizView = document.querySelector(".quiz_view")     // 강아지
+
+
+    let quizCount = 0;
+    let quizScore = "";
+
+    //문제 출력
+    const updateQuiz = (index) => {
+        // const typeTag = `<span class="quiz_type">${quizInfo[0].answerType}</span>`
+
+        const questionTag = `
+            <span class="number">${quizInfo[index].answerNum}</span>
+            <div class="ask">${quizInfo[index].answerAsk}</div>`
+
+        const choiceTag  = `
+            <label for="select1">
+                <input type="radio" id="select1" class = "select" name="select" value="1">
+                <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+            </label>
+            <label for="select2">
+                <input type="radio" id="select2" class = "select" name="select" value="2">
+                <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+            </label>
+            <label for="select3">
+                <input type="radio" id="select3" class = "select" name="select" value="3">
+                <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+            </label>
+            <label for="select4">
+                <input type="radio" id="select4" class = "select" name="select" value="4">
+                <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+            </label> `
+
+        //문제 출력
+        quizQuestion.innerHTML = questionTag;  
+        quizSelects.innerHTML = choiceTag;  
+        // document.querySelector(".quiz_type").innerHTML = ${quizInfo[0].answerType}
+        quizType.innerHTML = quizInfo[index].answerType 
+        quizResult.innerHTML = quizInfo[index].answerEx 
+        
+        const quizChoice = quizSelects.querySelectorAll(".choice");
+
+        for(let i=0; i<quizChoice.length; i++){
+            quizChoice[i].setAttribute("onclick" , "choiceSelected(this)")
+        }
+
+        // 문제, 해설 숨기기
+        quizResult.style.display = "none";
+        quizConfirm.style.display = "none";
+
+    }
+    updateQuiz(quizCount);
+
+    const choiceSelected = (answer) => {
+        let userAnswer = answer.textContent;
+        let currentAnswer = quizInfo[quizCount].answerResult; 
+
+        if(userAnswer == currentAnswer){
+            console.log("정답")
+            quizView.classList.add("like")
+            quizScore++
+        }else {
+            console.log("오답")
+            quizView.classList.add("dislike")
+            quizResult.style.display = "block";
+        }
+        quizConfirm.style.display = "block";
+    }
+
+    // if(100/quizInfo.length*quizScore >= 60){
+    //     quizConfirm.textContent = `합격입니다.`
+    // }else{
+    //     quizConfirm.textContent = `불합격입니다.`
+    // }
+
+    //정답 확인 버튼
+    const answerQuiz = () => {
+        //마지막 문제
+        if(quizInfo.length -1 == quizCount ){
+            if(100/quizInfo.length*quizScore >= 60){
+                quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 합격입니다.`
+            }else{
+                quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다. 총 ${Math.floor(100/quizInfo.length*quizScore)}점 불합격입니다.`
+            }
+        };
+
+        quizCount++
+        updateQuiz(quizCount);
+        quizView.classList.remove("like","dislike")
+    
+    }
+
+    quizConfirm.addEventListener("click",answerQuiz);
+
+
+
+    </script>
+</body>
+
+</html>

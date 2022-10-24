@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벡터와 비트맵</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    
+    <main id="main">
+       <div class="document">
+        <h2 class="t_tit"> 백터란? </h2>
+        <p class="t_desc2">
+            그래픽의 형태들이 수학적 공식으로 이루어져 있습니다. 다시말해 벡터 방식의 그래픽은 고정된 비트맵을 가지고 있는 것이 아니라, 
+            <i>수학적 공식으로 이루어진 오브젝트들이 그때그때 디스플레이에 비트맵화 되어 스크립에 표시</i> 됩니다.</p>
+
+        <h3 class="t_tit2"> 벡터의 장점과 사용하는 곳 </h3>
+        <p class="t_desc">
+            벡터의 점은 좌표계(x,y)로 구성되기 때문에 비트맵의 픽셀과 달리 이미지의 크기 조절이나 변형 때문에 해상도가 깨지지 않습니다. 
+            보기로 봐야 할 만큼 크기를 줄이고, 건물 외벽에 붙일 만큼 크기를 키워도 깨짐현상이 없습니다. <br>
+
+            그래서 벡터 방식은 여기저기 적용하는 부분이 많아, <i>크기조절이 자유로워야 하는 로고나 여러 포인트로 조정되어야 하는 서체, 
+            다양한 크기로 여러 곳에 응용되어야 하는 캐릭터 등을 제작할 때 사용</i>합니다. 
+            그리고 픽셀로 구성되는 비트맵보다 용량이 현저히 적기 때문에 파일을 관리하기도 편리합니다. 
+        </p><br>
+          
+        <h2 class="t_tit"> 비트맵이란? </h2>
+        <p class="t_desc2">비트맵 방식은 '비트의 지도(Map of bits)'라는 뜻으로, <i>각 픽셀에 저장된 비트 정보가 집합</i>된 것입니다. 
+            비트맵은 벡터와 다르게 픽셀의 점 하나하나가 이미지를 이루는 요소이기 때문에 벡터보다 정교한 이미지 표현이 가능합니다.. </p>
+        <h3 class="t_tit2"> 비트맵의 특징 </h3>
+        <p class="t_desc">
+            픽셀의 수가 많아질수록 화질은 뛰어나지만, 용량 또한 커지게 되고 비트맵 이미지는 크기를 확대하거나 축소하면 기존 이루고 있던 픽셀의 수가 변하여 원본 이미지에 손상이 가게 되는데, 
+            이로 인해 깨짐 현상과 이미지 품질 저하가 발생하게 됩니다. 바로 이것을 '이미지가 깨졌다'라고 표현하죠. 비트맵은 다른 표현으로 픽스맵(Pixmap)이나 레스터(Raster) 이미지로도 불립니다. 
+        </p><br>
+
+
+        <h2 class="t_tit"> 벡터와 비트맵의 차이? </h2>
+    
+        <p class="t_desc">이미지를 보면 벡터는 화면을 줄이거나 늘려도 거의 늘어나지 않는 반면 비트맵은 이미지가 깨지는걸 볼 수 있습니다.</p>
+        <table class="t_table">
+            <thead>
+             <tr>
+                <th></th>
+                <th>벡터</th>
+                <th>비트맵</th>
+             </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                     <td class="ce"> 장점 </td>
+                     <td>확대하거나 축소해도 해상도에 영향을 끼치지 않는다. <br>
+                        용량이 많이 늘어나지 않는다.</td>
+                     <td>픽셀 수가 많을 수록 화질과 색감이 뛰어난 이미지를 만들 수 있다.</td>
+                 </tr>
+                 <tr>
+                    <td class="ce"> 단점 </td>
+                    <td >사진과 이미지 같은 그래픽 표현에는 한계가 있다.</td>
+                    <td>이미지 축소와 확대가 가능하지만 이미지가 깨질 수 있고 품질 저하가 발생 된다.</td>
+                </tr>
+                <tr>
+                    <td class="ce"> 형식 </td>
+                    <td >AI, PDF, SVG</td>
+                    <td>JPG, JPEG, PNG, GIF</td>
+                </tr>
+            </tbody>
+         </table>
+        
+        
+   
+   
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

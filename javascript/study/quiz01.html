@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 유형 01</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+        <main id="main"> 
+            <div class="document">
+             <h2 class="t_tit"> 01. 퀴즈 유형 </h2>
+             <p class="t_desc">
+                퀴즈를 스크립트로 퀴즈 질문와 번호, 확인 버튼,결과를 도출해보았습니다.</p><br>
+            <p class="t_desc">아래는 HTML입니다. 가지고 있는 애니메이션을 가져와 문제를 맞추면 반응할 수 있도록 제재작 하였습니다.</p>
+                <div class="script">
+                    <div class="t_code">
+        <pre><code class="language-js">    &lt;div class="quiz_wrap"&gt;
+            &lt;div class="quiz"&gt;
+                &lt;span class="quiz_type"&gt;&lt;/span&gt;
+                &lt;h2 class="quiz_question"&gt;
+                    &lt;span class="number"&gt;&lt;/span&gt;
+                    &lt;div class="ask"&gt;&lt;/div&gt;
+                &lt;/h2&gt;
+                &lt;div class="quiz_view"&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="quiz_answer"&gt;
+                    &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+                    &lt;div class="result"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; </code></pre> 
+                    </div>
+                </div><br>
+            <p class="t_desc">아래는 자바스크립트입니다. <i>const로 데이터를 저장하고, innerText로 출력</i>하여, 함수로 반응할 수 있게 만들었습니다.
+            </p>
+            <div class="script">
+                <div class="t_code">
+    <pre><code class="language-js">    //선택자
+        const quizType = document.querySelector(".quiz_type");                              //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz_question .number");     //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz_question .ask");                   //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz_answer .confirm");        //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz_answer .result ");             //정답 결과
+        const quizDog = document.querySelector(".quiz_view .dog");                       //강아지
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = 1;
+        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 
+        대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+        const answerResult = "연변대비";
+    
+        //문제 출력
+        quizType.innerText = answerType;
+        quizNumber.innerText = answerNum + ". ";
+        quizAsk.innerText = answerAsk;
+        quizResult.innerText = answerResult;
+    
+        //정답 확인
+        //정답 버튼을 클릭하면 확인버튼을 안보이게 .. 숨겨진 정답은 보이게 ..
+        quizResult.style.display = "none";
+    
+        quizConfirm.addEventListener("click", function(){ 
+            quizConfirm.style.display = "none";  //스타일을 스크립트에서 부여해 , 안보이게 만듦.
+            quizResult.style.display = "block";    //그 뒤 가려져 있던 정답을 공개한다.
+        });  </code></pre> 
+                </div>
+            </div>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/quizEffect01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/quizEffect01.html">원본 소스 보여주기</a>
+            </div>
+            </div>
+        </main>
+        
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

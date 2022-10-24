@@ -1,0 +1,449 @@
+/* font */
+@import url('https://webfontworld.github.io/nixgon/NixgonFonts.css');
+@import url('https://webfontworld.github.io/amore/AritaDotum.css');
+
+.Nix {
+    font-family: 'NixgonFonts';
+}
+
+.arir {
+    font-family: 'AritaDotum';
+    font-weight: 300;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    width: 100%; 
+    height: 100vh;
+}
+
+body.img01 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_01@2x-min.jpg) no-repeat center / cover ;
+}
+body.img02 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_02@2x-min.jpg) no-repeat center / cover ;
+}
+body.img03 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_03@2x-min.jpg) no-repeat center / cover ;
+}
+body.img04 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_04@2x-min.jpg) no-repeat center / cover ;
+}
+body.img05 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_05@2x-min.jpg) no-repeat center / cover ;
+}
+body.img06 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_06@2x-min.jpg) no-repeat center / cover ;
+}
+body.img07 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_07@2x-min.jpg) no-repeat center / cover ;
+}
+body.img08 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_08@2x-min.jpg) no-repeat center / cover ;
+}
+body.img09 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_09@2x-min.jpg) no-repeat center / cover ;
+}
+body.img10 {
+    background: url(../../../assets/silde/min_jelly/slide_bg_10@2x-min.jpg) no-repeat center / cover ;
+}
+
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background:rgb(59 56 114 / 50%);
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
+}
+
+/* header */
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: #fff;
+    padding: 20px;
+}
+#header h1 {
+    display: inline-block;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #fff;
+    font-size: 40px;
+    font-weight: 200;
+}
+#header p {
+    margin-bottom: 10px;
+}
+#header li {
+    display: inline-block;
+}
+
+#header li.active a {
+    background-color: #fff;
+    color: #000;
+}
+
+#header li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 27px;
+    font-size: 14px;
+}
+
+#header li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* footer */
+#footer {}
+#footer .source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+/* modal__wrap */
+.modal__wrap {}
+
+.modal__btn {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.modal__btn:hover {
+    background-color: rgb(128, 50, 201);
+    color: rgb(15, 255, 107);
+}
+
+
+.modal__cont {
+    
+
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(126, 104, 179, 0.452);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    transform: scale(0);
+}
+
+
+
+.modal__box {
+    width: 60%;
+    height: 70vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+
+    /* max-width: 800px;
+    margin: 0 auto;
+    height: 600px;  */
+    transform: scale(0);
+    /* overflow: hidden; */
+}
+.modal__box .title {
+
+    padding-inline: 1rem;
+    cursor: grab;
+    background-color: hsl(180 2% 10%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modal__box .title .plus {
+    background: #483e60;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+
+}
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+    color: hsl(186deg 77% 63%);
+    background-color: hsl(260deg 45% 45%);
+    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: rgb(57, 5, 105);
+    color: aqua;
+}
+.modal__box .title .tabs > div em {
+    font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close{
+    margin-left: 3rem;
+}
+
+.modal__box .title .tabs > div .close svg {}
+
+.modal__box .cont {
+    background-color: #282936;
+    height: 100%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+    overflow-y: auto;
+
+}
+.modal__box .cont::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+    
+}
+.modal__box .cont::-webkit-scrollbar-thumb {
+    height: 5%; /* 스크롤바의 길이 */
+    background: #8d1dd8; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+.modal__box .cont .scroll::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+    height: 10px;
+    
+}
+.modal__box .cont .scroll::-webkit-scrollbar-thumb {
+    height: 2%; /* 스크롤바의 길이 */
+    background: #8d1dd8; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+
+.modal__box .cont > div {
+    display: none;
+}
+.modal__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #754ed1;
+    padding:  1rem 1rem 0.8rem 1rem ;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px hsl(180deg 2% 10%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal__close:hover {
+    background-color: #35f896;
+    color: #8d1dd8;
+}
+
+.modal__close svg {
+    color: #fff;
+}
+
+/* 모달 애니메이션 */
+
+.modal__cont.show { /* 전체 배경 */
+    animation: foldOut 0.8s ease forwards;
+    visibility : visible;
+}
+
+.modal__cont.show.hide { /* 스크립트 배경 */
+    animation: foldIn 0.25s 0.5s ease backwards;
+}
+
+.modal__cont.show .modal__close { /* 닫기 */
+    animation: foldInTo 0.8s 0.8s ease backwards;
+}
+
+
+.modal__cont.show .modal__box { 
+    animation: zoomOut 0.3s 0.8s ease forwards; /* 초가 두개면 뒤에꺼는 딜레이 */
+}
+
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.3s ease forwards;
+}
+
+.modal__cont.show.hide .modal__close {
+    animation: zoomInTo 0.3s ease forwards;
+}
+
+@keyframes foldOut {
+    0%      {transform: scaleX(0) scaleY(0.001);}
+    50%     {transform: scaleX(1) scaleY(0.001);}
+    100%    {transform: scaleX(1) scaleY(1) ;}
+}
+
+
+@keyframes foldIn {
+    0%      {transform: scaleX(1) scaleY(1);}
+    50%     {transform: scaleX(1) scaleY(0.001);}
+    100%    {transform: scaleX(0) scaleY(0.001) ;}
+}
+
+@keyframes foldInTo {
+    0%      { opacity: 0 ;}
+    100%    { opacity: 1 ;}
+}
+
+@keyframes zoomOut {
+    0%      {transform: scale(0);}
+    100%    {transform: scale(1);}
+}
+
+@keyframes zoomIn {
+    0%      {transform: scale(1);}
+    100%    {transform: scale(0);}
+}
+
+@keyframes zoomInTo {
+    0%      {opacity: 1 ;}
+    100%    {opacity: 0 ;}
+}
+
+
+
+/* 요소를 안보이게 하는 방법
+    1. display : none;          (애니메이션 x, 영역 x)
+    2. opacity: 0;              (애니메이션 o, 영역 o)
+    3. visibility : hidden      (애니메이션 x, 영역 x)
+    4. whidth : 0; height: 0;   (애니메이션 x, 영역 x) : blind
+    5. transform: scale(0);     (애니메이션 o, 영역 x)
+*/
+
+@media (max-width : 1100px){
+    
+    .modal__box .title {
+        overflow: hidden;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+
+    .modal__box .title .tabs > div .close {
+        display: none;
+    }
+}
+
+@media (max-width : 800px){
+    #header {
+        width: 100%;
+        text-align: center;
+    }
+    #header h1 {
+        line-height: 1.4;
+    }
+    .modal__box {
+        width: 96%;
+    }
+    
+}

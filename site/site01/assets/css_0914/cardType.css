@@ -1,0 +1,62 @@
+/* cardType */
+.card_inner {
+    display: flex;
+    justify-content: space-between;  /* 가운데 정렬로 맞추기*/
+}
+.card {
+    width: 32%;
+    background-color: #f5f5f5;
+}
+.card_body {
+    padding: 24px;
+}
+.card_body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden; /* 한줄 효과 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+.card_body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+    overflow: hidden; /* 2줄 이상 효과 */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
+
+@media(max-width: 960px){
+    .card_inner {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 49%;
+    }
+
+    .card:last-child {
+        display: none;
+    }
+}
+@media(max-width: 600px){
+    .card {
+        width: 100%;
+    }
+
+    .card:first-child {
+        margin-bottom: 20px;
+    }
+
+    .card_body {
+        padding: 20px;
+    }
+
+    .card_body .desc {
+
+    }
+}

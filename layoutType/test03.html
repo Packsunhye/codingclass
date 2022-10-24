@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #warp {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            overflow: hidden;
+        }
+        #header .logo {
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #E2DEFA;
+            float: left;
+        }
+        #header .manu {
+            width: 900px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #CDC8EC;
+            float: left;
+        }
+        #banner {
+            width: 1200px;
+            height: 400px;
+            overflow: hidden;
+        }
+        #banner .img {
+            width: 800px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            background-color: #BCB4EB;
+            float: left;
+        }
+        #banner .option {
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+            background-color: #A79EDF;
+            float: left;
+        }
+        #section {
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #section .box1 {
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            background-color: #B0A7E8;
+            float: left;
+        }
+        #section .box2 {
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            background-color: #A398E5;
+            float: left;
+        }
+        #section .box3 {
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            background-color: #8D80D9;
+            float: left;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            overflow: hidden;
+        }
+        #footer .ter1 {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #A39BD1;
+            float: left;
+        }
+        #footer .ter2 {
+            width: 800px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #8D85B9;
+            float: left;
+        }
+        #footer .ter3 {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #776EA6;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header">
+            <div class="logo">로고</div>
+            <div class="manu">
+                <div class="sample01_result">
+                    <script>
+                        {
+                            for(let i=1; i<=13; i++){
+                                document.write(i)
+                            }
+                        }
+                    </script>   
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="img">
+                <div class="sample02_result">
+                    <script>
+                        {   for( let i=1; i<=10; i++){
+                                if( i % 2 == 1 ){
+                                    document.write(i);
+                                }
+                            }
+                         }
+                    </script>   
+                </div>
+            </div>
+            <div class="option">광고</div>
+        </div>
+        <div id="section">
+            <div class="box1">공지사항</div>
+            <div class="box2">갤러리</div>
+            <div class="box3">팝업</div>
+        </div>
+        <div id="footer">
+            <div class="ter1">푸터</div>
+            <div class="ter2">copyright</div>
+            <div class="ter3">sns</div>
+        </div>
+    </div>
+    <script>
+        {
+            for( let i=1; i<=10; i++){
+                if( i % 2 == 1 ){
+                    document.write(i);
+                }
+            }
+        }
+        {
+            for(let i=1; i<=13; i++){
+                document.write(i)
+            }
+        }
+    </script>
+</body>
+
+</html>

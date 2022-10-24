@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 타입02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+
+        /* imgType */
+
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 32%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image__box {}
+        .image__box img {
+            vertical-align: top;
+
+        }
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: -100;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+
+            backdrop-filter: blur(4px);
+            padding: 23px 20px;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in ; 
+        }
+        .img1 { background-color: #052b6469; }
+        .img2 { background-color: #2c217360; }
+        .img3 { background-color: #111d2e62; }
+
+
+        .image:hover .image__desc {
+            bottom: 0;
+            transition: 0.25s ; 
+        }
+        .image:hover .image__desc a {
+            text-decoration: underline;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.03);
+            transition: all 0.4s ease-in ; 
+        }
+        
+        .image__desc h3 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+
+        }
+        .image__desc .more {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .image__desc .more:hover {
+            text-decoration: underline;
+        }
+      
+        /* .image__box img:not(:hover) {
+            transition: 0.25s;
+        }
+        .image__box img:hover {
+            transform: scale(1.04);
+            transition: 0.25s;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <section id="imgType02" class="img__wrap gmark section">
+        <h2>해파리의 떠다니는 모습들</h2>
+        <p>투명한 해파리들이 다채로운 바다상에서 깊게 유영하고 다니며 영롱한 색상을 드러내고 있어요</p>
+        <div class="image__inner container">
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imgType02_01.jpg" alt="해파리">
+                </figure>
+                <div class="image__desc img1">
+                    <h3>파란색 해파리</h3>
+                    <a href="#" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imgType02_02.jpg" alt="해파리">
+                </figure>
+                <div class="image__desc img2">
+                    <h3>보라색 해파리</h3>
+                    <a href="#" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imgType02_03.jpg" alt="해파리">
+                </figure>
+                <div class="image__desc img3">
+                    <h3>투명한 해파리</h3>
+                    <a href="#" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+        </div> 
+    </section>
+</body>
+</html>

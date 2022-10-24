@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0829 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            
+            <h2 class="t_tit"> jQuery 기본 선택자 </h2>
+            <p class="t_desc"> jQuery 선택자는 CSS3 파트에서 학습한 CSS 선택자와 의미가 같은 것이 많이 있습니다. 그러므로 차근히 알아가보겠습니다.</p>
+
+            <h3 class="t_tit2"> jQuery 기본 선택자의 형식은 다음과 같습니다. </h3>
+            <p class="t_box">
+             $("선택자") &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;$("#gnb")</p>
+
+             <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <td class="ce"> 태그 선택자 </td>
+                            <td class="ce"> $("p") </td>
+                            <td>
+                                p 요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> id 선택자 </td>
+                            <td class="ce"> $("#gnb") </td>
+                            <td>
+                                #gnb 요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> class 선택자 </td>
+                            <td class="ce"> $(".logo") </td>
+                            <td>
+                                .logo 요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 자식 선택자 </td>
+                            <td class="ce"> $("#gnb >ul >li") </td>
+                            <td>
+                                #gnb의 자식 요소의 자식 요소 li를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 하위 선택자 </td>
+                            <td class="ce"> $("#gnb ul") </td>
+                            <td>
+                                #gnb의 하위에 있는 모든 ul요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 인접 선택자 </td>
+                            <td class="ce"> $("#visual + #content") </td>
+                            <td>
+                                #visual 다음에 오는 #content 요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 형제 선택자 </td>
+                            <td class="ce"> $("#visual ~ #footer") </td>
+                            <td>
+                                #visual의 형제 요소 #footer를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 종속 선택자 </td>
+                            <td class="ce"> $("div.util") </td>
+                            <td>
+                                div요소 중 class가 util인 요소를 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 그룹 선택자 </td>
+                            <td class="ce"> $(".left,.right,#banner") </td>
+                            <td>
+                                .left, .right ,#banner요소들을 선택합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce"> 전체 선택자 </td>
+                            <td class="ce"> $("*") </td>
+                            <td>
+                                모든 요소를 선택합니다.
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/packsunhye/embed/PoRMveJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/PoRMveJ">
+                    Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div><br>
+
+            <details>
+                <summary>♠ jQuery 코드만 보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-js">$(document).ready(function(){
+    $("p").css("border","4px solid red");
+    $("#gnb").css("border","4px solid orange");
+    $(".logo").css("border","4px solid yellow");
+    $("#gnb > ul > li").css("border","4px solid green");
+    $("#gnb ul").css("border","4px solid blue");
+    $("#visual + #content").css("border","4px solid navy");
+    $("#visual ~ #footer").css("border","4px solid purple");
+    $("div.util").css("border","4px solid pink");
+    $(".left,.rigth,#banner").css("border","4px solid gray");
+})</code></pre>
+                </div>
+            </details>
+        </div>       
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

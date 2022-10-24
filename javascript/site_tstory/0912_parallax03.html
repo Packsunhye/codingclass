@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Parallax Effect 03 </h2>
+            <p class="t_desc"> 스크롤을 내릴 때엔 메뉴 버튼들이 위로 올라가지만 스크롤을 위로 올리면 메뉴가 다시 내려오는 법과, 스크롤을 끝까지 내렸을 시,
+                TOP 버튼이 나와 위쪽으로 올라가게 하는 이펙트를 배워보았습니다.
+            </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 페럴렉스 메뉴들이 다시 돌아왔습니다. 그리고 TOP 버튼이 추가 되었습니다.</p>
+            <details>
+                <summary> 👾 HTML 의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴 5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴 6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴 7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴 8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴 9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- //parallax__nav --&gt;
+
+&lt;div id="parallax__top"&gt;
+    Top
+&lt;/div&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 메뉴는 똑같아, 딱히 추가는 안하며 TOP만 보여드리겠습니다.</p>
+            <details>
+                <summary> 👾 CSS의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-css"> #parallax__top {
+    position: fixed;
+    left: 50%;
+    bottom: -220px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#parallax__top.show {
+    bottom: 20px;
+}
+#parallax__top:hover {
+    background-color: #fff;
+    color: #000;
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> 첫번째와 두번째 페럴렉스와는 다른 점들이 있습니다. 아래에서 설명드리겠습니다. </p>
+            <details>
+                <summary> 👾 Javascript의 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">// 밑으로 가면 top 올라오기
+window.addEventListener("scroll", ()=>{
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+        document.querySelector("#parallax__top").classList.add("show")
+    }else { 
+        document.querySelector("#parallax__top").classList.remove("show")
+    }
+})
+// top 누르면 올라오기
+document.querySelector("#parallax__top").addEventListener("click", ()=>{
+    window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+})
+
+//메뉴바 이벤트
+let nowScroll = true; 
+let lastScroll = 0;  
+
+function scrollProgress(){
+    nowScroll = true; 
+
+    setInterval(()=>{
+        if(nowScroll){
+            nowScroll = false
+            hasScroll();
+        }
+    },300)
+}
+
+function hasScroll(){
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    if(scrollTop &lt; lastScroll){
+        document.querySelector("#parallax__nav").classList.add("show");
+    }else {
+        document.querySelector("#parallax__nav").classList.remove("show");
+    }
+    lastScroll = scrollTop;
+}
+
+window.addEventListener("scroll",scrollProgress)
+
+    //스크롤 이동
+    document.querySelectorAll("#parallax__nav li a").forEach( li => {
+    li.addEventListener("click",(e)=>{
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});</code></pre>
+            </div>
+            </details>
+           <br>
+
+            <h2 class="t_tit"> 이미지로 이벤트 설명하기 </h2>
+
+            <h2 class="t_tit"> 사용된 스크립트 </h2>
+            <h3 class="t_tit2"> 01 ) flase와 ture를 반복하여 메뉴를 숨겼다 보였다 하는 방법 </h3>
+            <p class="t_box">
+                let nowScroll = true; <br>
+                let lastScroll = 0;  <br><br>
+
+                function scrollProgress(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;nowScroll = true; <br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;setInterval(()=>{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;if(nowScroll){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;nowScroll = false<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;hasScroll();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;},300)<br>
+                }<br>
+            </p>
+
+            <h3 class="t_tit2"> 02 ) TOP버튼이 스크롤을 내렸을 때 올라오는 방법 </h3>
+            <p class="t_box">
+                window.addEventListener("scroll", ()=>{
+                    &nbsp;&nbsp;&nbsp;&nbsp;let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector("#parallax__top").classList.add("show")
+                        &nbsp;&nbsp;&nbsp;&nbsp;}else { 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector("#parallax__top").classList.remove("show")
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                })
+            </p>
+
+            <h3 class="t_tit2"> 03 ) TOP버튼을 눌렀을 때 맨 위로 올라오는 방법 </h3>
+            <p class="t_box">
+                document.querySelector("#parallax__top").addEventListener("click", ()=>{
+                    &nbsp;&nbsp;&nbsp;&nbsp;window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+                })
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect03.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/parallaxEffect03.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect03.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

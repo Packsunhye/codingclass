@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : concat() </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> concat() 란?</h2>
+            <p class="t_desc">
+                concat()는 둘 이상의 문자열을 결합하여, 새로운 문자열을 반환해주는 메서드입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "cat" <br>
+                const currentStr1 = str1.concat("sleep"); //catsleep<br>
+                const currentStr2 = str1.concat(" ","sleep"); //cat sleep<br>
+                const currentStr3 = <i>str1.concat(" ",["so","cute"]); //cat so,cute</i><br>
+                <br>
+                "문자열".concat(문자열)<br>
+                "문자열".concat(문자열,문자열...)
+             </p><br>
+
+           
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    const str1 = "javascript";
+    const currentStr1 = str1.concat("reference")         //javascriptreference
+    const currentStr2 = str1.concat(" ", "reference")    //javascript reference
+    const currentStr3 = str1.concat(",", "reference")    //javascript,reference
+    const currentStr4 = str1.concat(", ", "reference", ", " , "book")    //javascript, reference, book
+    const currentStr5 = str1.concat(" ",[ "refer", "book"])    //javascript refer,book //배열은 (,)로 나옴 </code></pre>   
+            </div>
+            
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

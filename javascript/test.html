@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //선언적 함수 /  화살표 함수
+        {
+            function func(){
+                document.write("선언적 함수<br>");
+            }
+            func();
+
+
+            func = () => {
+                document.write("화살표 함수 - 선언적<br>");
+            }
+            func()
+        }
+
+        //익명 함수
+        {
+            // const func = function(){
+            //     document.write("익명함수<br>");
+            // }
+            // func();
+
+
+            const func = () => {
+                document.write("화살표 함수 - 익명함수<br>");
+            }
+
+            func();
+        }
+
+        //매개 함수
+        {
+            function func(str){
+                document.write(str);
+            }
+            func("매개 함수")
+
+            func = (str) => {
+                document.write(str);
+            }
+
+            func("화살표 함수 - 매개 함수<br>")
+        }
+
+        //리턴값 함수
+        {
+            function func(){
+                const str = "리턴값 함수<br>";
+                return str;
+            }
+            document.write(func());
+
+            func = () => {
+                const str = "화살표 함수 - 리턴값 함수<br>";
+                return str;
+            }
+            document.write(func());
+        }
+
+        //
+        {
+            const arr = [1,2,3,4,5,6,7,8,9];
+
+            //for문
+            for( i = 0; i < arr.length; i++ ){
+                document.write(arr[i]);
+            }
+
+            document.write("<br>");
+
+            //forEach문
+            arr.forEach(function(el){
+                document.write(el);
+            })
+
+            document.write("<br>");
+
+            //map()을 이용해서 하나씩 출력
+            arr.map(function(el){
+                document.write(el);
+            })
+            
+            document.write("<br>");
+
+            //for in 이용해서 하나씩 출력
+            for(let i in arr){
+                document.write(arr[i]);
+            }
+
+            document.write("<br>"); 
+
+            //for of 이용해서 하나씩 출력
+            for( let i of arr){
+                document.write(i);
+            }
+
+            }
+    </script>
+</body>
+</html>

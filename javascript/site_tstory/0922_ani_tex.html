@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0919 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Text animation </h2>
+            <p class="t_desc"> codepen에서 글자들이 하나씩 통통 튀는 애니메이션을 만들었습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> html은 간단합니다. h1 에서 글자 수 만큼 span을 만들어 한 글자씩 적어줍니다.</p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;h1&gt;
+  &lt;span&gt;C&lt;/span&gt;
+  &lt;span&gt;U&lt;/span&gt;
+  &lt;span&gt;T&lt;/span&gt;
+  &lt;span&gt;E&lt;/span&gt;
+  &lt;span&gt;C&lt;/span&gt;
+  &lt;span&gt;A&lt;/span&gt;
+  &lt;span&gt;T&lt;/span&gt;
+  &lt;span&gt;♥&lt;/span&gt;
+&lt;/h1&gt;</code></pre>  
+            </div>
+        
+            <h3 class="t_tit2"> 02. css </h3>
+            <p class="t_desc"> 이후에 배경을 지정해주고 원하는 font-family로 지정해준다음, text-shadow로 그림자의 강도를 높여줍니다. 그리고 글자에 animation-delay를 지정해 하나씩 움직이게 만들어줍니다.</p>
+            <div class="t_code">
+<pre><code class="language-css">html, body {
+  width: 100%;
+  height: 100%;
+  
+  background: linear-gradient(140deg, rgb(80, 97, 255) 0%, rgb(54, 7, 131) 100%);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  height: 100px;
+}
+h1 span {
+  font-family: 'VitroCore';
+  font-size: 80px;
+  color: #fff;
+  
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  -wedkit-font-smoothing : antialased;
+  text-shadow: 0 1px 0 #ccc,
+               0 1px 0 #ccc,
+               0 3px 0 #ccc,
+               0 4px 0 #ccc,
+               0 5px 0 #ccc,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0,0,0,0.4);
+  animation: bounse 0.3s ease infinite alternate;
+}
+
+h1 span:nth-child(2){ animation-delay:0.1s;}
+h1 span:nth-child(3){ animation-delay:0.2s;}
+h1 span:nth-child(4){ animation-delay:0.3s;}
+h1 span:nth-child(5){ animation-delay:0.4s;}
+h1 span:nth-child(6){ animation-delay:0.5s;}
+h1 span:nth-child(7){ animation-delay:0.6s;}
+h1 span:nth-child(8){ animation-delay:0.7s;}
+h1 span:nth-child(9){ animation-delay:0.8s;}
+
+@keyframes bounse {
+  100% {
+    top: -20px;
+    text-shadow : 0 1px 0 #ccc,
+               0 1px 0 #ccc,
+               0 3px 0 #ccc,
+               0 4px 0 #ccc,
+               0 5px 0 #ccc,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 50px 20px rgba(0,0,0,0.4);
+  }
+}</code></pre>   
+                </div>
+        
+            
+        
+            <div class="t_iframe">
+              <iframe height="300" style="width: 100%;" scrolling="no" title="220921-1" src="https://codepen.io/packsunhye/embed/MWGoNJx?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/packsunhye/pen/MWGoNJx">
+                220921-1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            
+        </div>        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

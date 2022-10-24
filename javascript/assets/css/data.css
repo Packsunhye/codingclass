@@ -1,0 +1,76 @@
+/* 여백 초기화 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv2Gothic';
+}
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #3f339b;
+}
+/* 목록 초기화 */
+li {
+    list-style: none;
+}
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* header */
+#header {
+    padding: 1vw;
+}
+#header li {
+    display: inline;
+}
+#header li a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 25px;
+    color: #000;
+    font-size: 0.7rem;
+}
+#header li.active a {
+    background: #000;
+    color: #fff;
+}
+/* main */
+#main {
+    padding: 3vw;
+}
+#main h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#main h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    margin-top: 3em;
+    font-weight: 300;
+}
+
+#main .result {
+    background-color: rgb(228, 216, 245);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#main .result  div{
+    margin: 10px;
+    padding: 10px;
+}

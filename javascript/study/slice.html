@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : slice() / substring() / substr()</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">slice() / substring() / substr()</h2>
+            <p class="t_desc">
+                문자열에서 원하는 값을 추출하는 메서드 입니다. 괄호 안에 시작값과 끝나는 위치 값을 넣어 원하는 단어나 글자를 출력할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2">01. slice()</h3>
+            <p class="t_box">
+                const str1 = "sleep cat" <br>
+                const currentStr1 = str1.slice(0); //sleep cat <br>
+                const currentStr2 = str1.slice(5,9); //cat
+             </p>
+             <p class="t_desc">
+                시작위치보다 끝나는 위치가 더 커야지 올바르게 나옵니다.
+            </p>
+             <!-- 01 -->
+         <div class="t_code">
+            <div class="script"></div>
+<pre><code>    const str1 = "javascript reference"
+    const currentStr1 = str1.slice(0);          //javascript reference
+    const currentStr2 = str1.slice(1);          //avascript reference
+    const currentStr3 = str1.slice(2);          //vascript reference
+    const currentStr4 = str1.slice(0,1);       //j
+    const currentStr5 = str1.slice(0,2);       //ja
+    const currentStr6 = str1.slice(0,3);       //jav
+    const currentStr7 = str1.slice(1,1);       //(아무것도 안나옴)
+    const currentStr8 = str1.slice(1,2);       //a
+    const currentStr9 = str1.slice(1,3);       //av
+    const currentStr10 = str1.slice(1,4);     //ava
+    const currentStr11 = str1.slice(-1);      //e
+    const currentStr12 = str1.slice(-2);      //ce
+    const currentStr13 = str1.slice(-3);      //nce
+    const currentStr14 = str1.slice(-3,-1);  //nc
+    const currentStr15 = str1.slice(-3,-2);  //n
+    const currentStr16 = str1.slice(-3,-3);  //(아무것도 안나옴) </code></pre>   
+        </div>
+       <!-- /slice() -->
+
+       <h3 class="t_tit2">02. substring()</h3>
+       <p class="t_desc">
+        substring()는 가끔씩 생기는 slice()의 오류 방지를 위해 자동적으로 시작점이 끝나는 점의 위치가 바뀌어도 올바르게 나올 수 있도록 도와줍니다.</p>
+       <p class="t_box">
+           const str1 = "sleep cat" <br>
+           const currentStr1 = str1.slice(9,5); //아무것도 나오지 않는다. <br>
+           const currentStr2 = str1.<i>substring(9,5); //cat</i>
+        </p>
+
+        <h3 class="t_tit2">03. substr()</h3>
+        <p class="t_desc">
+            substr()는 시작 위치를 지정하면 그 곳에서 부터 문자열을 출력할 수 있습니다. 똑같이 끝나는 점을 지정해줄 수 있습니다. </p>
+        <p class="t_box">
+            const str1 = "sleep cat" <br>
+            const currentStr1 = str1.substr(0); //sleep cat <br>
+            const currentStr2 = str1.substring(1); //leep cat <br>
+            const currentStr2 = str1.substring(-1); //t <br>
+        </p>
+        <p class="t_desc">
+            substr()는 현재 자주 쓰이지 않는 메서드 이지만 똑같이 정리해보겠습니다. </p>
+        <!-- 01 -->
+        <div class="t_code">
+            <div class="script"></div>
+<pre><code>    const str1 = "javascript reference"
+    const currentStr20 = str1.substr(0);       //javascript reference
+    const currentStr21 = str1.substr(1);       //avascript reference
+    const currentStr22 = str1.substr(2);       //vascript reference
+    const currentStr23 = str1.substr(0,1);    //j
+    const currentStr25 = str1.substr(0,3);    //jav
+    const currentStr26 = str1.substr(1,2);    //av
+    const currentStr27 = str1.substr(1,3);    //ava
+    const currentStr28 = str1.substr(1,4);    //avas
+    const currentStr29 = str1.substr(-1);     //e
+    const currentStr30 = str1.substr(-2);    //ce
+    const currentStr31 = str1.substr(-3);    //nce
+    const currentStr32 = str1.substr(-1,1);  //e
+    const currentStr33 = str1.substr(-2,2);  //ce
+    const currentStr34 = str1.substr(-3,3);  //nce </code></pre>   
+        </div>
+       <!-- /substr() -->
+
+
+       
+
+            
+
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

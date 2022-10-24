@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴렉스 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/parallax.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        /* parallax__nav */
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 2000;
+            background-color: rgba(95, 95, 95, 0.4);
+            padding: 20px 30px;
+            border-radius: 50px;
+            transition: top 0.4s ease;
+        }
+        #parallax__nav li {
+            display: inline;
+            margin: 0 5px;
+        }
+
+        #parallax__nav li a {
+            display: inline-block;
+            /* width: 30px; */
+            height: 30px;
+            padding: 5px 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #parallax__nav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 20px;
+            box-sizing: content-box;
+        }
+
+        #parallax__cont {
+            max-width: 1600px;
+            /* background-color: rgba(255,255,255,0.1); */
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        .content__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255,255,255,0.1); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 10vw;
+        }
+
+        .content__item:nth-child(even){
+            margin-left: 0;
+            text-align: right;
+        }
+        .content__item__num {
+            font-size: 35vw;
+            font-family: 'Lato';
+            font-weight: 100;
+            position: absolute;
+            left: -5vw;
+            top: -16vw;
+            opacity: 0.07;
+            z-index: -2;
+        }
+        .content__item:nth-child(even) .content__item__num {
+            right: -5vw;
+            left: auto;
+        }
+        .content__item__title {
+            font-weight: 400;
+            text-transform: capitalize; /* 첫글자만 대문자 */
+        }
+        .content__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .content__item__img {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            left: -5px;
+            top: -5px;
+            background-image: url(../../assets/silde/min_jelly/slide_main_07-min.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover ;
+            filter: saturate(0%);
+            transition: all 1s;
+            /* transition: all 1s; */
+        }
+
+        .content__item:hover .content__item__img {
+            filter: saturate(80%);
+            /* filter : brightness(120%); */
+        }
+
+        .content__item:nth-child(2) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_06-min.jpg);
+        }
+        .content__item:nth-child(3) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_05-min.jpg);
+        }
+        .content__item:nth-child(4) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_03-min.jpg);
+        }
+        .content__item:nth-child(5) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_02-min.jpg);
+        }
+        .content__item:nth-child(6) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_01-min.jpg);
+        }
+        .content__item:nth-child(7) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_08-min.jpg);
+        }
+        .content__item:nth-child(8) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_09-min.jpg);
+        }
+        .content__item:nth-child(9) .content__item__img {
+            background-image: url(../../assets/silde/min_jelly/slide_main_10.jpg);
+        }
+
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            word-break: keep-all;
+
+        }
+
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+
+        #parallax__info {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 2000;
+            background:rgba(0,0,0.4);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #parallax__info li, .scrollTop {
+            line-height: 1.4;
+        }
+        @media (max-width : 800px){
+            #parallax__cont {
+                margin-top: 70vw;
+            }
+
+            #parallax__nav {
+                padding: 10px;
+                right: auto;
+                left: 10px;
+                top: 50%;
+                border-radius: 5px;
+                background-color: rgba(0,0,0,0.8);
+                transform: translateY(-50%);
+        
+            }
+
+            #parallax__nav li {
+                display: block;
+                margin: 5px;
+            }
+
+            #parallax__nav li a {
+                font-size: 14px;
+                padding: 5px;
+                border-radius: 5px;
+                height: auto;
+                line-height: 1;
+            }
+
+            #parallax__nav li.active a{
+                border-radius: 5px;
+            }
+
+        }
+
+        /* .split span {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .split span.show {
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+        .style1.split span {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style1.split span.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .style2.split span {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style2.split span.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .style3.split span {
+            opacity: 0;
+            transform:  translateX(50px) translateY(50px) rotate(360deg);
+            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style3.split span.show {
+            opacity: 1;
+            transform: translateX(0) translateY(0) rotate(0);
+        }
+
+        .style4.split span {
+           
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style4.split span.show {
+           
+            animation: wobble 1s 1 ease-in forwards;
+        }
+        
+
+        @keyframes wobble {
+         0%     {transform: translate3d(0, 0, 0);  opacity: 0;}
+         15%    {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
+         30%    {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
+         45%    {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
+         60%    {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
+         75%    {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
+         100%   {transform: translate3d(0, 0, 0);  opacity: 1;}
+        }
+
+        .style5.split span {
+           display: inline-block;
+           min-width: 1vw;
+        }
+        .style5.split span.show {
+            animation: jello 1s 1 ease-in forwards;
+        }
+
+        @keyframes jello {
+            0% ,11.1%, 100% {transform: translate3d(0, 0, 0);}
+            22.2% {transform: skewX(-12.5deg) skewY(-12.5deg);}
+            33.3% {transform: skewX(6.25deg) skewY(6.25deg);}
+            44.4% {transform: skewX(-3.125deg) skewY(-3.125deg);}
+            55.5% {transform: skewX(1.5625deg) skewY(1.5625deg);}
+            66.6% {transform: skewX(-0.78125deg) skewY(-0.78125deg);}
+            77.7% {transform: skewX(0.390625deg) skewY(0.390625deg);}
+            88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
+        }
+
+    
+
+        /* .split.show span:nth-child(1){transition-delay: 100ms }
+        .split.show span:nth-child(2){transition-delay: 150ms }
+        .split.show span:nth-child(3){transition-delay: 200ms }
+        .split.show span:nth-child(4){transition-delay: 250ms }
+        .split.show span:nth-child(5){transition-delay: 300ms }
+        .split.show span:nth-child(6){transition-delay: 350ms }
+        .split.show span:nth-child(7){transition-delay:  400ms }
+        .split.show span:nth-child(8){transition-delay:  450ms }
+        .split.show span:nth-child(9){transition-delay:  500ms }
+        .split.show span:nth-child(10){transition-delay: 550ms}
+        .split.show span:nth-child(11){transition-delay: 600ms}
+        .split.show span:nth-child(12){transition-delay: 650ms}
+        .split.show span:nth-child(13){transition-delay: 700ms}
+        .split.show span:nth-child(14){transition-delay: 750ms}
+        .split.show span:nth-child(15){transition-delay: 800ms}
+        .split.show span:nth-child(16){transition-delay: 850ms}
+        .split.show span:nth-child(17){transition-delay: 900ms}
+        .split.show span:nth-child(18){transition-delay: 950ms}
+        .split.show span:nth-child(19){transition-delay: 1000ms}
+        .split.show span:nth-child(20){transition-delay: 1050ms}
+
+        .split.show span:nth-child(21){transition-delay: 1100ms }
+        .split.show span:nth-child(22){transition-delay: 1150ms }
+        .split.show span:nth-child(23){transition-delay: 1200ms }
+        .split.show span:nth-child(24){transition-delay: 1250ms }
+        .split.show span:nth-child(25){transition-delay: 1300ms }
+        .split.show span:nth-child(26){transition-delay: 1350ms }
+        .split.show span:nth-child(27){transition-delay: 1400ms }
+        .split.show span:nth-child(28){transition-delay: 1450ms }
+        .split.show span:nth-child(29){transition-delay: 1500ms }
+        .split.show span:nth-child(30){transition-delay: 1550ms }
+
+        .split.show span:nth-child(31){transition-delay: 1600ms }
+        .split.show span:nth-child(32){transition-delay: 1650ms }
+        .split.show span:nth-child(33){transition-delay: 1700ms }
+        .split.show span:nth-child(34){transition-delay: 1750ms }
+        .split.show span:nth-child(35){transition-delay: 1800ms }
+        .split.show span:nth-child(36){transition-delay: 1850ms }
+        .split.show span:nth-child(37){transition-delay: 1900ms }
+        .split.show span:nth-child(38){transition-delay: 1950ms }
+        .split.show span:nth-child(39){transition-delay: 2000ms }
+        .split.show span:nth-child(40){transition-delay: 2050ms }
+
+        .split.show span:nth-child(41){transition-delay: 2100ms }
+        .split.show span:nth-child(42){transition-delay: 2150ms }
+        .split.show span:nth-child(43){transition-delay: 2200ms }
+        .split.show span:nth-child(44){transition-delay: 2250ms }
+        .split.show span:nth-child(45){transition-delay: 2300ms }
+        .split.show span:nth-child(46){transition-delay: 2350ms }
+        .split.show span:nth-child(47){transition-delay: 2400ms }
+        .split.show span:nth-child(48){transition-delay: 2450ms }
+        .split.show span:nth-child(49){transition-delay: 2500ms }
+        .split.show span:nth-child(50){transition-delay: 2550ms }
+
+        .split.show span:nth-child(51){transition-delay: 2600ms }
+        .split.show span:nth-child(52){transition-delay: 2650ms }
+        .split.show span:nth-child(53){transition-delay: 2700ms }
+        .split.show span:nth-child(54){transition-delay: 2750ms }
+        .split.show span:nth-child(55){transition-delay: 2800ms } */
+        
+
+    </style>
+   
+  </head>
+
+  <body class="img08">
+    <header id="header" class="arir">
+      <h1 class="Nix"><a href="parallaxEffect.html">Javascript parallax Effect 06</a></h1>
+      <p>패럴렉스 이펙트 - 텍스트 효과 </p>
+      <ul>
+        <li><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect02.html">2</a></li>
+        <li><a href="parallaxEffect03.html">3</a></li>
+        <li><a href="parallaxEffect04.html">4</a></li>
+        <li><a href="parallaxEffect05.html">5</a></li>
+        <li class="active"><a href="parallaxEffect06.html">6</a></li>
+        <li><a href="parallaxEffect07.html">7</a></li>
+      </ul>
+    </header>
+    
+    <main id="parallax__cont">
+        <div id="contents">
+            <section id="section1" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split style1"> 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. </p>
+            </section>
+            <!-- //section1 -->
+
+            <section id="section2" class="content__item">
+                <span class="content__item__num">02</span>
+                <h2 class="content__item__title">section2</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split style2"> 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 </p>
+            </section>
+            <!-- //section2 -->
+
+            <section id="section3" class="content__item">
+                <span class="content__item__num">03</span>
+                <h2 class="content__item__title">section3</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split style3"> 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 </p>
+            </section>
+            <!-- //section3 -->
+
+            <section id="section4" class="content__item">
+                <span class="content__item__num">04</span>
+                <h2 class="content__item__title">section4</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split style4"> 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 </p>
+            </section>
+            <!-- //section4 -->
+
+            <section id="section5" class="content__item">
+                <span class="content__item__num">05</span>
+                <h2 class="content__item__title">section5</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split style5"> 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. </p>
+            </section>
+            <!-- //section5 -->
+
+            <section id="section6" class="content__item">
+                <span class="content__item__num">06</span>
+                <h2 class="content__item__title">section6</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split"> 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. </p>
+            </section>
+            <!-- //section6 -->
+
+            <section id="section7" class="content__item">
+                <span class="content__item__num">07</span>
+                <h2 class="content__item__title">section7</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split"> 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  </p>
+            </section>
+            <!-- //section7 -->
+
+            <section id="section8" class="content__item">
+                <span class="content__item__num">08</span>
+                <h2 class="content__item__title">section8</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split"> 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. </p>
+            </section>
+            <!-- //section8 -->
+
+            <section id="section9" class="content__item">
+                <span class="content__item__num">09</span>
+                <h2 class="content__item__title">section9</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc split"> 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. </p>
+            </section>
+            <!-- //section9 -->
+        </div>
+    </main>
+    <!-- // parallax__cont -->
+
+    <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span> px </div>
+    </aside>
+
+    <footer id="footer">
+      <div class="modal__wrap">
+          <div class="modal__btn">소스 보기</div>
+          <div class="modal__cont">
+              <div class="modal__box">
+                  <div class="title">
+                      <span class="dot" aria-label="true"></span>
+                      <div class="tabs">
+                          <div class="active">
+                              <span class="favicon" aria-label="true">
+                                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                      <circle cx="9" cy="9" r="9" fill="#ea51b2"></circle>
+                                      <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                      <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                    </svg>
+                              </span>
+                              <em>Javascript</em>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                              </span>
+                          </div>
+                          <div>
+                              <span class="favicon" aria-label="true">
+                                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                      <circle cx="9" cy="9" r="9" fill="#ea51b2"></circle>
+                                      <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                      <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                    </svg>
+                              </span>
+                              <em>HTML</em>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                              </span>
+                          </div>
+                          <div>
+                              <span class="favicon" aria-label="true">
+                                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                      <circle cx="9" cy="9" r="9" fill="#ea51b2"></circle>
+                                      <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                      <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#ea51b2"></path>
+                                    </svg>
+                              </span>
+                              <em>CSS</em>
+                              <span class="close">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                              </span>
+                          </div>
+                      </div>
+                      <span class="plus" aria-label="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                              <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                      </span>
+                  </div>
+                 <div class="cont">
+                      <div class="active">
+<pre><code class="language-js scroll">window.addEventListener("scroll" , () => {
+    // let scrollTop = window.pageYOffset;
+    // let scrollTop = window.scrollY;
+    // let scrollTop = document.documentElement.scrollTop;
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    // for 문
+    // for(let i = 1; i &lt; 10; i++){
+    //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active")
+    //     })
+    //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
+    //     }
+    // }
+
+    // forEach
+    document.querySelectorAll(".content__item").forEach((el,index)=>{
+        if(scrollTop >= el.offsetTop - 2 ){
+            document.querySelectorAll("#parallax__nav li").forEach(li => {
+                li.classList.remove("active")
+            });
+
+            document.querySelector("#parallax__nav li:nth-child("+ (index + 1) +")").classList.add("active");
+        };
+    });
+    
+
+    // if( scrollTop >= document.getElementById("section1").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
+    // }
+    // if( scrollTop >= document.getElementById("section2").offsetTop){
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active")
+    //     })
+    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
+    // }
+    // . . .
+
+     //info
+    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
+
+    // document.querySelector("offset1").innerText = document.getElementById("section1").offsetTop
+    // document.querySelector("offset2").innerText = document.getElementById("section2").offsetTop
+    // document.querySelector("offset3").innerText = document.getElementById("section3").offsetTop
+    // document.querySelector("offset4").innerText = document.getElementById("section4").offsetTop
+    // . . .
+
+    for(let i = 1; i &lt; 10; i++){
+        document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i ).offsetTop
+    }
+});
+
+//스크롤 이동
+document.querySelectorAll("#parallax__nav li a").forEach( li => {
+    li.addEventListener("click",(e)=>{
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});</code></pre>
+                      </div>
+                      <div>
+<pre><code class="language-html scroll">&lt;nav id="parallax__nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴 5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴 6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴 7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴 8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴 9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- //parallax__nav --&gt;
+
+&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- // parallax__cont --&gt;
+
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt; px &lt;/div&gt;
+    &lt;div class="info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt; #section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt; px&lt;/li&gt;
+            &lt;li&gt; #section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt; px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;!-- //parallax__info  --&gt;</code></pre>
+                      </div>
+                      <div>
+<pre><code class="language-css scroll">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(95, 95, 95, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+}
+
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#parallax__nav li a {
+    display: inline-block;
+    /* width: 30px; */
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+
+#parallax__cont {
+    max-width: 1600px;
+    /* background-color: rgba(255,255,255,0.1); */
+    width: 98%;
+    margin: 0 auto;
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.1); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 10vw;
+}
+
+.content__item:nth-child(even){
+    margin-left: 0;
+    text-align: right;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    right: -5vw;
+    left: auto;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize; /* 첫글자만 대문자 */
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -5px;
+    top: -5px;
+    background-image: url(../../assets/silde/min_jelly/slide_main_07-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover ;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_06-min.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_05-min.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_03-min.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_02-min.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_01-min.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_08-min.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_09-min.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../../assets/silde/min_jelly/slide_main_10.jpg);
+}
+
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+
+}
+
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background:rgba(0,0,0.4);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#parallax__info li, .scrollTop {
+    line-height: 1.4;
+}
+
+@media (max-width : 800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.8);
+        transform: translateY(-50%);
+
+    }
+
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+
+    #parallax__nav li.active a{
+        border-radius: 5px;
+    }
+
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}</code></pre>
+                      </div>
+                 </div>
+              </div>
+              <div class="modal__close">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                      <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+              </div>
+          </div>
+      </div>
+    </footer>
+  <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script>
+        //글씨 쪼개기 
+        // let text = document.querySelector("#section1 .content__item__desc");
+        // let soplitText = text.innerText;
+        // let soplitWrap = soplitText.split(' ').join('</span><span>')
+
+        // text.innerHTML = soplitWrap = "<span>" + soplitWrap + "</span>"
+
+        let descAll = document.querySelectorAll("#contents .content__item__desc.split");
+
+        //글씨 쪼개기(다중)
+        descAll.forEach( desc => {
+            let splitText = desc.innerText;
+            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+
+            desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+            desc.setAttribute("aria-label",splitText);
+
+        }); 
+
+        //스크롤
+        function scroll(){
+            let scrollTop = window.scrollY 
+            document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+
+            //css 클래스 추가(생고생)
+            // document.querySelectorAll(".content__item").forEach(item => {
+            //     if(scrollTop >= item.offsetTop ){
+            //         item.querySelector(".split").classList.add("show")
+            //     }
+            // })
+
+            // document.querySelectorAll(".content__item").forEach(item => {
+            //     if(scrollTop >= item.offsetTop){
+            //         item.querySelectorAll(".split span").forEach((span, index)=> {
+            //             span.classList.add("show")
+            //             span.style.transitionDelay = `${index * 100}ms`
+            //         })
+            //     }
+            // })
+
+            document.querySelectorAll(".content__item").forEach(item => {
+                if(scrollTop >= item.offsetTop){
+                    item.querySelectorAll(".split span").forEach((span, index)=> {
+                        setTimeout(()=>{
+                            span.classList.add("show");
+                        }, 50 * index );
+                    })
+                }
+            })
+
+
+            requestAnimationFrame(scroll)
+
+            //첫번째 span --> 0.01s
+            //두번째 span --> 0.02s
+            //. . . (index)
+            
+            
+        }
+        scroll();
+
+    </script>
+  </body>
+</html>

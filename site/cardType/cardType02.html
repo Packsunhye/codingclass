@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+        /* ir 효과(이미지 대체 효과 == alt)*/
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* cardType02 */
+        .card_inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card_inner .card {
+            width: 24%;
+            position: relative;
+        }
+        .card_inner .card:first-child {
+            margin-bottom: 50px;
+        }
+        .card_inner .card img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .card_inner .card .tit {
+            font-size: 28px;
+            margin-bottom: 10px;
+            overflow: hidden; /* 한줄 효과 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+        .card_inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .card_inner .card .more {
+            width: 23px;
+            height: 24px;
+            background-image: url(img/Frame\ 1.svg);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="cardType02" class="card_wrap gmark section">
+        <h2>낮잠을 자야하는 이유</h2>
+        <p>
+            지금도 눈이 감긴다 감겨 비오는 날은 왜이리 심한지 아주 그냥 고양이 뱃살에 묻혀서 <br>
+            잠을 자고싶당 왜냐하면 걘 따뜻하고 에어컨은 시원하고 극락이에요
+        </p>
+        <div class="card_inner container">
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_01.jpg" alt="고양이">
+            <h3 class="tit">이불 쏘옥 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ.. 아주 등에도 뽀뽀 해버려용</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_02.jpg" alt="고양이">
+            <h3 class="tit">베개 배는 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_03.jpg" alt="고양이">
+            <h3 class="tit">낮잠 자는 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+           <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_04.jpg" alt="고양이">
+            <h3 class="tit">둥글게 만 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_05.jpg" alt="고양이">
+            <h3 class="tit">냥모나이트 냥이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_06.jpg" alt="고양이">
+            <h3 class="tit">꾸벅 조는 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_07.jpg" alt="고양이">
+            <h3 class="tit">이불 옆에 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+
+           <article class="card">
+            <img src="../cardType/img/card_bg02_08.jpg" alt="고양이">
+            <h3 class="tit">얼굴 가린 고양이</h3>
+            <P class="desc">이불에 파묻힌 고양이는 귀엽따 나는 조심스럽게 들어가지만 왜 이리 잘 도망가는 걸까나 ㅜㅜ..</P>
+            <a href="btn" class="more"><span class="ir">더보기</span></a> 
+           </article>
+        </div>
+    </section>
+</body>
+</html>

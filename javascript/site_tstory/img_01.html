@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> html_site_Imge01 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Imge type 01 </h2><br>
+            <p class="t_desc">피그마에서 디자인 하여, zeplin을 참고해 만든 이미지 타입 사이트 입니다. 아래는 피그마를 이용해 먼저 디자인 하였습니다.</p>
+        <div class="t_iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D730%253A87" allowfullscreen></iframe>        </div><br>
+        <p class="t_desc">이후 코드로 작성하였습니다.</p>
+
+        <h3 class="t_tit2"> HTML </h3>
+        <p class="t_desc"> 카드들은 컨테이너를 부여해 display : flex 를 주기 쉽게 하였습니다. </p>
+        <div class="t_code">
+<pre><code class="language-html"> &lt;section id="imgType" class="img__wrap nexon section"&gt;
+    &lt;h2&gt;고양이는 왜이리 귀여운가?&lt;/h2&gt;
+    &lt;p&gt;고양이는 보들보들 가슴털과 말랑말랑 발바닥을 가지고 있기 때문이죠.&lt;/p&gt;
+
+    &lt;div class="img__inner container"&gt;
+        &lt;article class="img"&gt;
+            &lt;figure class="img__header"&gt;
+                &lt;img src="../imgeType/img/imgType01_01.jpg" alt="고양이"&gt;
+                &lt;h3&gt;고양이 보들 가슴털&lt;/h3&gt;
+                &lt;p&gt;고양이 보들보들 가슴털을 볼때마다 만지고 싶은데 만지면 도망가거나
+                    물어버려서 나는 울 수 밖에 없는것이였다. 그래도 기분 좋으면 만지게 해줌&lt;/p&gt;
+                &lt;a href="#" class="btn1"&gt;
+                    자세히 보기
+                &lt;/a&gt;
+            &lt;/figure&gt;
+        &lt;/article&gt;
+        &lt;article class="img"&gt;
+            &lt;figure class="img__header"&gt;
+                &lt;img src="../imgeType/img/imgType01_02.jpg" alt="고양이"&gt;
+                &lt;h3&gt;고양이 말랑 발바닥&lt;/h3&gt;
+                &lt;p&gt;고양이 발바닥 만지는건 참을 수가 없다. 이미 만져서 358번 물렸지만
+                    그래도 똑같이 만질 것이다. 다들 고양이 젤리 만져봤나? 나는 만졌지롱&lt;/p&gt;
+                &lt;a href="#" class="btn2"&gt;
+                    자세히 보기
+                &lt;/a&gt;
+            &lt;/figure&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt; </code></pre>
+        </div><br>
+
+        <h3 class="t_tit2"> CSS </h3>
+        <details>
+            <summary>공통 요소</summary>
+            <div class="t_code">
+    <pre><code class="language-css">         /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center; 
+        margin-bottom: 70px;
+        }
+                
+</code></pre>
+                        </div>
+        </details>
+        <div class="t_code"> <pre><code class="language-css">   /* imgType */
+
+    .img__header {
+        position: relative;
+    }
+
+    .img__header  img {
+        width: 570px;
+        height: 370px;
+        object-fit: contain;
+    }
+
+    .img__header h3 {
+        position: absolute;
+        width: 265px;
+        height: 32px;
+        margin: 0 245px 10px 30px;
+        font-size: 32px;
+        font-weight: 500;
+        text-align: left;
+        color: #fff;
+        top: 200px;
+    }
+
+    .img__header p {
+        position: absolute;
+        width: 510px;
+        height: 48px;
+        margin: 0 0 10px 30px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: left;
+        color: #fff;
+        top: 242px;
+    }
+    .img__header .btn1 {
+        position: absolute;
+        width: 120px;
+        height: 40px;
+        background-color: rgba(146, 50, 50, 0.5);
+        top: 300px;
+        left: 30px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+    }
+
+    .img__header .btn2 {
+        position: absolute;
+        width: 120px;
+        height: 40px;
+        background-color: rgba(41, 125, 120, 0.5);
+        top: 300px;
+        left: 30px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+    } </code></pre>
+        </div>
+
+        <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <iframe src="https://packsunhye.github.io/coding/site/imgeType/imgeType0817.html"></iframe>
+        </div>
+        
+        <div class="t_link">
+            <a href="https://github.com/Packsunhye/coding/blob/main/site/imgeType/imgeType0817.html">원본 소스 보여주기</a>
+        </div> 
+        <div class="t_link">
+            <a href="https://packsunhye.github.io/coding/site/imgeType/imgeType0817.html">원본 사이트 보여주기</a>
+        </div> 
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

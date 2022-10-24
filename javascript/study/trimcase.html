@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 소문자&대문자 | 공백 </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 01. toUpperCase() </h2>
+            <p class="t_desc">
+                문자열을 대문자로 변경해주는 메서드 입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "cat Do pUNch";<br>
+                const currentStr1 = <i> str1.toUpperCase(); // CAT DO PUNCH </i>
+             </p><br>
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code>    //toUpperCase()
+    const str1 = "javascript";
+    const currentStr1 = str1.toUpperCase(); // JAVASCRIPT </code></pre>   
+    </div><br>
+
+    <h2 class="t_tit"> 02. toLowerCase() </h2>
+            <p class="t_desc">
+                문자열을 소문자로 변경해주는 메서드 입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "cat Do pUNch";<br>
+                const currentStr1 = <i> str1.toUpperCase(); // cat do funch </i>
+             </p><br>
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code>    //toLowerCase()
+    const str1 = "JAVASCRIPT";
+    const currentStr1 = str1.toUpperCase(); // javascript </code></pre>   
+    </div><br>
+
+    <h2 class="t_tit"> 03. trim() </h2>
+    <p class="t_desc">
+        문자열의 앞/뒤 공백을 제거해주는 메서드 입니다.
+    </p>
+    <p class="t_box">
+        const str1 = "    Kitty     ";<br>
+        const currentStr1 = <i> str1.trim(); // Kitty </i>
+     </p><br>
+     <div class="t_code">
+        <div class="script"></div>
+    <pre><code>    //trim()
+    const str1 = "        javascript         "
+    const currentStr1 = str1.trim(); // javascript </code></pre>   
+    </div><br>
+
+    <h2 class="t_tit"> 04. trimStart() </h2>
+            <p class="t_desc">
+                문자열의 앞의 공백을 제거해주는 메서드 입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "    Kitty     ";<br>
+                const currentStr1 = <i> str1.trimStart(); // Kitty_____ </i>
+             </p><br>
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code>    //trimStart()
+    const str1 = "        javascript         "
+    const currentStr1 = str1.trimStart(); // javascript______ </code></pre>   
+    </div><br>
+
+    <h2 class="t_tit"> 05. trimEnd() </h2>
+            <p class="t_desc">
+                문자열의 뒤의 공백을 제거해주는 메서드 입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "    Kitty     ";<br>
+                const currentStr1 = <i> str1.trimStart(); // _____Kitty </i>
+             </p><br>
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code>    //trimEnd()
+    const str1 = "        javascript         "
+    const currentStr1 = str1.trimEnd(); // ______javascript </code></pre>   
+    </div><br>
+
+
+
+  
+
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

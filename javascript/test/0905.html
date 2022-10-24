@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+           float: left;
+           width: 300px;
+           padding: 10px;
+           margin: 10px;
+           font-size: 30px;
+           text-align: center;
+           background: rgb(221, 216, 238);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap" class="wrap">1
+        <p>mouseOver / mouseOut</p>
+    </div>
+    <div id="wrap2" class="wrap">2
+        <p>mouseEnter / mouseLeave</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#wrap").mouseover(function () {
+                $("#wrap p").css("background", "rgb(175, 156, 238)");
+            });
+            $("#wrap").mouseout(function () {
+                $("#wrap p").css("border", "3px solid blue");
+            });
+        
+            $("#wrap2").mouseenter(function () {
+                $("#wrap2 p").css("background", "rgb(175, 156, 238)");
+            });
+            $("#wrap2").mouseleave(function () {
+                $("#wrap2 p").css("border", "3px solid blue");
+            });
+        });
+    </script>
+</body>
+</html>

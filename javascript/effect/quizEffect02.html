@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트02</title>
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/tway/TwayAir.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <style>
+        pre code.hljs {
+            background-color: #0F0F13 !important;
+            border-radius: 0px !important;
+            overflow: auto !important;
+            font-size: 14px;
+            padding: 10px !important;
+
+        }
+
+        
+    </style>
+    
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html"> Quiz </a><em>주관식 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="screen__btn">소스 보기</div>
+        <div class="quiz_wrap">
+            <div class="quiz">
+                <span class="quiz_type"></span>
+                <h2 class="quiz_question">
+                    <span class="number"></span>
+                    <div class="ask"></div>
+                </h2>
+                <div class="quiz_view">
+                    <div class="true">정답입니다.</div>
+                    <div class="false">틀렸습니다.</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz_answer">
+                    <input type="text" class="input" placeholder="정답을 적어주세요.">
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <div class="screen">
+        
+        <div class="window">
+            <div class="title-bar">
+              <div class="minimize">
+                <div class="symbol"></div>
+              </div>
+              <div class="maximize">
+                <div class="symbol"></div>
+              </div>
+              <div class="close">
+                <div class="symbol"></div>
+              </div>
+            </div>
+            <div class="menu-bar">
+                <span class="active">Javascript</span>
+                <span>Html</span>
+                <span>Css</span>
+            </div>
+            <div class="content-container">
+              <div class="content">
+                <div class="main">
+                    <div class="active">
+                        <pre><code class="language-js">    //선택자
+    const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz_question .number");    //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz_answer .result ");     //정답 결과
+    const quizInput = document.querySelector(".quiz_answer .input");        //사용자 정답
+    const quizView = document.querySelector(".quiz_view");              //강아지
+    
+    //문제 정보
+    const answerType = "웹디자인기능사";
+    const answerNum = "2";
+    const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적,계획적으로 만들어내는 기업 이미지 통합 전략은 무엇입니까?";
+    let answerResult = "CIP";  
+                    
+    //문제 출력
+    quizType.textContent = answerType;
+    quizNumber.textContent = answerNum + ". ";
+    quizAsk.textContent = answerAsk;
+    quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+                    
+    //정답 숨기기
+    quizResult.style.display = "none"
+    
+    //정답 확인
+    //정답 버튼을 클릭했을 때.
+    //정답이 맞는지 비교해야한다.
+    quizConfirm.addEventListener("click", () => {
+        quizInput.style.display = "none"
+        quizResult.style.display = "block"
+        quizConfirm.style.display = "none"
+        
+        //사용자 정답
+        const userWord = quizInput.value.toLowerCase().trim(); //소문자,여백
+        answerResult = answerResult.toLowerCase().trim(); //우변을 좌변으로 대입 (상수여서 변경x, 변수로 바꿔줌)
+                    
+        // console.log(userWord) 
+        // console.log(answerResult) 
+                    
+        //사용자 정답 == 문제 정답
+        if(userWord == answerResult){
+            //정답
+            //alert("정답입니다.")
+            quizView.classList.add("like");
+        } else {
+            //오답
+            //alert("오답입니다.")
+            quizView.classList.add("dislike");
+        }
+    });  </code></pre>
+                    </div>
+                    <div>
+                        <pre><code class="language-html">   &lt;div class="quiz_wrap"&gt;
+    &lt;div class="quiz"&gt;
+        &lt;span class="quiz_type"&gt;&lt;/span&gt;
+        &lt;h2 class="quiz_question"&gt;
+            &lt;span class="number"&gt;&lt;/span&gt;
+            &lt;div class="ask"&gt;&lt;/div&gt;
+        &lt;/h2&gt;
+        &lt;div class="quiz_view"&gt;
+            &lt;div class="true"&gt;정답입니다.&lt;/div&gt;
+            &lt;div class="false"&gt;틀렸습니다.&lt;/div&gt;
+            &lt;div class="dog"&gt;
+                &lt;div class="head"&gt;
+                    &lt;div class="ears"&gt;&lt;/div&gt;
+                    &lt;div class="face"&gt;&lt;/div&gt;
+                    &lt;div class="eyes"&gt;
+                        &lt;div class="teardrop"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="nose"&gt;&lt;/div&gt;
+                    &lt;div class="mouth"&gt;
+                        &lt;div class="tongue"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chin"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="body"&gt;
+                    &lt;div class="tail"&gt;&lt;/div&gt;
+                    &lt;div class="legs"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="quiz_answer"&gt;
+            &lt;input type="text" class="input" placeholder="정답을 적어주세요."&gt;
+            &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="result"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;  </code></pre>
+                    </div>
+                    <div>
+                        <pre><code class="language-css">    .quiz_wrap {
+        display: flex;
+        align-items: flex-start;s
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 150px;
+        flex-wrap: wrap;
+    }
+
+    .quiz {
+        max-width: 500px;
+        width: 100%;
+        background-color: #fff;
+        border: 8px ridge #cacaca;
+        margin: 10px;
+    }
+
+    .quiz_type {
+        background-color: #cacaca;
+        text-align: center;
+        display: block;
+        /*span이라 inline이어서*/
+        font-size: 16px;
+        border: 3px ridge #cacaca;
+        color: #3b3b3b;
+        font-family: "DungGeunMo";
+        padding: 4px;
+    }
+
+    .quiz_question {
+        border-top: 6px ridge #cacaca;
+        border-bottom: 6px ridge #cacaca;
+        padding: 20px;
+        font-family: "TwayAir";
+        line-height: 1.3;
+    }
+
+    .quiz_question .number {
+        color: #b771f8;
+    }
+
+    .quiz_question .ask {
+        display: inline;
+    }
+
+    .quiz_answer {
+        border-top: 6px ridge #cacaca;
+        padding: 10px;
+        background-color: #f5f5f5;
+    }
+
+    .quiz_answer .confirm {
+        border: 6px ridge #cacaca;
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        background-color: #d6d6d6;
+        font-family: "TwayAir";
+        cursor: pointer;
+    }
+
+    .quiz_answer .result {
+        width: 100%;
+        font-size: 22px;
+        padding: 13px 20px;
+        border: 6px ridge #cacaca;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "TwayAir";
+        line-height: 1.3;
+    }
+    .quiz_answer .input {
+        width: 100%;
+        border: 6px ridge #cacaca;
+        font-size: 22px;
+        padding: 13px 20px;
+        background-color: #fff;
+        font-family: "TwayAir";
+        margin-bottom: 10px;
+    }
+    .quiz_view {
+        background-color: #f5f5f5;
+        font-family: "TwayAir";
+        position: relative;
+        overflow: hidden;
+    }
+    .quiz_view .true {
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        background-color: #8beeff;
+        color: rgb(60, 68, 136);
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+        left: 70%;
+        top: 100px;
+        opacity: 0;
+    }
+    .quiz_view .false {
+        width: 120px;
+        height: 120px;
+        background-color: rgb(255, 205, 68);
+        color: rgb(82, 39, 22);
+        line-height: 120px;
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+        right: 70%;
+        top: 100px;
+        opacity: 0;
+    }
+    .quiz_view.like .true{
+        opacity: 1;
+        animation: wobble 0.6s;
+    }
+    .quiz_view.dislike .false{
+        opacity: 1;
+        animation: wobble 0.6s; /*wobble 좌우로 흔드는 애니메이션*/
+    }
+
+    .quiz_selects {
+        margin: 5px 0;
+    }
+
+    .quiz_selects label {
+        display: flex;
+    }
+    .quiz_selects label input {
+        position: absolute;
+        left: -9999px;
+    }
+    .quiz_selects label span {
+        font-size: 20px;
+        line-height: 1.3 ;
+        font-family: "TwayAir";
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .quiz_selects label span::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        margin-right: 15px;
+        flex-shrink: 0;
+        box-shadow: inset 0px 0px 0px 4px #b781e9;
+        transition: all 0.25s;
+    }
+
+    .quiz_selects label input:checked + span {
+        background-color: rgb(228, 224, 235);
+    }
+
+    .quiz_selects label input:checked + span::before {
+        box-shadow: inset 0px 0px 0px 10px #b781e9;
+    }
+
+    .quiz_confirm {
+        width: 100%;
+        text-align: center;
+    }
+    .quiz_confirm .check {
+        font-size: 22px;
+        line-height: 1.3;
+        padding: 13px 60px;
+        border: 6px ridge #cacaca;
+        box-sizing: border-box;
+        text-align: center; 
+        font-family: "TwayAir";
+        cursor: pointer;
+        margin: 40px 0;
+        transition: background 0.3s;
+    }
+
+    .quiz_confirm .check:hover {
+        background: #b080fd;
+    }
+
+    .quiz_confirm .ex {
+        font-family: "DungGeunMo";
+        font-size: 28px;
+        font-weight: 500;
+
+    }   </code></pre>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="footer"></div>
+          </div>
+    </div>
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/sceen-98.js"></script>
+
+    <script>
+        //선택자
+        const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz_question .number");    //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz_answer .confirm");    //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz_answer .result ");     //정답 결과
+        const quizInput = document.querySelector(".quiz_answer .input");        //사용자 정답
+        const quizView = document.querySelector(".quiz_view");              //강아지
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = "2";
+        const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적,계획적으로 만들어내는 기업 이미지 통합 전략은 무엇입니까?";
+        let answerResult = "CIP";  
+
+        //문제 출력
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+
+        //정답 숨기기
+        quizResult.style.display = "none"
+        
+        //정답 확인
+        //정답 버튼을 클릭했을 때.
+        //정답이 맞는지 비교해야한다.
+        quizConfirm.addEventListener("click", () => {
+            quizInput.style.display = "none"
+            quizResult.style.display = "block"
+            quizConfirm.style.display = "none"
+          
+            //사용자 정답
+            const userWord = quizInput.value.toLowerCase().trim(); //소문자,여백
+            answerResult = answerResult.toLowerCase().trim(); //우변을 좌변으로 대입 (상수여서 변경x, 변수로 바꿔줌)
+
+            // console.log(userWord) 
+            // console.log(answerResult) 
+
+            //사용자 정답 == 문제 정답
+            if(userWord == answerResult){
+                //정답
+                //alert("정답입니다.")
+                quizView.classList.add("like");
+            } else {
+                //오답
+                //alert("오답입니다.")
+                quizView.classList.add("dislike");
+            }
+        });
+    </script>
+</body>
+
+</html>

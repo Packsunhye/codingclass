@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 함수
+    </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+       <div class="document">
+        <h2 class="t_tit"> 함수 </h2>
+        <p class="t_desc">
+           함수는 프로그램에서 반복적으로 사용되는 기능을 만들어 내기 위한 코드들의 집합입니다.</p>
+
+        <table class="t_table">
+            <thead>
+             <tr>
+                 <th>분류</th>
+                 <th>종류</th>
+                 <th>설명</th>
+             </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                     <td class="ce">사용자 정의 함수</td>
+                     <td>
+                        - 선언적 함수 <br>
+                        - 익명 함수 <br>
+                     </td>
+                     <td>
+                       프로그램에서 필요한 기능을 사용자가 <i>직접 정의해서 사용하는 함수</i>입니다.
+                     </td>
+                 </tr>
+                 <tr>
+                    <td class="ce">내장 함수</td>
+                    <td>
+                       - 인코딩, 디코딩 함수 <br>
+                       - 숫자 판별 함수 <br>
+                       - 유 . 무한 값 판별 함수 <br>
+                       - 숫자변환 함수 <br>
+                       - 문자변환 함수 <br>
+                       - 자바스크립트 코드 변경 함수 
+                    </td>
+                    <td>
+                      프로그램에서 자주 사용되는 기능들을 자바스크립트 <i>자바스크립트 내부적으로 제공해주는 함수 입니다.</i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+         <hr>
+
+            <h3 class="t_tit2">01. 선언적 함수</h3><br>
+
+            <h4 class="t_tit3">01) 선언적 함수의 형식</h4>
+            <p class="t_box">
+                function 함수() {<br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                 } <br>
+            </p> 
+            <p class="t_box">
+                function compute() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console,log('선언적 함수'); <br>
+                } <br>
+            </p> <br>  
+            <h4 class="t_tit3">02) 선언적 함수의 호출</h4>
+            <p class="t_desc">
+                '선언적 함수'는 함수를 호출할 때 함수의 앞 또는 뒤에서 호출이 가능하다.</p>
+
+
+            <h3 class="t_tit2">02. 익명 함수</h3>
+            <h4 class="t_tit3">01) 익명 함수의 형식</h4>
+            <p class="t_desc">
+                익명 함수는 변수에 함수 데이터를 저장하여 변수를 마치 함수처럼 사용할 수 있게 만든다.</p>
+            <p class="t_box">
+                var 변수 = function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                }; <br>
+            </p> 
+            <p class="t_box">
+                var compute = function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log('익명 함수'); <br>
+                }; <br>
+            </p> 
+
+
+            <h3 class="t_tit2">03. return, 매개변수, 화살표 함수</h3>
+            
+            <h4 class="t_tit2">01. return</h4>
+            <p class="t_desc">
+                함수를 통해 처리된 결과를 반환시켜주는 명령어 입니다.</p>
+                <div class="t_code">
+                    <pre><code class="language-js">    function func(){
+        const str = "함수가 실행되었습니다.4"
+        return str;
+    }
+    document.write(func()); </code></pre>
+                </div>
+            
+            <h4 class="t_tit2">02. 매개변수</h4>
+            <p class="t_desc">
+                함수를 호출할 때 전달하는 변수를 '매개변수' 라고 합니다. 아래는 매개변수가 있는 함수의 형식입니다.</p>
+                <div class="t_code">
+                <pre><code class="language-js">    function func(str){ //str은 변수, 인자. 
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.3"); </code></pre>
+                </div>
+
+            <h4 class="t_tit2">03. 화살표 함수</h4>
+            <p class="t_desc">
+                '=&gt;'을 이용하여 함수를 간결하게 표현할 때 사용. <br>
+                화살표 함수는 function 키워드를 생략하고 부등호 '='와 '&gt;'을 합쳐 코딩하며 항상 익명 함수 형식으로 표현합니다.
+                <i>단일 명령문일 경우에는 함수의 중괄호{}와 return을 생략</i>할 수 있습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">     func = () => {
+        document.write("함수가 실행되었습니다.");
+    }
+    func(); </code></pre>
+                </div>
+
+    </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

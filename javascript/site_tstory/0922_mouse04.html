@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Mouse Effect 04 </h2>
+            <p class="t_desc"> 마우스를 움직일 때 가운데에 있는 마우스에 따라 움직이는 이펙트를 공부해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc">배경 위에 figure로 이미지가 있을 박스와 figcaption으로 글귀를 감싸줍니다.</p>
+            <details>
+                <summary>🐱‍👤 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+      &lt;figure&gt;
+        &lt;img src="../../assets/silde/min_jelly/slide_bg_07-min.jpg" alt="이미지"&gt;
+        &lt;figcaption&gt;
+          &lt;p&gt;In order to succeed, we must first believe that we can.&lt;/p&gt;
+          &lt;p&gt;성공하기 위해서, 우리는 먼저 우리 자신이 할 수 있다는 것을 믿어야 한다.&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 이미지를 고정해주고 애니메이션을 지정해 움직임에 부드러움을 주었습니다.</p>
+            <details>
+                <summary>🐱‍👤 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    
+}
+
+.mouse__wrap figure {
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  transition: transform 500ms ease;
+  cursor: none;
+}
+
+.mouse__wrap figure figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+  white-space: nowrap;
+  line-height: 1.4;
+  font-weight: 300;
+ 
+}
+
+.mouse__wrap figure:hover {
+  transform: scale(1.025);
+}
+
+.mouse__wrap figure img {
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+}
+
+.mouse__cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 1000;
+  user-select: none;
+  pointer-events: none;
+}
+
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 10px;
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc">마우스 좌표값을 지정해주고, 가운데로 초기화 한 뒤 이미지 움직임을 /20으로 아주 조금만 움직이게 만들어줍니다.</p>
+            <details>
+                <summary>🐱‍👤 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js"> const cursor = document.querySelector(".mouse__cursor");
+const cursorBox = cursor.getBoundingClientRect();
+
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove",(e)=>{
+    //커서
+    gsap.to(cursor, {
+    duration : 0.5,
+    left : e.pageX - cursorBox.width/2,
+    top : e.pageY - cursorBox.height/2
+    });
+
+    //마우스 좌표값 
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //전체 가로값
+    // window.innerWidth //1920 : 브라우저 크기
+    // window.outerWidth //1920 : 브라우저 크기(스크롤바 포함)
+    // window.screen.width //1920 : 화면 크기
+    
+    //마우스 좌표 값 가운데로 초기화
+    //전체 길이/2 - 마우스 좌표값 == 0
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+    //이미지 움직이기 
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate("+ centerPageX/20 +"px, " + centerPageY/20 + "px)";
+
+    gsap.to(imgMove, {
+    duration : 0.3,
+    x : centerPageX/20,
+    y : centerPageY/20
+    });
+
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+});</code></pre>
+            </div>
+            </details>
+           <br>
+           
+           <h3 class="t_tit2"> 04. 이미지로 한눈에 알아봅시다. </h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/mouseEffect04.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/mouseEffect04.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/mouseEffect04.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 유형 02</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main"> 
+        <div class="document">
+         <h2 class="t_tit"> 02. 퀴즈 유형 </h2>
+         <p class="t_desc">
+            퀴즈를 스크립트로 퀴즈 질문와 번호, 확인 버튼,결과를 도출해보았다. 이번에는 답을 주관식으로 적어 <i>if문을 사용해 참인지 거짓인지 구별</i>할 수 있습니다.</p>
+        <p class="t_desc">아래는 HTML입니다. 가지고 있는 애니메이션을 가져와 문제를 맞추면 반응할 수 있도록 제재작 하였으며 따로 구형으로 애니메이션을 넣었습니다.</p>
+        <div class="script">
+            <div class="t_code">
+<pre><code class="language-js">     &lt;div class="quiz_wrap"&gt;
+    &lt;div class="quiz"&gt;
+        &lt;span class="quiz_type"&gt;&lt;/span&gt;
+        &lt;h2 class="quiz_question"&gt;
+            &lt;span class="number"&gt;&lt;/span&gt;
+            &lt;div class="ask"&gt;&lt;/div&gt;
+        &lt;/h2&gt;
+        &lt;div class="quiz_view"&gt;
+            &lt;div class="true"&gt;정답입니다.&lt;/div&gt;
+            &lt;div class="false"&gt;틀렸습니다.&lt;/div&gt;
+            &lt;div class="dog"&gt;
+                &lt;div class="head"&gt;
+                    &lt;div class="ears"&gt;&lt;/div&gt;
+                    &lt;div class="face"&gt;&lt;/div&gt;
+                    &lt;div class="eyes"&gt;
+                        &lt;div class="teardrop"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="nose"&gt;&lt;/div&gt;
+                    &lt;div class="mouth"&gt;
+                        &lt;div class="tongue"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chin"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="body"&gt;
+                    &lt;div class="tail"&gt;&lt;/div&gt;
+                    &lt;div class="legs"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="quiz_answer"&gt;
+            &lt;input type="text" class="input" placeholder="정답을 적어주세요."&gt;
+            &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="result"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt; </code></pre> 
+            </div>
+        </div><br>
+
+        <p class="t_desc">아래는 자바스크립트입니다. <i>function을 화살표 함수로 생략</i>하였으며, <i>toLowerCase().trim()을 사용하여 소문자로도 정답이라고 나올 수 있게 하였습니다.</i></p>
+        <div class="script">
+            <div class="t_code">
+<pre><code class="language-js">     //선택자
+    const quizType = document.querySelector(".quiz_type");                              //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz_question .number");     //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz_question .ask");                  //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz_answer .confirm");       //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz_answer .result ");            //정답 결과
+    const quizInput = document.querySelector(".quiz_answer .input");              //사용자 정답
+    const quizView = document.querySelector(".quiz_view");                            //강아지
+    
+    //문제 정보
+    const answerType = "웹디자인기능사";
+    const answerNum = "2";
+    const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적,계획적으로 만들어내는 기업 이미지 통합 전략은 무엇입니까?";
+    let answerResult = "CIP";  
+
+    //문제 출력
+    quizType.textContent = answerType;
+    quizNumber.textContent = answerNum + ". ";
+    quizAsk.textContent = answerAsk;
+    quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+
+    //정답 숨기기
+    quizResult.style.display = "none"
+    
+    //정답 확인
+    //정답 버튼을 클릭했을 때.
+    //정답이 맞는지 비교해야한다.
+    quizConfirm.addEventListener("click", () => {       //function을 화살표 함수로 줄였다.
+        quizInput.style.display = "none"
+        quizResult.style.display = "block"
+        quizConfirm.style.display = "none"
+      
+        //사용자 정답
+        const userWord = quizInput.value.toLowerCase().trim();      //소문자,여백
+        answerResult = answerResult.toLowerCase().trim();            //우변을 좌변으로 대입 (상수여서 변경x, 변수로 바꿔줌)
+
+        // console.log(userWord) 
+        // console.log(answerResult) 
+
+        //사용자 정답 == 문제 정답
+        if(userWord == answerResult){
+            //정답
+            quizView.classList.add("like");
+            //alert("정답입니다.")
+        } else {
+            //오답
+            quizView.classList.add("dislike");
+            //alert("오답입니다.")
+        }
+    }); </code></pre> 
+            </div>
+        </div>
+        
+        <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <iframe src="https://packsunhye.github.io/coding/javascript/effect/quizEffect02.html"></iframe>
+        </div>
+        
+        <div class="t_link">
+            <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/quizEffect02.html">원본 소스 보여주기</a>
+        </div>
+        </div>
+    </main>
+        
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

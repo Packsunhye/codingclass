@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Mouse Hover Effect </h2>
+            <p class="t_desc"> 마우스를 올려놓거나 내렸을 때 3D 효과가 나오는 애니메이션을 공부했습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 위, 아래와 오른쪽,왼쪽인 두가지 버전을 하였습니다. </p>
+            <details>
+                <summary>🐇 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="hover__wrap"&gt;
+    &lt;div class="hover__updown"&gt;
+      &lt;figure class= "front"&gt;
+        &lt;img src="https://github.com/Packsunhye/coding/blob/main/codepen/codepen01.jpg?raw=true" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 올리면 Up&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class= "back"&gt;
+        &lt;img src="https://github.com/Packsunhye/coding/blob/main/codepen/codepen03.jpg?raw=true" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 내리면 Down&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="hover__leftright"&gt;
+      &lt;figure class= "front"&gt;
+        &lt;img src="https://github.com/Packsunhye/coding/blob/main/codepen/codepen02.jpg?raw=true" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 올리면 to Left&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class= "back"&gt;
+        &lt;img src="https://github.com/Packsunhye/coding/blob/main/codepen/codepen04.jpg?raw=true" alt=""&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+          &lt;p&gt;마우스 내리면 to Right&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 중요한 코드는 <i>transform-style : preserve-3d; = 3D 효과를 주는 css</i> <i> backface-visibility: hidden; = 뒤로 돌리면 사라지게 하는 css</i> 입니다.</p>
+            <details>
+                <summary>🐇 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">body {
+    font-family: 'LocusSangsang';
+    background-image: linear-gradient(135deg, #191970 0%, #483d8b 40%, #9370db 100%);
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hover__wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .hover__wrap > div {
+    max-width : 400px;
+    margin: 3%;
+    position: relative;
+    perspective : 1000px;
+  }
+  
+  .hover__wrap > div img {
+    width: 100%;
+    border : 10px solid #f0f8ff;
+    box-shadow : 2px 2px 2px 2px rgba(0,0,0,0.2);
+    vertical-align: top;
+    box-sizing: border-box;
+    
+  }
+  
+  .hover__wrap > div .front {
+    transition : transform 1s;
+    backface-visibility: hidden;
+    transform-style : preserve-3d;
+  }
+  .hover__wrap > div .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition : transform 1s;
+    transform-style : preserve-3d;
+  }
+  .hover__wrap > div figcaption {
+    background: rgba(0,0,0,0.4);
+    color: #f8f8ff;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform :  translate(-50%, -50%) translatez(100px);
+    width: 60%;
+    backface-visibility: hidden;
+  }
+  
+  /*  mouse hover effect */
+  .hover__updown .front {
+    transform : rotateX(0deg);
+  }
+  .hover__updown:hover .front {
+    transform : rotateX(180deg);
+  }
+  
+  .hover__updown .back {
+    transform : rotateX(-180deg);
+  }
+  .hover__updown:hover .back {
+    transform : rotateX(0deg);
+  }
+  
+  .hover__leftright .front {
+    transform : rotateY(0deg);
+  }
+  .hover__leftright:hover .front {
+    transform : rotateY(180deg);
+  }
+  
+  .hover__leftright .back {
+    transform : rotateY(-180deg);
+  }
+  .hover__leftright:hover .back {
+    transform : rotateY(0deg);
+  }</code></pre>
+            </div>
+            </details>
+            
+           <h3 class="t_tit2"> 03. 이미지로 한눈에 알아봅시다. </h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="220930" src="https://codepen.io/packsunhye/embed/abGwmyd?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/abGwmyd">
+                    220930</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

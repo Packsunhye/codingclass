@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Slider Effect 04 </h2>
+            <p class="t_desc">버튼을 눌렀을 때 좌우로 움직일 수 있게 만드는 슬라이트 이펙트를 공부해보았습니다. 첫번째에서 왼쪽을 누른다면 마지막 이미지로 이동할 수 있도록 연결도 해야합니다.</p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc">HTML에서는 버튼을 추가해줍니다.</p>
+            <details>
+                <summary> 💀 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="slider__wrap"&gt;
+    &lt;div class="slider__img"&gt;
+        &lt;div class="slider__inner"&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_02-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_05-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_03-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_07-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="slider__btn"&gt;
+        &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+        &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> Css는 버튼만 추가로 만들었기 때문에, 기본은 sliderEffect03 와 똑같습니다. </p>
+            <details>
+                <summary> 💀 CSS 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    line-height: 50px;
+    border-radius: 10%;
+}
+.slider__btn a:hover {
+    background-color: rgba(130, 121, 255, 0.541);
+}
+.slider__btn a.prev {
+    left: 0;
+}
+.slider__btn a.next {
+    right: 0;
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> 많은 고민이 들어간 자바스트립트입니다. </p>
+            <div class="t_box">
+                //함수 만들기<br>
+                function gotoSlider(num){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;sliderInner.style.transition = "all 400ms"; //400ms 는 속도<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;sliderInner.style.transform = <i>"translateX("+ -sliderWidth * num +"px)";</i> // x축으로 움직이는데, -(이미지의 가로값) * 갯수 만큼 움직인다.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;currentIndex = num;<br>
+                }<br>
+                gotoSlider(num)<br>
+            </div>
+            <div class="t_box">
+                //왼쪽 버튼 클릭<br>
+                sliderBtnPrev.addEventListener("click", ()=>{ //왼쪽을 클릭했을 때<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let prevIndex = <i>( currentIndex + (sliderCount - 1) ) % sliderCount</i> //현재 보이는 이미지 + (이미지 갯수 -1) % 이미지 갯수 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;gotoSlider(prevIndex); //실행<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// gotoSlider( 현재이미지 -1 ); 그리고 1 -> 5 으로도 가게 함<br>
+                })<br>
+            </div>
+            <div class="t_box">
+                //오른쪽 버튼 클릭<br>
+                sliderBtnNext.addEventListener("click", ()=>{ //오른쪽을 클릭했을 때<br>
+                    let nextIndex = <i>( currentIndex + 1 ) % sliderCount </i> //(현재 보이는 이미지 + 1) % 이미지 갯수 <br>
+                    gotoSlider(nextIndex); //실행<br>
+                    //0 1 2 3 4<br>
+                })
+            </div>
+            <details>
+                <summary> 💀 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
+const slider = document.querySelectorAll(".slider")   
+const sliderBtn = document.querySelector(".slider__btn")  //버튼
+const sliderBtnPrev = document.querySelector(".prev")  //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".next")  //오른쪽 버튼
+
+let currentIndex = 0;                       //현재 보이는 이미지
+let sliderCount = slider.length;            //이미지 갯수 
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값  
+
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+}
+
+//왼쪽 버튼 클릭
+sliderBtnPrev.addEventListener("click", ()=>{
+    let prevIndex = ( currentIndex + (sliderCount - 1) ) % sliderCount
+    gotoSlider(prevIndex);
+    // gotoSlider( 현재이미지 -1 ); 그리고 1 -> 5 으로도 가게 함
+})
+
+
+//오른쪽 버튼 클릭
+sliderBtnNext.addEventListener("click", ()=>{
+    let nextIndex = ( currentIndex + 1 ) % sliderCount
+    gotoSlider(nextIndex);
+    //0 1 2 3 4
+})</code></pre>
+            </div>
+            </details>
+           <br>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/sliderEffect04.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/sliderEffect04.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/sliderEffect04.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

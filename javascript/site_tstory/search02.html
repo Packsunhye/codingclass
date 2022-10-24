@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 검색 유형 01 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 검색 유형 02 </h2>
+            <p class="t_desc"> includes()를 이용하여 단어를 검색하였을 때 정보가 나오도록 작업하는 방식 입니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 먼저 HTML 입니다. 정리를 해주는건 리스트로 만드는 것은 같지만 <br>
+                데이터가 어떤 것인지 구별하기 위해 <i>data-name 과 data-type</i> 을 넣어 지정해 줄 수 있도록 하였습니다. </p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-html">     &lt;div class="search__wrap"&gt;
+        &lt;span&gt;includes()를 이용하여 검색하기&lt;/span&gt;
+        
+        &lt;h1&gt; HTML 태그 검색하기 &lt;/h1&gt;
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="HTML 태그를 검색해주세요."&gt;
+        &lt;/div&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div class="type"&gt;플렉스, 애니메이션, 애니메이션, 기타 등등 유형 별로 검색해보세요! &lt;/div&gt;
+                &lt;div&gt; 전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+            &lt;div class="css"&gt;
+                &lt;ul&gt;
+                    &lt;li data-name="accent-color" data-type="플렉스"&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : accent-color 태그는 일부 요소에서 생성된 사용자 인터페이스 컨트롤의 강조 색상을 설정 합니다.&lt;/li&gt;
+                    &lt;li data-name="align-content" data-type="플렉스"&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content 태그는 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="align-items" data-type="플렉스"&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-items 태그는 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="align-self" data-type="플렉스"&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self 태그는 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="all" data-type="기타"&gt;&lt;strong&gt;all&lt;/strong&gt; : all 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation" data-type="애니메이션"&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation 태그는 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-delay" data-type="애니메이션"&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay 태그는 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-direction" data-type="애니메이션"&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction 태그는 애니메이션 움직임 방향을 설정합니다..&lt;/li&gt;
+                    &lt;li data-name="animation-duration" data-type="애니메이션"&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration 태그는 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+                    &lt;li data-name="animation-fill-mode" data-type="애니메이션"&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-fill-mode 태그는 애니메이션이 끝난 후의 상태를 설정합니다.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; </code></pre>   
+        </div>
+
+        <h3 class="t_tit2"> 02. javascript </h3>
+        <p class="t_desc"> 아래는 자바 스크립트 입니다. 선택자를 만드는 방식은 퀴즈 이펙트 01의 유형과 똑같지만 forEach문에 'keyup'작업을 넣어 검색하였을 때에 
+            <i>if문에서 사용자가 쓴 키워드가 includes()로 구별하여 일치하였을 때에 검색값이 나오도록</i> 하였습니다.  또한 searchList.length로 갯수까지 셀 수 있도록 하였습니다.</p>
+            <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    // 선택자 
+        const searchBox = document.querySelector(".search__box input");      //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li")  //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");    //전체갯수
+
+        //갯수
+        searchInfo.textContent = searchList.length;
+
+        
+
+        //속성 갯수 설정하기
+        //for문
+        // for(let i =1; i &lt;= searchList.length; i++){
+        //     document.querySelector(".num").innerHTML = i
+        // }
+        
+        // document.querySelector(".num").innerHTML = searchList.length
+
+        //검색 영역
+        searchBox.addEventListener("keyup",()=>{
+            const searchWord = searchBox.value; //사용자가 입력한 키워드
+            // const searchVocable = searchBox.value; //사용자가 입력한 타입
+
+            searchList.forEach(el => {
+                const cssName = el.dataset.name; //css 속성 모든 값
+                const cssType = el.dataset.type; //css 속성 모든 값
+                // console.log(cssName)
+
+                // "all".includes("all") //true
+                if(cssName.includes(searchWord)){
+                    el.classList.remove("hide");
+                }else{
+                    el.classList.add("hide");
+                }
+
+                // //키워드
+                // if(cssType.includes(searchVocable)){
+                //     el.classList.remove("hide");
+                // }else{
+                //     el.classList.add("hide");
+                // }
+
+
+            });
+        });
+ </code></pre>   
+    </div>
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/javascript/effect/searchEffect02.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/searchEffect02_css.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/javascript/effect/searchEffect02.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

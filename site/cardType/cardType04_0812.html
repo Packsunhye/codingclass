@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 04</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+
+        
+
+        .seban {
+            font-family: 'SebangGothic';
+            font-weight: 400;
+        }
+
+        .nanumsquare {
+            font-family: 'NanumSquare';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top; /* 이미지 여백 초기화 */
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > h2.tit {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            text-align: left;
+            font-size: 14px;
+            font-family: 'SebangGothic';
+            margin-bottom: 30px;
+            background: #000;
+            color: #fff;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+         /* blind */
+         .blind {
+            position: absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+
+
+        /* cardType04 */
+        .card_inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card .first {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .card .first .card_header {
+            width: 70%;
+        }
+        .card .first .card_comtents {
+            width: 30%;
+        }
+
+        .card {
+            width: 25%;
+            background-color: #ccc;  
+            display: flex; 
+            flex-wrap: wrap;  
+         }
+        .card_header {
+            width: 30%;
+        }
+
+        .card_comtents {
+            width: 70%;
+        }
+        .card_comtents .sub {}
+        .card_comtents .title {}
+        .card_comtents .desc {}
+        .card_comtents .more {}
+
+       
+    </style>
+</head>
+<body>
+    <section id="card_type" class="card_wrap section nanumsquare">
+        <h2 class="tit">Travel Channel</h2>
+        <div class="card_inner container">
+            <article class="card first">
+                <figure class="card_header">
+                    <img src="img/card_bg04_sea1_bg.jpg" alt="">
+                </figure>
+                <div class="card_comtents">
+                    <span class="sub">Travel Channel</span>
+                    <h3 class="title">여행하기 좋은 나라 베스트 파이브</h3>
+                    <p class="desc">완벽한 휴일을 구상하고 있나요? 특별한 시간을 찾고 있다구요? 그렇다면 수많은 여행 관련 업체를 둘러봐야 하지 않을까요?</p>
+                        <a class="more" href="#"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_sea2_bg.jpg" alt="">
+                </figure>
+                <div class="card_comtents">
+                    <span class="sub">Travel Channel</span>
+                    <h3 class="title">여행하기 좋은 나라 베스트 파이브</h3>
+                    <p class="desc">완벽한 휴일을 구상하고 있나요? 특별한 시간을 찾고 있다구요? 그렇다면 수많은 여행 관련 업체를 둘러봐야 하지 않을까요?</p>
+                        <a class="more" href="#"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_sea3_bg.jpg" alt="">
+                </figure>
+                <div class="card_comtents">
+                    <span class="sub">Travel Channel</span>
+                    <h3 class="title">여행하기 좋은 나라 베스트 파이브</h3>
+                    <p class="desc">완벽한 휴일을 구상하고 있나요? 특별한 시간을 찾고 있다구요? 그렇다면 수많은 여행 관련 업체를 둘러봐야 하지 않을까요?</p>
+                        <a class="more" href="#"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_sea4_bg.jpg" alt="">
+                </figure>
+                <div class="card_comtents">
+                    <span class="sub">Travel Channel</span>
+                    <h3 class="title">여행하기 좋은 나라 베스트 파이브</h3>
+                    <p class="desc">완벽한 휴일을 구상하고 있나요? 특별한 시간을 찾고 있다구요? 그렇다면 수많은 여행 관련 업체를 둘러봐야 하지 않을까요?</p>
+                        <a class="more" href="#"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card_header">
+                    <img src="img/card_bg04_sea5_bg.jpg" alt="">
+                </figure>
+                <div class="card_comtents">
+                    <span class="sub">Travel Channel</span>
+                    <h3 class="title">여행하기 좋은 나라 베스트 파이브</h3>
+                    <p class="desc">완벽한 휴일을 구상하고 있나요? 특별한 시간을 찾고 있다구요? 그렇다면 수많은 여행 관련 업체를 둘러봐야 하지 않을까요?</p>
+                        <a class="more" href="#"><span>더보기</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

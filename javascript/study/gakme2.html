@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : charAt() </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 함수 02 </h2>
+            <p class="t_desc">
+                함수에 변수를 이용해 여러가지를 출력하거나, 객체 안에 변수를 넣는 등 프로토 타입이나 객체 리터럴 함수를 정리해보았습니다.
+            </p>
+
+            <h3 class="t_tit2">01. 함수와 매개변수를 이용한 형태 </h3>
+            <p class="t_desc">
+                func에 변수를 저장 하였을 때, 다시 매개변수를 통해 값을 저장해 출력할 수 있었습니다.
+            </p>
+            <p class="t_box">
+            function func(str1, str2){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;document.write(str1 + "와" + str2 + "는 귀엽다." ) <br>
+            } <br>
+            <br>
+            func("강아지","고양이"); <br>
+            func("햄스터", "토끼")
+             </p><br>
+
+            <h3 class="t_tit2">02. 함수와 변수를 이용한 형태 </h3>
+            <p class="t_desc">
+                func에 변수를 저장 하였을 때, 다시 const에 변수를 출력할 수 있었습니다.
+            </p>
+            <p class="t_box">
+            function func(str1, str2){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;document.write(str1 + "는" + str2 + "가 귀엽다.")<br>
+            }<br>
+            <br>
+            const youNum1 = "강아지"<br>
+            const youNum2 = "고양이" <br>
+            const youStr1 = "혓바닥";<br>
+            const youStr2 = "발바닥";<br>
+            <br>
+            func(youNum1,youStr1);<br>
+            func(youNum2,youStr2);
+             </p><br>
+
+            <h3 class="t_tit2">03. 함수와 배열, 객체를 이용한 형태 </h3>
+            <p class="t_box">
+            function func(str1, str2){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;document.write(str1 + "는" + str2 + "가 귀엽다.")<br>
+            }<br>
+            <br>
+            cosnt info = { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mai : 강아지, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num : 혓바닥 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;mai :고양이, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num : 발바닥 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            } <br>
+            <br>
+            func(info[0].mai,info[0].num);<br>
+            func(info[1].mai,info[1].num);
+             </p><br>
+
+             <h3 class="t_tit2">04. 객체 안에 변수와 함수를 이용한 형태 </h3>
+            <p class="t_box">
+            cosnt info = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;mai1 : 강아지,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;num1: 혓바닥,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;mai2 :고양이,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;num2 : 발바닥<br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;result1 : function(){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;document.write(info.mai1 + "는" + info.num1 + "가 귀엽다." )<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;result2 : function(){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;document.write(info.mai2 + "는" + info.num2 + "가 귀엽다." )<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }<br>
+            <br>
+            info.result1();<br>
+            info.result2();
+             </p><br>
+
+             <h3 class="t_tit2">05. 객체 생성자 함수 </h3>
+             <p class="t_box">
+                function func(str, mai){<br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; this str = str<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this mai = mai <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.result = function(){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;document.write(str + "는" + mai + "가 귀엽다.");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br><br>
+                
+                const info1 = new func("강아지","혓바닥");<br>
+                const info2 = new func("고양이","발바닥");<br><br>
+
+                info1.result();<br>
+                info2.result();
+              </p><br>
+
+              <h3 class="t_tit2">06. 프로토 타입 함수 </h3>
+             <p class="t_box">
+                function func(str, mai){<br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this str = str<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;this mai = mai <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;func.prototype.result = function(){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;document.write(str + "는" + mai + "가 귀엽다.");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br><br>
+                
+                const info1 = new func("강아지","혓바닥");<br>
+                const info2 = new func("고양이","발바닥");<br><br>
+
+                info1.result();<br>
+                info2.result();
+              </p><br>
+
+              <h3 class="t_tit2">07. 객체 리터럴 함수 </h3>
+              <p class="t_box">
+                 function func(str, mai){<br>
+                     <br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;this str = str<br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;this mai = mai <br>
+                }<br>
+                func.prototype = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result1 : function(){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(str + "는" + mai + "가 귀엽다.");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result2 : function(){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write(str + "는" + mai + "가 귀엽다.");<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+      
+                 }<br><br>
+                 
+                 const info1 = new func("강아지","혓바닥");<br>
+                 const info2 = new func("고양이","발바닥");<br><br>
+ 
+                 info1.result();<br>
+                 info2.result();
+               </p><br>
+
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

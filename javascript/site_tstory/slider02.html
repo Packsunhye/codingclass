@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이미지 슬라이드 유형 01 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+        <main id="main">
+            <div class="document">
+                <h2 class="t_tit"> 이미지 슬라이드 유형 01 </h2>
+                <p class="t_desc"> setInterval()를  이용하여 몇 초마다 5개의 이미지가 변하는 유형을 제작하였습니다. </p>
+
+                <h3 class="t_tit2"> 01. HTML </h3>
+                <p class="t_desc"> 첫번째 sliderEffect의 HTML과 비슷하지만 이미지를 가로로 연결하여 좌로 움직이는 것이기 때문에, 보이기 위한 박스를 만들어 이미지 위에 감쌌습니다.</p>
+                <div class="t_code">
+                    <div class="script"></div>
+        <pre><code class="language-html">     &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_06-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_07-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_09-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_10.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; </code></pre>   
+            </div>
+
+            <h3 class="t_tit2"> 02. css </h3>
+                <p class="t_desc"> 가로로 연결하기 위해 position: relative를 부여하고, 원하는 영역만 보기 위해 overflow: hidden으로 가렸습니다.</p>
+                <div class="t_code">
+                    <div class="script"></div>
+        <pre><code class="language-css">     .slider__img { /* 이미지 보이는 영역 */
+            position: relative;
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .slider__inner { /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+            display: flex;
+            flex-wrap: wrap ;
+            width: 4000px;
+            height: 450px;
+        }
+
+        .slider { /* 개별적인 이미지 */
+            position: relative;
+            width: 800px;
+            height: 450px;
+        } </code></pre>   
+            </div>
+
+            <h3 class="t_tit2"> 03. javascript </h3>
+            <p class="t_desc"> 아래는 자바 스크립트 입니다. 선택자를 부여하고 약 1500 = 1.5초에 slider.length인 이미지의 갯수를 움직이면 됩니다. 이때 이미지를 다 보여준다면, 다시 되돌아가야합니다.
+            </p>
+                <div class="t_code">
+                    <div class="script"></div>
+        <pre><code class="language-js">    const sliderInner = document.querySelector(".slider__inner")
+            const slider = document.querySelectorAll(".slider")
+
+            let currentIndex = 0;  
+
+            sliderInner.style.transition = "all 0.8s"
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slider.length;
+
+                sliderInner.style.transform = "translateX(" + -800 * currentIndex + "px)"
+            },1500)</code></pre>   
+        </div><br>
+
+        <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <iframe src="https://packsunhye.github.io/coding/javascript/effect/sliderEffect02.html"></iframe>
+        </div>
+        
+        <div class="t_link">
+            <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/sliderEffect02.html">원본 소스 보여주기</a>
+        </div> 
+
+        <div class="t_link">
+            <a href="https://packsunhye.github.io/coding/javascript/effect/sliderEffect02.html">원본 사이트 보여주기</a>
+        </div>  
+
+                
+            
+            </div>
+        </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

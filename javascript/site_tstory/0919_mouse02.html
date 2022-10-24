@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Mouse Effect 02 </h2>
+            <p class="t_desc"> 마우스를 움직일 때마다, 따라다니는 원과 따라붙었을 때의 애니메이션과 특정 위치에 hover 할때 반응하는 이펙트를 공부해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 이번에는 style를 딱히 지정해주지 않았습니다.</p>
+            <details>
+                <summary>💀 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+      &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+      &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+      &lt;div class="mouse__wrap"&gt;
+        &lt;p class="Nix"&gt;&lt;span&gt;Nature&lt;/span&gt; never &lt;span&gt;deceives&lt;/span&gt; us it is we who deceive &lt;span&gt;ourselves&lt;/span&gt;&lt;/p&gt;
+        &lt;p class="arir"&gt;&lt;span&gt;자연&lt;/span&gt;은 인간을 결코 &lt;span&gt;속이지 않는다.&lt;/span&gt; 우리를 속이는 것은 항상 &lt;span&gt;우리 자신&lt;/span&gt;이다.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 기본 mouse와 따라붙는 mouse-sub 가 있으며, hover 등을 하였을 때 애니메이션을 주었습니다. </p>
+            <details>
+                <summary>💀 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">/* mouseType */
+body::after {
+    background:rgba(43, 37, 59, 0.651);
+}
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+
+.mouse__wrap p {
+    font-size: 1.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.mouse__wrap p:last-child {
+    font-size: 1.8vw;
+    font-weight: 500;
+}
+
+.mouse__wrap p span {
+    border-bottom: 0.05vw solid rgb(219, 73, 146);
+    color: rgb(219, 73, 146);
+}
+
+
+@media( max-width : 800px){
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .mouse__wrap p:last-child {
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 50%;
+    background: rgba(255, 42, 219, 0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.2s;
+}
+
+.mouse__cursor2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 9998;
+    border-radius: 50%;
+    background: rgba(255, 156, 230, 0.5);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.2s;
+}
+
+.mouse__cursor.active {
+    transform: scale(0);
+}
+.mouse__cursor2.active {
+    transform: scale(3);
+    background: rgba(255, 42, 219, 0.3);
+}
+
+.mouse__cursor.show {
+    transform: scale(0);
+}
+.mouse__cursor2.show {
+    transform: scale(3);
+    background: rgba(40, 169, 255, 0.3);
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc">GSPA를 사용하였으며, cursor의 오차를 줄여주거나, 특정 위치에 갔을 때 cursor가 반응하게 show를 붙여주는 역활도 하였습니다.</p>
+            <details>
+                <summary>💀 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor")
+const cursor2 = document.querySelector(".mouse__cursor2")
+const span = document.querySelectorAll(".mouse__wrap span")
+const header = document.querySelectorAll("#header")
+const btn = document.querySelectorAll(".modal__wrap .modal__btn")
+
+window.addEventListener("mousemove", e => {
+    //커서에 좌표값 할당
+    // cursor.style.left = e.pageX-5 + "px";
+    // cursor.style.top = e.pageY-5 + "px";
+
+    // cursor2.style.left = e.pageX-15 + "px";
+    // cursor2.style.top = e.pageY-15 + "px";
+
+    //GSAP
+    gsap.to(cursor, {duration: 0.15, left:e.pageX-5, top:e.pageY-5});
+    gsap.to(cursor2, {duration: 0.5, left:e.pageX-15, top:e.pageY-15});
+
+
+    //오버 효과
+    // mouseenter / mouseover  / 이벤트 버블링 
+    span.forEach(span => {
+        span.addEventListener("mouseenter", ()=>{
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+        });
+        span.addEventListener("mouseleave", ()=>{
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+        });
+    });
+
+    //옛날 효과
+    // span.forEach(function(){
+    //   this.addEventListener("mouseenter", function(){});
+    // })
+
+    header.forEach( header => {
+        header.addEventListener("mouseenter", ()=>{
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+        });
+        header.addEventListener("mouseleave", ()=>{
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+        });
+    })
+
+    btn.forEach( btn => {
+    btn.addEventListener("mouseenter", ()=>{
+        cursor.classList.add("show");
+        cursor2.classList.add("show");
+        });
+        btn.addEventListener("mouseleave", ()=>{
+        cursor.classList.remove("show");
+        cursor2.classList.remove("show");
+        });
+    })
+})</code></pre>
+            </div>
+            </details>
+           <br>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/mouseEffect02.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/mouseEffect02.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/mouseEffect02.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

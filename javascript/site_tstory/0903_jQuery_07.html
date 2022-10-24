@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0829 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            
+            <h2 class="t_tit"> jQuery 스타일 메서드 </h2>
+
+            <h3 class="t_tit2"> attr() 메서드 </h3>
+             <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td class="ce"> 취득 </td>
+                        <td>
+                            $("div").attr("width")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2"> 생성, 변경 </td>
+                        <td>
+                            $("div").css("background-color" , "red").css("padding" , "10px");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $("div").css({ background-color : "red" , padding : "10px"});
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce"> 콜백함수 </td>
+                        <td>
+                            $("div").css("width" ,function(index,.w){<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//index는 각 div 요소의 index 0,1,2<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//w 각 div 요소 width 값<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return css 속성 // 각 div 요소의 css 속성을 변경합니다.<br>
+                            });<br>
+                            ....<br>
+                            &lt;div&gt;내용&lt;/div&gt;<br>
+                            &lt;div&gt;내용&lt;/div&gt;<br>
+                            &lt;div&gt;내용&lt;/div&gt;<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery-07-1" src="https://codepen.io/packsunhye/embed/PoeoLVa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/PoeoLVa">
+                    jQuery-07-1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div><br>
+
+            <details>
+                <summary>🐳 jQuery 스타일 메서드의 코드만 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">$(document).ready(function() {
+    $("div").eq(0).css({padding: 10, "text-align": "center"});
+    $("div").css("width", function(index) {
+        return index * 100 + 100; // 100, 200, 300
+    });
+});/code></pre>
+                </div>
+            </details><br>
+            <!-- /01 -->
+
+            <h3 class="t_tit2"> width, height 관련 메서드 </h3>
+            <table class="t_table">
+               <thead>
+                   <tr>
+                        <th>메서드 종류</th>
+                        <th>설명</th>
+                   </tr>
+               </thead>
+               <tbody> 
+                   <tr>
+                       <td class="ce"> width() </td>
+                       <td>
+                           요소의 가로 길이를 취득, 변경할 수 있습니다.
+                       </td>
+                   </tr>
+                   <tr>
+                        <td class="ce"> innerWidth() </td>
+                        <td>
+                            padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce"> outerWidth() </td>
+                        <td>
+                            border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다. <br>
+                            outerWidth()의 요소의 width값 + 좌 · 우 border 값 <br>
+                            outerWidth(true)의 요소의 width값 + 좌 · 우 border 값 + 좌 · 우 margin 값 <br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="ce"> height() </td>
+                        <td>
+                            요소의 가로 높이를 취득, 변경할 수 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="ce"> innerHeight() </td>
+                         <td>
+                             padding이 적용된 요소의 높이 길이를 취득, 변경할 수 있습니다.
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="ce"> outerHeight() </td>
+                         <td>
+                             border와 margin이 적용된 요소의 높이 길이를 취득, 변경할 수 있습니다. <br>
+                             outerHeight()의 요소의 width값 + 상 · 하 border 값 <br>
+                             outerHeight(true)의 요소의 width값 + 상 · 하 border 값 + 상 · 하 margin 값 <br>
+                         </td>
+                     </tr>
+               </tbody>
+           </table>
+
+           <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+           <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery-07-2" src="https://codepen.io/packsunhye/embed/YzLzgmY?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/YzLzgmY">
+                    jQuery-07-2</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+           </div><br>
+
+           <details>
+               <summary>🐳 jQuery 스타일 메서드의 코드만 보기</summary>
+               <div class="t_code">
+<pre><code class="language-js">$(document).ready(function() {
+    $("div").width(150).height(150);
+    console.log("width" + $("div").width());
+    console.log("height " + $("div").height());
+    console.log("innerWidth " + $("div").innerWidth());
+    console.log("innerHeight " + $("div").innerHeight());
+    console.log("outerWidth " + $("div").outerWidth(true));
+    console.log("outerHeight " + $("div").outerHeight(true));
+});</pre>
+               </div>
+           </details><br>
+           <!-- /02 -->
+
+           <h3 class="t_tit2"> 위치 관련 메서드 </h3>
+           <table class="t_table">
+              <thead>
+                  <tr>
+                      <th>메서드 종류</th>
+                      <th>설명</th>
+                  </tr>
+              </thead>
+              <tbody> 
+                  <tr>
+                      <td class="ce" rowspan="2"> offset() </td>
+                      <td>
+                          $("div").offset().left    <br>
+                          $("div").offset().top     <br>
+                          $("div").offset({ left : 10, top : 10})   <br>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        html 기준으로 left , top 값을 취득, 변경할 수 있습니다.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ce"  rowspan="2"> position() </td>
+                    <td>
+                        $("div").position().left    <br>
+                        $("div").position().top     <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        부모 기준으로 left , top 값을 취득, 변경할 수 있습니다.
+                    </td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+          <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery-07-3" src="https://codepen.io/packsunhye/embed/yLjLryL?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/packsunhye/pen/yLjLryL">
+                jQuery-07-3</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+          </div><br>
+
+          <details>
+              <summary>🐳 jQuery 스타일 메서드의 코드만 보기</summary>
+              <div class="t_code">
+<pre><code class="language-js">$(document).ready(function() {
+    console.log($("#inner").offset().left);
+    console.log($("#inner").offset().top);
+    console.log($("#inner").position().left);
+    console.log($("#inner").position().top);
+});</pre>
+              </div>
+          </details><br>
+          <!-- /01 -->
+
+         
+        
+          
+        </div>       
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

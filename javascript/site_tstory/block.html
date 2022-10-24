@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 블록 구조 | 인라인 구조</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    
+    <main id="main">
+       <div class="document">
+        <h2 class="t_tit">블록 구조와 인라인 구조</h2>
+        <p class="t_desc2">
+            HTML의 태그들은 블록 요소와 인라인 요소로 분류됩니다. 블록 구조의 태그들은 보통 <i>div , p, h1-h6, ul, li, ol, table</i>이 있고, <br>
+            인라인 구조에서는 <i>span , a, em, i, strong</i>이 있습니다. </p><br>
+        
+        <h3 class="t_tit2">블록 구조와 인라인 구조의 비교</h3>
+        <p class="t_desc">코드펜에서 둘을 비교해 보았습니다.</p>
+        <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/packsunhye/embed/bGvzjXM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/packsunhye/pen/bGvzjXM">
+                Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+        
+        <h3 class="t_tit2">둘을 사용하였을 때에 특징의 비교</h3>
+        <table class="t_table">
+            <thead>
+                <th>블록 구조</th>
+                <th>인라인 구조</th>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td class="ce"> 줄바꿈이 일어날정도로 한 줄을 차지하고 있습니다. </td>
+                        <td class="ce"> 줄바꿈을 하지 않고 태그 안에 쓰여진 내용만큼만 공간을 차지합니다. </td>
+                    </tr>
+                    <tr>
+                        <td class="ce"> 블록 구조 안에는 블록 구조나 인라인 구조가 올 수 있습니다. </td>
+                        <td class="ce"> 인라인 구조 안에는 인라인 구조는 올 수 있으나, 블록 구조가 올 수 없습니다. (그러나 a 태그는 가능합니다.) </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">  블록 구조는 margin이나 padding 값을 먹일 수 있습니다. </td>
+                        <td class="ce">  인라인 구조는 margin이나 padding 값을 먹일 수 없습니다. </td>
+                    </tr>
+            </tbody>
+        </table>
+    
+   
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

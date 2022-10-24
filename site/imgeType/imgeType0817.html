@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 타입</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+
+        /* imgType */
+
+        .img__header {
+            position: relative;
+        }
+
+        .img__header  img {
+            width: 570px;
+            height: 370px;
+            object-fit: contain;
+        }
+
+        .img__header h3 {
+            position: absolute;
+            width: 265px;
+            height: 32px;
+            margin: 0 245px 10px 30px;
+            font-size: 32px;
+            font-weight: 500;
+            text-align: left;
+            color: #fff;
+            top: 200px;
+        }
+
+        .img__header p {
+            position: absolute;
+            width: 510px;
+            height: 48px;
+            margin: 0 0 10px 30px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+            text-align: left;
+            color: #fff;
+            top: 242px;
+        }
+        .img__header .btn1 {
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            background-color: rgba(146, 50, 50, 0.5);
+            top: 300px;
+            left: 30px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+        }
+
+        .img__header .btn2 {
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            background-color: rgba(41, 125, 120, 0.5);
+            top: 300px;
+            left: 30px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <section id="imgType" class="img__wrap nexon section">
+        <h2>고양이는 왜이리 귀여운가?</h2>
+        <p>고양이는 보들보들 가슴털과 말랑말랑 발바닥을 가지고 있기 때문이죠.</p>
+
+        <div class="img__inner container">
+            <article class="img">
+                <figure class="img__header">
+                    <img src="../imgeType/img/imgType01_01.jpg" alt="고양이">
+                    <h3>고양이 보들 가슴털</h3>
+                    <p>고양이 보들보들 가슴털을 볼때마다 만지고 싶은데 만지면 도망가거나
+                        물어버려서 나는 울 수 밖에 없는것이였다. 그래도 기분 좋으면 만지게 해줌</p>
+                    <a href="#" class="btn1">
+                        자세히 보기
+                    </a>
+                </figure>
+            </article>
+            <article class="img">
+                <figure class="img__header">
+                    <img src="../imgeType/img/imgType01_02.jpg" alt="고양이">
+                    <h3>고양이 말랑 발바닥</h3>
+                    <p>고양이 발바닥 만지는건 참을 수가 없다. 이미 만져서 358번 물렸지만
+                        그래도 똑같이 만질 것이다. 다들 고양이 젤리 만져봤나? 나는 만졌지롱</p>
+                    <a href="#" class="btn2">
+                        자세히 보기
+                    </a>
+                </figure>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

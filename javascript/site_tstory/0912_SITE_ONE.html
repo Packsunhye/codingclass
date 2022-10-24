@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <style>
+       details > summary {
+		padding-left: 24px;
+		background-color: #a8ade8;
+		width: 215px;
+		height: 50px;
+		line-height: 49px;
+		border-radius: 12px;
+		font-weight: 700;
+		list-style: none;
+		color: #ffffff;
+		/* -webkit-text-stroke: 1px #ffffff; */
+		margin-bottom: 5px;
+}
+    </style>
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 사이트 & 반응형 사이트 </h2>
+            <p class="t_desc"> 
+                드디어 왔습니다. 사이트 완성형 + 반응형 입니다.
+            </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 저의 🐶고생 끝에 완성되었습니다. </p>
+            <details>
+                <summary> 👻 HTML 코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id="skip"&gt;
+        &lt;a href="#headerType"&gt;헤더 영역 바로가기&lt;/a&gt;
+        &lt;a href="#sliderType"&gt;슬라이드 영역 바로가기&lt;/a&gt;
+        &lt;a href="#imageType01"&gt;이미지 영역 바로가기&lt;/a&gt;
+        &lt;a href="#imgTextType"&gt;이미지/텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#cardType"&gt;카드 영역 바로가기&lt;/a&gt;
+        &lt;a href="#bannerType"&gt;배너 영역 바로가기&lt;/a&gt;
+        &lt;a href="#textType"&gt;텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#footerType"&gt;푸터 영역 바로가기&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!-- //skip --&gt;
+
+    &lt;header id="headerType" class="header__wrap nexon"&gt;
+        &lt;div class="header__inner"&gt;
+            &lt;div class="header__logo"&gt;
+                &lt;a href="#"&gt;Jelly &lt;em&gt;Fish&lt;/em&gt;&lt;/a&gt; 
+            &lt;/div&gt;
+            &lt;div class="header__menu"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#sliderType"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#imageType"&gt;이미지 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#imgTextType"&gt;이미지 텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#cardType"&gt;카드 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#bannerType"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#textType"&gt;텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#footerType"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="header__member"&gt;
+                &lt;a href="#"&gt;로그인&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;a href="#" class="header__icon"&gt;
+                &lt;img src="../site_img/bars-solid.svg" alt=""&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;!-- //hraderType --&gt;
+
+    &lt;main id="mainType"&gt;
+        &lt;section id="sliderType" class="slider__wrap nexon scroll"&gt;
+            &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;
+                    &lt;div class="slider__img"&gt;
+                        &lt;div class="desc"&gt;
+                            &lt;span&gt;Under the Sea&lt;/span&gt;
+                            &lt;h3&gt;Jelly fish&lt;/h3&gt;
+                            &lt;p&gt;
+                                심해 그 저편에는 말랑한 해파리들이 &lt;br&gt;
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            &lt;/p&gt;
+                            &lt;div class="btn"&gt;
+                                &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                                &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider__arrow"&gt;
+                        &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                        &lt;a href="#" class="rigth"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider__dot"&gt;
+                        &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                        &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                        &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                        &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                        &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;    
+        &lt;!-- //sliderType --&gt;
+
+        &lt;section id="imageType" class="image__wrap nexon section scroll"&gt;
+            &lt;h2&gt;해파리들이 둥둥 떠다니는 모습&lt;/h2&gt;
+            &lt;p&gt;정해진 갈 길 없이 흘러가는 대로 움직이다보면 새로운 만남이 있어요.&lt;/p&gt;
+            &lt;div class="image__inner container"&gt;
+                &lt;article class="image img1"&gt;
+                    &lt;h3 class="image__title"&gt;화려한 모습의 해파리&lt;/h3&gt;
+                    &lt;p class="image__desc"&gt;색감과 그 화려한 치마와 같은 구완들이 바다속에서 자유롭게 있어요, &lt;br&gt; 만지면 돌이킬 수 없을 정도로 아프니 주의합시다.&lt;/p&gt;
+                    &lt;a class="image__btn" href="#" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/article&gt;
+                &lt;article class="image img2"&gt;
+                    &lt;h3 class="image__title"&gt;동그란 모습의 해파리&lt;/h3&gt;
+                    &lt;p class="image__desc"&gt;콕, 찔러보아 젤리처럼 부드럽게 흐물거리는 모습을 보고싶지만 &lt;br&gt;해파리 주변엔 해파리들이 가득있어요 바라보기만 합시다.&lt;/p&gt;
+                    &lt;a class="image__btn yellow" href="#" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //imgeType --&gt;
+
+        &lt;section id="imgTextType" class="imgText__wrap nexon section black scroll"&gt;
+            &lt;h2 class="blind"&gt;해파리의 신비한 빛깔&lt;/h2&gt;
+            &lt;div class="imgText__inner container"&gt;
+                &lt;div class="imgText__txt"&gt;
+                    &lt;span&gt;jellu fisf color&lt;/span&gt;
+                    &lt;h3&gt; 해파리의 &lt;br&gt;신비한 빛깔 &lt;/h3&gt;
+                    &lt;p&gt; 빛에 따라 달라지지만, 어떠한 색깔도 잘 어울리는 모습을 보입니다.&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;노무라입깃해파리&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;보름달물해파리&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;사자갈기해파리&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;스티기오메두사&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;숲뿌리해파리&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;범피&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="imgText__wold"&gt;
+                    &lt;div class="imgText__img img1"&gt;
+                        &lt;a href="#"&gt;대양해파리&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="imgText__img img2"&gt;
+                        &lt;a href="#" class="blue"&gt;커튼원양해파리&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt; 
+        &lt;!-- //imgTextType --&gt;
+
+        &lt;section id="cardType" class="card_wrap nexon section scroll"&gt;
+            &lt;h2&gt;해파리가 흘러갑니다 - ଳ&lt;/h2&gt;
+            &lt;p&gt;흔들흔들 , 사람들이 일상에 치이는 것처럼 해파리도 물살에 치여 움직인답니다.&lt;/p&gt;
+            
+            &lt;div class="card_inner container"&gt;
+                &lt;article class="card"&gt;
+                    &lt;figure class="card_header"&gt;
+                        &lt;img src="../site_img/card_bg01.jpg" alt="고양이가 가만히 있을 때"&gt;
+                    &lt;/figure&gt;
+                    &lt;div class="card_body"&gt;
+                        &lt;h3 class="tit"&gt;넙적한 해파리&lt;/h3&gt;
+                        &lt;p class="desc"&gt;넙적한 상산이 작은 촉수들과 어울려 바다에서 흔들립니다. 파란색 해파리를 멍하게 바라보다 보면 어느샌가 시간이 엄청 지나가있어요, 그렇지만 빠져들게 되지 않나요?&lt;/p&gt;
+                        &lt;a href="/" class="btn"&gt;
+                            더 자세히 보기 
+                            &lt;span aria-hidden="true"&gt;
+                                &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                    &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class="card"&gt;
+                    &lt;figure class="card_header"&gt;
+                        &lt;img src="../site_img/card_bg02.jpg" alt="고양이가 자고 있을 때"&gt;
+                    &lt;/figure&gt;
+                    &lt;div class="card_body"&gt;
+                        &lt;h3 class="tit"&gt;조그마한 해파리&lt;/h3&gt;
+                        &lt;p class="desc"&gt;바쁜듯 열심히 구완을 흩날리고 있지만 사실은 해파리는 흘러가고 있답니다. 하루에 할일이 지나다니는 것 뿐이라니 부러워요 저도 요 조그마한 해파리 처럼 가만히 즐기고 싶다.&lt;/p&gt;
+                        &lt;a href="/" class="btn"&gt;
+                            더 자세히 보기
+                            &lt;span aria-hidden="true"&gt;  &lt;!-- 이미지 읽지 않기 표시 --&gt;
+                                &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                    &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class="card"&gt;
+                    &lt;figure class="card_header"&gt;
+                        &lt;img src="../site_img/card_bg03.jpg" alt="고양이 사진이 너무 잘찍혔을 때"&gt;
+                    &lt;/figure&gt;
+                    &lt;div class="card_body"&gt;
+                        &lt;h3 class="tit"&gt;풍선같은 해파리&lt;/h3&gt;
+                        &lt;p class="desc"&gt;보자마자 풍선같은 생김새에 웃음이 나와요. 후 바람을 부르면 하늘로 올라같 것 같습니다. 사실은 바다가 제 2의 하늘이 아닐까요? 높이 높이 올라가렴 작은 풍선 해파리야&lt;/p&gt;
+                        &lt;a href="/" class="btn"&gt;
+                            더 자세히 보기
+                            &lt;span aria-hidden="true"&gt;
+                                &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                    &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                            &lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //cardType --&gt;
+
+        &lt;section id="bannerType" class="banner__wrap nexon scroll"&gt;
+            &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+            &lt;div class="banner__inner"&gt;
+                &lt;h3 class="title"&gt;해파리 사이트&lt;/h3&gt;
+                &lt;p class="desc"&gt;해파리들이 얼마나 아름다운지 알리는 사이트  
+                    &lt;a href="#" title="해파리 보러가기"&gt;어떠신가요?&lt;/a&gt;
+                &lt;/p&gt;
+                &lt;span class="small"&gt;배너 유형 01&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;    
+        &lt;!-- //bannerType --&gt;
+
+        &lt;section id="textType" class="text__wrap nexon section scroll"&gt;
+            &lt;span&gt;텍스트 유형 01&lt;/span&gt;
+            &lt;h2 class="mb70"&gt;해파리의 신기한 이야기들&lt;/h2&gt;
+            &lt;div class="text__inner container"&gt;
+                &lt;div class="text t1"&gt;
+                    &lt;h3 class="text__title"&gt;말랑해보인다.&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;자주 이야기 하지만, 말랑해보이지 않나요? 돌고래의 놀이감이 되는 이유가 있습니다.&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="text t2"&gt;
+                    &lt;h3 class="text__title"&gt;보는 것 만으로 즐겁다.&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;흔들리는 것 만으로도 마치 마리모를 보는 것과 같이 마음의 평화를 얻을 수 있어요.&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="text t3"&gt;
+                    &lt;h3 class="text__title"&gt;온도에 따라 나타난다.&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;보통 따뜻할 때에 나타나지만, 깊은 심해속에서도 살 수 있으니 차가운 물에 등장하는 아이도 있답니다.&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="text t4"&gt;
+                    &lt;h3 class="text__title"&gt;혼자서 증식이 가능하다&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;놀랍게도 갈라진다면 세포분열을 통해 재생하여 증식해 별개의 해파리가 된답니다. 놀랍지 않나요?&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="text t5"&gt;
+                    &lt;h3 class="text__title"&gt;영원히 사는 종이 있다.&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;'작은보호탑 해파리'는 생존에 부적절한 환경이 되면 몸을 뒤집어 세포 분열을 통해 어린 상태로 되돌아간대요&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="text t6"&gt;
+                    &lt;h3 class="text__title"&gt;스스로 빛을 낼 수 있다.&lt;/h3&gt;
+                    &lt;p class="text__desc"&gt;어두운 심해에서 먹이를 유혹하거나, 천적에게 위협을 가하기 위해 빛을 낼 수 있습니다.&lt;/p&gt;
+                    &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          
+        &lt;/section&gt; 
+        &lt;!-- //textType --&gt;
+
+    &lt;/main&gt;
+    &lt;!-- //mainType --&gt;
+
+    &lt;footer id="footerType" class="footer__wrap nexon section gray scroll"&gt;
+        &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+        &lt;div class="footer__inner container"&gt;
+            &lt;div class="footer__menu"&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;사이트&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;반응형 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;패럴랙스 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;포트폴리오 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;헤더 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;메뉴 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;메뉴 유형02&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;슬라이드 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형02&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;이미지 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;컨텍츠 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;카드 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;카드 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;카드 유형03&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;푸터 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;푸터 메뉴 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;푸터 컨택트 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;푸터 이메일 유형03&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="footer__rigth"&gt;
+                2022 Manyong. Portfolio is Power&lt;br&gt;
+                All rights reserved.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footerType --&gt;
+
+    &lt;script&gt;
+     
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 각 타입 별로 나눠서 보여드리겠습니다.</p>
+            <details>
+                <summary> 👻 CSS header 코드 </summary>
+                <div class="t_code">
+<pre><code class="language-css">/* 헤더 유형 */
+    .header__inner {
+     position: fixed;
+     left: 0;
+     top: 0;
+     background-color: #141414;
+     /* backdrop-filter: blur(10px); */
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 20px;
+     box-sizing: border-box;
+     border-bottom: 1px solid #000;
+     z-index: 10000;
+ }
+
+ .header__logo {
+     width: 10%;
+     font-size: 30px;
+     font-weight: 700;
+     text-transform: uppercase;
+ }
+ .header__logo a {
+     color: #715af4;
+ }
+ .header__logo em {
+     color: rgb(145, 145, 145);
+     font-size: 18px;
+     font-weight: 400;
+    
+ }
+ .header__menu {
+     width: 80%;
+     text-align: center;
+ }
+ .header__icon {
+     display: none;
+ }
+ .header__menu li {
+     display: inline;
+ }
+ .header__menu li a {
+     padding: 13px 30px;
+     margin: 0 5px;
+     color: rgb(145, 145, 145);
+     transition: background-color 0.3s ;
+ }
+ .header__menu li.active a {
+     background-color:  #3d26c0;
+     border-radius: 5px;
+     color: #fff;
+ }
+ .header__menu li a:hover {
+     background-color:  #3d26c0;
+     color: #fff;
+     border-radius: 5px;
+ }
+ .header__member {
+     text-align: right;
+     width: 10%;
+ }
+ .header__member a {
+     font-size: 16px;
+     border: 1px solid rgb(145, 145, 145);
+     padding: 10px 30px;
+     border-radius: 50px;
+     transition: all 0.3s;
+     color: #fff;
+ }
+ .header__member a:hover {
+     background-color: #3d26c0;
+     color: #fff;
+ }
+
+ /* @media(max-width : 800px){
+     .header__inner {
+         height: 50px;
+     }
+     .header__logo em {
+         display: none;
+     }
+     .header__menu ul li {
+         width: 90%;
+     }
+     .header__menu ul li a{
+         padding: 9px 3px;
+     }
+     .header__menu ul li:nth-child(1),.header__menu ul li:nth-child(5),.header__menu ul li:last-child {
+         display: none;
+     }
+     .header__member {
+         display: none;
+     }
+ } */
+
+ @media(max-width : 460px){
+     #headertype {
+         overflow: hidden;
+     }
+     .header__inner {
+         padding: 10px;
+         width: 100%;
+         display: block;
+         overflow: hidden;
+     }
+     .header__logo {
+         width: 80%;
+     }
+     .header__menu {
+         display: none;
+
+         width: 100%;
+         flex-direction: column;
+         /* align-items: flex-start; */
+         padding-top: 15px;
+     }
+ 
+     .header__menu li {
+         width: 100%;
+         text-align: center;
+         display: block;
+         margin-bottom: 15px;
+     }
+     .header__menu li a {
+         padding: 7px 115px;
+     }
+     .header__member {
+         width: 100%;
+
+         display: none;
+     }
+     .header__member a {
+         padding: 10px 15px;
+     }
+
+     .header__icon {
+         width: 20%;
+         height: 15px;
+         width: 15px;
+         display: block;
+         background-color: #715af4;
+         position: fixed;
+         top: 18px;
+         left: 425px;
+     }
+
+     .header__menu.active, .header__member.active {
+         display: flex;
+         justify-content: center;
+         
+     }   
+ 
+ }</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS slider 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.slider__inner {
+    margin-top: 70px;
+}
+.slider {
+    position: relative;
+}
+.slider__img {
+    background: url(../../../slideType/img/slider_bg01.jpg) no-repeat center / cover ;
+}
+.slider__img:hover {
+    filter: brightness(120%);
+    transition: all 0.3s ease;
+}
+.slider__img .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+.slider__img .desc span{
+    font-size: 16px;
+    height: 20px;
+    line-height: 15px;
+    background-color: #fff;
+    padding: 6px 14px 0 14px;
+    border-radius: 30px;
+    text-transform:uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+
+}
+.slider__img .desc h3{
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-top: 10px;
+    margin-left: -8px;
+}
+.slider__img .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 130px;
+}
+.slider__img .desc .btn {
+
+}
+.slider__img .desc .btn a{
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.800);
+    padding: 11px 50px;
+    display: inline-block;
+}
+.slider__img .desc .btn a.black {
+    background: rgba(0, 0, 0, 0.555);
+    color: #fff;
+}
+.slider__arrow a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 56px;
+    background-image: url(../../../slideType/img/slider_icon.svg);
+}
+
+.slider__arrow a.left {
+    left: 20px;
+}
+.slider__arrow a.rigth {
+    right: 20px;
+    background-position: -50px 0px;
+}
+
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+}
+
+.slider__dot a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../../../slideType/img/slider_icon.svg);
+    background-position: -20px -70px ;
+}
+
+.slider__dot a.active {
+    background-position: 0px -70px;
+}
+
+.slider__dot a.play {
+    background-position: -40px -70px;
+}
+
+.slider__dot a.stop {
+    background-position: -60px -70px;
+}
+
+
+@media(max-width : 460px){
+    .slider__inner {
+        width: 100%;
+        margin-top: 55px;
+    }
+    .slider__img {
+        width: 100%;
+    }
+    .slider__img .desc {
+        width: 460px;
+        padding: 100px 0;
+    }
+    .slider__img .desc h3 {
+        font-size: 40px;
+        margin-left: 30px;
+    }
+    .slider__img .desc span {
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-left:30px; 
+    }
+    .slider__img .desc p {
+        font-size: 14px;
+        margin-left: 30px;
+    }
+    .slider__img .desc .btn {
+        text-align: center;
+    }
+    .slider__arrow a.rigth, .slider__arrow a.left {
+        top: 300px;
+    }
+}</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS imgType 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">/* img type */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.15s ease-in-out;
+}
+.image.img1 {
+    background: url(../../../site_img/imgType01_01.png) no-repeat center;
+    
+}
+.image.img2 {
+    background: url(../../../site_img/imgType01_02.png) no-repeat center;
+}
+.image.img1:hover,.image.img2:hover  {
+    transform: scale(1.01);
+    filter: brightness(110%);
+    
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.image__btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #1f1d94af;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image__btn.yellow {
+    background-color: #626cc9b6;
+}
+
+@media(max-width : 460px){
+    .image__inner {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .image {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .image__title {
+        font-size: 28px;
+    }
+    .image__desc {
+        font-size: 16px;
+    }
+}</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS imgTextType 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css"> /* 이미지 텍스트 유형 */
+    .imgText__inner {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .imgText__inner div {
+      width: 32%;
+      /* height: 500px; */
+  }
+  .imgText__txt span {
+      font-size: 16px;
+      color: #666;
+      text-decoration: underline;
+      text-underline-position: under;
+      margin-bottom: 20px;
+      display: block;
+  }
+  .imgText__txt h3 {
+      color: #fff;
+      font-size: 50px;
+      font-weight: 300;
+      word-break: keep-all;
+      line-height: 1.4;
+      margin-bottom: 20px;
+  }
+  .imgText__txt p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: rgb(218, 218, 218);
+      margin-bottom: 10px;
+  }
+  .imgText__txt ul {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+  }
+  .imgText__txt ul li {
+      padding-left: 20px;
+      position: relative;
+  }
+  .imgText__txt ul li a {
+      color: rgb(148, 148, 148);
+  }
+  .imgText__txt ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: rgb(148, 148, 148);
+  }
+  .imgText__wold {
+      display: contents;
+  }
+  
+  .imgText__img {
+      border-radius: 10px;
+      position: relative;
+  }
+  .imgText__img  a {
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+      background-color: #66a4ce7a;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 30px;
+      border-radius: 30px;
+      display: inline-block;
+  }
+  
+  .imgText__img  a.blue {
+      background-color: rgba(125, 102, 209, 0.527);
+  }
+  
+  .imgText__img.img1{
+      background : url(../../../imgTextType/img/imgText_01.jpg) no-repeat center / cover ;
+  }
+  .imgText__img.img2{
+      background: url(../../../imgTextType/img/imgText_02.jpg) no-repeat center / cover;
+  }
+  
+  @media(max-width : 460px){
+      
+      .imgText__inner {
+          flex-direction: column;
+      }
+  
+      .imgText__inner div {
+          width: 100%;
+          text-align: center;
+      }
+      .imgText__txt {
+          height: 350px;
+          margin-bottom: 40px;
+      }
+      .imgText__txt span {
+          font-size: 12px;
+          margin-bottom: 10px;
+      }
+  
+      .imgText__txt h3 {
+          font-size: 32px;
+          margin-bottom: 10px;
+      }
+      .imgText__txt p {
+          width: 60%;
+          padding-left: 88px;
+          font-size: 16px;
+          word-break: keep-all;
+      }
+      .imgText__txt ul li a {
+          font-size: 14px;
+      }
+      .imgText__txt ul li::before {
+          left: 135px;
+      }
+  
+      .imgText__wold {
+          display: flex;
+          height: 350px;
+      }
+  
+      .imgText__img {
+          border-radius: 15px;
+      }
+      .imgText__img.img1{
+          margin-right: 5px;
+      }
+  
+      .imgText__img a {
+          font-size: 14px;
+      }
+  }</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS card 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">/* cardType */
+.card_inner {
+    display: flex;
+    justify-content: space-between;  /* 가운데 정렬로 맞추기*/
+}
+.card {
+    width: 32%;
+    background-color: #f5f5f5;
+}
+.card_body {
+    padding: 24px;
+}
+.card_body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden; /* 한줄 효과 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+.card_body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+    overflow: hidden; /* 2줄 이상 효과 */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+}
+
+@media(max-width : 460px){
+    .card_inner {
+        flex-direction: column;
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS banner 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.banner__inner {
+    background-image: url(../../../bannerType/img/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+
+.banner__inner .small {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+@media(max-width : 460px){
+    .banner__inner {
+        padding: 80px;
+    }
+
+    .banner__inner .title {
+        font-size: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 18px;
+        margin-bottom: 34px;
+    }
+}</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS text 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">/* 텍스트 유형 */
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text {
+    width: 32%;
+    margin-bottom: 2%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: background 0.4s;
+}
+.text:hover {
+    background-color: #f5f5f5;
+
+}
+.text__title {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-top: 75px;
+}
+
+.text__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: url(../img/text_type_01_.svg);
+    border-radius: 50%;
+}
+.text.t1 .text__title::before {
+    background-position: 0 0;
+}
+.text.t2 .text__title::before {
+    background-position: -100px 0;
+}
+.text.t3 .text__title::before {
+    background-position: -200px 0;
+}
+.text.t4 .text__title::before {
+    background-position: -300px 0;
+}
+.text.t5 .text__title::before {
+    background-position: -400px 0;
+}
+.text.t6 .text__title::before {
+    background-position: -500px 0;
+}
+
+
+.text__desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    overflow: hidden; /* 2줄 이상 효과 */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    margin-bottom: 20px;
+
+}
+.text_btn {
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    color: #666;
+    text-underline-position: under;
+}
+
+@media(max-width : 460px){
+    .text__inner {
+        width: 100%;
+        flex-direction: column;
+    }
+    .text {
+        width: 100%;
+    }
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 14px;
+    }
+    .text_btn {
+        font-size: 14px;
+    }
+}
+</code></pre>
+            </div>
+            </details><br>
+
+            <details>
+                <summary> 👻 CSS footer 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.footer__inner {}
+.footer__inner .footer__menu {
+    display: flex;
+    margin-bottom: 70px;
+}
+.footer__inner .footer__menu > div {
+    width: 16%;
+}
+
+.footer__inner .footer__menu h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__inner .footer__menu li a {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__inner .footer__rigth {
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+    padding-top: 40px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+@media(max-width : 460px){
+    .footer__inner {
+
+    }
+    .footer__inner .footer__menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer__inner .footer__menu h3 {
+        font-size: 14px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    .footer__inner .footer__menu li a {
+        font-size: 8px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    
+    .footer__inner .footer__menu > div {
+        width: 20%;
+    }
+    .footer__inner .footer__rigth {
+        width: 100%;
+    }
+}</code></pre>
+            </div>
+            </details><br>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> 페럴렉스 이펙트에 사용하는 자바스크립트와, width 값이 460px이 되었을 때 햄버거 버튼이 생기는 자바스크립트를 만들었습니다. </p>
+            <details>
+                <summary> 👻 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js"> window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+    //forEach 문
+    document.querySelectorAll(".scroll").forEach((e,i)=>{
+        if(scrollTop >=  e.offsetTop-500 ){ //scrollTop이 id값 이상이면
+            document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+                li.classList.remove("active");
+            });
+            document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
+        }; 
+        
+    });
+});
+
+document.querySelectorAll(".header__menu li a").forEach( li => {
+    li.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+    });
+});
+
+const headerIcon = document.querySelector(".header__icon")
+const menu = document.querySelector(".header__menu")
+const member = document.querySelector(".header__member")
+
+headerIcon.addEventListener("click", ()=>{
+    menu.classList.toggle("active")
+    member.classList.toggle("active")
+})</code></pre>
+            </div>
+            </details><br><br>
+
+           <h2 class="t_tit"> 마지막으로 , . . . 다들 해파리한 하루 되세요 - ଳ </h2>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/site/site01/index.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/site/site01/index.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/site/site01/index.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

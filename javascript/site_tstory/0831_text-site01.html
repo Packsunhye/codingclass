@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 텍스트 사이트 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+
+          <h2 class="t_tit"> 텍스트 사이트 01 </h2>
+          <p class="t_desc"> 텍스트와 아이콘을 활용하여 웹 사이트를 디자인 해보았습니다. </p>
+
+
+          <h3 class="t_tit2"> 01. figma </h3>
+          <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+          <div class="t_iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D914%253A88" allowfullscreen></iframe>
+          </div>
+          <p class="t_desc"> 이때, 스프라이트로 아이콘을 작업해줄꺼기 때문에 이미지 스프라이트로 준비하였습니다. </p>
+          <div class="t_iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D914%253A188" allowfullscreen></iframe>
+          </div>
+          <h3 class="t_tit2"> 02. HTML </h3>
+
+          <p class="t_desc"> HTML 입니다. css에서 작업을 display : flex 으로 작업을 할 예정이기 때문에 구조를 잘 잡아야 합니다. </p>
+          <div class="t_code">
+              <div class="script"></div>
+  <pre><code class="language-html">    &lt;section id="textTyle01" class="text__wrap nexon section"&gt;
+    &lt;p&gt;텍스트 유형 01&lt;/p&gt;
+    &lt;h2&gt;고양이가 귀여운 이유들&lt;/h2&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img01"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title "&gt;털이 부드럽다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;고양이는 아주 보드라운 털을 말랑거리는 살 위에 덮어져있다. 
+                한번도 만져보지 못한 사람은 있어도 한번만 만지는 사람은 없다&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img02"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title "&gt;귀가 쫑긋 거린다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;쫑긋 거리는 귀는 만지면 만질 수록 짜증을 나타내지만 
+                그래도 그게 너무 귀여워서 참을 수 없다 뒤집으면 팔랑거려요&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img03"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title "&gt;햇빛을 즐길 줄 안다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;가끔씩 따뜻한 햇살에 길거리를 걸으면 어느샌가 길냥이들이 
+                하나씩 자리를 잡고 있다 그러면 나도 너무 행복하다&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img04"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title "&gt;발바닥이 말랑거린다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;고양이의 발바닥은 마치 라이크 젤리이다. 그 젤리를 만져보았나요?
+                 맬렁맬렁하지만 역시 바닥을 딛기위해 쪼금 단단함.. 최고.&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img05"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title "&gt;낮잠을 잘 잔다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;이불을 들쳐보면 고양이가 잠들어있는 만두를 열어보는 것과 같다. 
+                특히 겨울에 전기장판을 틀면 그곳은 고양이의 인기장소&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="twwt"&gt;
+            &lt;span class="img__svg img06"&gt;&lt;/span&gt;
+            &lt;h3 class="text__title"&gt;은근히 집사를 좋아한다&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;우리집 애기는 내가 있으면 관심없는 척 반경 1m이내에 있는데 
+                내가 오면 후다닥 달려와서 이제 왔냐고 화를 낸다&lt;/p&gt;
+            &lt;span class="twxt"&gt;&lt;a href="#"&gt;더보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>   
+      </div>
+
+      <h3 class="t_tit2"> 03. css </h3>
+      <p class="t_desc"> 공통된 요소가 있으므로 그것을 제외한 뒤 작성하였습니다. </p>
+          <div class="t_code">
+              <div class="script"></div>
+  <pre><code class="language-css">     .text__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .text__inner .twwt {
+        width: 373px;
+        height: 260px;
+        background-color: rgb(255, 255, 255);
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text__inner .twwt:hover {
+        background-color: #F5F5F5;
+    }
+
+    .text__inner .img__svg {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #FFCF87;
+        margin-top: 20px;
+        margin-left: 20px;
+
+        background-size: 600px;
+        background: url(../site_img/Group\ 5.svg) no-repeat;
+    }
+
+
+    .text__inner .img02 {
+        background-position: -100px;
+    }
+    .text__inner .img03 {
+        background-position: -200px;
+    }
+    .text__inner .img04 {
+        background-position: -300px;
+    }
+    .text__inner .img05 {
+        background-position: -400px;
+    }
+    .text__inner .img06[] {
+        background-position: -500px;
+    }
+
+
+
+    .text__inner .twwt .text__title {
+        margin: 20px 20px 20px 20px;    
+    }
+    .text__inner .twwt .text__desc {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        color: #666;
+        line-height: 1.4;
+    
+    
+    
+        overflow: hidden; /* 2줄 이상 효과 */
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+
+    .text__inner .twwt .twxt > a {
+        margin-left: 20px;
+        color: #666;
+        text-decoration: underline;
+    }
+
+    .twwt:nth-child(1),.twwt:nth-child(2),.twwt:nth-child(3){
+        margin-bottom: 20px;
+    }</code></pre>   
+  </div>
+
+
+    <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+        <iframe src="https://packsunhye.github.io/coding/site/textType/textType_0830.html"></iframe>
+    </div>
+    
+    <div class="t_link">
+        <a href="https://github.com/Packsunhye/coding/blob/main/site/textType/textType_0830.html">원본 소스 보여주기</a>
+    </div> 
+
+    <div class="t_link">
+        <a href="https://packsunhye.github.io/coding/site/textType/textType_0830.html">원본 사이트 보여주기</a>
+    </div>  
+
+            
+    
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

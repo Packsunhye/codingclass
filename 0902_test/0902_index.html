@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0902 시험</title>
+    <style>
+         /* fonts */
+         @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .nanum {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        
+        .container {
+            width: 1000px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1000px;
+        
+        }
+        .section {
+            /* padding: 120px 0; */
+        }
+       
+       
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+
+        }
+
+        .mb70 {
+            margin-bottom: 70px !important;
+        }
+
+        /* header 유형 */
+
+        .header__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            /* width: 20%;
+            height: 180px; */
+            /* background: url(../0902_test/img/logo.jpg); */
+        }
+
+        .header__logo img {
+            padding-top: 20px;
+            padding-bottom: 10px;
+           
+            width: 100px;
+            height: 80px;
+        }
+
+        .header__menu {
+            float: right;
+           
+        }
+
+        .header__menu ul {
+            padding-top: 25px;
+        
+        }
+
+        .header__menu li {
+            display: inline;
+            font-size: 18px;
+            font-weight: 500;
+          
+        }
+
+        .header__menu li a {
+            margin-left: 20px;
+            line-height: 100px;
+        }
+
+
+        /* slide type */
+        .slider__wrap {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider__img { /* 이미지 보이는 영역 */
+            position: relative;
+            width: 960px;
+            height: 391px;
+            overflow: hidden;
+        }
+
+        .slider__inner { /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+            display: flex;
+            flex-wrap: wrap ;
+            width: 4800px; /* 총 이미지 */
+            height: 391px;
+
+           
+        }
+
+        .slider { /* 개별적인 이미지 */
+            position: relative;
+            width: 960px;
+            height: 391px;
+        }
+
+
+
+        /* Ad__wrap */
+        .ad__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .adBox__01 {
+            width: 49%;
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccccccf1;
+        }
+
+        .adBox__01 .kop {
+            padding: 30px;
+           
+        }
+
+        .adBox__01 .kop .notion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .adBox__01 .kop .notion h3 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .adBox__01 .kop .notion p {
+            margin-left: -153px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+        }
+        .adBox__01 .kop .notion .plus {
+            text-align: right;  
+            font-size: 14px;
+        }
+        .adBox__01 .kop .ytop {
+            display: flex;
+            font-size: 16px;
+            color: #666;
+        }
+        .adBox__01 .kop .ytop .spike {
+            text-align: left;
+            margin-right: 125px;
+         }
+         .adBox__01 .kop .ytop .spike p {
+            margin-bottom: 10px;
+         }
+        .adBox__01 .kop .ytop .dalok { 
+            text-align: right;
+        }
+        .adBox__01 .kop .ytop .dalok p {
+            margin-bottom: 10px;
+        }
+
+        .adBox__02 {
+            width: 49%;
+            height: 210px;
+        }
+        .adBox__02 .aDbox__img {
+        }
+
+    
+
+        /* imge type */
+        .image__wrap h2 {
+            padding: 40px 0 10px 0;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 24%;
+            position: relative;
+            overflow: hidden;
+        }
+        .image__box {
+            margin-bottom: 15px;
+        }
+       .image__desc h3 {
+           font-size: 16px;
+           font-weight: 300;
+           margin-bottom: 35px;
+        }
+
+        /* footerType */
+
+        .footer__wrap .line {
+            border-bottom: 1px solid rgb(167, 167, 167);
+            margin-bottom: 25px;
+        }
+        .footer__wrap > P {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .footer__wrap .more {
+            margin-top: 35px;
+            font-size: 12px;
+            margin-bottom: 50px;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <section id="headerType" class="header__wrap nanum">
+        <div class="header__inner container">
+            <div class="header__logo">
+                <a href="#"><img src="../0902_test/img/logo.jpg" alt=""></a>
+           </div>
+           <div class="header__menu">
+            <ul>
+                <li><a href="#">즐길거리</a></li>
+                <li><a href="#">요금/우대혜택</a></li>
+                <li><a href="#">참여프로그램</a></li>
+                <li><a href="#">이용가이드</a></li>
+                <li class="op"><a href="#">소통서비스</a></li>
+            </ul>
+           </div>
+        </div>
+    </section>
+
+    
+    <main>
+        <section id="sliderType" class="slider__wrap nanum section">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <div class="slider"><img src="../0902_test/img/main.jpg" alt=""></div>
+                    <div class="slider"><img src="../0902_test/img/main_2.jpg" alt=""></div>
+                    <div class="slider"><img src="../0902_test/img/main_3.jpg" alt=""></div>
+                    <div class="slider"><img src="../0902_test/img/main_4.jpg" alt=""></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <section id="AdType" class="Ad__wrap nanum">
+        <div class="ad__inner container">
+            <div class="adBox__01">
+                <div class="kop">
+                    <div class="notion">
+                        <h3>롯데월드 소식 |</h3> 
+                        <p>뉴스·공지</p>
+                        <div class="plus">
+                            <a href="#">더보기</a>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <div class="ytop">
+                        <div class="spike">
+                            <p>그럴싸진관 미라클</p>
+                            <p>드림스테이지 '힘내 소중한 너'</p>
+                            <p>'힘내 소중한 너'음원 발매</p>
+                            <p>이용 요금 조정 안내</p>
+                        </div>
+                        <div class="dalok">
+                            <p>2018.11.19</p>
+                            <p>2018.11.20</p>
+                            <p>2018.11.13</p>
+                            <p>2018.11.12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="adBox__02">
+                <div class="aDbox__img">
+                    <img src="../0902_test/img/ad.jpg" alt="">
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section id="imageType" class="image__wrap nanum  container">
+        <h2>특별한 경험</h2>
+        <div class="image__inner ">
+            <article class="image img1">
+                <figure class="image__box">
+                    <img src="../0902_test/img/ad_sm_01.jpg" alt="놀이기구">
+                </figure>
+                <div class="image__desc">
+                    <h3>연간회원안내</h3>
+                </div>
+            </article>
+            <article class="image img2">
+                <figure class="image__box">
+                    <img src="../0902_test/img/ad_sm_02.jpg" alt="놀이기구">
+                </figure>
+                <div class="image__desc">
+                    <h3>프리미엄투어</h3>
+                </div>
+            </article>
+            <article class="image img3">
+                <figure class="image__box">
+                    <img src="../0902_test/img/ad_sm_03.jpg" alt="놀이기구">
+                </figure>
+                <div class="image__desc">
+                    <h3>공연참여 프로그램</h3>
+                </div>
+            </article>
+            <article class="image img3">
+                <figure class="image__box">
+                    <img src="../0902_test/img/ad_sm_04.jpg" alt="놀이기구">
+                </figure>
+                <div class="image__desc">
+                    <h3>단체 프로그램</h3>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="footerType" class="footer__wrap nanum  container">
+        <div class="line"></div>
+       <p>서울 특별시 송파구 올림픽로 240 호텔롯데 롯데월드 | 대표자 : 박동기 </p>
+       <p>사업자등록번호 : 294-85-00014 | 통신판매업신고번호 : 송파 제 5513호 | 전화 : 1661-2000</p>
+        <div class="more">
+            <p>COPYIRIGHT 2018 LOTTEWOLD ALL RIGHTS RESERVED.</p>
+        </div>
+    </section>
+
+
+
+   
+    <script>
+        const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
+        const slider = document.querySelectorAll(".slider")          //각각의 이미지
+
+        let currentIndex = 0;                                               //현재 보이는 이미지
+        let sliderCount = slider.length;                                    //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth;                            //이미지 가로값
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
+        sliderInner.appendChild(sliderClone);                               //첫번째 이미지를 마지막에 넣어줌
+
+        function sliderEffect(){
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+
+            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex +"px)";
+            
+            //마지막 사진에 위치 했을 때 
+            if(currentIndex == sliderCount){
+               setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateX(-0px)";
+               }, 900);
+
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, 1500);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : repeat() </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> repeat() 란?</h2>
+            <p class="t_desc">
+                repeat()는 문자열을 복사하여, 복사한 새로운 문자열을 반환해주는 메서드입니다.
+            </p>
+            <p class="t_box">
+                const str1 = "cat" <br>
+                const currentStr1 = str1.concat("0"); //'_' //공백<br>
+                const currentStr2 = str1.concat("1"); //cat<br>
+                const currentStr3 = <i>str1.concat("3"); //catcatcat</i><br>
+                <br>
+                "문자열".repeat(숫자) 
+             </p><br>
+
+           
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    const str1 = "javascript";
+    const currentStr1 = str1.repeat("0"); //''
+    const currentStr2 = str1.repeat("1"); //javascript
+    const currentStr3 = str1.repeat("2"); //javascriptjavascript  </code></pre>   
+            </div>
+            
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script> 
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

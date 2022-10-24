@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 텍스트 / 이미지 사이트  </h2>
+            <p class="t_desc"> 텍스트와 이미지 사이트 유형의 웹 사이트를 디자인 해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. figma </h3>
+            <p class="t_desc"> 간편하게 디자인 하기 위해 피그마로 디자인 해보았습니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3e71kzMMnntvpqvpHWdXAb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1095%253A243" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2"> 02. HTML </h3>
+            <p class="t_desc"> HTML 입니다. 배너 타입은 그저 이미지 위에 글씨만 올리는 타입이라 html도 간단합니다. </p>
+            <div class="t_code">
+                <div class="script">
+<pre><code class="language-html">&lt;section id="imgTextType" class="imgText__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;깜찍발랄 고양이는 알아보기&lt;/h2&gt;
+    &lt;div class="imgText__inner container"&gt;
+        &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;이미지 텍스트 유형 01&lt;/span&gt;
+            &lt;h3&gt; 멋있는 고양이 알아보기 &lt;/h3&gt;
+            &lt;p&gt; 고양이 집사, 예비 집사, 인터넷 집사를 위한 사이트 입니다.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;털매끈 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;발바닥 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;귀쫑긋 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;낮잠 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;맹수 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;깜찍한 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img1"&gt;
+            &lt;a href="#"&gt;귀 쫑긋 사이트&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img2"&gt;
+            &lt;a href="#" class="blue"&gt;맹수 사이트&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+                </div>
+            </div>
+
+
+            <h3 class="t_tit2"> 03. css </h3>
+            <p class="t_desc"> 글자색이라던가, 크기만 조정해주면 배너타입은 완성입니다. </p>
+            <div class="t_code">
+                <div class="script">
+<pre><code class="language-html"> .imgText__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgText__inner > div {
+    width: 32%;
+    height: 500px;
+}
+.imgText__txt span {
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+    display: block;
+}
+.imgText__txt h3 {
+    font-size: 50px;
+    font-weight: 300;
+    word-break: keep-all;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.imgText__txt p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+.imgText__txt ul {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.imgText__txt ul li {
+    padding-left: 20px;
+    position: relative;
+}
+.imgText__txt ul li a {
+    color: #666;
+}
+.imgText__txt ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+.imgText__img {
+    border-radius: 10px;
+    position: relative;
+}
+.imgText__img  a {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #7966ce;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.imgText__img  a.blue {
+    background-color: rgb(102, 170, 209);
+}
+
+.imgText__img.img1{
+    background : url(/site/imgTextType/img/imgText_01.jpg) no-repeat center / cover ;
+}
+.imgText__img.img2{
+    background: url(/site/imgTextType/img/imgText_02.jpg) no-repeat center / cover;
+}</code></pre>
+
+                </div>
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/site/imgTextType/imgTextType.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/site/imgTextType/imgTextType.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/site/imgTextType/imgTextType.html">원본 사이트 보여주기</a>
+            </div>  
+
+
+
+
+            
+    
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

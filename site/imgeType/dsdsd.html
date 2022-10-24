@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .main__add {
+        background: #F5F5F5;
+        margin-top: 100px;
+        margin-bottom: 120px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+          padding : 100px 0;
+      }
+      .main__add::before {
+        content: '';
+        width: 1000px;
+        height: 100%;
+        background-color: #F5F5F5;
+        position: absolute;
+        left: -1000px;
+        top: 0;
+        z-index: 1;
+      }
+      .main__add::after {
+        content: '';
+        width: 1000px;
+        height: 100%;
+        background-color: #F5F5F5;
+        position: absolute;
+        right: -1000px;
+        top: 0;
+        z-index: 1;
+      }
+      .main__add .card {
+        width: 32%;
+        height: 400px;
+        background: #ccc;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+      }
+      
+      .main__add .card:hover {
+          transform: scale(1.05);
+      }
+      
+      .main__add .java {
+          background-color: #B5B9DC;
+      }
+      .main__add .css {
+        background-color: #b5d8dc;
+      }
+      .main__add .html {
+        background-color: #c8dcb5;
+      }
+
+      
+      </style>
+</head>
+<body>
+
+      
+      <div class="main__add">
+          <div class="card java">
+            <h3></h3>
+          </div>
+          <div class="card css">
+            <h3></h3>
+          </div>
+          <div class="card html">
+            <h3></h3>
+          </div>
+      </div>
+</body>
+</html>

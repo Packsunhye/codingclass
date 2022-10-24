@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            text-align: center;
+            color: #fff;
+            
+        }
+        #header{
+            width: 100%;
+            height: 100px;
+            background-color: #000;
+            
+        }
+        #img{
+            width: 100%;
+            height: 400px;
+            background-color: #111;
+        }
+        #notion{
+            width: 100%;
+            height: 400px;
+            background-color: #222;
+        }
+        #ad{
+            width: 100%;
+            height: 600px;
+            background-color: #333;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background-color: #444;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #header .header_log {
+            width: 300px;
+            height: 100px;
+            float: left;
+            background-color: #555;
+            line-height: 100px;
+        }
+        #header .header_menu {
+            width: 900px;
+            height: 50px;
+            float: left;
+            background-color: #666;
+            line-height: 50px;
+        }
+        #header .header_op {
+            width: 900px;
+            height: 50px;
+            float: left;
+            background-color: #777;
+            line-height: 50px;
+        }
+
+        #img .img_gg01 {
+            width: 600px;
+            height: 200px;
+            background-color: #888;
+            float: left;
+            line-height: 200px;
+        }
+        #img .img_gg02 {
+            width: 600px;
+            height: 200px;
+            background-color: #999;
+            float: left;
+            line-height: 200px;
+        }
+        #img .img_gg03 {
+            width: 600px;
+            height: 200px;
+            background-color: rgb(80, 80, 80);
+            float: left;
+            line-height: 200px;
+        }
+        #img .img_gg04 {
+            width: 600px;
+            height: 200px;
+            background-color: rgb(114, 114, 114);
+            float: left;
+            line-height: 200px;
+        }
+
+        #notion .container .notion_LA01 {
+            width: 1200px;
+            height: 100px;
+            background-color: #d45656;
+            float: left;
+            line-height: 100px;
+        }
+        #notion .container .notion_LA02 {
+            width: 1200px;
+            height: 100px;
+            background-color: #b18181;
+            float: left;
+            line-height: 100px;
+        }
+        #notion .container .notion_LA03 {
+            width: 1200px;
+            height: 100px;
+            background-color: #6e4b4b;
+            float: left;
+            line-height: 100px;
+        }
+        #notion .container .notion_LA04 {
+            width: 1200px;
+            height: 100px;
+            float: left;
+            line-height: 100px;
+        }
+
+        .notion_LA04 .EE1{
+            width: 600px;
+            height: 100px;
+            float: left;
+            background-color: #ac2f2f;
+            line-height: 100px;
+        }
+        .notion_LA04 .EE2{
+            width: 600px;
+            height: 100px;
+            float: left;
+            background-color: #ec3232;
+            line-height: 100px;
+        }
+
+        .ad_pop01 {
+            width: 1200px;
+            height: 300px;
+            line-height: 300px;
+            float: left;
+        }
+
+        .ad_pop01 .box1{
+            width: 200px;
+            height: 300px;
+            float: left;
+            background-color: #b57558;
+            line-height: 300px;
+        }
+        .ad_pop01 .box2{
+            width: 200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+            background-color: #995535;
+        }
+        .ad_pop01 .box3{
+            width: 200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+            background-color: #5c2c16;
+        }
+        .ad_pop01 .box4{
+            width: 200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+            background-color: #2b1206;
+        }
+        .ad_pop01 .box5{
+            width: 200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+            background-color: #290e02;
+        }
+        .ad_pop01 .box6{
+            width: 200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+            background-color: #140904;
+        }
+
+        .ad_pop02 {
+            width: 1200px;
+            height: 300px;
+            float: left;
+            line-height: 300px;
+        }
+
+        .ad_pop02 .GG01 {
+            width: 600px;
+            height: 300px;
+            float: left;
+            background-color: #c46f55;
+            line-height: 300px;
+        }
+        .ad_pop02 .GG02 {
+            width: 600px;
+            height: 300px;
+            float: left;
+            background-color: #774030;
+            line-height: 300px;
+        }
+
+        .terter {
+            width: 1200px;
+            height: 100px;
+            line-height: 100px;
+            background-color: #362d2a;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header_log">1</div>
+                <div class="header_menu">2</div>
+                <div class="header_op">3</div>
+            </div>
+        </div>
+        <div id="img">
+            <div class="container">
+                <div class="img_gg01">1</div>
+                <div class="img_gg02">2</div>
+                <div class="img_gg03">3</div>
+                <div class="img_gg04">4</div>
+            </div>
+        </div>
+        <div id="notion">
+            <div class="container">
+                <div class="notion_LA01">1</div>
+                <div class="notion_LA02">2</div>
+                <div class="notion_LA03">3</div>
+                <div class="notion_LA04">
+                    <div class="EE1">4</div>
+                    <div class="EE2">5</div>
+                </div>
+            </div>
+        </div>
+        <div id="ad">
+            <div class="container">
+                <div class="ad_pop01">
+                    <div class="box1">1</div>
+                    <div class="box2">2</div>
+                    <div class="box3">3</div>
+                    <div class="box4">4</div>
+                    <div class="box5">5</div>
+                    <div class="box6">6</div>
+                </div>
+                <div class="ad_pop02">
+                    <div class="GG01">7</div>
+                    <div class="GG02">8</div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="terter"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

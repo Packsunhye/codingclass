@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기초</title>
+</head>
+
+<link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+
+<style>
+    /* 리셋 */
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'GmarketSans';
+    }
+    /* #header */
+    #header {
+        padding: 2vw;
+        border-bottom: 1px dashed #dedede;
+    }
+    #header h1 {
+        font-size: 4vw;
+        margin-bottom: 2vw;
+    }
+    #header nav ul li {
+        list-style: none;
+        display: inline;
+    }
+    #header nav ul li a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid #000;
+        padding: 0.5vw 1vw 0.3vw 1vw;
+        display: inline-block;
+    }
+    #header nav ul li a:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    /* #contents */
+    #contents {
+        padding: 2vw;
+    }
+    #contents .menu {
+        border-bottom: 1px dashed #dedede;
+        padding-bottom: 2vw;
+    }
+    #contents .menu ul li {
+        list-style: none;
+        display: inline;
+    }
+    #contents .menu ul li a {
+        text-decoration: none;
+        color: #000;
+        border: 1px solid #000;
+        background-color: #000;
+        color: #fff;
+        padding: 0.5vw 1vw 0.3vw 1vw;
+        word-break: keep-all;
+        margin: 0.3vw;
+        margin-top: 0.3vw;
+        display: inline-block;
+    }
+    /* article */
+    .article {
+        padding: 2vw 0;
+        line-height: 1.6;
+    }
+    
+    .article h2 {
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+    .article p {
+        margin-bottom: 15px;
+    }
+
+    .article .table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+    
+
+    .article .table tr th {
+        border:  1px solid #dedede;
+        padding: 10px;
+        font-weight: normal;
+        background-color: #f5f5f5;
+    }
+    .article .table tr td {
+        border:  1px solid #dedede;
+        padding: 10px;
+    }
+
+    .article .table .center {
+        text-align: center;
+    }
+
+    .article .box {
+        background-color:  #ececec;
+        padding: 10px;
+    }
+
+
+    /* 미디어 쿼리 */
+    @media (max-width:800px) {
+        #header {
+            padding: 16px;
+        }
+        #header h1 {
+            font-size: 40px;
+        }
+        #header nav ul li a {
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        #contents {
+            padding: 16px;
+        }
+    }
+    
+</style>
+<body>
+<header id="header">
+    <h1>HTML</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">기초</a></li>
+            <li><a href="#">주제</a></li>
+            <li><a href="#">알파벳</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="contents">
+    <nav class="menu">
+        <ul>
+            <li><a href="basic.html">기본 문서</a></li>
+            <li><a href="markup.html">기본 규칙</a></li>
+            <li><a href="#">W3C validator</a></li>
+            <li><a href="semantic.html">시멘틱 마크업</a></li>
+            <li><a href="bolck_inline.html">블록/인라인요소</a></li>
+        </ul>
+    </nav>
+    <article class="article">
+        <h2>HTML 기본 문서</h2>
+        <p>
+         html의 요소는 &lt;head&gt;요소와  &lt;body&gt;요소로 구성되어 있으며, &lt;head&gt;요소 안에는 
+         meta, title, link, stlye, script등의 요소가 있습니다.
+        </p>
+        <table class="table">
+            <tr>
+                <th>요소명</th>
+                <th>설명</th>
+            </tr>
+        <tbody>
+            <tr>
+                <td class="center"> &lt;meta&gt;</td>
+                <td>HTML 문서의 설명,키워드,문서의 작성자 등을 지정합니다.</td>
+            </tr>
+            <tr>
+                <td class="center">&lt;title&gt;</td>
+                <td>HTML 문서의 제목을 지정합니다.</td>
+            </tr>
+            <tr>
+                <td class="center">&lt;link&gt;</td>
+                <td>외부의 CSS 파일을 HTML문서의 연결할때 사용합니다.</td>
+            </tr>
+            <tr>
+                <td class="center">&lt;stlye&gt;</td>
+                <td>HTML문서 내에서 스타일(CSS)을 정의합니다.</td>
+            </tr>
+            <tr>
+                <td class="center">&lt;script&gt;</td>
+                <td>자바스크립트를 HTML문서 내무에서 정의하거나 외부에서 자바스크립트 파일을 불러올 떄 사용합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p> 또 meta 태그에서 알아두어야 할 속성 중에는 name 속성과 content 속성이 있는데, 나중에 학습하게 될 CSS 파트에서 반응형 웹 기술을 사용하기 위한 속성들입니다.</p>
+    <p class="box">
+        &lt;meta name="viewport" comtent="width=device-width, initial-scale=1.0,minimum-scal=1.0,maximum-scale=1.0, user-scalable=no"&gt;
+    </p>
+    <p>
+       보통 "뷰포트"라고 하는데 모바일 해상도(가로보기,세로보기)에 맞게 HTML 뮨서를 조절해주는 속성들이라고 생각하면 될 것 같습니다.
+    </p>
+    </article>
+</section>
+</body>
+</html>

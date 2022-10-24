@@ -1,0 +1,192 @@
+       /* 헤더 유형 */
+       .header__inner {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #141414;
+        /* backdrop-filter: blur(10px); */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #000;
+        z-index: 10000;
+    }
+
+    .header__logo {
+        /* width: 10%; */
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .header__logo a {
+        color: #715af4;
+    }
+    .header__logo em {
+        color: rgb(145, 145, 145);
+        font-size: 18px;
+        font-weight: 400;
+       
+    }
+    .header__menu {
+        width: 80%;
+        text-align: center;
+    }
+
+    .header__menu li {
+        display: inline;
+    }
+    .header__menu li a {
+        padding: 13px 30px;
+        margin: 0 5px;
+        color: rgb(145, 145, 145);
+        transition: background-color 0.3s ;
+    }
+    .header__menu li.active a {
+        background-color:  #3d26c0;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .header__menu li a:hover {
+        background-color:  #3d26c0;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .header__member {
+        text-align: right;
+        width: 10%;
+    }
+    .header__member a {
+        font-size: 16px;
+        border: 1px solid rgb(145, 145, 145);
+        padding: 10px 30px;
+        border-radius: 50px;
+        transition: all 0.3s;
+        color: #fff;
+    }
+    .header__member a:hover {
+        background-color: #3d26c0;
+        color: #fff;
+    }
+
+
+    /* header__ham */
+
+    .header__ham {
+        display: none;
+
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        margin-top: 1px;
+    }
+
+    .header__ham span {
+        display: block;
+        background: #fff;
+        width: 30px;
+        height: 2px;
+        border-radius: 3px;
+        margin-left: 10px;
+        margin-top: 5px;
+        transition: 0.25s margin 0.25s, 0.25s transform;
+    }
+    .header__ham.active span {
+        transition: 0.25s margin, 0.25s transform 0.25s;
+    }
+
+    .header__ham.active span:nth-child(1){
+       margin-top: 25px;
+       margin-bottom: -7px;
+        transform: rotate(45deg);
+    }
+
+    .header__ham.active span:nth-child(2){
+        transform: rotate(45deg);
+    }
+
+    .header__ham.active span:nth-child(3){
+        transform: rotate(135deg);
+        margin-top: -2px;
+    }
+
+    .header__ham span:nth-child(1){
+        margin-top: 17px;
+    }
+
+
+
+    @media(max-width : 1455px){
+
+        .header__menu {
+            position: fixed;
+            right: -100%;
+            top: 69px;
+            background: rgb(0, 0, 0);
+            width: 20%;
+            height: 100vh;
+            padding: 20px;
+            text-align: right;
+            transition: right 0.4s ease-in;
+        }
+        .header__menu ul li {
+            display: block;
+            margin: 35px;
+        }
+        .header__menu ul li a {
+            padding: 10px;
+            white-space: nowrap;
+        }
+        .header__menu.active {
+            right: 0;
+        }
+
+        .header__member {
+            margin-right: 50px;
+        }
+
+        .header__ham {
+            display: block;
+           
+        }
+
+    }
+
+    @media(max-width : 1130px){
+        .header__member {
+            width: 50%;
+        }
+    }
+
+    @media(max-width : 960px){
+        .header__menu {
+            width: 35%;
+        }
+    }
+
+    @media(max-width : 440px){
+        .header__menu {
+            width: 50%;
+        }
+        .header__logo {
+            width: 50%;
+        }
+
+        .header__logo em {
+            display: none;
+        }
+        
+        .header__member a {
+            width: 50%;
+            padding: 7px 13px;
+            font-size: 14px;
+        }
+    }
+        
+

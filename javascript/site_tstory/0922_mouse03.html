@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Mouse Effect 03 </h2>
+            <p class="t_desc"> 마우스를 움직일 때 뒤에 있는 이미지가 보이는 착시효과를 공부해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc">마우스 이펙트 01번 만큼 쉬운 구조로 묶었습니다.</p>
+            <details>
+                <summary>🐱‍👤 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+      &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+      &lt;div class="mouse__wrap"&gt;
+        &lt;p class="Nix"&gt;The way to get &lt;span&gt;started&lt;/span&gt; is to &lt;span&gt;quit talking&lt;/span&gt; and begin &lt;span&gt;doing.&lt;/span&gt;&lt;/p&gt;
+        &lt;p class="arir"&gt;무언가를 &lt;span&gt;시작&lt;/span&gt;하려면 &lt;span&gt;말은 멈추고&lt;/span&gt; &lt;span&gt;행동&lt;/span&gt;해야 한다.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc">이미지가 사실은 두개 이므로, 배경 말고 보여지는 이미지는 필터를 넣어 밝아지게 만들어줍니다. 또한 background-position 과 background-attachment 으로 이미지가 정중앙에 있게 만듭니다. </p>
+            <details>
+                <summary>🐱‍👤 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    color: #fff;
+    background: url(../../assets/silde/min_jelly/slide_bg_02@2x-min.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    border: 5px solid #fff;
+    cursor: none;
+    filter: brightness(120%);
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc">getBoundingClientRect()으로 마우스의 위치가 중앙에 위치할 수 있게 만듭니다.</p>
+            <details>
+                <summary>🐱‍👤 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js"> const cursor = document.querySelector(".mouse__cursor")
+
+// const circleW = cursor.offsetWidth; //200
+// const circleH = cursor.offsetHeight; //200
+// const circle2 = cursor.clientWidth; //190 : 보더값 제외
+
+const circle = cursor.getBoundingClientRect();
+// {
+//    x:0,
+//    y:0,
+//    bottom : 200,
+//    hight : 200,
+//    left : 0 ,
+//    right : 200,
+//    top : 0,
+//    width : 200
+// }
+
+window.addEventListener("mousemove",(e) => {
+    gsap.to(cursor,
+    { duration : 0.3, 
+    left : e.pageX - circle.width/2,
+    top : e.pageY - circle.height/2
+    });
+
+});</code></pre>
+            </div>
+            </details>
+           <br>
+
+           <h3 class="t_tit2"> 04. 이미지로 한눈에 알아봅시다. </h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/mouseEffect03.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/mouseEffect03.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/mouseEffect03.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

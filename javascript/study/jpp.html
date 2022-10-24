@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> join()/ push()/ pop() </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+        <h2 class="t_tit"> join()/ push()/ pop() </h3>
+        <h3 class="t_tit2">01. join()</h3>
+        <p class="t_desc2"> join()은 배열의 사본을 반환하며, 배열의 모든 요소를 연결해 <i>하나의 문자열로 만듭니다.</i></p>
+        <p class="t_desc1">아래는 예시입니다.</p>
+        <div class="t_code">
+            <pre><code class="language-js">    //join()을 사용하는 경우   
+    const arrNum = [100,200,300,400,500];
+    const text1 = arrNum.join('')
+    const text2 = arrNum.join('-')
+
+    document.querySelector.innerHTML = text1   //100200300400500가 나옴
+    document.querySelector.innerHTML = text2  //100-200-300-400-500가 나옴</code></pre>
+        </div>
+
+        <h3 class="t_tit2">02. push()</h3>
+        <p class="t_desc2"> push()은 배열의 <i>마지막에 새로운 요소를 추가하고, 변경된 배열의 길이를 반환하는 함수입니다.</i> </p>
+        <p class="t_desc1">아래는 예시입니다.</p>
+        <div class="t_code">
+            <pre><code class="language-js">    //push()을 사용하는 경우   
+    const arrNum = [100,200,300,400,500];
+    const arrPush = arrNum.push(600);
+
+    document.querySelector.innerHTML = arrPush // 6이 나옴 //600을 추가하고 길이를 반환(숫자를 세기) 때문
+    document.querySelector.innerHTML = arrNum  //100,200,300,400,500,600이 나옵니다. //num에는 push때문에 600이 추가되어 있다.</code></pre>
+        </div>
+        
+        <h3 class="t_tit2">03. pop()</h3>
+        <p class="t_desc2"> pop()은 배열의 <i>마지막에 요소를 제거하고, 삭제된 요소를 반환하는 함수입니다.</i> </p>
+        <p class="t_desc1">아래는 예시입니다.</p>
+        <div class="t_code">
+            <pre><code class="language-js">    //pop()을 사용하는 경우   
+    const arrNum2 = [100,200,300,400,500];
+    const arrPush2 = arrNum.push();
+
+    document.querySelector.innerHTML = arrPush2 // 500이 나옴 // 마지막 요소인 500을 삭제하고 반환하였기 때문
+    document.querySelector.innerHTML = arrNum2  //100,200,300,400이 나옵니다. //num에는 pop때문에 500이 삭제되어 있다.</code></pre>
+        </div><br>
+
+        <h3 class="t_tit2">> 정리 </h3>
+        <table class="t_table">
+            <thead>
+             <tr>
+                 <th>이름</th>
+                 <th>특징</th>
+                 <th>사용법</th>
+             </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                     <td class="ce">join()</td>
+                     <td>배열의 사본(()안에 들어있는)을 반환 + 하나의 문자열을 만든다.</td>
+                     <td>const text1 = arrNum.join('')</td>
+                 </tr>
+                 <tr>
+                     <td  class="ce">push()</td>
+                     <td>마지막에 새로운 요소(()안에 들어있는)를 추가 + 길이(갯수)를 반환</td>
+                     <td>const arrPush = arrNum.push(i);</td>
+                 </tr>
+                 <tr>
+                    <td  class="ce">pop()</td>
+                    <td>마지막 요소를 제거 + 삭제된 요소를 반환</td>
+                    <td>const arrPush2 = arrNum.push();</td>
+                </tr>
+            </tbody>
+         </table>
+        
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

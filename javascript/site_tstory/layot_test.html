@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 요소</title>
+    <style>
+        /* 웹폰트 */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        /* 리셋 */
+        /* 여백 초기화 */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        /* 링크 초기화 */
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+        /* 목록 초기화 */
+        li {
+            list-style: none;
+        }
+        /* 제목 초기화 */
+        h1, h2, h3, h4, h5, h6{
+            font-weight: normal;
+        }
+        /* address */
+        address {
+            font-style: normal;
+        }
+
+        /* 레이아웃 */
+        #main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #header {
+            width: 1200px;
+            height: 200px;
+            background-color: #DCD1FA;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #add {
+            width: 1200px;
+            height: 550px;
+            background-color: #DCD1FA;
+            margin-bottom: 20px;
+        }
+
+        #footer {
+            width: 1200px;
+            height: 150px;
+            background-color: #DCD1FA;
+        }
+        
+        
+
+        .header_box01 {
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            margin: 32px 83px 18px 45px;
+        }
+
+        h1 {
+            width: 80px;
+            height: 20px;
+            background-color: #70667c;
+            color: #fff;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        .wed {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .tiT {
+            color: #fff;
+            margin: 44px 350px 31px;
+            background-color: #4e415e;
+            text-align: center;
+        }
+        
+        #nav {
+            width: 800px;
+            height: 80px;
+            background-color: #fff;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+        #nav > p {
+            width: 80px;
+            height: 20px;
+            background-color: #70667c;
+            color: #fff;
+            text-align: center;
+            margin-left : 17px;
+            line-height : 20px;
+            margin-top: 15px;
+        }
+
+        .nav_box > li {
+            float: left;
+            width: 57px;
+            height: 17px;
+            margin: 35px 35px 0 30px;
+        }
+        
+        .add_box {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .add_box > section {
+            width: 450px;
+            height: 510px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .section_box01 {
+            margin-left: 20px;
+        }  
+
+        .artocle_add {
+            margin-left: 20px;
+        }
+        .artocle_add > article {
+            width: 220px;
+            height: 245px;
+            background-color: #fff;
+            margin-bottom: 20px;
+
+        }
+
+        #add > p {
+            width: 100px;
+            height: 20px;
+            background-color: #4e415e;
+            color: #fff;
+            text-align: center;
+        }
+       .section_box01 > p {
+            width: 100px;
+            height: 25px;
+            background-color: #70667c;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 20px;
+       }
+       .section_box01 > h2 {
+            margin-top: 196px;
+            text-align: center;
+       }
+
+       .artocle_add article p {
+            width: 90px;
+            height: 20px;
+            background-color: #70667c;
+            text-align: center;
+            color: #fff;
+            line-height: 20px;
+       }
+       .artocle_add article h2,
+       .artocle_add article aside {
+            margin-top: 100px;
+            text-align: center;
+       }
+       
+       #footer > p {
+            width: 100px;
+            height: 20px;
+            background-color: #4e415e;
+            color: #fff;
+            text-align: center;
+       }
+
+       .footer_box01,.footer_box02 {
+            width: 590px;
+            height: 45px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            margin-left: 127px;
+       }
+       .footer_box02 {
+            margin-bottom: 20px;
+       }
+
+       .footer_box01 .tit_p , .footer_box02 > .tit_p {
+            width: 100px;
+            height: 20px;
+            background-color: #70667c;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+       }
+
+       .footer_box01 address , .footer_box02 > .recol {
+            text-align: center;
+            margin-bottom: 14px;
+       }
+        
+    </style>
+</head>
+<body>
+   <div id="main" >
+    <header id="header">
+        <div class="header_box01">
+            <h1>h1</h1>
+            <p class="wed"><a href="#">반응형웹</a></p>
+        </div>
+        <div class="header_box02">
+            <div class="tiT">header</div>
+            <nav id="nav">
+                <p>nav</p>
+                <ul class="nav_box">
+                    <li><a href="#">MENU01</a></li>
+                    <li><a href="#">MENU02</a></li>
+                    <li><a href="#">MENU03</a></li>
+                    <li><a href="#">MENU04</a></li>
+                    <li><a href="#">MENU05</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="add">
+        <p>div</p>
+        <div class="add_box">
+            <section class="section_box01">
+                <p>section</p>
+                <h2>콘텐츠 그룹01</h2>
+            </section>
+            <section class="section_box01">
+                <p>section</p>
+                <h2>콘텐츠 그룹02</h2>
+            </section>
+            <div class="artocle_add">
+                <article>
+                    <p>article</p>
+                    <h2>주요기사</h2>
+                </article>
+                <article>
+                    <p>article</p>
+                    <aside>광고</aside>
+                </article>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <p>footer</p>
+        <div class="footer_box01">
+            <p class="tit_p">address</p>
+            <address>강원도 춘천시 화천구 어쩌구  033)489-5760  halmony@naver.com</address>
+        </div>
+        <div class="footer_box02">
+            <p class="tit_p">p</p>
+            <p class="recol">COPYRIGHT ⓒ ALL rights reserved</p>
+        </div>
+    </footer>
+   </div>
+</body>
+</html>

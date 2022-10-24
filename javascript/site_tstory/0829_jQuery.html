@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0829 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            
+            <h2 class="t_tit"> jQuery 개념 정리 </h2>
+            <p class="t_desc"> 제이쿼리(jQuery)는 오픈 소스 기반의 자바스크립트 라이브러리입니다. </p>
+
+            <h3 class="t_tit2"> 01. 사용법 </h3>
+            <p class="t_desc"> 01-1 ) 기존의 style이나 js 링크처럼 GSAP에서 script 링크를 가져와, 선택자등을 쉽게 가져올 수 있게 만들어줍니다. (CDN 방식) </p>
+            <p class="t_box">
+                //적용방식<br>
+                &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+            </p><br>
+            <p class="t_desc"> 01-2 ) 다운로드 방식입니다. 홈페이지로 가 제이쿼리를 다운 받을 수 있습니다. </p>
+            <p class="t_box">
+                //적용방식<br>
+                &lt;script src=js/jquery.js"&gt;&lt;/script&gt;
+            </p>
+            <div class="t_link">
+                <a href="https://jquery.com/download/"> 사이트 가기 </a>
+            </div> <br>
+           
+            <h3 class="t_tit2"> 02. 자바스크립트와 jQuery의 비교 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">//javascript
+const sliderInner = document.querySelector(".보여지는_곳")
+const slider = document.querySelectorAll(".이미지")
+
+let currentIndex = 0;  
+
+sliderInner.style.transition = "all 0.8s"
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slider.length;
+
+    sliderInner.style.transform = "translateX(" + -800 * currentIndex + "px)"
+},1500) </code></pre><br>
+<div class="t_code">
+    <pre><code class="language-js">//jQuery
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+let currentIndex = 0;
+        
+setInterval(()=>{
+    currentIndex = (currentIndex + 1) % $(".slider").length;
+
+    $(".slider__inner").css("position","relative");
+    $(".slider__inner").animate({left : -800 * currentIndex},800);
+
+},1500) </code></pre><br>
+        <p class="t_desc"> 보이는 것과 같이 jQuery는 $(달러)표시를 사용해, 스크립트의 양도 줄이며 선택자를 설정할 수 있습니다. </p>
+
+        <h3 class="t_tit2"> 03. jQuery의 장점 </h3>
+        <p class="t_desc">
+            01. 멀티 브라우저 지원<br>
+            02. 자바스크립트로 구현하기 어려운 기능이나 효과, 연출을 구현할 수 있습니다.<br>
+            03. 코드 양이 줄어듭니다<br>
+            04. 오픈 소스 이므로, 누군가 제작한 코드를 배우기 쉽습니다.
+        </p>
+
+        <h3 class="t_tit2"> 04. jQuery의 기본형식 </h3>
+        <p class="t_desc"> 마지막으로 jQuery의 기본형식을 정리하며 끝내겠습니다. </p>
+        <p class="t_box">
+            //01<br>
+            &lt;script src=js/jquery-3.3.1.min.js"&gt;&lt;/script&gt;<br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &lt;/script&gt;<br><br>
+
+            //02<br>
+            &lt;script src=js/jquery-3.3.1.min.js"&gt;&lt;/script&gt;<br>
+            &lt;script&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;$(function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &lt;/script&gt;
+        </p>
+        
+
+
+        
+
+        </div>       
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

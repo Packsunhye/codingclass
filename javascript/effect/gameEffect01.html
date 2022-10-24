@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bg.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
+    <link rel="stylesheet" href="../assets/css/animal.css">
+    <style>
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform : translate(-50%, -50%);
+
+            width: 1200px;
+            height: 800px;
+            z-index: 3;
+        }
+        .icon_iframe.show {
+            display: block;
+        }
+        .icon_iframe {
+            display: none;
+        }
+
+        #volume-control {
+            transform: rotate(90deg);
+            position: absolute;
+            top: 130px;
+            right: -35px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>MANYONG GAME EFFECT01</h1>
+        <div class="time"></div>
+    </header>
+    <!-- header -->
+    
+    <div class="icon_iframe">
+    <iframe src="https://github1s.com/Packsunhye/coding/blob/main/javascript/effect/gameEffect01.html"></iframe>
+    </div>
+
+    <div class="game__frame">
+        <div class="game__wrap">
+            <div class="game__inner">
+                <div class="game__audio"></div>
+                <div class="game__title">
+                    <div>ଳ</div>
+                    <h2>기억력 테스트</h2>
+                    <div>ଳ</div>
+                </div>
+                <p class="desc">
+                    1분동안 아래에 있는 많은 동물들을 기억하고 입력해주세요 :3
+                </p>
+                <div class="search__audio">
+                    <span class="play">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_202_1988)">
+                            <path d="M16.8646 19.4894C16.5766 19.4894 16.2886 19.3799 16.0696 19.1594C15.6301 18.7199 15.6301 18.0074 16.0696 17.5679C19.1401 14.4974 19.1401 9.5009 16.0696 6.4304C15.6301 5.9909 15.6301 5.2784 16.0696 4.8389C16.5091 4.3994 17.2216 4.3994 17.6611 4.8389C19.5736 6.7514 20.6266 9.2939 20.6266 11.9984C20.6266 14.7029 19.5736 17.2454 17.6611 19.1579C17.4421 19.3769 17.1541 19.4879 16.8661 19.4879L16.8646 19.4894ZM12.8671 17.3669C12.5791 17.3669 12.2911 17.2574 12.0721 17.0369C11.6326 16.5974 11.6326 15.8849 12.0721 15.4454C13.9726 13.5449 13.9726 10.4519 12.0721 8.5514C11.6326 8.1119 11.6326 7.3994 12.0721 6.9599C12.5116 6.5204 13.2241 6.5204 13.6636 6.9599C16.4416 9.7379 16.4416 14.2574 13.6636 17.0369C13.4446 17.2559 13.1566 17.3669 12.8686 17.3669H12.8671Z" fill="white"/>
+                            <path d="M9.75004 22.4999C9.55503 22.4999 9.36304 22.4234 9.21904 22.2809L3.43804 16.4999H0.748535C0.334535 16.4999 -0.00146484 16.1639 -0.00146484 15.7499V8.24994C-0.00146484 7.83594 0.334535 7.49994 0.748535 7.49994H3.43804L9.21904 1.71894C9.43353 1.50444 9.75603 1.43994 10.0365 1.55694C10.317 1.67394 10.5 1.94694 10.5 2.24994V21.7499C10.5 22.0529 10.317 22.3274 10.0365 22.4429C9.94353 22.4819 9.84604 22.4999 9.75004 22.4999Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_202_1988">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>                            
+                    </span>
+                    <span class="stop">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_34_4475)">
+                            <path d="M22.5 14.511V16.5H20.511L18 13.989L15.489 16.5H13.5V14.511L16.011 12L13.5 9.489V7.5H15.489L18 10.011L20.511 7.5H22.5V9.489L19.989 12L22.5 14.511Z" fill="white"/>
+                            <path d="M9.75004 22.4999C9.55503 22.4999 9.36304 22.4234 9.21904 22.2809L3.43804 16.4999H0.748535C0.334535 16.4999 -0.00146484 16.1639 -0.00146484 15.7499V8.24994C-0.00146484 7.83594 0.334535 7.49994 0.748535 7.49994H3.43804L9.21904 1.71894C9.43353 1.50444 9.75603 1.43994 10.0365 1.55694C10.317 1.67394 10.5 1.94694 10.5 2.24994V21.7499C10.5 22.0529 10.317 22.3274 10.0365 22.4429C9.94353 22.4819 9.84604 22.4999 9.75004 22.4999Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_34_4475">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>                            
+                    </span>
+                    <audio id="audio" src="../assets/music/pixel.mp3" loop="loop"></audio>
+                </div>
+                <div class="time">
+                    <span>1:00</span>
+                </div>
+                <div class="search__box">
+                    <label for="search">입력하기</label>
+                    <input type="text" id="search" placeholder="동물 단어 입력하기">
+                    <div class="start">버튼을 누르면 게임이 시작됩니다 ଳ</div>
+                </div>
+                <div class="search__info center">
+                    <div>찾은 속성 갯수 : <span class="num">0</span></div>
+                    <div> 현재 맞춘 갯수 : <span class="now">0</span> </div>
+                </div>
+
+                <div class="search__result">
+                    <div class="result"></div>
+                    <button class="restart">다시 시작하기</button>
+                </div>
+      
+                <div class="search__anwers">
+                    <!-- <span>asdsd</span> -->
+                </div>
+                <div class="search__MissAnwers">
+                    <!-- <span>asdsd</span> -->
+                </div>
+                <div class="search__list">
+                    <!-- <span>asdsd</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
+        <div class="cusor">
+            <img src="../assets/img/cursor.cluster.png" alt="">
+        </div>   
+        <div class="icon__box">
+            <div class="icon1">
+                <img src="../assets/img/grin.png" alt="">
+                <span>노래</span>
+            </div>
+            <div class="icon2">
+                <img src="../assets/img/folder.block.png" alt="">
+                <span>게임</span>
+            </div>
+            <div class="icon3">
+                <img src="../assets/img/folder.red.png" alt="">
+                <span>빨간색</span>
+            </div>
+            <div class="icon4">
+                <img src="../assets/img/folder.yellow.png" alt="">
+                <span>노란색</span>
+            </div>
+            <div class="icon5">
+                <img src="../assets/img/page.blue.png" alt="">
+                <span>파란색</span>
+            </div>
+            <div class="icon6">
+                <img src="../assets/img/icon.pic.png" alt="">
+                <span>소스보기</span>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+    <footer id="footer">
+        <div class="agent"></div>
+    </footer>
+    <!-- footer -->
+
+    <!-- 뮤직 플레이어 -->
+    <div class="music__wrap">
+        <div class="music__inner">
+            <div class="music__header">
+                <div>ଳ</div>
+                <h2>Music Player</h2>
+                <div>ଳ</div>
+            </div>
+            <div class="music__contents">
+                <div class="music__view">
+                    <div class="img">
+                        <img src="../assets/img/artwork.pic.png" alt="">
+                    </div>
+                    <div class="title">
+                        <h3> 가수 - 제목 </h3>
+                        <p>youtube music</p>
+                    </div>
+                        <input type="range" id="volume-control" min="0.1" max="10">
+                </div>
+                <div class="music__control">
+                    <div class="progress">
+                        <div class="bar">
+                            <audio id="main-audio" src="../assets/music/music_audio01.mp3"></audio>
+                        </div>
+                        <div class="timer">
+                            <span class="current">0:00</span>
+                            <span class="duraition">4:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="control">
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                        <i title="재생" class="play" id="control-play"></i>
+                        <i title="다음곡 재생" class="next" id="control-next"></i>
+                        <i title="재생 목록" class="list" id="control-list"></i>
+                        <!-- <i title="정지" class="stop" id="control-stop"></i> -->
+                        <!-- <i title="한곡 반복" class="repeat_one"></i>-->
+                        <!-- <i title="랜덤 반복" class="shuffle"></i> -->
+                    </div>
+                </div>
+            </div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>뮤직 리스트 <span class="close"></span></h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script src="../assets/js/game.js"></script>
+    <script src="../assets/js/animal.js"></script>
+    <script>
+        $( ".icon1" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.grine.png")
+            },
+        });
+        $( ".icon2" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+        $( ".icon3" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.red.png")
+            },
+        });
+        $( ".icon4" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.cluster.png")
+            },
+        });
+        $( ".icon5" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.blue.png")
+            },
+        });
+        $( ".icon6" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+        $( ".music__wrap" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+
+        // 팝업 열기
+        const WbTn = document.querySelector(".icon6");
+        const MbTn = document.querySelector(".icon1");
+        const GbTn = document.querySelector(".icon2");
+        const iconFrame = document.querySelector(".icon_iframe");
+        const musicW = document.querySelector(".music__wrap");
+        const gameDr = document.querySelector(".game__frame");
+
+        WbTn.addEventListener("click", ()=>{
+            iconFrame.classList.add("show")
+        })
+        MbTn.addEventListener("click", ()=>{
+            musicW.classList.add("show")
+        })
+        GbTn.addEventListener("click", ()=>{
+            gameDr.classList.add("show")
+        })
+
+        const audio = document.getElementById('main-audio');
+        const audioVolume = document.getElementById('volume-control');
+        audioVolume.addEventListener("change", function(e) {
+            audio.volume = this.value/10;
+        })
+
+
+        // 외부영역 클릭 시 팝업 닫기
+        $(document).mouseup(function (e){
+        	var LayerPopup = $(".icon_iframe");
+        	var MusicPopup = $(".music__wrap");
+        	var GamePopup = $(".game__frame");
+        	if(LayerPopup.has(e.target).length === 0){
+        		LayerPopup.removeClass("show");
+        	}
+            if(MusicPopup.has(e.target).length === 0){  
+        		MusicPopup.removeClass("show");
+        	}
+            if(GamePopup.has(e.target).length === 0){  
+        		GamePopup.removeClass("show");
+        	}
+        });
+
+        const cursor = document.querySelector(".cusor");
+
+        window.addEventListener("mousemove",(e) => {
+          gsap.to(cursor, {duration: 0.15, left:e.pageX, top:e.pageY});
+
+        });
+
+        function printTime() {
+                const clock = document.querySelector(".time");
+                const now = new Date();
+                let hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                const ampm = hours >= 12 ? "pm" : "am";
+                hours = hours % 12 || 12;
+                // const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + ":" + now.getMinutes() + ()":"now.()getMnow.getS now.()getSeconds();
+                const nowTime = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 ${hours < 10 ? `0${hours}` : `${hours}`}:${minutes < 10 ? `0${minutes}` : `${minutes}`}:${seconds < 10 ? `0${seconds}` : `${seconds}`}${ampm}`;
+                clock.innerText = nowTime;
+                setTimeout("printTime()", 1000);
+            }
+      
+        // function printTime(){
+        //     const clock = document.querySelector(".time");
+        //     const now = new Date();
+        //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초"
+        //     //getFullYear - 년도만 갖고올 수 있다.getMonth - 0부터 시작이라 +1 해줘야지 제대로 된 월이 나온다.
+            
+        //     clock.textContent = nowTime;
+        //     setTimeout("printTime()",1000);
+        // }
+        function preintAgent(){
+            const agent = document.querySelector(".agent")
+            const os = navigator.userAgent.toLocaleLowerCase();
+            
+            // agent.textContent = os;
+
+            if(os.indexOf("window")>=0){
+                agent.textContent = "현재 윈도우를 사용하고 있습니다. 화면 크기는 넓이 : "+ screen.width + " 높이 : "+screen.height+ " 입니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("macintosh")>=0){
+                agent.textContent = "현재 맥을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("iphone")>=0){
+                agent.textContent = "현재 아이폰을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("android")>=0){
+                agent.textContent = "현재 안드로이드를 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window"); 
+            }
+        }
+        window.onload = function(){
+            printTime();
+            preintAgent();
+        }
+
+       
+    </script>
+</body>
+</html>

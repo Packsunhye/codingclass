@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0829 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            
+            <h2 class="t_tit"> jQuery 속성 메서드 </h2>
+
+            <h3 class="t_tit2"> attr() 메서드 </h3>
+             <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td class="ce"> 취득 </td>
+                        <td>
+                            $("a").attr("href")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2"> 생성, 변경 </td>
+                        <td>
+                            $("a").attr("href","http://icoxpublish.com").attr("target","_blank")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            $("a").attr({href : "http://icoxpublish.com" , target : "_blank" });
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce"> 콜백함수 </td>
+                        <td>
+                            $("a").attr("href" ,function(index,h){<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//index는 각 a 요소의 index 0,1,2<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//h 각 a 요소 href 속성<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return attribute 속성 // 각 a 요소의 속성을 생성 및 변경합니다.<br>
+                            });<br>
+                            ....<br>
+                            &lt;a href="http://www.daum.net" target="_blank" title-"새창"&gt;다음&lt;/a&gt;<br>
+                            &lt;a href="http://www.naver.net" target="_blank" title-"새창"&gt;네이버&lt;/a&gt;<br>
+                            &lt;a href="http://www.nate.net" target="_blank" title-"새창"&gt;네이트&lt;/a&gt;<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery-06-1" src="https://codepen.io/packsunhye/embed/QWrWoqZ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/QWrWoqZ">
+                    jQuery-06-1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div><br>
+
+            <details>
+                <summary>🐳 jQuery 속성 메서드의 코드만 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">$(document).ready(function () {
+    console.log($("#site > a:eq(0)").attr("href"));
+    $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+    $("#site a").attr("title", function () {
+        return "새창";
+    });
+});</code></pre>
+                </div>
+            </details><br>
+            <!-- /01 -->
+
+            <h3 class="t_tit2"> prop() 메서드 </h3>
+            <p class="t_desc"> attr()가 html attribute(속성)에 관련된 메서드라면 prop()는 자바스크립트 property(프로퍼티)에 관련된 메서드 입니다. <br>
+                prop()메서드는 요소의 속성을 true,false로 제어할 수 있습니다.
+            </p>
+
+            <p class="t_desc"> 보시다 싶이 attr() 메서드는 checked 속성이 요소에 추가되는 반면 prop()메서드의 ture는 자바스크립트의 프로퍼티로 처리 됩니다.
+            </p>
+            <h3 class="t_tit2"> 위의 예시를 사용하여 jQuery를 사용해보았습니다. </h3>
+            <div class="t_iframe">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jQuery-06-1" src="https://codepen.io/packsunhye/embed/RwywdJL?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/packsunhye/pen/RwywdJL">
+                    jQuery-06-1</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div><br>
+
+            <details>
+                <summary>🐳 jQuery 속성 메서드의 코드만 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">$(document).ready(function () {
+    console.log($("input:checkbox").eq(0).attr("checked"));
+    console.log($("input:checkbox").eq(1).prop("checked"));
+    $("input:checkbox").eq(0).attr("checked", "checked");
+    $("input:checkbox").eq(1).prop("checked", true);
+    console.log($("input:checkbox").eq(0).attr("checked"));
+    console.log($("input:checkbox").eq(1).prop("checked"));
+});</code></pre>
+                </div>
+            </details><br>
+            <!-- /02 -->
+
+
+        
+          
+        </div>       
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,247 @@
+/* font */
+@import url('https://webfontworld.github.io/NanumBarunGothic/NanumBarunGothic.css'); 
+
+body {
+    font-family: "NanumBarunGothic";
+
+}
+
+em {
+    font-style : normal
+}
+
+ul,li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+/* container */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#nav {
+    display: flex;
+    margin: 0 auto;
+    width: 1180px;
+}
+
+/* header */
+#header {
+ padding-top: 30px;
+ width: 20%;
+
+}
+.header__inner {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.header__logo {
+    display: flex;
+    margin-bottom: 50px;
+}
+.header__logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.header__logo p {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 9px;
+    color: #999;
+}
+.header__logo p em {
+    font-size: 24px;
+}
+.header__menu li {
+    margin-bottom: 35px;
+}
+.header__menu a{
+    font-size: 24px;
+    font-weight: 700;
+
+}
+.header__menu a.active {
+    color: blue;
+}
+.header__menu li > ul {
+    margin: 30px 0 35px 0;
+    padding-left: 30px;
+}
+.header__menu li > ul li {
+    /* border-bottom: 1px solid #d5d5d5; */
+}
+.header__menu li > ul li a {
+    font-size: 16px;
+}
+
+/*main*/
+#main {
+    width: 70%;
+    padding-top: 30px;
+    margin-bottom: 50px;
+}
+.slider__wrap {
+    padding: 0;
+}
+
+.slider img {
+    width: 1000px;
+    height: 500px;
+}
+
+.slider__img {
+    width: 1000px;
+    overflow: hidden;
+}
+
+.slider__inner {
+    display: flex;
+    width: 4000px;
+}
+
+
+
+
+/* content */
+.cont__name ul  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.cont__name ul li {
+    margin-left: 20px;
+}
+.cont__name ul li:first-child {
+    margin-left: 0;
+}
+.cont__name ul a {
+    font-weight: 700;
+    font-size: 30px;
+}
+.cont__type {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.cont__type > div {
+    width: 15%;
+}
+.cont__type > div img {
+    width: 100%;
+}
+.cont__type > div .desc {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cont__type.box2 {
+    display: none;
+}
+
+
+/* card */ 
+#content {
+    
+}
+.card__inner {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.card__box{
+    padding: 10px;
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid rgb(215, 215, 240);
+    border-radius: 5px;
+}
+.card__box > p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 50px;
+}
+.card__box > img {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    float: right;
+    margin-bottom: 10px;
+}
+.card__main {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 25px 0;
+}
+.card__main img {
+    width: 200px;
+}
+.card__desc ul {
+    padding: 10px;
+}
+.card__desc li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* 말줄임 적용 */
+    margin-bottom: 10px;
+}
+.card__desc li a {
+    color: #888;    
+    font-size: 14px;
+}
+
+/* footer */
+#footer {
+    width: 1374px;
+    margin: 0 auto;
+}
+
+.footer__inner {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: #edf2f8;
+}
+.footer__use {
+    display: flex;
+}
+
+.footer__logo img {
+    width: 70px;
+    height: 70px;
+}
+.footer__logo > h3 {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+.footer__text {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.footer__side {
+    float: right;
+}
+.footer__side img {
+    height: 60px;
+    line-height: 50;
+}

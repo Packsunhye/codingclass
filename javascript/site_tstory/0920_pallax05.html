@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  사이트  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Parallax Effect05 </h2>
+            <p class="t_desc"> 스크롤을 내렸을 때 숫자나, 이미지, 안의 글귀등에게 이질감을 주는 이펙트를 공부하였습니다.</p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 기본적으로는 4번 유형과 같지만, 이해를 돕기 위해 스크롤 탑을 추가하였습니다.</p>
+            <details>
+                <summary>🐇 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt; 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- // parallax__cont --&gt;
+
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt; px &lt;/div&gt;
+&lt;/aside&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 바뀐 곳은 거의 없으나, 이질감만 주기엔 심심해서 hover하였을 때 색이 돌아오는 모습을 추가했습니다. </p>
+            <details>
+                <summary>🐇 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css"> .content__item__img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -5px;
+    top: -5px;
+    background-image: url(../../assets/silde/min_jelly/slide_main_07-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover ;
+    filter: saturate(0%);
+    transition: all 1s;
+    /* transition: all 1s; */
+}
+
+.content__item:hover .content__item__img {
+    filter: saturate(80%);
+}</code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc"> gsap를 이용하여 애니메이션 효과를 좀 더 추가하며, offsetTop을 이용해 시야의 이질감을 주었습니다.</p>
+            <details>
+                <summary>🐇 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js">function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
+
+        let offset1 = (scrollTop - item.offsetTop) * 0.1;  //scrollTop - 섹션의 offsetTop 을 주었으나, 너무 크므로 0.1을 곱한다.
+        let offset2 = (scrollTop - item.offsetTop) * 0.15; 
+        let offset3 = (scrollTop - item.offsetTop) * 0.2; 
+
+        // target1.style.transform = `translateY(${offset}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+
+        gsap.to(target1, {duration : .3, y : offset1, ease : "power4.out"});
+        gsap.to(target2, {duration : .3, y : offset2});
+        gsap.to(target3, {duration : .3, x : offset3, ease : "expo.out"});
+    })
+
+    requestAnimationFrame(scroll);
+}
+scroll();</code></pre>
+            </div>
+            </details>
+           <br>
+
+           <h3 class="t_tit2"> 04. 이미지로 한눈에 알아봅시다. </h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect05.html"></iframe>
+            </div>
+            
+            <div class="t_link">
+                <a href="https://github.com/Packsunhye/coding/blob/main/javascript/effect/parallaxEffect05.html">원본 소스 보여주기</a>
+            </div> 
+        
+            <div class="t_link">
+                <a href="https://packsunhye.github.io/coding/javascript/effect/parallaxEffect05.html">원본 사이트 보여주기</a>
+            </div>  
+
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  애니메이션  </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> Eye animation </h2>
+            <p class="t_desc"> 마우스를 움직일 때 와 키보드를 눌렀을 때, 카드에 있는 남성의 눈이 움직이는 걸 공부해보았습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc">기본으로 모두 감싸주고, 카드에 남자 안에 눈, 그리고 글자를 구분해줍니다.</p>
+            <details>
+                <summary>🐱‍👤 HTML 코드</summary>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="weapper"&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="me"&gt;
+      &lt;div class="eye"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text"&gt;Men&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            </details>
+           
+            
+            <h3 class="t_tit2"> 02. Css </h3>
+            <p class="t_desc"> 남성의 눈과 얼굴을 구분해 위치하도록 합니다.</p>
+            <details>
+                <summary>🐱‍👤 css 코드</summary>
+                <div class="t_code">
+<pre><code class="language-css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.weapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 369px;
+  height: 547px;
+  transform-style : preserve-3d;
+/*   transform: perspective(600px); */
+}
+.me {
+  position: absolute;
+  width: 369px;
+  height: 547px;
+  transform: translatez(80px) scale(0.8);
+}
+
+.me::before , .me::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background: url(https://github.com/Packsunhye/coding/blob/main/codepen/0926_men.png?raw=true) no-repeat 0 0;
+}
+
+.me::after {
+  height: 30px;
+  top: auto;
+  bottom: -15px;
+  filter : blur(15px);
+  background-size: 100% 30px;
+  border-radius: 100px;
+}
+
+.eye, .eye::before {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 175px;
+  left: 119px;
+  z-index: -1;
+  background: url(https://github.com/Packsunhye/coding/blob/main/codepen/0926_eye.png?raw=true);
+}
+
+.eye::before {
+  content: '';
+  top: -3px;
+  left: 99px;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 390px;
+  height: 595px;
+  transform: translatez(150px) translatex(-11px) translateY(-26px) scale(.55);
+  border: 3px solid #fff;
+  text-align: center;
+  font-size: 35px;
+  line-height: 1000px;
+  color: #fff;
+  opacity: 0.3;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.36) 39%, rgba(255,255,255,0) 51% , #000 100%);
+}
+
+.text::after {
+  content: 'eye move';
+  width: 100%;
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  z-index: 1;
+  line-height: 1;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  text-indent: 20px;
+} </code></pre>
+            </div>
+            </details>
+            
+
+            <h3 class="t_tit2"> 03. Javascript </h3>
+            <p class="t_desc">마우스 무브와 키보드 다운으로 키보드와 마우스 값을 알아내 움직이도록 합니다.</p>
+            <details>
+                <summary>🐱‍👤 Javascript 코드</summary>
+                <div class="t_code">
+<pre><code class="language-js">const wrap = document.querySelector('.weapper');
+const eye = document.querySelector('.eye');
+const speed = 1;
+let x = 0;
+let y = 0;
+let followX = 0;
+let followY = 0;
+function animate() {
+  x += (followX - x) * speed;
+  y += (followY - y) * speed;
+  eye.style.transform = `translate(${-x}px, ${-y}px)`;
+  wrap.style.transform = `translate(-50%, -50%) perspextive(600px) rotateX(${-y}deg) rotateY(${-x}deg)`;
+  requestAnimationFrame(animate);
+}
+window.addEventListener('mousemove', (e) => {
+  let mouseX = Math.max(-100, Math.min(100, window.innerWidth / 2 - e.clientX));
+  let mouseY = Math.max(-100, Math.min(100, window.innerHeight / 2 - e.clientY));
+  followX = (12 * mouseX) / 100;
+  followY = (10 * mouseY) / 100;
+});
+window.addEventListener('keydown', (e) => {
+  switch(e.keyCode) {
+    case 37:
+      followX = 12;
+      break;
+    case 38:
+      followY = 10;
+      break;
+    case 39:
+      followX = -12;
+      break;
+    case 40:
+      followY = -10;
+      break;
+    default:
+      break;
+  }
+});
+animate();</code></pre>
+            </div>
+            </details>
+           <br>
+           <h3 class="t_tit2"> 04. 이미지로 한눈에 알아봅시다. </h3>
+
+          <div class="t_iframe">
+            <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/packsunhye/embed/OJZOEww?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+              See the Pen <a href="https://codepen.io/packsunhye/pen/OJZOEww">
+              Untitled</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+              on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </div>
+        
+
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

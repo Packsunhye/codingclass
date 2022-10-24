@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 조건문</title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+       <div class="document">
+        <h2 class="t_tit"> 조건문 </h2>
+        <p class="t_desc">
+            조건문은 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를 제어하거나 반복시키는 문장입니다.
+            조건문에는 if문 , switch문을 가장많이 사용합니다.</p>
+
+            <h3 class="t_tit2">01. if문의 형식</h3>
+            <p class="t_desc">
+                If문은 조건식의 결과에 따라 중괄호 { } 로 묶어놓은 블록이 실행여부가 결정되는 조건문입니다. 
+                조건식에는 true 또는 false값을 산출할 수 있는 연산식이나 boolean변수가 올 수 있습니다. 조건식이 true면 블록을 실행하고 false면 블록을 실행하지 않습니다. 
+                C언어에서 0은 false(거짓)로 0이 아닌 나머지 값은 모두 true(참)로 인식합니다.</p>
+            <div class="script">
+                <div class="t_code">
+<pre><code class="language-js">    //false, 0 ,undefined , null
+           //true, 1, "0", "1", 0&lt;10, [], {}
+       
+           if(0){
+               document.write("실행되었습니다.(true)");
+           } else {
+               document.write("실행되었습니다.(false)");
+           }
+</code></pre> 
+                </div>
+            </div>
+            
+            <h3 class="t_tit2">02. if문은 if문 안에 또 다른 if문을 중첩하여 사용할 수 있습니다.</h3>
+            <div class="script">
+                <div class="t_code">
+<pre><code class="language-js">   const num = 100;
+
+    if(num == 100 ){
+        document.write("실행되었습니다.(1)");
+        if(num == 100 ){
+            document.write("실행되었습니다.(2)");
+            if(num == 100 ){
+                document.write("실행되었습니다.(3)");
+            }
+        }
+    } else {
+        document.write("실행되었습니다.(4)");
+    } </code></pre>  
+                </div> 
+            </div>
+        
+            <hr>
+
+            <h3 class="t_tit2">03. swich문의 형식</h3>
+            <p class="t_desc">
+                if 문은 차례대로 하나하나 비교하며 조건에 맞는 값을 찾지만, 
+                switch 문은 이미 지정한 case를 보고 해당 조건의 값을 출력한다.</p>
+            <div class="script">
+                <div class="t_code">
+<pre><code class="language-js">    const num = 100;
+
+    switch(num){
+        case 100 : 
+            document.write("실행되었습니다.(num==100)");
+            break;
+        case 110 : 
+            document.write("실행되었습니다.(num==110)");
+            break;   
+        case 120 : 
+            document.write("실행되었습니다.(num==120)");
+            break;   
+        case 130 : 
+            document.write("실행되었습니다.(num==130)");
+            break; 
+        default :
+             document.write("실행되었습니다.(num==값이 없음)"); 
+    }
+</code></pre>   
+                </div>
+            </div>
+            
+    </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  

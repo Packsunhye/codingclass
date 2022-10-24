@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 04</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+
+        .seban {
+            font-family: 'SebangGothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {         /*  ㅣ+ 형제요소 ㅣ > 자식요소(첫번째)  */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center; 
+            margin-bottom: 70px;
+        }
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+
+        /* cardType04 */
+        .top {
+            width: 1160px;
+            margin: 0 0 0 1px;
+            background-color: #000;
+            border-top: 2px solid #000;
+        }
+
+        .jelly {
+            width: 56px;
+            height: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 7px 22px 9px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+            background-color: #000;
+            margin-bottom: 30px;
+        }
+        .main_header {
+            display: flex;
+        }
+
+        .header_img {
+            margin-right: 25px;
+            width: 787px;
+            height: 470px;
+        }
+        .main_header .smo_Tw {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #313131;
+        }
+        .main_header .main_tet {
+            width: 348px;
+            height: 66px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -1.96px;
+        }
+        .coMem {
+            width: 348px;
+            height: 60px;
+            margin-top: 290px ;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.4;
+            letter-spacing: -0.98px;
+            text-align: left;
+            color: #313131;
+            margin-bottom: 20px;
+        }
+
+        .botoom {
+            border-bottom: 1px solid #d3d3d3;
+        }
+
+        .card_rpt {
+            display: flex;
+        }
+
+        .card {
+            display: flex;
+        }
+        
+        .card .tit {
+            width: 135px;
+            height: 16px;
+            margin: 0 70px 6px 0;
+            margin-right: 70px;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #323232;
+            margin-top: 30px;
+        }
+        .card .desc {
+            width: 152px;
+            height: 36px;
+            margin: 6px 53px 12px 0;
+            font-size: 15px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.3;
+            letter-spacing: normal;
+            text-align: left;
+            color: #1c1c1c;
+        }
+        .card img {
+            width: 70px;
+            height: 70px;
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="cardType04" class="card_wrap seban section">
+        <div class="card_inner container">
+            <div class="top"></div>
+            <div class="jelly">Jelly fish</div>
+            <div class="main_header">
+                <figure class="header_img">
+                    <img src="img/card_bg04_main.jpg" alt="해파링">
+                </figure>
+                <div class="twt">
+                    <p class="smo_Tw">심해 속 해파리의 신비</p>
+                    <h2 class="main_tet">해파리는 너무 신비롭다 말랑말랑 귀엽습니다.</h2>
+                    <p class="smo_Tw">귀여운 외모이지만 준비 없이 키우지는 맙시다!</p>
+                    <p class="coMem">해파리를 키울려면 키울만한 수조와 환경과 먹이가 필요해요. 해파리는 플라크톤을 제일 자주 먹지만 그 외에도 작은 물고기를 먹을 수 있다네요 사실 몰랐었던 정보랍니다. </p>
+                </div>
+            </div>
+            <div class="botoom"></div>
+            <div class="card_rpt">
+                <article class="card">
+                    <div class="footer">
+                         <h4 class="tit">해파리의 귀여움</h3>
+                         <p class="desc">
+                             해파리가 귀여운 이유 <br>
+                             그냥 둥실 둥실 !</p>
+                    </div>
+                     <img src="img/card_bg04_01.jpg" alt="">
+                 </article>
+                 <article class="card">
+                     <div class="footer">
+                          <h4 class="tit">해파리의 뭉텅이</h3>
+                          <p class="desc">
+                             해파리의 뭉텅이가 <br>
+                             갑자기 ?!</p>
+                     </div>
+                      <img src="img/card_bg04_02.jpg" alt="">
+                  </article>
+                  <article class="card">
+                     <div class="footer">
+                          <h4 class="tit">해파리의 부드러움</h3>
+                          <p class="desc">
+                             맬렁맬렁 <br>
+                             만져보고 싶어용!</p>
+                     </div>
+                      <img src="img/card_bg04_03.jpg" alt="">
+                  </article>
+                  <article class="card">
+                     <div class="footer">
+                          <h4 class="tit">해파리의 투명함</h3>
+                          <p class="desc">
+                             해파리가 투명해도 사실 <br>
+                             독이 있답니다!</p>
+                     </div>
+                      <img src="img/card_bg04_04.jpg" alt="">
+                  </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

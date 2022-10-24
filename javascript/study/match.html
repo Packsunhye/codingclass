@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : match() </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">match() 란? </h2>
+            <p class="t_desc">
+                search()과 비슷한 메서드이며 원하는 값을 검색할 때에 배열로 반환합니다. 또한 정규식 표현이 가능합니다.
+            </p>
+            <p class="t_box">
+                const str1 = "cat do funch" <br>
+                const currentStr1 = str1.match('cat'); //'cat'<br>
+                const currentStr2 = str1.match('funch'); //'funch' <br>
+                const currentStr3 = str1.match(/c/g); //(2) 'c','c'  <br>
+                <br>
+                "문자열".search("검색값");<br>
+                "문자열".search(정규식 표현);
+             </p><br>
+
+           
+             <div class="t_code">
+                <div class="script"></div>
+    <pre><code class="language-js">    const str1 = "javascript reference";
+    const currentStr1 = str1.match("javascript");    //'javascript'
+    const currentStr2 = str1.match("reference");    //'reference'
+    const currentStr3 = str1.match("r");                 //'r'
+    const currentStr4 = str1.match(/reference/);   //'reference'
+    const currentStr5 = str1.match(/Reference/);  //null
+    const currentStr6 = str1.match(/Reference/i);    //'reference' //i는 소문자 대문자 구별하지 않는다
+    const currentStr7 = str1.match(/r/g);                //(3) ['r', 'r', 'r']
+    const currentStr8 = str1.match(/e/g);               //(4) ['e', 'e', 'e', 'e'] </code></pre>   
+            </div>
+
+        </div>      
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+  
+</body>
+</html>

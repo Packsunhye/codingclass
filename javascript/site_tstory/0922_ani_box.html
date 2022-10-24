@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0919 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> box Animation </h2>
+            <p class="t_desc"> codepen에서 box가 늘어났다 줄어드는 애니메이션을 만들었습니다. </p>
+
+            <h3 class="t_tit2"> 01. HTML </h3>
+            <p class="t_desc"> 정육면체인 만큼 6개의 빈칸을 만들어줍니다.</p>
+            <div class="t_code">
+<pre><code class="language-html">&lt;div class="cube"&gt;
+  &lt;div&gt;마뇽&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>  
+            </div>
+        
+            <h3 class="t_tit2"> 02. css </h3>
+            <p class="t_desc"> 원들 에게 애니메이션을 줄 때, 한번에 많은 수를 움직이는 것을 해야하니 scss로 for문을 사용해 여러개의 nth-child를 한 문장으로 해결할 수 있게 하였습니다.</p>
+            <div class="t_code">
+<pre><code class="language-css">body {
+	background-color: #000;
+	height: 100vh;
+	perspective: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cube {
+	position: relative;
+	width: 100px; height: 100px;
+	transform-style: preserve-3d;
+	transform: rotatex(-20deg) rotatey(-140deg) translatez(0);
+	animation: rotate 8000ms linear infinite;
+}
+.cube div {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100px; height: 100px;
+	opacity: 0.75;
+	color: #fff;
+}
+.cube div:nth-child(1){
+	background: #ffcc80;
+	transform: rotatex(90deg) translatey(-100px);
+	transform-origin: center top;
+	animation: top 4000ms ease-in-out 8000ms infinite;
+}
+.cube div:nth-child(2){
+	background: #ffb74d;	
+	transform-origin: center bottom;
+	transform: rotatex(-90deg) translatey(100px);
+	animation: bottom 4000ms ease-in-out 8000ms infinite;
+}
+.cube div:nth-child(3){
+	background: #ffa726;
+	transform-origin: left center;
+	transform: rotateY(-90deg) translateX(-100px);
+	animation: left 4000ms ease-in-out 8000ms infinite;
+}
+.cube div:nth-child(4){
+	background: #ff9800;
+	transform-origin: right center;
+	transform: rotateY(90deg) translateX(100px);
+	animation: right 4000ms ease-in-out 8000ms infinite;
+}
+.cube div:nth-child(5){
+	background: #fb8c00;
+	transform-origin: center center;
+	transform: rotateX(0deg);
+	animation: front 4000ms ease-in-out 8000ms infinite;
+}
+.cube div:nth-child(6){
+	background: #f57c00;
+	transform-origin: center center;
+	transform: rotateY(180deg) translatez(100px);
+	animation: back 4000ms ease-in-out 8000ms infinite;
+}
+
+@keyframes rotate {
+	0% {transform: rotatex(0) rotatey(0) rotatez(0) translatez(0) }
+	100% {transform: rotatex(360deg) rotatey(360deg) rotatez(360deg) translatez(0)}
+}
+
+@keyframes top {
+	0%   {transform: rotatex(90deg) translatey(-100px) translatez(0);}
+	50%  {transform: rotatex(90deg) translatey(-100px) translatez(100px);}
+	100% {transform: rotatex(90deg) translatey(-100px) translatez(0);}
+}
+
+@keyframes bottom {
+	0%   {transform: rotatex(-90deg) translatey(100px) translatez(0);}
+	50%  {transform: rotatex(-90deg) translatey(100px) translatez(100px);}
+	100% {transform: rotatex(-90deg) translatey(100px) translatez(0);}
+}
+
+@keyframes left {
+	0%   {transform: rotateY(-90deg) translateX(-100px) scaleY(1);}
+	50%  {transform: rotateY(-90deg) translateX(-100px) scaleY(3);}
+	100% {transform: rotateY(-90deg) translateX(-100px) scaleY(1);}
+}
+
+@keyframes right {
+	0%   {transform: rotateY(90deg) translateX(100px) scaleY(1);}
+	50%  {transform: rotateY(90deg) translateX(100px) scaleY(3);}
+	100% {transform: rotateY(90deg) translateX(100px) scaleY(1);}
+}
+
+@keyframes front {
+	0%   {transform: rotateX(0deg) scaleY(1);}
+	50%  {transform: rotateX(0deg) scaleY(3);}
+	100% {transform: rotateX(0deg) scaleY(1);}
+}
+
+@keyframes back {
+	0%   {transform: rotateY(180deg) translatez(100px) scaleY(1);}
+	50%  {transform: rotateY(180deg) translatez(100px) scaleY(3);}
+	100% {transform: rotateY(180deg) translatez(100px) scaleY(1);}
+}</code></pre>   
+                </div>
+        
+            
+        
+            <div class="t_iframe">
+              <iframe height="300" style="width: 100%;" scrolling="no" title="0922" src="https://codepen.io/packsunhye/embed/LYmjrpy?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/packsunhye/pen/LYmjrpy">
+                0922</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            
+        </div>        
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

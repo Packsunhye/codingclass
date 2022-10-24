@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 사이즈 </title>
+</head>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+            
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        h4 {
+            margin-top: 30px;
+        }
+
+        p {
+            font-weight: normal;
+        }
+        .p_color {
+            color: rgb(109, 105, 107);
+            font-size: 14px;
+        }
+
+        
+        /* #header */
+    #header {
+        padding: 2vw;
+        border-bottom: 1px dashed #dedede;
+    }
+    #header h1 {
+        font-size: 4vw;
+        margin-bottom: 2vw;
+    }
+    #header nav ul li {
+        list-style: none;
+        display: inline;
+    }
+    #header nav ul li a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid #000;
+        padding: 0.5vw 1vw 0.3vw 1vw;
+        display: inline-block;
+    }
+    #header nav ul li a:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    /* #contents */
+    #contents {
+        padding: 2vw;
+    }
+    #contents .menu {
+        border-bottom: 1px dashed #dedede;
+        padding-bottom: 2vw;
+    }
+    #contents .menu ul li {
+        list-style: none;
+        display: inline;
+    }
+    #contents .menu ul li a {
+        text-decoration: none;
+        color: #000;
+        border: 1px solid #000;
+        background-color: #000;
+        color: #fff;
+        padding: 0.5vw 1vw 0.3vw 1vw;
+        word-break: keep-all;
+        margin: 0.3vw;
+        margin-top: 0.3vw;
+        display: inline-block;
+    }
+    
+    /* article */
+    .article {
+        padding: 0.3vw 0;
+        line-height: 1.6;
+    }
+    
+    .article h2 {
+        font-weight: normal;
+    }
+    
+    .article h3 {
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+
+    .article .box {
+        background-color:  #e3e3e3;
+        padding: 15px;
+    }
+
+    /* 미디어 쿼리 */
+    @media (max-width:800px) {
+        #header {
+            padding: 16px;
+        }
+        #header h1 {
+            font-size: 40px;
+        }
+        #header nav ul li a {
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        #contents {
+            padding: 16px;
+        }
+        
+    }
+    </style>
+
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="size.html">폰트 사이즈</a></li>
+            </ul>
+        </nav>
+
+        <h4>문자의 글자 크기를 지정하는 속성입니다.</h4><br>
+        <p> px </p>
+        <article class="article">
+            <pre><p class="box"> font-size: 12px;</p></pre>
+        </article><br>
+
+        <p> % </p>
+        <article class="article">
+            <pre><p class="box"> font-size: 150%;</p></pre>
+        </article><br>
+
+        <p> em </p>
+        <p class="p_color"> 부모 요소의 글자 크기를 100% 기준으로 계산한 100분의 1단위입니다.</p>
+        <article class="article">
+            <pre><p class="box"> font-size: 1.5em;</p></pre>
+        </article><br>
+
+        <p> rem </p>
+        <p class="p_color"> rem은 em과 비슷하지만 부모 요소가 아닌 최상위 요소로 크기를 100% 기준으로 계산합니다.
+            rem의 r은 root 즉, html 요소를 뜻하므로, html 요소에서 지정한 글자 크기가 1rem이 됩니다.
+        </p>
+        <article class="article">
+            <pre><p class="box"> font-size: 1.5rem;</p></pre>
+        </article><br>
+
+        <p> vw, vh </p>
+        <p class="p_color"> vw는 뷰포트 너비값이 100부의 1단위, vh는 뷰포트 높이값이 100분의 1단위입니다.</p>
+        <article class="article">
+            <pre><p class="box"> font-size: 10vw;</p></pre>
+        </article><br>
+        
+    </section>
+</body>
+</html>
