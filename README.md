@@ -1,7 +1,7 @@
 ## codingclass
 
 ## 메인
-https://packsunhye.github.io/codingclass/index.html        s
+https://packsunhye.github.io/codingclass/index.html   
 
 ## 자바스크립트   
 https://packsunhye.github.io/codingclass/javascript/index.html      
