@@ -39,38 +39,38 @@ https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect06.html
 https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect07.html   
 
 ## 퀴즈 이펙트   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect01.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect02.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect03.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect04.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect05.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/quizEffect06.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect01.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect02.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect03.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect04.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect05.html   
+https://packsunhye.github.io/codingclass/javascript/effect/quizEffect06.html   
 
 ## 마우스 이펙트   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect01.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect02.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect03.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect04.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect05.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/mouseEffect06.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect01.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect02.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect03.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect04.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect05.html   
+https://packsunhye.github.io/codingclass/javascript/effect/mouseEffect06.html   
 
 ## 페럴렉스 이펙트   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect01.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect02.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect03.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect04.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect05.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect06.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect07.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect01.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect02.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect03.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect04.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect05.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect06.html   
+https://packsunhye.github.io/codingclass/javascript/effect/parallaxEffect07.html   
 
 ## 슬라이드 이펙트   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect01.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect02.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect03.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect04.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect05.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect06.html   
-ttps://packsunhye.github.io/codingclass/javascript/effect/sliderEffect07.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect01.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect02.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect03.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect04.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect05.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect06.html   
+https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect07.html   
 
 ## 게임 이펙트
-
+https://packsunhye.github.io/codingclass/javascript/effect/gameEffect01.html  
