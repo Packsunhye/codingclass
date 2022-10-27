@@ -94,24 +94,42 @@
     <!-- 메모리 게임 플레이 -->
     <div class="memory__game open">
         <div class="memory__wrap">
-            <div class="memory__start">
+            <div class="memory__start ">
                 <div class="top">
                     <div>ଳ</div>
                     <h2>게임 시작</h2>
                     <div>ଳ</div>
                 </div>
-                <div>
+                <div class="rul">
                     <p>가벼운 규칙 : 잘 읽고 시작해주세요 :3</p>
                     <ul>
-                        <li>1. 시간은 60초 입니다. 시간 내에 한짝씩 맞출경우 1점입니다 총 8점을 노려봐요.</li>
-                        <li>2. 짝을 맞추는 것을 틀렸을 시 틀린 점수가 하나씩 올라갑니다. <br>5점이 되었을 경우 실패입니다 ;3</li>
+                        <li>1. 시간은 60초 입니다. 시간 내에 한짝씩 맞출경우 1점입니다
+                            <br><em>카드를 잘 기억해서 총 8점을 노려봐요.</em>
+                        </li>
+                        <li>2. 짝을 맞추는 것을 틀렸을 시 틀린 점수가 하나씩 올라갑니다.
+                            <br><em>5점이 되었을 경우 실패입니다 ;3</em>
+                        </li>
                         <li>3. 다시 도전할 수 있으니 실패해도 다시 시작버튼을 눌러주세요!</li>
                     </ul>
                 </div>
-                <button>START</button>
+                <button class="use">START</button>
             </div>
-            <div class="memory__end"></div>
-            <div class="memory__inner">
+            <div class="memory__end">
+                <div class="endTop">
+                    <div>ଳ</div>
+                    <h2>게임 종료 ! ! !</h2>
+                    <div>ଳ</div>
+                </div>
+                <div class="endRul">
+                    <p>수고하셨습니다 :3 <em>게임이 종료 되었습니다.</em></p>
+                    <div class="endFine">
+                        <p>점수는 0 점입니다 ~ ଳ</p>
+                        <p>언제든 다시 도전할 수 있습니다.</p>
+                    </div>
+                </div>
+                <button class="useEnd">RESTART</button>
+            </div>
+            <div class="memory__inner start">
                 <div class="memory__card">
                     <!-- card -->
                     <div class="line">
