@@ -1,0 +1,191 @@
+.memory__game {
+    display: none;
+}
+
+.memory__game.open {
+    display: block;
+}
+
+.memory__wrap {}
+
+.memory__inner {
+    width: 700px;
+    height: 800px;
+    border: 3px solid rgb(244 224 255);
+    background: rgb(0, 0, 0);
+
+    position: absolute;
+    left: 450px;
+    top: 100px;
+    animation: flicker 0.5s infinite alternate;
+}
+
+.memory__card {
+    padding: 30px;
+}
+
+.memory__card .line {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: #fff;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.memory__card .line .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.memory__card .line .top>div {
+    font-size: 24px;
+}
+
+.memory__card .line .top>h2 {
+    font-size: 28px;
+}
+
+.memory__card .line .result {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.memory__card .line .result p:nth-child(1) {
+    padding-right: 10px;
+}
+
+.memory__card .cards {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.memory__card .cards li {
+    letter-spacing: normal;
+    width: 150px;
+    height: 150px;
+    /* background-color: #fff; */
+    /* padding: 10px; */
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.memory__card .cards li img {
+    width: 100%;
+}
+
+.memory__card .cards li .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(157 145 255);
+
+    backface-visibility: hidden;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    user-select: none;
+    pointer-events: none;
+}
+
+.memory__card .cards li .front {
+    transform: rotateY(0);
+}
+
+.memory__card .cards li.flip .front {
+    transform: rotateY(180deg);
+}
+
+.memory__card .cards li .back {
+    transform: rotateY(-180deg);
+}
+
+.memory__card .cards li.flip .back {
+    transform: rotateY(0);
+}
+
+.memory__card .cards li.shakeX {
+    animation: shakeX 1s 1;
+}
+
+
+@keyframes flicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        box-shadow:
+            0 0 0.5rem #fff,
+            inset 0 0 0.1rem #fff,
+            0 0 3rem 2px rgb(140 115 255),
+            inset 0 0 0rem 3px rgb(140 115 255),
+            0 0 0rem 3px rgb(140 115 255),
+            inset -4px -5px 3rem 2px rgb(140 115 255)
+    }
+}
+
+@keyframes shakeX {
+
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+
+@keyframes rubberBand {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    animation-name: rubberBand;
+}
