@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
 
 </head>
+
 <body>
     <header id="header">
         <nav>
@@ -33,8 +35,8 @@
     <main id="main">
         <div class="search__wrap">
             <span>indexOf() / search() 를 이용하여 검색하기</span>
-           
-            
+
+
             <h1> CSS 속성 검색하기 </h1>
             <div class="search__box">
                 <label for="search">검색하기</label>
@@ -46,38 +48,814 @@
             <div class="search__list">
                 <div class="css">
                     <ul>
-                        <li data-name="accent-color"><strong>accent-color</strong> : accent-color 속성은 일부 요소에서 생성된 사용자 인터페이스 컨트롤의 강조 색상을 설정 합니다.</li>
-                        <li data-name="align-content"><strong>align-content</strong> : align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
-                        <li data-name="align-items"><strong>align-items</strong> : align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.</li>
-                        <li data-name="align-self"><strong>align-self</strong> : align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
-                        <li data-name="all"><strong>all</strong> : all 속성은 다른 페이지 이동을 설정합니다.</li>
-                        <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
-                        <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션 지연 시간을 설정합니다.</li>
-                        <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션 움직임 방향을 설정합니다..</li>
-                        <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션 움직임 시간을 설정합니다.</li>
-                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                        <li><strong>accent-color</strong> : 요소의 강조 색상을 지정합니다.
+                        </li>
+                        <li><strong>align-content</strong> : 콘텐츠 사이와 콘텐츠 주위 빈
+                            공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다.</li>
+                        <li><strong>align-items</strong> : 교차축에서 아이템 정렬 하는
+                            속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다.</li>
+                        <li><strong>align-self</strong> : 특정 item의 정렬을 따로 하고 싶을 때
+                            사용합니다.</li>
+                        <li><strong>all</strong> : CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값,
+                            상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다.</li>
+                        <li><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적로
+                            처리합니다.</li>
+                        <li><strong>animation-delay</strong> : 애니메이션 지연
+                            시간을 설정합니다.</li>
+                        <li><strong>animation-direction</strong> :
+                            애니메이션 움직임 방향을 설정합니다.</li>
+                        <li><strong>animation-duration</strong> : 애니메이션
+                            움직인 시간을 설정합니다.</li>
+                        <li><strong>animation-fill-mode</strong> :
+                            애니메이션이 끝난 후의 상태를 설정합니다.</li>
 
-                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션의 반복 횟수를 설정합니다.</li>
-                        <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 애니메이션 keyframe 이름을 설정합니다.</li>
-                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션 진행상태를 설정합니다.</li>
-                        <li data-name="animation-timeline"><strong>animation-timeline</strong> : animation-timeline 속성은 요소에 적용할 스크롤 애니메이션을 설명하는 하나 이상의 규칙 이름을 지정합니다.</li>
-                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : animation-timing-function 속성은 애니메이션 움직임의 속도를 설정합니다.</li>
-                        <li data-name="appearance"><strong>appearance</strong> : appearance 속성은 운영 체제의 테마를 기반으로 하는 UI 컨트롤의 기본 모양을 제어하는 ​​데 사용됩니다.</li>
-                        <li data-name="aspect-ratio"><strong>aspect-ratio</strong> : aspect-ratio 속성은 자동 크기 및 기타 레이아웃 기능 계산에 사용되는 상자의 기본 종횡비를 설정합니다</li>
-                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤 영역에 흐림 또는 색상 이동과 같은 그래픽 효과를 적용할 수 있습니다 .</li>
-                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility 속성은 사용자를 향할 때 요소의 뒷면을 볼 수 있는지 여부를 설정합니다.</li>
-                        <li data-name="background"><strong>background</strong> : background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li>
+                            <strong>animation-iteration-count</strong> : 애니메이션의 반복 횟수를 설정합니다.
+                        </li>
+                        <li><strong>animation-name</strong> : 애니메이션
+                            keyframe 이름을 설정합니다.</li>
+                        <li><strong>animation-play-state</strong> :
+                            애니메이션 진행상태를 설정합니다.</li>
+                        <li><strong>animation-timeline</strong> :
+                            애니메이션의 타임라인을 설정합니다.</li>
+                        <li>
+                            <strong>animation-timing-function</strong> : 애니메이션 움직임의 속도를 설정합니다.
+                        </li>
+                        <li><strong>appearance</strong> : 운영체제 및 브라우저에 기본적로 설정되어
+                            있는 테마를 기반로 요소를 표현한다.</li>
+                        <li><strong>aspect-ratio</strong> : 요소의 크기를 비율대로 조정할 수
+                            있게 한다.</li>
+                        <li><strong>backdrop-filter</strong> : 요소 뒤 영역에 흐림이나
+                            색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다.</li>
+                        <li><strong>backface-visibility</strong> : 요소의
+                            뒷쪽에서 앞면이 보이게 할지 정하는 속성입니다.</li>
+                        <li><strong>background</strong> : 백그라운드 속성을 일괄적로 설정합니다.
+                        </li>
 
-                        <li data-name="background-attachment"><strong>background-attachment</strong> : background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</li>
-                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : background-blend-mode 속성은 배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
-                        <li data-name="background-clip"><strong>background-clip</strong> : background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
-                        <li data-name="background-color"><strong>background-color</strong> : background-color 속성은 백그라운드 색을 설정합니다.</li>
-                        <li data-name="background-image"><strong>background-image</strong> : background-image 속성은 백그라운드 이미지 속성을 설정합니다.</li>
-                        <li data-name="background-origin"><strong>background-origin</strong> : background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
-                        <li data-name="background-position"><strong>background-position</strong> : background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</li>
-                        <li data-name="background-position-x"><strong>background-position-x</strong> : background-position-x 속성은 백그라운드 이미지의 X축 위치 영역을 설정합니다.</li>
-                        <li data-name="background-position-y"><strong>background-position-y</strong> : background-position-y 속성은 백그라운드 이미지의 Y축 위치 영역을 설정합니다.</li>
-                        <li data-name="background-repeat"><strong>background-repeat</strong> : background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li><strong>background-attachment</strong> :
+                            배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li><strong>background-blend-mode</strong> :
+                            배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                        <li><strong>background-clip</strong> : 백그라운드 이미지의
+                            위치 기준점을 설정합니다.</li>
+                        <li><strong>background-color</strong> : 백그라운드 색을
+                            설정합니다.</li>
+                        <li><strong>background-image</strong> : 백그라운드 이미지
+                            속성을 설정합니다.</li>
+                        <li><strong>background-origin</strong> : 백그라운드
+                            이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li><strong>background-position</strong> :
+                            백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li><strong>background-position-x</strong> :
+                            백그라운드 이미지의 X축위치 영역을 설정합니다.</li>
+                        <li><strong>background-position-y</strong> :
+                            백그라운드 이미지의 Y축위치 영역을 설정합니다.</li>
+                        <li><strong>background-repeat</strong> :백그라운드
+                            이미지 반복 여부를 설정합니다.</li>
+
+                        <li><strong>background-size</strong> : 백그라운드 이미지
+                            사이즈를 설정합니다.</li>
+                        <li><strong>block-size</strong> : 블럭의 크기를 지정합니다.</li>
+                        <li><strong>border</strong> : 테두리 속성을 일괄적로 설정합니다.</li>
+                        <li><strong>border-block</strong> : 보더블럭 속성을 지정합니다.
+                        </li>
+                        <li><strong>border-block-color</strong> : 보더블럭
+                            색상을 지정합니다.</li>
+                        <li><strong>border-block-end</strong> : 보더블럭 끝부분을
+                            설정합니다.</li>
+                        <li><strong>border-block-end-color</strong> :
+                            보더블럭 끝부분 색상을 설정합니다.</li>
+                        <li><strong>border-block-end-style</strong> :
+                            보더블럭 끝부분 스타일을 설정합니다.</li>
+                        <li><strong>border-block-end-width</strong> :
+                            보더블럭 끝부분 너비를 설정합니다.</li>
+                        <li><strong>border-block-start</strong> : 보더블럭의
+                            시작부분을 설정합니다.</li>
+
+                        <li>
+                            <strong>border-block-start-color</strong> : 보더블럭 시작부분을 설정합니다.
+                        </li>
+                        <li>
+                            <strong>border-block-start-style</strong> : 보더블럭 시작부분 스타일을 설정합니다.
+                        </li>
+                        <li>
+                            <strong>border-block-start-width</strong> : 보더블럭 시작부분 너비값을 설정합니다.
+                        </li>
+                        <li><strong>border-block-style</strong> : 보더블럭
+                            스타일을 설정합니다.</li>
+                        <li><strong>border-block-width</strong> : 보더블럭의
+                            너비값을 지정합니다.</li>
+                        <li><strong>border-bottom</strong> : 아래쪽 속성을 일괄적로
+                            설정합니다.</li>
+                        <li><strong>border-bottom-color</strong> : 테두리
+                            아래쪽 색 속성을 설정합니다.</li>
+                        <li>
+                            <strong>border-bottom-left-radius</strong> : 아래 왼쪽 모서리 굴곡을 설정합니다.
+                        </li>
+                        <li>
+                            <strong>border-bottom-right-radius</strong> : 아래 오른쪽 모서리 굴곡을 설정합니다.
+                        </li>
+                        <li><strong>border-bottom-style</strong> : 테두리
+                            아래쪽 스타일 속성을 설정합니다.</li>
+
+                        <li><strong>border-bottom-width</strong> : 테두리
+                            아래쪽 두께 속성을 설정합니다.</li>
+                        <li><strong>border-collapse</strong> : 테이블 cell 테두리의
+                            겹침 속성을 설정한다.</li>
+                        <li><strong>border-color</strong> : 테두리의 색상을 지정합니다.
+                        </li>
+                        <li><strong>border-end-end-radius</strong> :
+                            속성은 요소의에 따라 물리적 경계 반경에 매핑하는 요소에 논리적 경계 반경 정의 writing-mode , direction , 및 text-orientation .
+                            이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 .</li>
+                        <li><strong>border-end-start-radius</strong>
+                            : 이 속성은 요소의 블록 끝과 인라인 시작면 사이의 모서리에 영향을줍니다.</li>
+                        <li><strong>border-image</strong> : 테두리의 이미지를 지정합니다.
+                        </li>
+                        <li><strong>border-image-outset</strong> : 테두리를
+                            벗어나는 이미지 양을 지정.</li>
+                        <li><strong>border-image-repeat</strong> : 원본
+                            이미지의 모서리 영역을 요소의 테두리 이미지 크기에 맞춰 조절할 때 사용할 방법을 지정합니다.</li>
+                        <li><strong>border-image-slice</strong> :
+                            border-image-source로 설정한 이미지를 여러 개의 영역로 나눕니다.</li>
+                        <li><strong>border-image-source</strong> : 요소의
+                            테두리 이미지로 사용할 원본 이미지를 지정합니다.</li>
+
+                        <li><strong>border-image-width</strong> : 요소의 테두리
+                            이미지로 사용할 원본 이미지를 지정합니다.</li>
+                        <li><strong>border-inline</strong> : 스타일 시트에서 하나의 장소에서
+                            각각의 논리적 인라인 border 속성 값을 설정합니다.</li>
+                        <li><strong>border-inline-color</strong> : 논리적
+                            인라인 테두리의 색상을 정의합니다.</li>
+                        <li><strong>border-inline-end</strong> : 요소의 논리적
+                            인라인 엔드 테두리 폭을 정의합니다.</li>
+                        <li><strong>border-inline-end-color</strong>
+                            : 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의 논리적 인라인 엔드 테두리 색상을 정의합니다.</li>
+                        <li><strong>border-inline-end-style</strong>
+                            : 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 끝 테두리 스타일을 정의합니다.</li>
+                        <li><strong>border-inline-end-width</strong>
+                            : 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 엔드 테두리 폭을 정의합니다.</li>
+                        <li><strong>border-inline-start</strong> : 스타일
+                            시트에서 하나의 장소에서 각각의 논리적 인라인 시작 border 속성 값을 설정합니다.</li>
+                        <li>
+                            <strong>border-inline-start-color</strong> : 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 색상에 매핑하는 요소의
+                            논리적 인라인 시작 테두리 색상을 정의합니다.
+                        </li>
+                        <li>
+                            <strong>border-inline-start-style</strong> : 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 테두리 스타일에
+                            매핑하는 요소의 논리적 인라인 시작 테두리 스타일을 정의합니다.
+                        </li>
+
+                        <li>
+                            <strong>border-inline-start-width</strong> : 속성은 요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는
+                            요소의 논리적 인라인 시작 테두리 폭을 정의합니다.
+                        </li>
+                        <li><strong>border</strong> : 요소의 쓰기 모드, 방향성,
+                            텍스트 방향에 따라 물리적 테두리 스타일에 매핑하는 요소의 논리적 인라인 테두리의 스타일을 정의합니다.</li>
+                        <li><strong>border-inline-width</strong> : 요소의
+                            쓰기 모드, 방향성, 텍스트 방향에 따라 폭 물리적 경계에 매핑하는 요소의 논리적 인라인 테두리의 폭을 정의합니다.</li>
+                        <li><strong>border-left</strong> : 왼쪽 테두리를 설정합니다.</li>
+                        <li><strong>border-left-color</strong> : 박스의 왼쪽
+                            테두리 색상을 지정합니다.</li>
+                        <li><strong>border-left-style</strong> : 박스의 왼쪽
+                            테두리 영역의 스타일을 지정합니다.</li>
+                        <li><strong>border-left-width</strong> : 박스의 왼쪽
+                            테두리 영역의 너비를 지정합니다.</li>
+                        <li><strong>border-radius</strong> : 테두리를 둥글게 만들 수 있는
+                            속성입니다.</li>
+                        <li><strong>border-right</strong> : 오른쪽 테두리를 설정합니다.
+                        </li>
+                        <li><strong>border-right-color</strong> : 박스의 오른쪽
+                            테두리 색상을 지정합니다.</li>
+
+                        <li><strong>border-right-style</strong> : 박스의 오른쪽
+                            테두리 영역의 스타일을 지정합니다.</li>
+                        <li><strong>border-right-width</strong> : 박스의 오른쪽
+                            테두리 영역의 너비를 지정합니다.</li>
+                        <li><strong>border-spacing</strong> : 테이블 cell과 테두리와의
+                            간격을 지정한다.</li>
+                        <li><strong>border-start-end-radius</strong>
+                            : 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다 .</li>
+                        <li>
+                            <strong>border-start-start-radius</strong> : 이것은 텍스트 방향 및 쓰기 모드에 관계없이 작업 할 스타일을 작성할 때 유용 합니다
+                            .
+                        </li>
+                        <li><strong>border-style</strong> : 박스의 테두리 영역의 스타일을
+                            지정합니다.</li>
+                        <li><strong>border-top</strong> : 위쪽 테두리를 설정합니다.</li>
+                        <li><strong>border-top-color </strong> : 박스의 상단
+                            테두리 색상을 지정합니다.</li>
+                        <li><strong>border-top-left-radius</strong> :
+                            라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 왼쪽 상단.</li>
+                        <li><strong>border-top-right-radius</strong>
+                            : 속성 라운드 코너의 곡률을 규정하는 타원의 반경 (또는 세미 메이저 및 세미 마이너 축의 반경)을 지정하여 소자의 오른쪽 상단.</li>
+
+                        <li><strong>border-top-style</strong> : 박스의 상단 테두리
+                            영역의 스타일을 지정합니다.</li>
+                        <li><strong>border-top-width</strong> : 박스의 상단 테두리
+                            영역의 너비를 지정합니다.</li>
+                        <li><strong>border-width</strong> : 박스의 테두리 영역의 너비를
+                            지정합니다.</li>
+                        <li><strong>bottom</strong> : 용기블럭의 높이를 참조합니다. 요소가 밑에서부터 어디쯤
+                            배치 될 지 결정합니다.</li>
+                        <li><strong>box-decoration-break</strong> : 요소의
+                            방법 속성을 지정 조각이 여러 행, 열 또는 페이지에 걸쳐 깨진 경우 렌더링해야합니다.</li>
+                        <li><strong>box-shadow</strong> : 요소의 프레임 주위에 그림자 효과를
+                            추가합니다.</li>
+                        <li><strong>box-sizing</strong> : 박스의 크기를 어떤 것을 기준로 계산할지를
+                            정하는 속성입니다.</li>
+                        <li><strong>break-after</strong> : 속성 설정 페이지, 열, 또는 지역
+                            구분은 생성 된 박스 후 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다.</li>
+                        <li><strong>break-before</strong> : 세트 페이지, 열, 또는 지역 구분은
+                            생성 된 박스 전에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다.</li>
+                        <li><strong>break-inside</strong> : 속성 설정 페이지, 열, 또는 지역
+                            나누기 생성 된 상자 안에 행동해야하는 방법. 생성 된 상자가 없으면 속성이 무시됩니다.</li>
+                        <!-- 100 -->
+
+                        <li><strong>caption-side</strong> : 표(table)의 캡션의 위치를
+                            정하는 속성</li>
+                        <li><strong>caret-color</strong> : 색상 설정 삽입 캐럿 , 다음 문자 입력
+                            된 삽입 될 볼 마커를. 이를 텍스트 입력 커서 라고도합니다 .</li>
+                        <li><strong>clear</strong> : float 속성을 해제한다.</li>
+                        <li><strong>clip</strong> : 요소의 보이는 부분을 정의합니다.</li>
+                        <li><strong>clip-path</strong> : 요소의 어떤 부분 집합을 표시 할 것인지 클리핑
+                            영역을 생성한다.</li>
+                        <li><strong>color</strong> : 텍스트 내용의 글자 색상을 지정합니다.</li>
+                        <li><strong>color-scheme</strong> : 요소가 편안하게 렌더링 할 수있는 색
+                            구성표 표시 할 수 있습니다.</li>
+                        <li><strong>column-count</strong> : 해당 요소를 몇 개의
+                            칼럼(column)로 나눌지를 설정합니다.</li>
+                        <li><strong>column-fill</strong> : 컬럼로 쪼갤 때, 얼마나 요소들이
+                            균형이 맞는지 컨트롤 합니다.</li>
+                        <li><strong>column-gap
+                                (grid-column-gap)</strong> : 그리드 레이아웃에서 컬럼 간의 간격을 정의합니다.</li>
+
+                        <li><strong>column-rule</strong> : 다중 열 레이아웃의 열 사이에 그려진
+                            라인의 폭, 스타일, 색상을 설정한다.</li>
+                        <li><strong>column-rule-color</strong> : 다중 열
+                            레이아웃의 열 사이에 그려진 라인의 색을 설정한다.</li>
+                        <li><strong>column-rule-style</strong> : 다중 열
+                            레이아웃에서 열 사이에 그려진 라인의 스타일을 설정합니다.</li>
+                        <li><strong>column-rule-width</strong> : 다중 열
+                            레이아웃의 열 사이에 그려진 라인의 폭을 설정한다.</li>
+                        <li><strong>column-span</strong> : 컬럼 span을 설정합니다.</li>
+                        <li><strong>column-width</strong> : 다중 열 레이아웃에서 이상적인
+                            컬럼 폭을 설정한다.</li>
+                        <li><strong>columns</strong> : 다단을 정의 - 단축 속성</li>
+                        <li><strong>contain</strong> : 특정 요소와 콘텐츠가 문서 트리의 다른 부위와
+                            독립되어있음을 나타낼 때 사용합니다.</li>
+                        <li><strong>content</strong> : 엘리먼트의 앞(:before)이나 뒤(:after)에
+                            내용을 생성합니다.</li>
+                        <li><strong>content-visibility</strong> : 페이지로드
+                            성능을 개선하는 데 가장 영향력있는 속성</li>
+
+                        <li><strong>counter-increment</strong> :
+                            counter-reset로 설정한 값을 증가시키는 역할</li>
+                        <li><strong>counter-reset</strong> : 카운터를 사용하려면,
+                            counter-reset로 먼저 카운터 이름과 시작값을 설정 해야 합니다</li>
+                        <li><strong>counter-set</strong> : CSS 카운터 를 주어진 값로
+                            설정합니다.</li>
+                        <li><strong>cursor</strong> : 마우스 커서의 모양을 지정한다.</li>
+                        <li><strong>direction</strong> : 텍스트의 표기 방향을 지정한다.</li>
+                        <li><strong>display</strong> : 엘리먼트의 디스플레이 속성을 지정한다.</li>
+                        <li><strong>empty-cells</strong> : 테두리와 배경이 주위에 표시할지 여부
+                        </li>
+                        <li><strong>filter</strong> : 요소 흐림 또는 색상 변화와 같은 그래픽 효과를
+                            적용한다.</li>
+                        <li><strong>flex</strong> : 요소들을 자유자제로 위치 시키는 속성로, 레이아웃을 쉽게 잡을
+                            수 있다.</li>
+                        <li><strong>flex-basis</strong> : 플렉스 항목의 초기 기본 크기를
+                            설정합니다.</li>
+
+                        <li><strong>flex-direction</strong> : CSS3에 추가된 속성로
+                            flexible item이 flex 컨테이너 안에 위치되는 방법을 지정한다.</li>
+                        <li><strong>flex-flow</strong> : 플렉스 컨테이너의 방향,뿐만 아니라 포장
+                            동작을 지정한다.</li>
+                        <li><strong>flex-grow</strong> : flex-item 요소가,
+                            flex-container 요소 내부에서 할당 가능한 공간의 정도를 선언합니다.</li>
+                        <li><strong>flex-shrink</strong> : 공간을 넘어갈 경우에 각 아이템들을
+                            줄이는 방법을 설정하는 방법입니다.</li>
+                        <li><strong>flex-wrap</strong> : flexible item을 wrap 할것인지
+                            아닌지를 지정한다.</li>
+                        <li><strong>float</strong> : 용기박스를 왼쪽 또는 오른쪽로 이동하거나 이동하지 않음을
+                            지정한다.</li>
+                        <li><strong>font</strong> : 엘리먼트안의 텍스트 컨텐츠의 font-style,
+                            font-variant, font-weight, font-size, line-height, font-family를 설정하는 약식속성이다.</li>
+                        <li><strong>font-family</strong> : 특정 글꼴이나 대표 글꼴을 지정한다.
+                        </li>
+                        <li><strong>font-feature-settings</strong> :
+                            오픈타입 폰트의 다양한 오픈타입 피처를 설정합니다.</li>
+                        <li><strong>border</strong> : 저장된 폰트 자간 정보의 사용을 설정한다.
+                        </li>
+
+                        <li><strong>font-language-override</strong> :
+                            서체에서 특정 언어의 상형 문자의 사용을 제어합니다.</li>
+                        <li><strong>font-optical-sizing</strong> : 서로 다른
+                            크기로 볼 수 있도록 최적화되어 있는지 설정합니다.</li>
+                        <li><strong>font-size</strong> : 글꼴의 크기를 지정한다.</li>
+                        <li><strong>font-size-adjust</strong> : (대문자의 크기를
+                            정의하는) 현재의 폰트 크기에 대한 소문자의 크기를 설정한다.</li>
+                        <li><strong>font-stretch</strong> : 글꼴 에서 노멀, 압축 또는
+                            확장면을 선택합니다.</li>
+                        <li><strong>font-style</strong> :font-family에서 지정된 폰트의
+                            스타일을 지정합니다.</li>
+                        <li><strong>font-synthesis</strong> : 브라우저가 굵은 글꼴과
+                            이탤릭 글꼴을 합성하는 것을 허용할지 설정합니다.</li>
+                        <li><strong>font-variant</strong> : 소문자를 작은 대문자, 즉 소문자
+                            크기의 대문자로 바꾸는 속성입니다.</li>
+                        <li><strong>font-variant-alternates</strong>
+                            : 대체 글리프의 사용을 제어합니다.</li>
+                        <li><strong>font-variant-caps</strong> : 대문자를위한 대체
+                            글리프의 사용을 제어합니다.</li>
+
+                        <li><strong>font-variant-east-asian</strong>
+                            : 일본과 중국 등 동아시아 스크립트를 대체 글리프의 사용.</li>
+                        <li><strong>font-variant-ligatures</strong> :
+                            ligatures 글꼴의 글자들을 서로 더 조화롭게 보이도록 하는 기능을 지정합니다.</li>
+                        <li><strong>font-variant-numeric</strong> : 숫자,
+                            분수 및 서수 마커 대체 글리프의 사용을 제어합니다.</li>
+                        <li><strong>font-variant-position</strong> :
+                            글꼴에 내장된 윗 첨자 또는 아랫첨자를 사용하도록 지정합니다.</li>
+                        <li><strong>font-variation-settings</strong>
+                            : Variable fonts(가변 폰트) 의 폰트 스타일을 제어하는 CSS 속성입니다.</li>
+                        <li><strong>font-weight</strong> : 글꼴의 굵기를 지정한다.</li>
+                        <li><strong>forced-color-adjust</strong> : 강제 색상
+                            모드 중 선택 하여 특정 요소에 대한 저장을 할 수 있습니다.</li>
+                        <li><strong>gap (grid-gap)</strong> : row-gap 및
+                            column-gap 의 약어 입니다. (갭제어)</li>
+                        <li><strong>grid</strong> : 2차원 표형태의 레이아웃을 만들 수 있는 속성입니다.</li>
+                        <li><strong>grid-area</strong> : grid-templete-areas에 지정한
+                            영역을 정의해준다.</li>
+
+                        <li><strong>grid-auto-columns</strong> : 암시 적로 생성
+                            된 그리드 컬럼의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다.</li>
+                        <li><strong>grid-auto-flow</strong> : 자동 배치 알고리즘이 자동
+                            배치 항목을 그리드로 유입 얻을 방법을 정확하게 지정 작동 방식 CSS 속성을 제어합니다.</li>
+                        <li><strong>grid-auto-rows</strong> : 암시 적로 생성 된 그리드
+                            행의 크기를 지정 트랙 이나 트랙의 패턴을 지정합니다.</li>
+                        <li><strong>grid-column</strong> : 격자 아이템의 크기 및 위치 지정
+                            합니다.</li>
+                        <li><strong>grid-column-end</strong> : 그리드 열 내에서 그리드
+                            항목의 끝 위치를 지정합니다.</li>
+                        <li><strong>grid-column-start</strong> : 그리드 열 내에서
+                            그리드 항목의 시작 위치를 지정합니다.</li>
+                        <li><strong>grid-row</strong> : 그리드의 인라인 시작 및 인라인 끝 가장자리를
+                            지정합니다.</li>
+                        <li><strong>grid-row-end</strong> : 그리드 영역 의 인라인 끝
+                            가장자리를 지정합니다.</li>
+                        <li><strong>grid-row-start</strong> : 그리드 영역 의 인라인 시작
+                            가장자리를 지정합니다.</li>
+                        <li><strong>grid-template</strong> : 그리드의 열, 행 및 지역을
+                            정의하기위한 약식속성입니다.</li>
+
+                        <li><strong>grid-template-areas</strong> : 레이아웃이
+                            어떤 형태로 구성되는지 설계도의 역할을 한다.</li>
+                        <li><strong> grid-template-columns</strong> :
+                            열 넓이를 지정한다.</li>
+                        <li><strong>grid-template-rows</strong> : 행 높이를
+                            지정한다.</li>
+                        <li><strong>hanging-punctuation</strong> : 구두점이
+                            시작 정지 또는 텍스트 행의 종료 여부를 속성 지정합니다.</li>
+                        <li><strong>height</strong> : 블럭레벨 요소의 높이를 지정한다.</li>
+                        <li><strong>hyphenate-character</strong> : 하이픈
+                            나누기 전 줄 끝에서 사용되는 문자(또는 문자열)를 설정합니다.</li>
+                        <li><strong>hyphens</strong> : 단어를 여러 줄에 걸쳐 때 텍스트 랩을
+                            하이픈되어야하는 속성을 지정합니다.</li>
+                        <li><strong>image-orientation</strong> : 이미지 방향에
+                            대한 레이아웃 독립적 수정을 지정합니다.</li>
+                        <li><strong>image-rendering</strong> : 이미지 스케일링
+                            알고리즘을 설정한다.</li>
+                        <li><strong>image-resolution</strong> : 해상도를 설정합니다.
+                        </li>
+
+                        <li><strong>ime-mode</strong> : IME(Input Method Editor)의
+                            상태를 반환하거나 설정합니다.</li>
+                        <li><strong>initial-letter</strong> : 세트, 떨어 제기하고, 침몰
+                            초기 문자에 대한 스타일링.</li>
+                        <li><strong>initial-letter-align</strong> : 단락
+                            내에서 초기 문자의 정렬을 지정합니다.</li>
+                        <li><strong>inline-size</strong> : 요소의 블록의 수평과 수직 크기를
+                            정의한다.</li>
+                        <li><strong>inset</strong> : element와 테두리 사이의 element 내부에 있는
+                            공간을 의미합니다.</li>
+                        <li><strong>inset-block</strong> : 요소의 쓰기 모드, 방향성, 텍스트
+                            방향에 따라 실제 오프셋에 매핑하는 요소의 논리 블록의 시작과 끝 오프셋을 정의합니다.</li>
+                        <li><strong>inset-block-end</strong> : 요소의 쓰기 모드,
+                            방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 (offset) 논리 블록의 끝을 정의합니다.</li>
+                        <li><strong>inset-block-start</strong> : 논리적 블록 요소의
+                            쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 인 세트에 매핑하는 요소의 오프셋 시작을 정의합니다.</li>
+                        <li><strong>inset-inline</strong> : 요소의 쓰기 모드, 방향성, 텍스트
+                            방향에 따라 실제 오프셋에 매핑 인라인 방향로 요소의 논리적 시작과 끝 오프셋을 정의합니다.</li>
+                        <li><strong>inset-inline-end</strong> : 요소의 쓰기 모드,
+                            방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 최종 삽입을 정의합니다.</li>
+
+                        <li><strong>inset-inline-start</strong> : 요소의 쓰기
+                            모드, 방향성, 텍스트 방향에 따라 오프셋에 매핑하는 요소의 논리적 인라인 시작 인 세트를 정의합니다.</li>
+                        <li><strong>isolation</strong> : 요소가 새로운 생성해야하는지 여부를 결정합니다.
+                        </li>
+                        <li><strong>justify-content</strong> : 가로축 - 중심축을
+                            기준로 아이템들을 정렬한다. 주로 flex랑 사용된다.</li>
+                        <li><strong>justify-items</strong> : 수직축을 중심로 좌우로 위치를
+                            조정하는 속성입니다. Flexbox와 같은 개념입니다.</li>
+                        <li><strong>justify-self</strong> : 상자가 적절한 축 방향의 정렬
+                            컨테이너 내부 정당화되는 방법을 설정합니다.</li>
+                        <li><strong>left</strong> : 용기블럭의 너비를 참조합니다. 요소가 왼쪽에서 어느 위치에 배치
+                            될 지 결정합니다.</li>
+                        <li><strong>letter-spacing</strong> : 텍스트 문자 사이의 수평
+                            간격 동작을 설정합니다.</li>
+                        <li><strong>line-break</strong> : 줄 바꿈 규칙을 어떻게 할지 결정합니다.
+                        </li>
+                        <li><strong>line-height</strong> : 인라인 박스의 높이를 지정한다.
+                        </li>
+                        <li><strong>line-height-step</strong> : 라인 박스의 높이에
+                            대한 공정 유닛을 설정한다.</li>
+                        <!-- 200 -->
+
+                        <li><strong>list-style</strong> : 목록 항목의
+                            속성들(list-style-type, list-style-position, list-style-image)을 한꺼번에 지정하는 약식속성입니다.</li>
+                        <li><strong>list-style-image</strong> : 목록 항목 마커로
+                            사용되는 이미지를 설정합니다.</li>
+                        <li><strong>list-style-position</strong> : 속성의
+                            위치 설정 합니다.</li>
+                        <li><strong>list-style-type</strong> : 목록 항목 요소 (예 :
+                            디스크, 문자, 또는 사용자 정의 카운터 스타일 등) 마커를 설정합니다</li>
+                        <li><strong>margin</strong> : 엘리먼트와 엘리먼트 사이의 간격을 지정</li>
+                        <li><strong>margin-block</strong> : 요소의 쓰기 모드, 방향성, 텍스트
+                            방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록의 시작과 끝 여백을 정의합니다.</li>
+                        <li><strong>margin-block-end</strong> : 요소의 쓰기 모드,
+                            방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 블록 끝 마진을 정의합니다.</li>
+                        <li><strong>margin-block-start</strong> : 요소의 쓰기
+                            모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리 블록 시작 마진을 정의합니다.</li>
+                        <li><strong>margin-bottom</strong> : 요소 밑에 쪽 마진을 설정합니다.
+                        </li>
+                        <li><strong>margin-inline</strong> : 약식 속성입니다 정의하는 두
+                            요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작과 끝 여백.</li>
+
+                        <li><strong>margin-inline-end</strong> : 요소의 쓰기 모드,
+                            방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 끝 마진을 정의합니다.</li>
+                        <li><strong>margin-inline-start</strong> : 속성은
+                            요소의 쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 한계에 매핑하는 요소의 논리적 인라인 시작 마진을 정의합니다.</li>
+                        <li><strong>margin-left</strong> : 소 왼쪽의 여백 영역을 설정 합니다.
+                        </li>
+                        <li><strong>margin-right</strong> : 엘리먼트의 오른쪽 마진을 지정한다.
+                        </li>
+                        <li><strong>margin-top</strong> : 엘리먼트의 상단 마진을 지정한다.</li>
+                        <li><strong>margin-trim</strong> : 컨테이너가 컨테이너의 가장자리에 인접한
+                            자식의 여백을 트리밍할 수 있습니다 .</li>
+                        <li><strong>mask</strong> : 아이템이 부분적로만 보여지게 하거나 혹은 완전히 가려서 보여지지
+                            않게 할 수 있는 기능을 가지고 있습니다.</li>
+                        <li><strong>mask-border</strong> : 요소의 경계의 가장자리를 따라 마스크를
+                            만들 수 있습니다.</li>
+                        <li><strong>mask-border-mode</strong> : 블렌딩 모드를 지정하는
+                            마스크의 테두리</li>
+                        <li><strong>mask-border-outset</strong> : 요소의있는 거리
+                            지정 마스크 보더 의 경계 상자에서 밖로 설정됩니다.</li>
+
+                        <li><strong>mask-border-repeat</strong> : 속성 세트 에지
+                            영역 , 소스 이미지가 요소의의 크기에 맞게 조정되는 마스크 테두리.</li>
+                        <li><strong>mask-border-slice</strong> : 요소 마스크 테두리
+                            의 구성 요소를 형성하는 데 사용됩니다 .</li>
+                        <li><strong>mask-border-source</strong> : 동적 최종
+                            마스크 테두리에 적용되는 영역로 소스 이미지를 분할하는데 사용된다.</li>
+                        <li><strong>mask-border-width</strong> : 속성은 엘레멘트의
+                            너비 설정 마스크 경계를 설정합니다.</li>
+                        <li><strong>mask-clip</strong> : 마스크에 의해 영향을받는 영역을 결정한다.
+                        </li>
+                        <li><strong>mask-composite</strong> : 그 다음 마스크 층과 현재의
+                            마스크 층에 사용되는 합성 동작을 나타낸다.</li>
+                        <li><strong>mask-image</strong> : 마스크 층로서 사용되는 화상을 설정한다.
+                        </li>
+                        <li><strong>mask-mode</strong> : 정의 된 마스크 참조 여부 속성 세트</li>
+                        <li><strong>mask-origin</strong> : 마스크의 원점을 설정합니다.</li>
+                        <li><strong>mask-position</strong> : 마스크의 위치를 설정합니다.
+                        </li>
+
+                        <li><strong>mask-repeat</strong> : 마스크 이미지를 반복하는 방법을 속성
+                            집합을 설정합니다.</li>
+                        <li><strong>mask-size</strong> : 마스크 이미지의 크기를 지정합니다.</li>
+                        <li><strong>mask-type</strong> : 마스크 타입을 설정합니다.</li>
+                        <li><strong>max-block-size</strong> : 기입 방향로 규정되는 방향의
+                            반대측에있는 요소들의 최대 크기를 지정하는 writing-mode . 즉, 쓰기 방향이 수평이면 max-block-size 는 max-height 와 같습니다 .
+                        </li>
+                        <li><strong>max-height</strong> : 엘리먼트의 최대 높이를 지정한다.</li>
+                        <li><strong>max-inline-size</strong> : 기록 모드에 따라서,
+                            요소의 블록의 수평 또는 수직의 최대 크기를 정의한다.</li>
+                        <li><strong>max-width</strong> : 엘리먼트의 최대 넒이를 지정한다.</li>
+                        <li><strong>min-block-size</strong> : 기록 모드에 따라서, 요소의
+                            블록의 최소 수평 또는 수직 크기를 정의한다.</li>
+                        <li><strong>min-height</strong> : 엘리먼트의 내용영역 높이의 최소값을
+                            지정한다. 음수값은 지정할 수 없다.</li>
+                        <li><strong>min-inline-size</strong> : 기록 모드에 따라서,
+                            요소의 블록의 수평 또는 수직의 최소 크기를 정의한다.</li>
+
+                        <li><strong>min-width</strong> : 엘리먼트의 최소 넓이를 지정한다.</li>
+                        <li><strong>mix-blend-mode</strong> : 요소의 내용은 요소의 부모의
+                            내용과 요소의 배경로 혼합하는 방법.</li>
+                        <li><strong>object-fit</strong> : img 나 video 요소와 같은 대체
+                            요소의 콘텐츠 크기를 어떤 방식로 조절해 요소에 맞출 것인지 지정합니다.</li>
+                        <li><strong>object-position</strong> : 대체 요소의 콘텐츠 정렬
+                            방식을 지정합니다.</li>
+                        <li><strong>offset</strong> : 정의 된 경로를 따라 애니메이션화 된 요소에 필요한 모든
+                            속성을 설정한다.</li>
+                        <li><strong>offset-anchor</strong> : 실제로 경로를 따라 움직이는
+                            offset-path 를 따라 이동하는 요소의 상자 내부 지점을 지정합니다 .</li>
+                        <li><strong>offset-distance</strong> : CSS 속성 지정은 함께
+                            위치 offset-path 요소의 위치가된다.</li>
+                        <li><strong>offset-path</strong> : 수행 할 요소의 이동 경로를 지정하고,
+                            부모 컨테이너 내의 요소의 위치를 정의 또는 SVG 좌표계.</li>
+                        <li><strong>offset-position</strong> : 오프셋의 위치값을
+                            설정합니다.</li>
+                        <li><strong>offset-rotate</strong> : 소자의 배향 / 정의 방향
+                            offset-path .</li>
+
+                        <li><strong>opacity</strong> : 요소의 투명도를 결정합니다.</li>
+                        <li><strong>order</strong> : 플렉스 또는 그리드 컨테이너에서 항목을 배치하는 순서를
+                            설정합니다.</li>
+                        <li><strong>orphans</strong> : 표시해야하는 블록 컨테이너 선의 최소 설정 저면
+                            (A)의 페이지 , 영역 또는 컬럼 .</li>
+                        <li><strong>outline</strong> : 단일 선언에서 대부분의 개요 속성을 설정합니다 .
+                        </li>
+                        <li><strong>outline-color</strong> : 요소의 외곽선의 색상을
+                            설정합니다.</li>
+                        <li><strong>outline-offset</strong> : 간 공간 설정 윤곽 요소의
+                            가장자리 또는 경계.</li>
+                        <li><strong>outline-style</strong> : 요소의 윤곽의 스타일을
+                            설정합니다. 윤곽선은 border 외부의 요소 주위에 그려지는 선입니다 .</li>
+                        <li><strong>outline-width</strong> : 엘레멘트의 윤곽의 두께를
+                            설정합니다.</li>
+                        <li><strong>overflow</strong> : 내용이 박스보다 큰 경우 밖로 넘친 부분을
+                            어떻게 표시할지를 지정한다.</li>
+                        <li><strong>overflow-anchor</strong> : 조정 스크롤 위치가
+                            내용의 변화를 최소화하기 위해 브라우저의 스크롤 고정 행동을 거부 할 수있는 방법을 제공합니다.</li>
+
+                        <li><strong>overflow-block</strong> : 상자의 블록 시작과 블록
+                            끝 가장자리를 오버 플로우 어떤 쇼 속성 집합. 이것은 아무것도, 스크롤 막대 또는 오버플로 내용 일 수 있습니다.</li>
+                        <li><strong>overflow-clip-margin</strong> :
+                            얼마나 외부의 경계를 가지는 요소를 결정</li>
+                        <li><strong>overflow-inline</strong> : 내용이 상자의 인라인
+                            시작과 끝 가장자리를 오버 플로우 어떤 쇼 속성 집합.</li>
+                        <li><strong>overflow-wrap</strong> : 라우저가 줄 상자를 넘쳐에서
+                            텍스트를 방지하기 위해 다른 깨지지 않는 문자열 내에서 줄 바꿈을 삽입할지 여부를 설정, 인라인 요소에 적용됩니다.</li>
+                        <li><strong>overflow-x</strong> : 블록 레벨 요소의 왼쪽과 오른쪽
+                            가장자리를 오버 플로우 어떤 쇼 속성 집합.</li>
+                        <li><strong>overflow-y</strong> : 블록 레벨 엘리먼트의 상부 및 하부
+                            가장자리를 넘쳐 어떤 방송 속성 세트. 이것은 아무것도 아니거나 스크롤 막대 또는 오버플로 내용 일 수 있습니다.</li>
+                        <li><strong>overscroll-behavior</strong> : 스크롤
+                            영역의 경계에 도달 할 때 브라우저가 무엇 CSS 속성을 설정합니다.</li>
+                        <li>
+                            <strong>overscroll-behavior-block</strong> : 스크롤 영역의 블록 방향 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다.
+                        </li>
+                        <li>
+                            <strong>overscroll-behavior-inline</strong> : 스크롤 영역의 인라인 방향의 경계에 도달하면 CSS 속성은 브라우저의 동작을
+                            설정합니다.
+                        </li>
+                        <li><strong>overscroll-behavior-x</strong> :
+                            스크롤 영역의 수평 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다.</li>
+
+                        <li><strong>overscroll-behavior-y</strong> :
+                            스크롤 영역의 수직 경계에 도달하면 CSS 속성은 브라우저의 동작을 설정합니다.</li>
+                        <li><strong>padding</strong> : 엘리먼트의 상, 하, 좌, 우 여백을 한꺼번에
+                            지정합니다.</li>
+                        <li><strong>padding-block-end</strong> : 속성은 요소의 쓰기
+                            모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 블록 끝 패딩을 정의합니다.</li>
+                        <li><strong>padding-block-start</strong> : 요소의 쓰기
+                            모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리 블록 시작 패딩을 정의합니다.</li>
+                        <li><strong>padding-bottom</strong> : 요소 내부의 아래쪽 여백을
+                            설정합니다.</li>
+                        <li><strong>padding-inline-end</strong> : 요소의 쓰기
+                            모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 최종 패딩을 정의합니다.</li>
+                        <li><strong>padding-inline-start</strong> : 요소의
+                            쓰기 모드, 방향성, 텍스트 방향에 따라 물리적 패딩에 매핑하는 요소의 논리적 인라인 시작 패딩을 정의합니다.</li>
+                        <li><strong>padding-left</strong> : 엘리먼트의 왼쪽 여백을 지정한다.
+                        </li>
+                        <li><strong>padding-right</strong> : 엘리먼트의 오른쪽 여백을
+                            지정한다.</li>
+                        <li><strong>padding-top</strong> : 요소의 위쪽 패딩을 결정합니다.</li>
+
+                        <li><strong>page-break-after</strong> : 페이지 나누기 후 현재
+                            요소.</li>
+                        <li><strong>page-break-before</strong> : 이 속성은
+                            break-before 속성 로 대체되었습니다 .</li>
+                        <li><strong>page-break-inside</strong> : 이 속성은
+                            break-inside 속성로 대체되었습니다 .</li>
+                        <li><strong>perspective</strong> : 3 차원 위치 요소 일부 관점을 제공하기
+                            위해, Z = 0 인 평면과 사용자 사이의 거리를 결정한다.</li>
+                        <li><strong>perspective-origin</strong> : 변형되는 요소에
+                            배치되는 perspective() 변형 함수 와 달리 3차원 공간에서 변형된 자식의 부모에 첨부됩니다 .</li>
+                        <li><strong>place-content</strong> : CSS의 단축형 속성 (즉, 한
+                            번에 블록 및 인라인 두 방향을 따라 정렬 내용을 수행 할 수 있습니다 align-content 및 justify-content 등 관련 레이아웃 시스템의 특성)
+                            그리드 또는 인 flexbox .</li>
+                        <li><strong>place-items</strong> : 약식 속성은 한 번에 블록 및 인라인 두
+                            방향을 따라 정렬 항목을 수행 할 수 있습니다 (즉, align-items 및 justify-items 속성)과 같은 관련 레이아웃 시스템에 그리드 또는 인
+                            flexbox . 두 번째 값이 설정되지 않은 경우 첫 번째 값도 사용됩니다.</li>
+                        <li><strong>place-self</strong> : 단축형 속성은 당신이 (즉, 한 번에 블록과
+                            인라인 방향 모두에서 개별 항목을 정렬 할 수 있습니다</li>
+                        <li><strong>pointer-events</strong> : 어떤 상황 (있는 경우)에
+                            따라 속성 집합은 특정 그래픽 요소가 될 수있는 대상 포인터 이벤트.</li>
+                        <li><strong>position</strong> : 엘리먼트의 배치방법을 지정한다.</li>
+
+                        <li><strong>print-color-adjust</strong> : 출력 장치에서
+                            요소의 모양을 최적화하기 위해 사용자 에이전트 가 수행할 수 있는 작업을 설정합니다.</li>
+                        <li><strong>quotes</strong> : 브라우저가 사용하는 추가 인용 부호를 렌더링하는 방법을
+                            속성 집합을 설정합니다.</li>
+                        <li><strong>resize</strong> : 요소 의 크기를 조정할 수 있는지 여부와 방향을
+                            결정합니다.</li>
+                        <li><strong>right</strong> : 용기블럭의 너비를 참조합니다. 요소가 오른쪽에서 어디에 배치
+                            될 지 결정합니다.</li>
+                        <li><strong>rotate</strong> : 각각 독립적로의 회전 변환을 지정할 수 있습니다
+                        </li>
+                        <li><strong>row-gap (grid-row-gap)</strong> :
+                            요소의 행 사이 의 간격( gutter ) 크기를 설정합니다.</li>
+                        <li><strong>ruby-align</strong> : 기재 위에 다른 루비 원소의 분포를
+                            정의한다.</li>
+                        <li><strong>ruby-position</strong> : 기본 요소에 루비 요소 친척의
+                            위치를 정의합니다. 요소 위( over ), 요소 아래( under ) 또는 오른쪽에 있는 문자 사이( inter-character )에 위치할 수 있습니다</li>
+                        <li><strong>scale</strong> : 개별적로 독립적 규모의 변환을 지정할 수 있습니다.</li>
+                        <li><strong>scroll-behavior</strong> : 탐색 또는 CSSOM
+                            스크롤 API에서 트리거 스크롤 할 때 속성은 스크롤 상자의 동작을 설정합니다.</li>
+                        <!-- 300 -->
+
+                        <li><strong>scroll-margin</strong> : 훨씬처럼 값을 지정, 한 번에
+                            요소의 스크롤 여백의 모든 설정합니다.</li>
+                        <li><strong>scroll-margin-block</strong> : 블록
+                            차원의 요소의 스크롤 마진을 설정한다.</li>
+                        <li><strong>scroll-margin-block-end</strong>
+                            : 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 끝에서 스크롤 스냅 영역의 여백을 정의합니다 .</li>
+                        <li>
+                            <strong>scroll-margin-block-start</strong> : 이 상자를 스냅포트에 맞추는 데 사용되는 블록 차원의 시작 부분에서 스크롤 스냅
+                            영역의 여백을 정의합니다.
+                        </li>
+                        <li><strong>scroll-margin-bottom</strong> :
+                            엘리먼트의 하단 마진을 지정한다.</li>
+                        <li><strong>scroll-margin-inline</strong> : 인라인
+                            차원의 요소의 스크롤 마진을 설정한다.</li>
+                        <li>
+                            <strong>scroll-margin-inline-end</strong> : 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 끝에서 스크롤 스냅
+                            영역의 여백을 정의합니다 .
+                        </li>
+                        <li>
+                            <strong>scroll-margin-inline-start</strong> : 이 상자를 snapport에 맞추는 데 사용되는 인라인 차원의 시작 부분에서 스크롤
+                            스냅 영역의 여백을 정의합니다 .
+                        </li>
+                        <li><strong>scroll-margin-left</strong> : 엘리먼트의
+                            왼쪽 마진을 지정한다.</li>
+                        <li><strong>scroll-margin-right</strong> : 이 상자를
+                            snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 오른쪽 여백을 정의합니다.</li>
+
+                        <li><strong>scroll-margin-top</strong> : 이 상자를
+                            snapport에 맞추는 데 사용되는 스크롤 스냅 영역의 위쪽 여백을 정의합니다.</li>
+                        <li><strong>scroll-padding</strong> : 한 번에 요소의 모든면에
+                            세트 스크롤 패딩을 설정합니다.</li>
+                        <li><strong>scroll-padding-block</strong> : 블록
+                            차원의 요소의 스크롤 패딩을 설정한다.</li>
+                        <li>
+                            <strong>scroll-padding-block-end</strong> : 블록 사이즈의 단부 에지 오프셋을 정의합니다.
+                        </li>
+                        <li>
+                            <strong>scroll-padding-block-start</strong> : 블록 사이즈의 시작 에지에 대한 속성을 정의 오프셋을 설정합니다.
+                        </li>
+                        <li><strong>scroll-padding-bottom</strong> :
+                            밑바닥 오프셋을 정의</li>
+                        <li><strong>scroll-padding-inline</strong> :
+                            인라인 차원의 요소의 스크롤 패딩을 설정한다.</li>
+                        <li>
+                            <strong>scroll-padding-inline-end</strong> : 인라인 측정에 단부 가장자리의 속성을 정의
+                        </li>
+                        <li>
+                            <strong>scroll-padding-inline-start</strong> : 인라인 측정의 시작 에지에 대한 속성을 정의 옵셋 영역 보는 최적의 사용자의
+                            관점에서 일을 배치하기위한 대상 영역
+                        </li>
+                        <li><strong>scroll-padding-left</strong> : 좌측의
+                            속성을 정의 옵셋 최적 가시 영역 은 사용자의 관점에서 일을 배치하기위한 대상 영역로서 사용하는 영역을 정의합니다.</li>
+
+                        <li><strong>scroll-padding-right</strong> : 우측에
+                            대한 오프셋을 정의합니다.</li>
+                        <li><strong>scroll-padding-top</strong> : 속성의 상단에
+                            대해 오프셋을 정의</li>
+                        <li><strong>scroll-snap-align</strong> : 상자의 스냅
+                            위치를 스냅 컨테이너의 스냅포트(정렬 컨테이너) 내에서 스냅 영역(정렬 주제)의 정렬로 지정합니다.</li>
+                        <li><strong>scroll-snap-coordinate</strong> :
+                            이 기능은 더 이상 권장되지 않습니다.</li>
+                        <li><strong>scroll-snap-destination</strong>
+                            : 이 기능은 더 이상 권장되지 않습니다.</li>
+                        <li><strong>scroll-snap-points-x</strong> :
+                            물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다.</li>
+                        <li><strong>scroll-snap-points-y</strong> :
+                            물리보다는 논리상 방향과 차원 맵핑을 통해 레이아웃을 제어하는 능력을 제공하는 속성 및 값을 정의하는 CSS 모듈입니다</li>
+                        <li><strong>scroll-snap-stop</strong> : 스크롤 컨테이너가
+                            "건너"가능한 스냅 위치에 허용되는지 여부 속성을 정의합니다.</li>
+                        <li><strong>scroll-snap-type</strong> : 포인트를 고정하는
+                            방법을 엄격 속성 집합 하나가 경우에 스크롤 컨테이너에 적용됩니다</li>
+                        <li><strong>scrollbar-color</strong> : 속성은 스크롤 트랙과
+                            엄지 손가락의 색상을 설정합니다.</li>
+
+                        <li><strong>scrollbar-width</strong> : 사용하면 작성자가 요소
+                            의 스크롤 막대가 표시될 때 최대 두께를 설정할 수 있습니다.</li>
+                        <li><strong>shape-image-threshold</strong> :
+                            속성에 대한 값로 이미지를 이용한 형상 추출 할 알파 채널 임계 값을 설정합니다.</li>
+                        <li><strong>shape-margin</strong> : 속성 집합은 CSS 모양의 마진을
+                            사용하여 생성 된 shape-outside .</li>
+                        <li><strong>shape-outside</strong> : 속성은 인접한 인라인 콘텐츠가
+                            둘러싸야 하는 사각형이 아닐 수 있는 모양을 정의합니다 </li>
+                        <li><strong>tab-size</strong> : 탭 문자 (+ 0009 U)의 폭을 지정하는 데
+                            사용됩니다.</li>
+                        <li><strong>table-layout</strong> : 테이블의 레이아웃을 정의합니다.
+                        </li>
+                        <li><strong>text-align</strong> : 블럭안 인라인 인라인 요소의 수평 정렬을
+                            지정한다</li>
+                        <li><strong>text-align-last</strong> : 블록 또는 행의 마지막
+                            줄 오른쪽 강제 줄 바꿈하기 전에, 정렬되는 방식 CSS 속성을 설정합니다.</li>
+                        <li><strong>text-combine-upright</strong> : 속성
+                            세트는 문자의 조합을 단일 문자의 공간로. 결합 된 텍스트가 1em보다 넓은 경우 사용자 에이전트는 1em 이내의 콘텐츠에 맞아야합니다.</li>
+                        <li><strong>text-decoration</strong> : 텍스트에 밑줄, 윗줄,
+                            가운데줄이나 깜빡거림의 장식적인 요소를 지정한다.</li>
+
+                        <li><strong>text-decoration-color</strong> :
+                            텍스트 요소의 밑줄의 색깔을 결정합니다.</li>
+                        <li><strong>text-decoration-line</strong> : 속성
+                            집합 같은 밑줄 또는 윗줄로, 요소의 텍스트에 사용되는 장식의 종류.</li>
+                        <li><strong>text-decoration-skip</strong> : 요소에
+                            영향을 미치는 텍스트 장식이 건너뛰어야 하는 요소 콘텐츠의 부분을 설정합니다.</li>
+                        <li>
+                            <strong>text-decoration-skip-ink</strong> : 글리프 센더와 디 센더를 통해 통과 할 때 overlines와 밑줄이 그려하는 방법
+                            속성 지정합니다.
+                        </li>
+                        <li><strong>text-decoration-style</strong> :
+                            속성에 의해 지정된 라인의 스타일 설정 text-decoration-line . 스타일은 text-decoration-line 로 설정된 모든 행에 적용됩니다 .
+                        </li>
+                        <li><strong>text-emphasis</strong> : 텍스트에 강조 표시를
+                            적용합니다.</li>
+                        <li><strong>text-emphasis-color</strong> : 속성을
+                            강조 마크의 색상을 설정합니다.</li>
+                        <li><strong>text-emphasis-position</strong> :
+                            루비 텍스트처럼 강조 표시를위한 공간이 충분하지 않으면 줄 높이가 증가합니다.</li>
+                        <li><strong>text-emphasis-style</strong> : 속성이
+                            강조 표시의 모양을 설정합니다.</li>
+                        <li><strong>text-indent</strong> : 블록의 텍스트 행하기 전에 넣어 빈
+                            공간 (들여 쓰기)의 길이를 설정합니다.</li>
+
+                        <li><strong>text-justify</strong> : 텍스트에 적용되어야한다</li>
+                        <li><strong>text-orientation</strong> : 속성은 행의 텍스트
+                            문자의 방향을 설정합니다.</li>
+                        <li><strong>text-overflow</strong> : 숨겨진 오버플로 콘텐츠가
+                            사용자에게 신호되는 방식을 설정합니다.</li>
+                        <li><strong>text-rendering</strong> : 텍스트를 렌더링 할 때
+                            최적화 할 작업에 대한 렌더링 엔진에 대한 정보를 제공합니다.</li>
+                        <li><strong>text-shadow</strong> : 텍스트에 그림자를 추가합니다.</li>
+                        <li><strong>text-size-adjust</strong> : (모바일 폰트 크기
+                            조정 관련)</li>
+                        <li><strong>text-transform</strong> : 텍스트를 활용하는 CSS
+                            속성을 지정합니다.</li>
+                        <li><strong>text-underline-position</strong>
+                            : 속성은 사용하여 설정 밑줄의 위치를 지정합니다.</li>
+                        <li><strong>top</strong> : 용기블럭의 높이를 참조합니다. 위쪽에서 요소가 어디에 배치 될
+                            것인가 결정합니다.</li>
+                        <li><strong>touch-action</strong> : 터치 스크린 사용자가 조작 할 수있는
+                            방법을 CSS 속성을 설정합니다.</li>
+
+                        <li><strong>transform</strong> : 요소를 변형시킬 수 있습니다.</li>
+                        <li><strong>transform-box</strong> : 박스의 변형효과를
+                            설정합니다.</li>
+                        <li><strong>transform-origin</strong> : 요소의 변환에
+                            대한 원점을 설정합니다.</li>
+                        <li><strong>transform-style</strong> : 요소의 아이들이 3D
+                            공간에 위치하거나 요소의 평면에 평평 여부 속성 집합.</li>
+                        <li><strong>transition</strong> : 애니메이션 효과를 입힐 때 속도를
+                            조절하는 방법을 제공합니다.</li>
+                        <li><strong>transition-delay</strong> : 속성의 시작하기
+                            전에 대기하는 CSS 속성 지정 기간 전환 효과 때 그 값 변경.</li>
+                        <li><strong>transition-duration</strong> : 전환
+                            애니메이션 완료하는 데 소요되는 시간을 설정합니다.</li>
+                        <li><strong>transition-property</strong> :
+                            트렌지션 프로퍼티를 설정합니다.</li>
+                        <li>
+                            <strong>transition-timing-function</strong> : 트랜지션의 타이밍을 설정합니다.
+                        </li>
+                        <li><strong>translate</strong> : transform 속성로 요소에 회전,
+                            크기 조절, 기울이기, 이동 효과를 부여할 수 있습니다.</li>
+
+                        <li><strong>unicode-bidi</strong> : 함께와 direction 특성,
+                            문서의 양방향 텍스트가 처리되는 방법을 결정합니다.</li>
+                        <li><strong>user-select</strong> : 사용자가 텍스트를 선택할 수 있는지
+                            여부를 속성을 제어합니다.</li>
+                        <li><strong>vertical-align</strong> : 인라인 엘리먼트나 테이블의
+                            셀 안에서 수직정렬을 지정한다.</li>
+                        <li><strong>visibility</strong> : 문서의 레이아웃을 변경하지 않고 CSS 속성
+                            표시하거나 숨기는 소자입니다.</li>
+                        <li><strong>white-space</strong> : 공백문자를 어떻게 다룰것인가를 정의
+                            한다.</li>
+                        <li><strong>widows</strong> : 표시해야하는 블록 컨테이너 선의 최소 개수 설정 상부
+                            (A)의 페이지 , 영역 또는 컬럼 .</li>
+                        <li><strong>width</strong> : 블럭레벨 요소의 너비를 지정한다.</li>
+                        <li><strong>will-change</strong> : 요소에 예상되는 변화의 종류에 관한
+                            힌트를 브라우저에 제공케 한다.</li>
+                        <li><strong>word-break</strong> : 단어의 분리를 어떻게 할 것인지
+                            결정합니다.</li>
+                        <li><strong>word-spacing</strong> : 단어 사이의 간격을 지정한다.
+                        </li>
+
+                        <li><strong>writing-mode</strong> : 텍스트의 선이 수평 또는 수직로
+                            배치 여부 속성 집합뿐만 아니라 블록이 진행되는 방향.</li>
+                        <li><strong>z-index</strong> : 엘리먼트의 겹쳐지는 순서를 지정한다.</li>
                     </ul>
                 </div>
             </div>
@@ -90,92 +868,121 @@
         <div class="modal__cont">
             <div class="modal__box">
                 <div class="title">
-                <span class="dot" aria-label="true"></span>
+                    <span class="dot" aria-label="true"></span>
                     <div class="tabs">
                         <div class="active">
                             <span class="favicon" aria-label="true">
-                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false">
                                     <circle cx="9" cy="9" r="9" fill="#32ADFF"></circle>
-                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                  </svg>
+                                    <path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                    <path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                </svg>
                             </span>
                             <em>Javascript</em>
                             <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
                             </span>
                         </div>
                         <div>
                             <span class="favicon" aria-label="true">
-                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false">
                                     <circle cx="9" cy="9" r="9" fill="#32ADFF"></circle>
-                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                  </svg>
+                                    <path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                    <path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                </svg>
                             </span>
                             <em>HTML</em>
                             <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
                             </span>
                         </div>
                         <div>
                             <span class="favicon" aria-label="true">
-                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                    focusable="false">
                                     <circle cx="9" cy="9" r="9" fill="#32ADFF"></circle>
-                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#32ADFF"></path>
-                                  </svg>
+                                    <path
+                                        d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                    <path
+                                        d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                        fill="#32ADFF"></path>
+                                </svg>
                             </span>
                             <em>CSS</em>
                             <span class="close">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                    focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
                             </span>
                         </div>
                     </div>
                     <span class="plus" aria-label="true">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                            <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                            focusable="false">
+                            <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
                     </span>
                 </div>
-               <div class="cont">
+                <div class="cont">
                     <div class="active">
-<pre><code class="language-js scroll">const searchBox = document.querySelector(".search__box input");      //검색 영역
-const searchList = document.querySelectorAll(".search__list ul li");  //목록 리스트
-const searchInfo = document.querySelector(".search__info .num"); //전체갯수
+                        <pre><code class="language-js scroll">const searchBox = document.querySelector('.search__box input'); // 검색 영역
+const searchList = document.querySelectorAll('.search__list ul li') // 목록 리스트
+const searchInfo = document.querySelector('.search__info .num');
 
-//검색 영역
+// 전체 갯수 구하기
 searchInfo.textContent = searchList.length;
 
+// 검색 영역
 searchBox.addEventListener("keyup", () => {
-    const searchWord = searchBox.value;     //사용자가 입력한 키워드
+    const searchWord = searchBox.value; // 사용자가 입력한 키워드
+    let cnt = 0;
 
-    //animation.indexOf()
-    //animation.search()
     searchList.forEach(el => {
-        const cssName = el.dataset.name;
+        const cssName = el.querySelector('strong').innerText;
 
-        if(cssName.indexOf(searchWord)){
-            el.classList.add("hide")
-        } else {
-            el.classList.remove("hide") //indexOf()값이 0이 되는 값만 hide를 지워줍니다.
+        if (cssName.search(searchWord)) {
+            el.classList.add('hide');
         }
-
+        else {
+            el.classList.remove('hide');
+            cnt++; 
+        }
     });
+    searchInfo.innerText = cnt;
 });</code></pre>
                     </div>
                     <div>
-<pre><code class="language-html scroll">&lt;div class="search__wrap"&gt;
+                        <pre><code class="language-html scroll">&lt;div class="search__wrap"&gt;
     &lt;span&gt;indexOf() / search() 를 이용하여 검색하기&lt;/span&gt;
 
     &lt;h1&gt; CSS 속성 검색하기 &lt;/h1&gt;
@@ -196,7 +1003,7 @@ searchBox.addEventListener("keyup", () => {
 &lt;/div&gt; </code></pre>
                     </div>
                     <div>
-<pre><code class="language-css scroll" >#main {
+                        <pre><code class="language-css scroll" >#main {
     margin: 50px 10px;
 }
 .search__wrap {
@@ -283,12 +1090,14 @@ searchBox.addEventListener("keyup", () => {
 }
 </code></pre>
                     </div>
-               </div>
+                </div>
             </div>
             <div class="modal__close">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
                 </svg>
             </div>
         </div>
@@ -302,34 +1111,32 @@ searchBox.addEventListener("keyup", () => {
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-        // 선택자 
-        const searchBox = document.querySelector(".search__box input");      //검색 영역
-        const searchList = document.querySelectorAll(".search__list ul li");  //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num"); //전체갯수
-        const searchInfo_sT = document.querySelector(".search__info .num");  
+        const searchBox = document.querySelector('.search__box input'); // 검색 영역
+        const searchList = document.querySelectorAll('.search__list ul li') // 목록 리스트
+        const searchInfo = document.querySelector('.search__info .num');
 
-        //검색 영역
+        // 전체 갯수 구하기
         searchInfo.textContent = searchList.length;
 
+        // 검색 영역
         searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+            const searchWord = searchBox.value; // 사용자가 입력한 키워드
+            let cnt = 0;
 
-            //animation.indexOf()
-            //animation.search()
             searchList.forEach(el => {
-               const cssName = el.dataset.name;
+                const cssName = el.querySelector('strong').innerText;
 
-            //if(cssName.indexOf(searchWord)){
-               if(cssName.search(searchWord)){
-                    el.classList.add("hide")
-               } else {
-                    el.classList.remove("hide") //indexOf()값이 0이 되는 값만 hide를 지워줍니다.
-               }
-
+                if (cssName.search(searchWord)) {
+                    el.classList.add('hide');
+                }
+                else {
+                    el.classList.remove('hide');
+                    cnt++;
+                }
             });
-            const hidingNum = document.querySelectorAll(".search__list ul li.hide");
-            searchInfo_sT.textContent = searchList.length - hidingNum.length;
+            searchInfo.innerText = cnt;
         });
     </script>
 </body>
+
 </html>

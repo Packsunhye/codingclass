@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 사이트 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 프로그래머스 문제 풀이 02 </h2>
+            <p class="t_desc"> 짝수 홀수 구하기 </p>
+
+            <h3 class="t_tit2"> 01. 문제 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function solution(num) {
+    var answer = 0;
+    return answer;
+}</code></pre>
+            </div>
+
+
+            <h3 class="t_tit2"> 02. 나의 문제 풀이 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function solution(n) {
+    for(let x = 2; x &lt; n; x++){
+        if( n % x === 1 ) return x;
+    }   
+}</code></pre>
+            </div>
+
+
+            <h3 class="t_tit2"> 03. 다른 사람의 문제 풀이 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function solution(n) {
+    let answer = 0;
+    for (let i = 0; i &lt; n; i++) {
+        if (answer > 0) {
+            break;
+        }
+
+        if (n % i == 1) {
+            answer = i;    
+        }
+    }
+
+    return answer;
+}</code></pre>
+            </div>
+            <p class="t_desc">길긴 하지만 이해하기 쉽게 풀어주었기 때문에 가져와보았습니다. i는 n 보다 작지만 증가하며,
+                answer는 0보다 작아질 경우 바로 멈추지만 n을 i로 나눴을 때 1이 남았을 경우 answer는 i값이 되어 제출 합니다.</p>
+            <br>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

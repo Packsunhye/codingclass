@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 사이트 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 프로그래머스 문제 풀이 01 </h2>
+            <p class="t_desc"> 평균값 구하기 </p>
+
+            <h3 class="t_tit2"> 01. 문제 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function solution(arr) {
+    var answer = 0;
+        for( var i=0; i &lt; arr.length; i++){        
+            answer += arr[i];    
+        }
+    return answer;
+}</code></pre>
+            </div>
+
+
+            <h3 class="t_tit2"> 02. 나의 문제 풀이 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function solution(arr) {
+    var answer = 0;
+        for( var i=0; i &lt; arr.length; i++){        
+            answer += arr[i];    
+        }
+    return answer/arr.length;
+}</code></pre>
+            </div>
+
+
+            <h3 class="t_tit2"> 03. 다른 사람의 문제 풀이 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">function average(array){
+    return array.reduce((a, b) => a + b) / array.length;
+}</code></pre>
+            </div>
+            <p class="t_desc"> reduce로 누적값을 만들어 낸 뒤, length로 갯수를 구하고 나누는 것 같다. </p>
+            <br>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
