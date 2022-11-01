@@ -6,7 +6,7 @@ em {
     display: none;
 }
 
-.memory__game.open {
+.memory__game.show {
     display: block;
 }
 

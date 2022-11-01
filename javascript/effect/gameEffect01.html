@@ -94,7 +94,7 @@
     <!-- 메모리 게임 플레이 -->
     <div class="memory__game">
         <div class="memory__wrap">
-            <div class="memory__start ">
+            <div class="memory__start start">
                 <div class="top">
                     <div>ଳ</div>
                     <h2>게임 시작</h2>
@@ -103,13 +103,10 @@
                 <div class="rul">
                     <p>가벼운 규칙 : 잘 읽고 시작해주세요 :3</p>
                     <ul>
-                        <li>1. 시간은 60초 입니다. 시간 내에 한짝씩 맞출경우 1점입니다
-                            <br><em>카드를 잘 기억해서 총 8점을 노려봐요.</em>
-                        </li>
-                        <li>2. 짝을 맞추는 것을 틀렸을 시 틀린 점수가 하나씩 올라갑니다.
-                            <br><em>5점이 되었을 경우 실패입니다 ;3</em>
-                        </li>
-                        <li>3. 다시 도전할 수 있으니 실패해도 다시 시작버튼을 눌러주세요!</li>
+                        <li>1. 시간은 무제한 입니다. 틀릴 때마다 점수가 하나씩 줄어듭니다</li>
+                        <li>2. 점수가 0이 될때 게임은 종료됩니다. </li>
+                        <li>3. 다 맞추면 게임의 점수와 함께 게임이 종료됩니다.</li>
+                        <li>4. 다시 도전할 수 있으니 실패해도 다시 시작버튼을 눌러주세요!</li>
                     </ul>
                 </div>
                 <button class="use">START</button>
@@ -129,7 +126,7 @@
                 </div>
                 <button class="useEnd">RESTART</button>
             </div>
-            <div class="memory__inner start">
+            <div class="memory__inner ">
                 <div class="memory__card">
                     <!-- card -->
                     <div class="line">
@@ -474,18 +471,27 @@
         const WbTn = document.querySelector(".icon6");
         const MbTn = document.querySelector(".icon1");
         const GbTn = document.querySelector(".icon2");
+        const MMTn = document.querySelector(".icon3");
         const iconFrame = document.querySelector(".icon_iframe");
         const musicW = document.querySelector(".music__wrap");
         const gameDr = document.querySelector(".game__frame");
+        const memoryW = document.querySelector(".memory__game");
 
         WbTn.addEventListener("click", () => {
             iconFrame.classList.add("show")
         })
         MbTn.addEventListener("click", () => {
             musicW.classList.add("show")
+
         })
         GbTn.addEventListener("click", () => {
             gameDr.classList.add("show")
+            resetQuiz()
+
+        })
+        MMTn.addEventListener("click", () => {
+            memoryW.classList.add("show")
+            // resetMemory()
         })
 
         const audio = document.getElementById('main-audio');
@@ -500,14 +506,21 @@
             var LayerPopup = $(".icon_iframe");
             var MusicPopup = $(".music__wrap");
             var GamePopup = $(".game__frame");
+            var MemoryPopup = $(".memory__game");
             if (LayerPopup.has(e.target).length === 0) {
                 LayerPopup.removeClass("show");
             }
             if (MusicPopup.has(e.target).length === 0) {
                 MusicPopup.removeClass("show");
+                pauseMusic()
             }
             if (GamePopup.has(e.target).length === 0) {
                 GamePopup.removeClass("show");
+                endQuiz()
+            }
+            if (MemoryPopup.has(e.target).length === 0) {
+                MemoryPopup.removeClass("show");
+                endQuiz()
             }
         });
 

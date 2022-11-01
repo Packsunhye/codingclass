@@ -4,7 +4,11 @@
 
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
+const memoryStart = memoryWrap.querySelector(".memory__start");
+const memoryEnd = memoryWrap.querySelector(".memory__end");
+const memoryInner = memoryWrap.querySelector(".memory__inner");
 
+let timeReamining = 60;
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0;
@@ -16,6 +20,12 @@ let sound = [
 let soundMatch = new Audio(sound[1]);
 let soundUnMatch = new Audio(sound[0]);
 let soundGoodMatch = new Audio(sound[2]);
+
+function resetMemory() {
+  memoryStart.classList.add("start");
+  memoryInner.classList.remove("start");
+  memoryEnd.classList.remove("start");
+}
 
 //카드 뒤집기
 function filpCard(e) {

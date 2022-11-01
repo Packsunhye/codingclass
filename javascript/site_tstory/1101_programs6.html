@@ -14,7 +14,7 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit"> 프로그래머스 문제 풀이 05 </h2>
+            <h2 class="t_tit"> 프로그래머스 문제 풀이 06 </h2>
             <p class="t_desc"> 짝수 홀수 구하기 </p>
 
             <h3 class="t_tit2"> 01. 문제 </h3>
@@ -28,17 +28,15 @@
 
             <h3 class="t_tit2"> 02. 나의 문제 풀이 </h3>
             <div class="t_code">
-                <pre><code class="language-js">function solution(phone_number) {
+                <pre><code class="language-js">function solution(s) {
     var answer = '';
     
-    let back = phone_number.substr(-4,4);
+    if( s.length % 2 === 0 ){
+        answer = s[s.length / 2 - 1] + s[s.length / 2];
+    } else {
+        answer = s[Math.floor(s.length/2)];
+    }
     
-    let front = phone_number.substring(0,phone_number.length-4);
-
-    let result = front.replace(/[0-9]/g,'*');
-    
-    answer = result + back
-
     return answer;
     
 }</code></pre>
@@ -47,11 +45,12 @@
 
             <h3 class="t_tit2"> 03. 다른 사람의 문제 풀이 </h3>
             <div class="t_code">
-                <pre><code class="language-js">function hide_numbers(s) {
-    return s.replace(/\d(?=\d{4})/g, "*");
+                <pre><code class="language-js">function solution(s) {
+    return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
 }</code></pre>
             </div>
-            <p class="t_desc">폰 넘버인 s를 정규식 방법으로 replace로 4자리를 가져와 *로 변환해준걸 알 수 있습니다.</p>
+            <p class="t_desc">사진 대로 간지나서 들고온 문제풀이입니다. substr로 특정 위치의 문자를 잘라내며, Math.ceil로 반올림하여 문자를
+                if문을 안쓰고도 가운데에서 가져 올 수 있는 역활을 한것 같습니다. </p>
             <br>
 
         </div>
