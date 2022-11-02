@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴렉스 - 애플</title>
+    <link href="https://webfontworld.github.io/elice/EliceDigitalBaeum.css" rel="stylesheet">
+    <link href="../assets/css/apple.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="scrollTop">0</div>
+    <main id="contenst">
+        <section id="section1">
+            <div class="sec1">
+                <div class="sec1_text1 fixed" data-0="top : 50%; opacity : 1" data-500="top : 30%;  opacity : 0">
+                    안녕하세요 :3
+                </div>
+                <div class="sec1_text2 fixed"
+                    data-500="top : 70%; opacity : 0;  transform : translate(-50%, -50%) scale(1);"
+                    data-1000="top : 50%;  opacity : 1; transform : translate(-50%, -50%) scale(1);"
+                    data-1500="top : 50%;  opacity : 1; transform : translate(-50%, -50%) scale(0);">
+                    프론트 앤드 개발자입니다.
+                </div>
+                <div class="sec1_text3 fixed"
+                    data-1300="width : 0%;  transform : translate(-50%, -50%) rotate(180deg); opacity : 0;"
+                    data-2300="width : 100%;  transform : translate(-50%, -50%) rotate(0deg); opacity : 1;"></div>
+            </div>
+            <div class="sec1_text4 fixed" data-2000="transform : translate(-50%, -50%) scale(0) rotate(-360deg);"
+                data-3000=" transform : translate(-50%, -50%) scale(1) rotate(0deg);">
+                HELLO 💜
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+            // document.querySelector(".sec1_text1").style.marginLeft = -scrollTop + "px";
+            //1초에 60번 실행 //자기 호출
+            requestAnimationFrame(scroll);
+            //scroll() : 위에 넣어줬음
+        }
+        scroll();
+    </script>
+</body>
+
+</html>

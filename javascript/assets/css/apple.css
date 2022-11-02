@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'EliceDigitalBaeum';
+    font-weight: 400;
+}
+
+.fixed {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scrollTop {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 40px;
+    z-index: 100000;
+}
+
+/* layout */
+.contenst {}
+
+.section1 {
+    height: 10000px;
+}
+
+.section2 {}
+
+.section3 {}
+
+.section4 {}
+
+.section5 {}
+
+.section6 {}
+
+
+/* sec1 */
+.sec1_text1 {
+    font-size: 8vw;
+    white-space: nowrap;
+}
+
+.sec1_text2 {
+    font-size: 8vw;
+    white-space: nowrap;
+}
+
+.sec1_text3 {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    background-image: url(../apple/jelly.jpg);
+    background-size: cover;
+}
+
+.sec1_text4 {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50vw;
+    font-size: 8vw;
+}

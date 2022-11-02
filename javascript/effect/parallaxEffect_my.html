@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴렉스 - 애플</title>
+    <link href="https://webfontworld.github.io/elice/EliceDigitalBaeum.css" rel="stylesheet">
+    <link href="../assets/css/my.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="scrollTop">0</div>
+    <main id="contenst">
+        <section id="section1">
+            <div class="sec1">
+                <div class="sec1_text1 fixed" 
+                data-0="top : 50%; opacity : 1; "
+                data-500="top : 30%;  opacity : 0;">
+                    안녕하세요 ଳ
+                </div>
+                <div class="sec1_text2 fixed" 
+                data-500="top : 50%; opacity : 0; transform: translate(-50%, -50%);"
+                data-700="top : 10%; opacity : 1; transform: translate(-50%, -50%);">
+        
+                </div>
+                <div class="sec1_text3 fixed" 
+                data-700="top : 47%; left : 10%; opacity : 0; transform: translate(-50%, -50%);"
+                data-1200="top : 47%; left : 130%; opacity : 1; transform: translate(-50%, -50%);"
+                data-3000="top : 47%; left : 130%; opacity : 1; transform: translate(-50%, -50%);"
+                data-4000="top : 47%; left : 187%; opacity : 0; transform: translate(-50%, -50%);">
+                    저는 
+                </div>
+                <div class="sec1_text4 fixed" 
+                data-700="top : 60%; left : 10%; opacity : 0; transform: translate(-50%, -50%);"
+                data-1300="top : 60%; left : 96%; opacity : 1; transform: translate(-50%, -50%);"
+                data-2800="top : 60%; left : 96%; opacity : 1; transform: translate(-50%, -50%);"
+                data-3700="top : 60%; left : 147%; opacity : 0; transform: translate(-50%, -50%);">
+                    <em>프론트앤드 개발자</em>
+                </div>
+                <div class="sec1_text5 fixed" 
+                data-700="top : 73%; left : 10%; opacity : 0; transform: translate(-50%, -50%);"
+                data-1600="top : 73%; left : 107%; opacity : 1; transform: translate(-50%, -50%);"
+                data-2600="top : 73%; left : 107%; opacity : 1; transform: translate(-50%, -50%);"
+                data-3200="top : 73%; left : 147%; opacity : 0; transform: translate(-50%, -50%);">
+                   박선혜 입니다.
+                </div>
+                <div class="sec1_text6 fixed" 
+                data-1600="top : 50%; left : 10%; opacity : 0; transform: translate(-50%, -50%);"
+                data-1900="top : 50%; left : 23%; opacity : 1; transform: translate(-50%, -50%);"
+                data-3000="top : 50%; left : 23%; opacity : 1; transform: translate(-50%, -50%);"
+                data-3600="top : 50%; left : 1%; opacity : 0; transform: translate(-50%, -50%);">
+                    
+                </div>
+                <div class="sec1_text7 fixed" 
+                data-3700="top : 20%; left : 80%; opacity : 0; transform: translate(-50%, -50%);"
+                data-4000="top : 20%; left : 80%; opacity : 1; transform: translate(-50%, -50%);"
+                data-5300="top : 20%; left : 10%; opacity : 1; transform: translate(-50%, -50%);">
+                Hello, my name is Seon-Hye Park. 
+                </div>
+                <div class="sec1_text8 fixed" 
+                data-3700="top : 45%; left : 10%; opacity : 0; transform: translate(-50%, -50%);"
+                data-4000="top : 45%; left : 10%; opacity : 1; transform: translate(-50%, -50%);"
+                data-5300="top : 45%; left : 80%; opacity : 1; transform: translate(-50%, -50%);">
+                I like games, jellyfish and cats. The skills I can do are drawing and coding. 
+                </div>
+                <div class="sec1_text9 fixed" 
+                data-3700="top : 70%; left : 80%; opacity : 0; transform: translate(-50%, -50%);"
+                data-4000="top : 70%; left : 80%; opacity : 1; transform: translate(-50%, -50%);"
+                data-5300="top : 70%; left : 10%; opacity : 1; transform: translate(-50%, -50%);">
+                I learn coding hard and can make a self-introduction like this. Take good care of me
+                </div>
+                
+        </section>
+        <!-- //section1 -->
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+            // document.querySelector(".sec1_text1").style.marginLeft = -scrollTop + "px";
+            //1초에 60번 실행 //자기 호출
+            requestAnimationFrame(scroll);
+            //scroll() : 위에 넣어줬음
+        }
+        scroll();
+    </script>
+</body>
+
+</html>
