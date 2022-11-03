@@ -442,71 +442,42 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll">window.addEventListener("scroll" , () => {
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+<pre><code class="language-js scroll">  document.querySelectorAll("#parallax__dot a").forEach(el =>{
+    el.addEventListener("click", e => {
+        e.preventDefault();
 
-    // for 문
-    // for(let i = 1; i &lt; 10; i++){
-    //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
-    //     }
-    // }
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior : "smooth"});
 
-    // forEach
-    document.querySelectorAll(".content__item").forEach((el,index)=>{
-        if(scrollTop >= el.offsetTop - 2 ){
-            document.querySelectorAll("#parallax__nav li").forEach(li => {
-                li.classList.remove("active")
-            });
+        // window.scroll(0, 1000);
+        // window.scroll({left:0 , top:2000});
+        // window.scroll({left:0 , top:2000, behavior : "smooth"}); 
 
-            document.querySelector("#parallax__nav li:nth-child("+ (index + 1) +")").classList.add("active");
-        };
+        // window.scrollTo(0, 1000);
+        // window.scrollTo({left:0 , top:2000});
+        // window.scrollTo({left:0 , top:2000, behavior : "smooth"});
+
+        // window.scrollBy(0, 1000);
+        // window.scrollBy({left:0 , top:2000});
+        // window.scrollBy({left:0 , top:2000, behavior : "smooth"});
+
+
     });
-    
-
-    // if( scrollTop >= document.getElementById("section1").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
-    // }
-    // if( scrollTop >= document.getElementById("section2").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
-    // }
-    // . . .
-
-     //info
-    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
-
-    // document.querySelector("offset1").innerText = document.getElementById("section1").offsetTop
-    // document.querySelector("offset2").innerText = document.getElementById("section2").offsetTop
-    // document.querySelector("offset3").innerText = document.getElementById("section3").offsetTop
-    // document.querySelector("offset4").innerText = document.getElementById("section4").offsetTop
-    // . . .
-
-    for(let i = 1; i &lt; 10; i++){
-        document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i ).offsetTop
-    }
 });
 
-//스크롤 이동
-document.querySelectorAll("#parallax__nav li a").forEach( li => {
-    li.addEventListener("click",(e)=>{
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});</code></pre>
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach((e,i)=>{
+        if(scrollTop >= e.offsetTop -10 ){
+            document.querySelectorAll("#parallax__dot li").forEach( li => {
+                li.classList.remove("active")
+            });
+            document.querySelector("#parallax__dot li:nth-child("+ (i + 1) +")").classList.add("active");
+        }
+    })
+</code></pre>
                       </div>
                       <div>
 <pre><code class="language-html scroll">&lt;nav id="parallax__nav"&gt;

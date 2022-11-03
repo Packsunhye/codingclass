@@ -482,200 +482,137 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll">window.addEventListener("scroll" , () => {
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+<pre><code class="language-js scroll"> let descAll = document.querySelectorAll("#contents .content__item__desc.split");
 
-    // for 문
-    // for(let i = 1; i &lt; 10; i++){
-    //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
-    //     }
-    // }
+//글씨 쪼개기(다중)
+descAll.forEach( desc => {
+    let splitText = desc.innerText;
+    let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
 
-    // forEach
-    document.querySelectorAll(".content__item").forEach((el,index)=>{
-        if(scrollTop >= el.offsetTop - 2 ){
-            document.querySelectorAll("#parallax__nav li").forEach(li => {
-                li.classList.remove("active")
-            });
+    desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+    desc.setAttribute("aria-label",splitText);
 
-            document.querySelector("#parallax__nav li:nth-child("+ (index + 1) +")").classList.add("active");
-        };
-    });
+}); 
+
+// reveal 클래스 자식요소에 글씨만 있다면, 가상으로 span 태그를 만들어서 넣어주세요 !
+function scroll(){
+
+    let scrollTop = window.scrollY;
+    const reveal = document.querySelectorAll(".reveal");
     
-
-    // if( scrollTop >= document.getElementById("section1").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
-    // }
-    // if( scrollTop >= document.getElementById("section2").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
-    // }
-    // . . .
-
-     //info
-    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
-
-    // document.querySelector("offset1").innerText = document.getElementById("section1").offsetTop
-    // document.querySelector("offset2").innerText = document.getElementById("section2").offsetTop
-    // document.querySelector("offset3").innerText = document.getElementById("section3").offsetTop
-    // document.querySelector("offset4").innerText = document.getElementById("section4").offsetTop
-    // . . .
-
-    for(let i = 1; i &lt; 10; i++){
-        document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i ).offsetTop
-    }
-});
-
-//스크롤 이동
-document.querySelectorAll("#parallax__nav li a").forEach( li => {
-    li.addEventListener("click",(e)=>{
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
+    reveal.forEach(el => {
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+        // if(scrollTop > revealOffset - window.innerHeight){
+        //     el.classList.add("show");
+        // }
+        if(scrollTop >= revealOffset - window.innerHeight){
+            if(revealDelay == undefined){
+                el.classList.add("show");
+            } else {
+                setTimeout(() => {
+                    el.classList.add("show");
+                }, revealDelay)
+            }
+        }
     });
-});</code></pre>
+    document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+    requestAnimationFrame(scroll);
+}
+scroll();</code></pre>
                       </div>
                       <div>
-<pre><code class="language-html scroll">&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴 3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴 4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴 5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴 6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴 7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴 8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴 9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;!-- //parallax__nav --&gt;
-
-&lt;main id="parallax__cont"&gt;
-    &lt;div id="contents"&gt;
-        &lt;section id="section1" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section1 --&gt;
-
-        &lt;section id="section2" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section2 --&gt;
-
-        &lt;section id="section3" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section3 --&gt;
-
-        &lt;section id="section4" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section4 --&gt;
-
-        &lt;section id="section5" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section5 --&gt;
-
-        &lt;section id="section6" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section6 --&gt;
-
-        &lt;section id="section7" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section7 --&gt;
-
-        &lt;section id="section8" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section8 --&gt;
-
-        &lt;section id="section9" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt; 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section9 --&gt;
-    &lt;/div&gt;
-&lt;/main&gt;
-&lt;!-- // parallax__cont --&gt;
-
-&lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt; px &lt;/div&gt;
-    &lt;div class="info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt; #section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt; px&lt;/li&gt;
-            &lt;li&gt; #section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt; px&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/aside&gt;
-&lt;!-- //parallax__info  --&gt;</code></pre>
+<pre><code class="language-html scroll">&lt;div id="contents"&gt;
+    &lt;section id="section1" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section1 --&gt;
+  
+    &lt;section id="section2" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section2 --&gt;
+  
+    &lt;section id="section3" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section3 --&gt;
+  
+    &lt;section id="section4" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section4 --&gt;
+  
+    &lt;section id="section5" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section5 --&gt;
+  
+    &lt;section id="section6" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section6 --&gt;
+  
+    &lt;section id="section7" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section7 --&gt;
+  
+    &lt;section id="section8" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section8 --&gt;
+  
+    &lt;section id="section9" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+        &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+            &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt; 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;!-- //section9 --&gt;
+&lt;/div&gt;</code></pre>
                       </div>
                       <div>
 <pre><code class="language-css scroll">/* parallax__nav */
@@ -687,8 +624,8 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     background-color: rgba(95, 95, 95, 0.4);
     padding: 20px 30px;
     border-radius: 50px;
+    transition: top 0.4s ease;
 }
-
 #parallax__nav li {
     display: inline;
     margin: 0 5px;
@@ -753,7 +690,7 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
 .content__item__imgWrap {
     width: 100%;
     padding-bottom: 56.25%;
-    background: #000;
+    /* background: #000; */
     position: relative;
     overflow: hidden;
     z-index: -1;
@@ -770,6 +707,12 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     background-size: cover ;
     filter: saturate(0%);
     transition: all 1s;
+    /* transition: all 1s; */
+}
+
+.content__item:hover .content__item__img {
+    filter: saturate(80%);
+    /* filter : brightness(120%); */
 }
 
 .content__item:nth-child(2) .content__item__img {
@@ -825,7 +768,6 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
 #parallax__info li, .scrollTop {
     line-height: 1.4;
 }
-
 @media (max-width : 800px){
     #parallax__cont {
         margin-top: 70vw;
@@ -859,10 +801,103 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
         border-radius: 5px;
     }
 
-    #parallax__info {
-        left: 10px;
-        bottom: 10px;
-    }
+}
+
+.reveal > div, .reveal > span {
+    opacity: 0;
+}
+
+.reveal.show > div,.reveal.show > span  {
+    animation: opacity 1s linear forwards;
+}
+.reveal {
+    position: relative;
+}
+.reveal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+.reveal.reveal-TWO::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: #b575fd;
+}
+
+/* 1개 */
+.reveal.show::before{
+    animation: reveal 1s;
+}
+
+.reveal.reveal-RTL.show::before{
+    animation: reveal-RTL 1s;
+} 
+
+.reveal.reveal-TTB.show::before{
+    animation: reveal-TTB 1s;
+} 
+
+.reveal.reveal-BTT.show::before{
+    animation: reveal-BTT 1s;
+} 
+
+/* 2개 */
+.reveal.show::after{
+    animation: reveal 1s 0.3s;
+}
+.reveal.reveal-RTL.show::after{
+    animation: reveal-RTL 1s 0.3s;
+}
+.reveal.reveal-TTB.show::after{
+    animation: reveal-TTB 1s 0.3s;
+} 
+
+.reveal.reveal-BTT.show::after{
+    animation: reveal-BTT 1s 0.3s;
+} 
+
+@keyframes opacity {
+    0%      {opacity: 0;}
+    60%     {opacity: 0;}
+    70%     {opacity: 1;}
+    100%    {opacity: 1;}
+}
+@keyframes reveal {
+    0%      {width: 0;      left: 0;}
+    50%     {width: 100%;   left: 0;}
+    80%     {width: 100%;   left: 0;}
+    100%    {width: 0;      left: 100%;}
+}
+
+
+@keyframes reveal-RTL {
+    0%      {width: 0;      right: 0;       left: auto;}
+    50%     {width: 100%;   right: 0;       left: auto;}
+    80%     {width: 100%;   right: 0;       left: auto;}
+    100%    {width: 0;      right: 100%;    left: auto;}
+}
+
+@keyframes reveal-TTB {
+    0%      {width: 0;      height: 0;      top: 0;}
+    50%     {width: 100%;   height: 100%;   top: 0;}
+    80%     {width: 100%;   height: 100%;   top: 0;}
+    100%    {width: 0;      height: 0;      top: 100%;}
+}
+@keyframes reveal-BTT {
+    0%      {width: 0;      height: 0;      bottom: 0;      top:auto; }
+    50%     {width: 100%;   height: 100%;   bottom: 0;      top:auto; }
+    80%     {width: 100%;   height: 100%;   bottom: 0;      top:auto; }
+    100%    {width: 0;      height: 0;      bottom: 100%;   top:auto; }
 }</code></pre>
                       </div>
                  </div>

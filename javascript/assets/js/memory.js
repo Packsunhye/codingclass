@@ -8,10 +8,11 @@ const memoryCards = memoryWrap.querySelectorAll(".cards li");
 // const memoryEnd = memoryWrap.querySelector(".memory__end");
 // const memoryInner = memoryWrap.querySelector(".memory__inner");
 const memoryStartBtn = memoryWrap.querySelector("button.use");
+const memoryStartBtnEnd = memoryWrap.querySelector("button.useEnd");
 
 
-const memoryScoreNum = memoryWrap.querySelector("memory__card .result p");
-const memoryScoreOne = memoryWrap.querySelector("memory__card .result p em");
+const memoryScoreNum = memoryWrap.querySelector(".memory__card .result p");
+const memoryScoreOne = memoryWrap.querySelector(".memory__card .result p em");
 
 let cardOne, cardTwo;
 let disableDeck = false;
@@ -32,12 +33,8 @@ function satrtCard(){
   memoryStart.classList.remove("start");
   memoryInner.classList.add("start");
 
-  //점수 기초
-  // memoryScoreNum.innerHTML = '100';
-
   //카드 뒤집기
   shuffledCard();
-  // scoreNum()
 }
 
 //카드 뒤집기
@@ -97,16 +94,19 @@ function matchCards(img1, img2) {
       disableDeck = false;
     }, 1600);
 
-    countScore = countScore - 5;
+    countScore = countScore - 50;
 
     if(countScore == 0){
-      endCard();
+      setTimeout(() => {  
+        endCard()
+      }, 2000);
+      // endCard();
     }
     soundUnMatch.play();
   }
   memoryScoreOne.innerText = countScore;
 }
-  
+
 //카드 섞기
 function shuffledCard() {
   cardOne = cardTwo = "";
@@ -139,7 +139,7 @@ function shuffledCard() {
 function endCard(){
   memoryStart.classList.remove("start");
   memoryInner.classList.remove("start");
-  memoryInner.classList.add("start");
+  memoryEnd.classList.add("start");
 
   memoryScoreNum.innerHTML = `점수는 <em>${countScore}</em>점 입니다 :3`;
 
@@ -150,6 +150,35 @@ memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
 });
 
+// 리스타투
+function restartCard(){
+  cardReset()
+  memoryEnd.classList.remove("start");
+
+  // let countScore = 100;
+
+  memoryScoreNum.innerHTML = `점수: <em>${countScore}</em>점`;
+}
+
+// 리셋
+function cardReset() {
+  memoryStart.classList.add("start");
+  memoryEnd.classList.remove("start");
+  memoryInner.classList.remove("start");
+
+
+  cardOne = cardTwo = "";
+  disableDeck = false;
+  matchedCard = 0;
+  countScore = 100;
+
+  memoryScoreOne.innerText = "0";
+
+  memoryCards.forEach((card) => {
+      card.classList.remove("flip");
+  });
+}
 
 // 버튼 이벤트
 memoryStartBtn.addEventListener("click", satrtCard); // 게임 시작
+memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작

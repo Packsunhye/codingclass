@@ -426,71 +426,18 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll">window.addEventListener("scroll" , () => {
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+<pre><code class="language-js scroll"> //재귀함수
+function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
 
-    // for 문
-    // for(let i = 1; i &lt; 10; i++){
-    //     if( scrollTop >= document.getElementById("section"+i).offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //         document.querySelector("#parallax__nav li:nth-child("+ i +")").classList.add("active");
-    //     }
-    // }
-
-    // forEach
-    document.querySelectorAll(".content__item").forEach((el,index)=>{
-        if(scrollTop >= el.offsetTop - 2 ){
-            document.querySelectorAll("#parallax__nav li").forEach(li => {
-                li.classList.remove("active")
-            });
-
-            document.querySelector("#parallax__nav li:nth-child("+ (index + 1) +")").classList.add("active");
-        };
+    document.querySelectorAll(".content__item").forEach(item => {
+        if(scrollTop > item.offsetTop - window.innerHeight/2){
+            item.classList.add("show");
+        }
     });
-    
-
-    // if( scrollTop >= document.getElementById("section1").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
-    // }
-    // if( scrollTop >= document.getElementById("section2").offsetTop){
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
-    // }
-    // . . .
-
-     //info
-    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
-
-    // document.querySelector("offset1").innerText = document.getElementById("section1").offsetTop
-    // document.querySelector("offset2").innerText = document.getElementById("section2").offsetTop
-    // document.querySelector("offset3").innerText = document.getElementById("section3").offsetTop
-    // document.querySelector("offset4").innerText = document.getElementById("section4").offsetTop
-    // . . .
-
-    for(let i = 1; i &lt; 10; i++){
-        document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i ).offsetTop
-    }
-});
-
-//스크롤 이동
-document.querySelectorAll("#parallax__nav li a").forEach( li => {
-    li.addEventListener("click",(e)=>{
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});</code></pre>
+    requestAnimationFrame(scroll); //1분에 60번 출력
+}
+scroll();</code></pre>
                       </div>
                       <div>
 <pre><code class="language-html scroll">&lt;nav id="parallax__nav"&gt;
@@ -631,8 +578,8 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     background-color: rgba(95, 95, 95, 0.4);
     padding: 20px 30px;
     border-radius: 50px;
+    transition: top 0.4s ease;
 }
-
 #parallax__nav li {
     display: inline;
     margin: 0 5px;
@@ -755,21 +702,6 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     margin-right: -4vw;
 }
 
-#parallax__info {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    z-index: 2000;
-    background:rgba(0,0,0.4);
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-#parallax__info li, .scrollTop {
-    line-height: 1.4;
-}
-
 @media (max-width : 800px){
     #parallax__cont {
         margin-top: 70vw;
@@ -803,10 +735,70 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
         border-radius: 5px;
     }
 
-    #parallax__info {
-        left: 10px;
-        bottom: 10px;
-    }
+}
+
+/* 한번에 나타내기 */
+/* #contents > section {
+    opacity: 0;
+    transition: all 1s;
+}
+#contents > section.show {
+    opacity: 1;
+} */
+
+/* 개별적으로 나타내기 */
+#contents > section .content__item__num {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1s 0.1s cubic-bezier(.29,.33,.13,.85);
+}
+#contents > section .content__item__title {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s 0.3s cubic-bezier(.29,.33,.13,.85);
+}
+#contents > section .content__item__imgWrap {
+    opacity: 0;
+    transform: translateY(200px) rotate(30deg) skew(20deg);
+    transition: all 1s 0.6s cubic-bezier(.29,.33,.13,.85);
+}
+#contents > section .content__item__desc {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s 0.9s cubic-bezier(.29,.33,.13,.85);
+}
+
+#contents > section.show .content__item__num {
+    opacity: 0.07;
+    transform: translateY(0);
+}
+#contents > section.show .content__item__title {
+    opacity: 1;
+    transform: translateX(0);
+}
+#contents > section.show .content__item__imgWrap {
+    opacity: 1;
+    transform: translateY(0)rotate(0) skew(0);
+}
+#contents > section.show .content__item__desc {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#contents > section:nth-child(even) .content__item__title {
+    transform: translateX(100px);
+}
+
+#contents > section:nth-child(even).show .content__item__title {
+    transform: translateX(0);
+}
+
+#contents > section:nth-child(even) .content__item__desc {
+    transform: translateX(200px);
+}
+
+#contents > section:nth-child(even).show .content__item__desc {
+    transform: translateX(0);
 }</code></pre>
                       </div>
                  </div>

@@ -101,7 +101,6 @@
         <li class="active"><a href="mouseEffect04.html">4</a></li>
         <li><a href="mouseEffect05.html">5</a></li>
         <li><a href="mouseEffect06.html">6</a></li>
-        <li><a href="mouseEffect07.html">7</a></li>
       </ul>
     </header>
     
@@ -198,174 +197,136 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll">const cursor = document.querySelector(".mouse__cursor")
-const cursor2 = document.querySelector(".mouse__cursor2")
-const span = document.querySelectorAll(".mouse__wrap span")
-const header = document.querySelectorAll("#header")
-const btn = document.querySelectorAll(".modal__wrap .modal__btn")
+<pre><code class="language-js scroll">const cursor = document.querySelector(".mouse__cursor");
+const cursorBox = cursor.getBoundingClientRect();
 
-window.addEventListener("mousemove", e => {
-  //커서에 좌표값 할당
-  // cursor.style.left = e.pageX-5 + "px";
-  // cursor.style.top = e.pageY-5 + "px";
-
-  // cursor2.style.left = e.pageX-15 + "px";
-  // cursor2.style.top = e.pageY-15 + "px";
-
-  //GSAP
-  gsap.to(cursor, {duration: 0.15, left:e.pageX-5, top:e.pageY-5});
-  gsap.to(cursor2, {duration: 0.5, left:e.pageX-15, top:e.pageY-15});
-
-
-  //오버 효과
-  // mouseenter / mouseover  / 이벤트 버블링 
-  span.forEach(span => {
-      span.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("active");
-        cursor2.classList.add("active");
-      });
-      span.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("active");
-        cursor2.classList.remove("active");
-      });
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove",(e)=>{
+  //커서
+  gsap.to(cursor, {
+    duration : 0.5,
+    left : e.pageX - cursorBox.width/2,
+    top : e.pageY - cursorBox.height/2
   });
 
-  //옛날 효과
-  // span.forEach(function(){
-  //   this.addEventListener("mouseenter", function(){});
-  // })
+  //마우스 좌표값 
+  let mousePageX = e.pageX;
+  let mousePageY = e.pageY;
 
-  header.forEach( header => {
-      header.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("active");
-        cursor2.classList.add("active");
-      });
-      header.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("active");
-        cursor2.classList.remove("active");
-      });
-  })
+  //전체 가로값
+  // window.innerWidth //1920 : 브라우저 크기
+  // window.outerWidth //1920 : 브라우저 크기(스크롤바 포함)
+  // window.screen.width //1920 : 화면 크기
+  
+  //마우스 좌표 값 가운데로 초기화
+  //전체 길이/2 - 마우스 좌표값 == 0
+  let centerPageX = window.innerWidth/2 - mousePageX;
+  let centerPageY = window.innerHeight/2 - mousePageY;
 
-  btn.forEach( btn => {
-    btn.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("show");
-        cursor2.classList.add("show");
-      });
-      btn.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("show");
-        cursor2.classList.remove("show");
-      });
-  })
-})</code></pre>
+  //이미지 움직이기 
+  const imgMove = document.querySelector(".mouse__wrap figure img");
+  // imgMove.style.transform = "translate("+ centerPageX/20 +"px, " + centerPageY/20 + "px)";
+
+  gsap.to(imgMove, {
+    duration : 0.3,
+    x : centerPageX/20,
+    y : centerPageY/20
+  });
+
+  document.querySelector(".mousePageX").textContent = mousePageX;
+  document.querySelector(".mousePageY").textContent = mousePageY;
+  document.querySelector(".centerPageX").textContent = centerPageX;
+  document.querySelector(".centerPageY").textContent = centerPageY;
+});</code></pre>
                       </div>
                       <div>
-<pre><code class="language-html scroll">&lt;main id="main"&gt;
-  &lt;section id="mouseType"&gt;
-    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-    &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
-    &lt;div class="mouse__wrap"&gt;
-      &lt;p class="Nix"&gt;&lt;span&gt;Nature&lt;/span&gt; never &lt;span&gt;deceives&lt;/span&gt; us it is we who deceive &lt;span&gt;ourselves&lt;/span&gt;&lt;/p&gt;
-      &lt;p class="arir"&gt;&lt;span&gt;자연&lt;/span&gt;은 인간을 결코 &lt;span&gt;속이지 않는다.&lt;/span&gt; 우리를 속이는 것은 항상 &lt;span&gt;우리 자신&lt;/span&gt;이다.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
+<pre><code class="language-html scroll">&lt;section id="mouseType"&gt;
+  &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+  &lt;div class="mouse__wrap"&gt;
+    &lt;figure&gt;
+      &lt;img src="../../assets/silde/min_jelly/slide_bg_07-min.jpg" alt="이미지"&gt;
+      &lt;figcaption&gt;
+        &lt;p&gt;In order to succeed, we must first believe that we can.&lt;/p&gt;
+        &lt;p&gt;성공하기 위해서, 우리는 먼저 우리 자신이 할 수 있다는 것을 믿어야 한다.&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
                       </div>
                       <div>
 <pre><code class="language-css scroll">/* mouseType */
 body::after {
 
-    background:rgba(43, 37, 59, 0.651);
+    background:rgba(160, 145, 201, 0.884) !important;
 }
 
-
 .mouse__wrap {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    
+}
+
+.mouse__wrap figure {
+  width: 50vw;
+  height: 50vh;
   overflow: hidden;
+  position: relative;
+  transition: transform 500ms ease;
   cursor: none;
 }
 
-.mouse__wrap p {
-  font-size: 1.5vw;
-  line-height: 2;
+.mouse__wrap figure figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+  white-space: nowrap;
+  line-height: 1.4;
   font-weight: 300;
+  
 }
 
-.mouse__wrap p:last-child {
-  font-size: 1.8vw;
-  font-weight: 500;
+.mouse__wrap figure:hover {
+  transform: scale(1.025);
 }
 
-.mouse__wrap p span {
-  border-bottom: 0.05vw solid rgb(219, 73, 146);
-  color: rgb(219, 73, 146);
-}
-
-
-@media( max-width : 800px){
-    .mouse__wrap p {
-        padding: 0 20px;
-        font-size: 18px;
-        line-height: 1.5;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .mouse__wrap p:last-child {
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
-      word-break: keep-all;
-    }
+.mouse__wrap figure img {
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
 }
 
 .mouse__cursor {
   position: absolute;
   left: 0;
   top: 0;
-  width: 10px;
-  height: 10px;
-  z-index: 9999;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: rgba(255, 42, 219, 0.3);
+  background: #fff;
+  z-index: 1000;
   user-select: none;
   pointer-events: none;
-  transition: transform 0.3s, opactiy 0.2s;
 }
 
-.mouse__cursor2 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  z-index: 9998;
-  border-radius: 50%;
-  background: rgba(255, 156, 230, 0.5);
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s, opactiy 0.2s;
-}
-
-.mouse__cursor.active {
-  transform: scale(0);
-}
-.mouse__cursor2.active {
-  transform: scale(3);
-  background: rgba(255, 42, 219, 0.3);
-}
-
-.mouse__cursor.show {
-  transform: scale(0);
-}
-.mouse__cursor2.show {
-  transform: scale(3);
-  background: rgba(40, 169, 255, 0.3);
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 10px;
 }</code></pre>
                       </div>
                  </div>

@@ -96,7 +96,6 @@
         <li><a href="mouseEffect04.html">4</a></li>
         <li><a href="mouseEffect05.html">5</a></li>
         <li class="active"><a href="mouseEffect06.html">6</a></li>
-        <li><a href="mouseEffect07.html">7</a></li>
       </ul>
     </header>
     <!-- Let bygones be bygones. -->
@@ -163,9 +162,6 @@
           </div>  
         </div>
       </section>
-
-         
-     
     </main>
 
 
@@ -235,13 +231,160 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll"></code></pre>
+<pre><code class="language-js scroll">const mouseMove = (e) => {
+  let positionSlow =( e.pageX - (window.innerWidth/2)) * 0.1 ;
+  let positionFast =( e.pageX - (window.innerWidth/2)) * 0.2 ;
+  
+  gsap.to(".spanSlow", {duration: .4, x : positionSlow});
+  gsap.to(".spanFast", {duration: .4, x : -positionFast});
+  gsap.to(".mouse__cursor", {duration: .3, left: e.pageX -5, top: e.pageY - 5});
+
+}
+window.addEventListener("mousemove",  mouseMove);
+
+// 마우스 커서가 글씨 위에 올라가면 크기는 5배 정도 크게, 글씨는 반전효과
+const spanWrap = document.querySelectorAll(".spanWrap span");
+spanWrap.forEach((e,i)=>{
+  e.addEventListener("mouseenter", ()=>{
+      document.querySelector(".mouse__cursor").style.transform="scale(5)"
+  })
+  e.addEventListener("mouseleave", ()=>{
+      document.querySelector(".mouse__cursor").style.transform="scale(1)"
+  })
+})
+//마우스 커서가 글씨 위에 올라가면 원의 크키가  5배 크게 작업 + 글씨 반전 효과</code></pre>
                       </div>
                       <div>
-<pre><code class="language-html scroll"></code></pre>
+<pre><code class="language-html scroll">&lt;section id="mouseType"&gt;
+  &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+  &lt;div class="mouse__wrap"&gt;
+    &lt;div class="mouse__img"&gt;
+        &lt;figure&gt;
+          &lt;img src="../../assets/silde/jelly/slide_bg_08.jpg" alt=""&gt;
+        &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="mouse__text"&gt;
+        &lt;div class="line"&gt;
+          &lt;div class="left"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanSlow view"&gt;Let bygones&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="right"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanSlow view"&gt;Let bygones&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="line"&gt;
+          &lt;div class="left"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanFast view"&gt;be bygones.&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="right"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanFast view"&gt;be bygones.&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="line"&gt;
+          &lt;div class="left"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanSlow view"&gt;지나간 일은&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="right"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanSlow view"&gt;지나간 일은&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="line"&gt;
+          &lt;div class="left"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanFast view"&gt;잊어버리세요.&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="right"&gt;
+            &lt;div class="spanWrap"&gt;
+              &lt;span class="spanFast view"&gt;잊어버리세요.&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
                       </div>
                       <div>
-<pre><code class="language-css scroll"></code></pre>
+<pre><code class="language-css scroll"> /* mouseType */
+body::after {
+
+  background:rgba(117, 64, 95, 0.445) !important;
+}
+
+.mouse__wrap{
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+.mouse__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.mouse__text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -20%);
+  font-size: 3vw;
+  line-height: 1.5;
+
+
+}
+.mouse__text .line {
+  width: 100%;
+  display: flex;
+}
+.mouse__text .line .left {
+  width: 50vw;
+  color: rgb(57, 87, 255);
+  overflow: hidden;
+  transform: skew(0deg, -15deg);
+}
+.mouse__text .line .left .spanWrap {
+  width: 100vw;
+  text-align: center;
+}
+.mouse__text .line .right {
+  width: 50vw;
+  overflow: hidden;
+  transform: skew(0deg,   15deg);
+}
+.mouse__text .line .right .spanWrap {
+  width: 100vw;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.mouse__text span {
+  display: inline-block;
+}
+
+.mouse__cursor {
+  position: absolute;
+  left: 0;top: 0;
+  width: 20px;height: 20px;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.9);
+  user-select: none;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}</code></pre>
                       </div>
                  </div>
               </div>
