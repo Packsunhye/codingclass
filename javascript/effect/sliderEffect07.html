@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 이펙트 04</title>
+    <title>슬라이드 이펙트</title>
 
     
     <link rel="stylesheet" href="../assets/css/slider.css">
@@ -270,59 +270,133 @@
                     </div>
                    <div class="cont">
                         <div class="active">
-<pre><code class="language-js scroll">const sliderWrap = document.querySelector(".slider__wrap")
+<pre><code class="language-js scroll">        const sliderWrap = document.querySelector(".slider__wrap")
 const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
 const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
 const slider = document.querySelectorAll(".slider")   
-const sliderBtn = document.querySelector(".slider__btn")  //버튼
-const sliderBtnPrev = document.querySelector(".prev")  //왼쪽 버튼
-const sliderBtnNext = document.querySelector(".next")  //오른쪽 버튼
+const sliderDot = document.querySelector(".slider__dot")    //슬라이더 닷
+const sliderBtn = document.querySelector(".slider__btn")    //왼쪽 버튼
+const sliderBtnPrev = document.querySelector(".slider__btn .prev")  //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".slider__btn .next")  //오른쪽 버튼
+// const sliderBtnPlay = document.querySelector(".slider__dot .play")  //플레이
+// const sliderBtnStop = document.querySelector(".slider__dot .stop")  //정지
 
-let currentIndex = 0;                       //현재 보이는 이미지
-let sliderCount = slider.length;            //이미지 갯수 
-let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값  
+let currentIndex = 0,
+    sliderLength = slider.length,
+    sliderWidth = slider[0].offsetWidth,
+    sliderFirst = slider[0],                //첫번째 이미지
+    sliderLast = slider[sliderLength -1],   //마지막 이미지
+    cloneFirst = sliderFirst.cloneNode(true),   //첫번째 이미지 복사
+    cloneLast = sliderLast.cloneNode(true),     //마지막 이미지 복사
+    dotIndex = "",
+    interval = 3000,
+    sliderTimer = ""
 
-//이미지 움직이는 영역
-function gotoSlider(num){
-    sliderInner.style.transition = "all 400ms";
-    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-    currentIndex = num;
+
+function init(){
+    imgClone(); //이미지 복사
+    createDot() //닷 버튼 생성
+    autoPlay(); //자동 플레이
+}
+init();
+
+function autoPlay(){
+    sliderTimer = setInterval(()=>{
+        let intervelNum = currentIndex + 1;
+        gotoSlider(intervelNum);
+    },interval)
+}
+function stopPlay(){
+    clearInterval(sliderTimer);
 }
 
-//왼쪽 버튼 클릭
+function imgClone(){
+    sliderInner.appendChild(cloneFirst); 
+    sliderInner.insertBefore(cloneLast, sliderFirst);
+}
+//dot
+function createDot(){
+    for(let i = 1; i &lt;= sliderLength; i++){
+        dotIndex += `&lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;`;
+    }
+    dotIndex += `&lt;a href="#" class="play" style="display:none;"&gt;&lt;/a&gt;`
+    dotIndex += `&lt;a href="#" class="stop"&gt;&lt;/a&gt;`
+
+    sliderDot.innerHTML = dotIndex;
+    sliderDot.firstChild.classList.add("active");
+}
+//버튼 움직이기 prev,next
+function gotoSlider(index){
+    sliderInner.classList.add("transition");
+    let posInital = sliderInner.offsetWidth; //-800
+
+    sliderInner.style.left = -sliderWidth * (index + 1)  + "px";
+
+    currentIndex = index;     
+    
+    let sliderDotAcive = document.querySelectorAll(".slider__dot .dot");
+    sliderDotAcive.forEach(el => el.classList.remove("active"));
+    sliderDotAcive[index].classList.add("active");
+}
+
+//순간이동
+function checkIndex(){
+    sliderInner.classList.remove("transition");
+    
+    // console.log(currentIndex);
+    // 마지막 이미지
+    if(currentIndex==sliderLength){
+        sliderInner.style.left = -(1 * sliderWidth) + "px";
+        currentIndex = 0;
+    }
+    //  처음 이미지
+    if(currentIndex==-1){
+        sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+        currentIndex = sliderLength - 1;
+    }
+}
+
+// 닷버튼 누르면 해당 이미지로 이동
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=>{
+    dot.addEventListener("click", ()=>{
+        gotoSlider(index);
+    });
+});
+
 sliderBtnPrev.addEventListener("click", ()=>{
-    let prevIndex = ( currentIndex + (sliderCount - 1) ) % sliderCount
+    let prevIndex = currentIndex - 1;
     gotoSlider(prevIndex);
-    // gotoSlider( 현재이미지 -1 ); 그리고 1 -> 5 으로도 가게 함
-})
-
-
-//오른쪽 버튼 클릭
+});
 sliderBtnNext.addEventListener("click", ()=>{
-    let nextIndex = ( currentIndex + 1 ) % sliderCount
+    let nextIndex = currentIndex + 1;
     gotoSlider(nextIndex);
-    //0 1 2 3 4
-})</code></pre>
+});
+
+document.querySelector(".slider__dot .play").addEventListener("click", ()=>{
+    autoPlay();
+    document.querySelector(".slider__dot .play").style.display="none";
+    document.querySelector(".slider__dot .stop").style.display="inline-block";
+});
+document.querySelector(".slider__dot .stop").addEventListener("click", ()=>{
+    stopPlay();
+    document.querySelector(".slider__dot .play").style.display="inline-block";
+    document.querySelector(".slider__dot .stop").style.display="none";
+});        
+sliderInner.addEventListener("mouseenter", stopPlay);
+sliderInner.addEventListener("mouseleave", autoPlay);
+sliderInner.addEventListener("transitionend",checkIndex);</code></pre>
                         </div>
                         <div>
-<pre><code class="language-html scroll">&lt;div class="slider__wrap"&gt;
-    &lt;div class="slider__img"&gt;
-        &lt;div class="slider__inner"&gt;
-            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_02-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_05-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_03-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_07-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="slider__btn"&gt;
-        &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
-        &lt;a href="#" class="next"&gt;next&lt;/a&gt;
-    &lt;/div&gt;
+<pre><code class="language-html scroll">&lt;div class="slider__btn"&gt;
+    &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+    &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="slider__dot"&gt;
+
 &lt;/div&gt;</code></pre>
                         </div>
                         <div>
-<pre><code class="language-css scroll" >.slider__btn a {
+<pre><code class="language-css scroll" > .slider__btn button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -335,15 +409,76 @@ sliderBtnNext.addEventListener("click", ()=>{
     color: #fff;
     line-height: 50px;
     border-radius: 10%;
+    pointer-events: auto;
+    border: 0;
 }
-.slider__btn a:hover {
+.slider__btn button:hover {
     background-color: rgba(130, 121, 255, 0.541);
 }
-.slider__btn a.prev {
+.slider__btn button.prev {
     left: 0;
 }
-.slider__btn a.next {
+.slider__btn button.next {
     right: 0;
+}
+.slider__btn.disable button {
+    pointer-events: none;
+}
+
+
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius : 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 5px;
+}
+.slider__dot .dot.active {
+    background : rgba(255,255,255,0.9);
+}
+.slider__dot .play {
+    width: 23px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: -3px;
+
+    border-left: 14px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+.slider__dot .stop{
+    display: inline-block;
+    width: 23px;
+    height: 20px;
+    position: relative;
+    vertical-align: -3px;
+    margin-left: 5px;
+}
+.slider__dot .stop::before{
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    left: 0; top: 0;
+}
+.slider__dot .stop::after{
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    left: 10px; top: 0;
 }</code></pre>
                         </div>
                    </div>
@@ -424,7 +559,11 @@ sliderBtnNext.addEventListener("click", ()=>{
 
             sliderInner.style.left = -sliderWidth * (index + 1)  + "px";
 
-            currentIndex = index;      
+            currentIndex = index;     
+            
+            let sliderDotAcive = document.querySelectorAll(".slider__dot .dot");
+            sliderDotAcive.forEach(el => el.classList.remove("active"));
+            sliderDotAcive[index].classList.add("active");
         }
 
         //순간이동
@@ -443,6 +582,13 @@ sliderBtnNext.addEventListener("click", ()=>{
                 currentIndex = sliderLength - 1;
             }
         }
+
+        // 닷버튼 누르면 해당 이미지로 이동
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=>{
+            dot.addEventListener("click", ()=>{
+                gotoSlider(index);
+            });
+        });
 
         sliderBtnPrev.addEventListener("click", ()=>{
             let prevIndex = currentIndex - 1;
