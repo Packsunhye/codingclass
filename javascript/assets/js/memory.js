@@ -72,6 +72,11 @@ function matchCards(img1, img2) {
       alert("게임 오버");
       soundGoodMatch.play();
       memoryScoreNum.innerHTML = `축하드립니다. 점수는 <em>${countScore}</em>점 입니다 :3`
+      cardOne.removeEventListener("click", filpCard);
+      cardTwo.removeEventListener("click", filpCard);
+      soundMatch.play();
+      cardOne = cardTwo = "";
+      disableDeck = false;
     }
 
     cardOne.removeEventListener("click", filpCard);
@@ -94,7 +99,7 @@ function matchCards(img1, img2) {
       disableDeck = false;
     }, 1600);
 
-    countScore = countScore - 50;
+    countScore = countScore - 5;
 
     if(countScore == 0){
       setTimeout(() => {  
@@ -104,7 +109,8 @@ function matchCards(img1, img2) {
     }
     soundUnMatch.play();
   }
-  memoryScoreOne.innerText = countScore;
+  memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
+  // memoryScoreOne.innerText = countScore;
 }
 
 //카드 섞기
@@ -145,7 +151,7 @@ function endCard(){
 
 }
 
-//카드 클릭
+//카드 클릭 
 memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
 });
@@ -153,11 +159,14 @@ memoryCards.forEach((card) => {
 // 리스타투
 function restartCard(){
   cardReset()
+  satrtCard()
+  // card.addEventListener("click", filpCard);
   memoryEnd.classList.remove("start");
 
   // let countScore = 100;
 
-  memoryScoreNum.innerHTML = `점수: <em>${countScore}</em>점`;
+  // memoryScoreOne.innerText = countScore;
+  memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
 }
 
 // 리셋
@@ -166,11 +175,19 @@ function cardReset() {
   memoryEnd.classList.remove("start");
   memoryInner.classList.remove("start");
 
-
+  
   cardOne = cardTwo = "";
   disableDeck = false;
   matchedCard = 0;
   countScore = 100;
+  memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
+  cardOne = cardTwo = "";
+  // cardOne.removeEventListener("click", filpCard);
+  // cardTwo.removeEventListener("click", filpCard);
+  soundMatch.play();
+  disableDeck = false;
+  // cardOne.addEventListener("click", filpCard);
+  // cardTwo.addEventListener("click", filpCard);
 
   memoryScoreOne.innerText = "0";
 

@@ -8,15 +8,15 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="../assets/css/game.css">
-    <!-- <link rel="stylesheet" href="../assets/css/bg.css"> -->
-    <link rel="stylesheet" href="../assets/css/Lain.css">
+    <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/animal.css">
     <link rel="stylesheet" href="../assets/css/meoory.css">
+
+    <link rel="stylesheet" href="../assets/css/dracula.css">
     <style>
         /* body {
             background: url(../assets/memory/hide02.png);
-            background-size: cover;
             width: 100%;
             height: 100%;
         } */
@@ -49,17 +49,20 @@
 </head>
 
 <body>
+    
     <header id="header">
         <h1>MANYONG GAME EFFECT01</h1>
         <div class="time"></div>
     </header>
     <!-- header -->
 
-    <div class="icon_iframe">
-        <!-- <iframe src="https://github1s.com/Packsunhye/coding/blob/main/javascript/effect/gameEffect01.html"></iframe> -->
+    <div class="container">
+        <button class="grayscaleButton">Grayscale</button>
+        <p class="sliderText">
+        <input type="range" min="0" max="100" value="50" class="slider" id="slider"/>
+        <div class="splash"></div>
     </div>
-
-
+    <!-- rain -->
 
     <main id="main">
         <div class="cusor">
@@ -420,9 +423,693 @@
         </div>
     </div>
 
+    <div class="screen">
+        
+        <div class="window">
+            <div class="title-bar">
+              <div class="minimize">
+                <div class="symbol"></div>
+              </div>
+              <div class="maximize">
+                <div class="symbol"></div>
+              </div>
+              <div class="close">
+                <div class="symbol"></div>
+              </div>
+            </div>
+            <div class="menu-bar">
+                <span class="active">Music Player</span>
+                <span>Search Game</span>
+                <span>Card Game</span>
+            </div>
+            <div class="content-container">
+              <div class="content">
+                <div class="main">
+                    <div class="active">
+    <pre><code class="language-js"> const musicWrap = document.querySelector(".music__wrap");
+const musicView = musicWrap.querySelector(".music__view .img img");
+const musicName = musicWrap.querySelector(".music__view .title h3");
+const musicArtist = musicWrap.querySelector(".music__view .title p");
+const musicAudio = musicWrap.querySelector("#main-audio");
+
+const musicProgress = musicWrap.querySelector(".progress");
+const musicProgressBar = musicWrap.querySelector(".progress .bar");
+const musicProgressCurrent = musicWrap.querySelector(".progress .timer .current");
+const musicProgressDuration = musicWrap.querySelector(".progress .timer .duraition");
+
+const musicPlay = musicWrap.querySelector("#control-play");
+const musicPrevBtn = musicWrap.querySelector("#control-prev");
+const musicNextBtn = musicWrap.querySelector("#control-next");
+const musicRepeat = musicWrap.querySelector("#control-repeat");
+
+const musicListBtn = musicWrap.querySelector("#control-list");
+const musicCloseBtn = musicWrap.querySelector(".music__list .close");
+const musicList = musicWrap.querySelector(".music__list");
+const musicListUl = musicWrap.querySelector(".music__list ul");
+
+let musicIndex = 1; //현재 음악 인덱스
+
+//음악 재생
+
+function LoadMusic(num){
+    // musicView.stc = `../assets/img/artwork.pic.png`;
+    musicName.innerText = allMusic[num-1].name;     //뮤직 이름 
+    musicArtist.innerText = allMusic[num-1].artist;     //뮤직 아티스트
+    musicView.src = `../assets/music_img/${allMusic[num-1].img}.png`;   //뮤직 이미지
+    musicView.alt = allMusic[num-1].name;   //뮤직 이미지 alt
+    musicAudio.src = `../assets/music/${allMusic[num-1].audio}.mp3`;    //뮤직 로드
+}
+//재생버튼
+function playMusic(){
+    musicWrap.classList.add("pause");
+    musicPlay.setAttribute("title","정지");
+    musicPlay.setAttribute("class","stop");
+    musicAudio.play();
+}
+
+//정지버튼
+function pauseMusic(){
+    musicWrap.classList.remove("pause");
+    musicPlay.setAttribute("title","재생");
+    musicPlay.setAttribute("class","play");
+    musicAudio.pause();
+}
+
+//이전곡 듣기
+function prevMusic(){
+    musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;
+    LoadMusic(musicIndex);
+    playMusic();
+    playListMusic(); //뮤직 업데이트
+}
+
+//다음곡 듣기
+function nextMusic(){
+    musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;
+    LoadMusic(musicIndex);
+    playMusic();
+    playListMusic(); //뮤직 업데이트
+}
+
+
+//뮤직 진행바 
+musicAudio.addEventListener("timeupdate", e => {
+    // console.log(e);
+    const currentTime = e.target.currentTime;
+    // console.log(currentTime); 시간이 지날 수록 증가(현재 진행되는 시간)
+    const duration = e.target.duration;
+    // console.log(duration); 전체 갯수(오디오의 총 길이)
+
+    let progressWidth = (currentTime/duration) * 100 //전체 길이에서 현재 진행되는 시간을 백분위로 나눔
+
+    musicProgressBar.style.width = `${progressWidth}%`
+
+    //전체 시간
+    musicAudio.addEventListener("loadeddata", ()=>{
+        let audioDuration = musicAudio.duration;
+        let totalMin = Math.floor(audioDuration / 60); //전체 시간을 분단위로 쪼개줌
+        let totalSec = Math.floor(audioDuration % 60); //남은 초를 저장
+
+        if(totalSec &lt; 10) totalSec = `0${totalSec}`; //초가 한 자릿수일때 앞에 0을 붙임
+
+        musicProgressDuration.textContent = `${totalMin}:${totalSec}`; //완성된 시간 문자열을 출력
+    })
+
+    //진행중인 시간
+    let currentMin = Math.floor(currentTime / 60); //전체 시간을 분단위로 쪼개줌
+    let currentSec = Math.floor(currentTime % 60); //남은 초를 저장
+
+    if(currentSec &lt; 10) currentSec = `0${currentSec}`; //초가 한 자릿수일때 앞에 0을 붙임
+
+    musicProgressCurrent.textContent = `${currentMin}:${currentSec}`; //완성된 시간 문자열을 출력
+    
+    
+})
+
+//진행버튼 클릭
+musicProgress.addEventListener("click", (e) => {
+    let progressWidth = musicProgress.clientWidth; //진행바의 전체 길이
+    let clickdeOffsetX = e.offsetX; //진행바 기준으로 측정되는 X 좌표
+    let songDuration = musicAudio.duration; //오디오의 전체길이
+
+    musicAudio.currentTime = (clickdeOffsetX / progressWidth) * songDuration; //백분위로 나눈 숫자에 다시 전체 길이를 곱해 현재 재생값으로 바뀜
+})
+
+//반복버튼 클릭
+musicRepeat.addEventListener("click", ()=>{
+    let getAttr = musicRepeat.getAttribute("class")
+    // console.log(getAttr);
+
+    switch(getAttr){
+        case "repeat" : 
+            musicRepeat.setAttribute("class","repeat_one");
+            musicRepeat.setAttribute("title","한곡 반복");
+        break;
+        case "repeat_one" : 
+            musicRepeat.setAttribute("class","shuffle");
+            musicRepeat.setAttribute("title","랜덤 반복");
+        break;
+        case "shuffle" : 
+            musicRepeat.setAttribute("class","repeat");
+            musicRepeat.setAttribute("title","전체 반복");
+        break;
+    }
+})
+
+//오디오가 끝나면 재생
+musicAudio.addEventListener("ended", ()=>{
+    let getAttr = musicRepeat.getAttribute("class");
+    // alert(getAttr);
+
+    switch(getAttr){
+        case "repeat" : 
+            nextMusic()
+        break;
+        case "repeat_one" : 
+            playMusic()
+        break;
+        case "shuffle" : 
+            let randomIndex = Math.floor(Math.random() * allMusic.length + 1) //랜덤 인덱스를 생성
+
+            do {
+                randomIndex = Math.floor(Math.random() * allMusic.length + 1)
+            } while( musicIndex == randomIndex )
+            musicIndex = randomIndex;   //  현재 인덱스를 랜덤 인덱스로 변경
+            LoadMusic(musicIndex);      //  랜덤인덱스가 반영된 현재 인덱스 값으로 음악을 다시 로드
+            playMusic();                //  로드한 음악을 재생 
+        break;
+    }
+    playListMusic(); //뮤직 업데이트
+})
+
+//플레이 버튼 클릭
+musicPlay.addEventListener("click", ()=>{
+    const isMusicPauesd = musicWrap.classList.contains("pause"); //음악 재생중
+    isMusicPauesd ? pauseMusic() : playMusic();
+})
+
+musicPrevBtn.addEventListener("click", ()=>{
+    prevMusic();
+})
+musicNextBtn.addEventListener("click", ()=>{
+    nextMusic();
+})
+
+
+// 뮤직 리스트
+musicListBtn.addEventListener("click", ()=> {
+    musicList.classList.add("show")
+})
+musicCloseBtn.addEventListener("click", ()=> {
+    musicList.classList.remove("show")
+})
+
+// 뮤직 리스트 구현하기
+for(let i =0; i &lt; allMusic.length; i++){
+    let li =  ` 
+        &lt;li data-index="${i+1}"&gt;
+            &lt;strong&gt;${allMusic[i].name}&lt;/strong&gt;
+            &lt;em&gt;${allMusic[i].artist}&lt;/em&gt;
+            &lt;audio class="${allMusic[i].audio}" src="../assets/music/${allMusic[i].audio}.mp3"&gt;&lt;/audio&gt;
+            &lt;span class="audio-duration" id="${allMusic[i].audio}"&gt;재생시간&lt;/span&gt;
+        &lt;/li&gt;
+    `;
+
+    // musicListUl.innerHTML += li;
+    musicListUl.insertAdjacentHTML("beforeend", li);
+
+    //리스트의 음악 시간 불러오기
+    let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`);; //리스트에서 시간을 표시할 선택지를 가져옴
+    let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`);   //리스트에서 오디오를 가져옴
+
+    liAudio.addEventListener("loadeddata",()=>{
+        let audioDuration = liAudio.duration;   //오디오의 전체 길이
+        let totalMin = Math.floor(audioDuration / 60);  //전체 길이를 분 단위 쪼갬
+        let totalSec = Math.floor(audioDuration % 60);  //초 계산
+        if( totalSec &lt; 10 )totalSec = `0${totalSec}`;   //앞 자리에 0추가
+        liAudioDuration.innerText = `${totalMin} : ${totalSec}`// 문지열 출력
+        liAudioDuration.setAttribute("data-duration", `${totalMin} : ${totalSec}`); //속성에 오디오 같이 저장
+    })
+
+}
+
+// 뮤직 리스트를 클리어 하면 재생
+function playListMusic(){
+    const musicListAll = musicListUl.querySelectorAll("li"); //뮤직 리스트 목록
+    for(let i = 0 ; i &lt; musicListAll.length; i++){
+        let audioTag = musicListAll[i].querySelector(".audio-duration");
+
+        if(musicListAll[i].classList.contains("playing")){
+            musicListAll[i].classList.remove("playing");    //클래스가 존재하면 삭제
+            let adDuration = audioTag.getAttribute("data-duration");    //오디오 길이 값 가져오기
+            audioTag.innerText = adDuration;    //오디오 길이값 출력
+        }
+        if(musicListAll[i].getAttribute("data-index") == musicIndex){ //현재 뮤직 인덱스랑 리스트 인덱스 값이 같으면
+            musicListAll[i].classList.add("playing");   // 클레스 playing  추가
+            audioTag.innerText = "재생중 :3"    //재생중일 경우 재생중 멘트 추가
+        }
+
+        musicListAll[i].setAttribute("onclick","clicked(this)")
+    }
+}
+
+
+//뮤직의 리스트를 클릭하면
+function clicked(el){
+    let getLiIndex = el.getAttribute("data-index"); //클릭한 리스트의 인덱스 값을 저장
+    musicIndex = getLiIndex;    //클릭한 인덱스 값을 뮤직 인덱스 저장
+    LoadMusic(musicIndex);      //해당 인덱스 뮤직 로드
+    playMusic();                //음악 재생
+    playListMusic();            //음악 리스트 업데이트
+}
+
+//플레이 버튼
+// let i = 0;
+// musicPlay.addEventListener("click", ()=>{
+//     if(i==0){
+//         playMusic();
+//         document.querySelector(".play").setAttribute("title", "정지")
+//         document.querySelector(".play").classList.add("stop");
+//         document.querySelector(".play").classList.remove("play");
+//         i++;
+//     } else {
+//         pauseMusic();
+//         document.querySelector(".stop").setAttribute("title", "재생")
+//         document.querySelector(".stop").classList.add("play");
+//         document.querySelector(".stop").classList.remove("stop");
+//         i--;
+//     }
+// })
+
+// 마지막
+window.addEventListener("load", ()=>{
+    LoadMusic(musicIndex);  //음악 재생
+    playListMusic();        //리스트 초기화
+})</code></pre>
+                    </div>
+                    <div>
+<pre><code class="language-js">const searchTime = document.querySelector(".time span");
+const searchList = document.querySelector(".search__list");
+const searchAnswers = document.querySelector(".search__anwers");
+const searchMissAnswers = document.querySelector(".search__MissAnwers");
+const searchStart = document.querySelector(".search__box .start");
+const searchInput = document.querySelector("#search");
+const searchAudio = document.querySelector("#audio");
+const musicPlayVar = document.querySelector(".search__audio .play");
+const musicStop = document.querySelector(".search__audio .stop");
+const searchScoreNum = document.querySelector(".search__info .num");
+const searchScoreNow = document.querySelector(".search__info .now");
+const searchResult = document.querySelector(".search__result .result");
+const searchResultWrap = document.querySelector(".search__result");
+const searchRestart = document.querySelector(".search__result .restart");
+
+let timeReamining = 60, // 남은 시간
+    score = 0; // 점수
+(answers = {}), // 새로운 정답
+    (timeInterval = ""); //시간간격
+
+searchScoreNum.innerHTML = cssProperty.length;
+
+function updateList() {
+    cssProperty.forEach((data) => {
+    searchList.innerHTML += `&lt;span&gt;${data.name}&lt;/span&gt;`;
+    });
+}
+updateList();
+
+function resetQuiz() {
+    searchStart.style.display = "block";
+    searchList.style.display = "block";
+
+    searchStart.style.pointerEvents = "all";
+
+    // 버튼 모습
+    musicStop.style.display = "block";
+    musicPlayVar.style.display = "none";
+
+    searchMissAnswers.style.display = "none";
+    searchRestart.style.display = "none";
+    searchRestart.style.display = "none";
+    searchResult.style.display = "none";
+
+    // 점수 계산
+    let score = 0;
+
+    updateList();
+}
+
+// 게임 시작하기
+function startQuiz() {
+    // 시작 버튼 숨기기
+    searchStart.style.display = "none";
+    searchList.style.display = "none";
+
+    //다시 시작할때 데이터 초기화
+    searchAnswers.innerHTML = "";
+    searchMissAnswers.innerHTML = "";
+
+    // 시간 설정(1초에 한번씩 줄어듦)
+    timeInterval = setInterval(reduceTime, 1000);
+
+    // 버튼 모습
+    musicStop.style.display = "none";
+    musicPlayVar.style.display = "block";
+    // 음악 추가
+    music();
+
+    // 점수 계산
+    let score = 0;
+
+    // 정답 체크
+    checkAnswers();
+}
+// 음악 재생
+function music() {
+    musicStop.addEventListener("click", () =&gt; {
+    musicStop.style.display = "none";
+    musicPlayVar.style.display = "block";
+    searchAudio.pause();
+    });
+    musicPlayVar.addEventListener("click", () =&gt; {
+    musicPlayVar.style.display = "none";
+    musicStop.style.display = "block";
+    searchAudio.play();
+    });
+    searchAudio.play();
+}
+
+// 인풋 체크하기
+function checkInput() {
+    let input = event.currentTarget.value.trim().toLowerCase(); // 사용자가 입력한 값 가져오기
+    if (answers.hasOwnProperty(input) && !answers[input]) {
+    answers[input] = true;
+    // 정답 표시
+    searchAnswers.style.display = "block";
+    searchAnswers.innerHTML += `&lt;span&gt;${input}&lt;/span&gt;`;
+    // 점수 반영
+    score++;
+    searchScoreNow.innerText = score;
+    // 정답 초기화
+    searchInput.value = "";
+    }
+}
+
+// 정답 체크하기 : 정답을 객체 파일로 만들기
+function checkAnswers() {
+    cssProperty.forEach((item) =&gt; {
+    let answer = item.name.trim().toLocaleLowerCase();
+    answers[answer] = false;
+    });
+}
+
+// 오답 보여주기
+function missAnswers() {
+    searchMissAnswers.style.display = "block";
+    searchAnswers.style.display = "none";
+    cssProperty.forEach((item) =&gt; {
+    let answer = item.name.trim().toLocaleLowerCase();
+    if (answers[answer] == false) {
+        searchMissAnswers.innerHTML += `&lt;span&gt;${item.name}&lt;/span&gt;`;
+    }
+    });
+}
+
+// 시간 설정하기 0:00
+function reduceTime() {
+    timeReamining--;
+    if (timeReamining == 0) endQuiz();
+    searchTime.innerText = displayTime();
+}
+
+// 시간 표시하기
+function displayTime() {
+    if (timeReamining &lt;= 0) {
+    return "0:00";
+    } else {
+    let minutes = Math.floor(timeReamining / 60);
+    let seconds = timeReamining % 60;
+    // 초 단위가 한자리수일 때 0 추가
+    if (seconds &lt; 10) seconds = "0" + seconds;
+    return minutes + ":" + seconds;
+    }
+}
+
+// 게임이 끝났을 때
+function endQuiz() {
+    // 시작 버튼 만들기
+    searchStart.style.display = "block";
+    searchStart.style.pointerEvents = "none";
+    // 오답 보여주기
+    missAnswers();
+    //시간정지
+    clearInterval(timeInterval);
+    // 음악 끄기
+    musicStop.style.display = "block";
+    musicPlayVar.style.display = "none";
+    searchAudio.pause();
+    // 메시지 출력
+    searchResultWrap.classList.add("show");
+    let point = Math.round((score / cssProperty.length) * 100);
+    searchResult.innerHTML = `게임이 종료되었습니다.${cssProperty.length}개 중 ${score}개를 맞혔습니다. 점수는 ${point}점입니다.`;
+}
+// 다시 시작하기
+function restart() {
+    searchResultWrap.classList.remove("show");
+    timeReamining = 60; // 시간
+    score = 0;
+
+    searchStart.style.display = "none"; // 버튼 숨김
+    searchStart.style.pointerEvents = "all";
+    searchList.style.display = "none";
+
+    //맞힌 갯수 없애기
+    searchScoreNow.textContent = "0";
+
+    //노래
+    musicStop.style.display = "none";
+    musicPlay.style.display = "block";
+    searchAudio.play();
+
+    startQuiz();
+}
+
+// 버튼 이벤트
+searchStart.addEventListener("click", startQuiz); // 게임 시작
+searchInput.addEventListener("input", checkInput);
+searchRestart.addEventListener("click", restart);
+$(searchResultWrap).draggable();</code></pre>
+                    </div>
+                    <div>
+<pre><code class="language-js">const memoryWrap = document.querySelector(".memory__wrap");
+const memoryCards = memoryWrap.querySelectorAll(".cards li");
+const memoryStartBtn = memoryWrap.querySelector("button.use");
+const memoryStartBtnEnd = memoryWrap.querySelector("button.useEnd");
+
+
+const memoryScoreNum = memoryWrap.querySelector(".memory__card .result p");
+const memoryScoreOne = memoryWrap.querySelector(".memory__card .result p em");
+
+let cardOne, cardTwo;
+let disableDeck = false;
+let matchedCard = 0;
+let countScore = 100;
+let sound = [
+    "../assets/music/fail.m4a",
+    "../assets/music/ture.m4a",
+    "../assets/music/ture02.m4a",
+];
+let soundMatch = new Audio(sound[1]);
+let soundUnMatch = new Audio(sound[0]);
+let soundGoodMatch = new Audio(sound[2]);
+
+
+//게임 시작하기
+function satrtCard(){
+    memoryStart.classList.remove("start");
+    memoryInner.classList.add("start");
+
+    //카드 뒤집기
+    shuffledCard();
+}
+
+//카드 뒤집기
+function filpCard(e) {
+    let clickdeCard = e.target;
+
+    if (clickdeCard !== cardOne && !disableDeck) {
+    clickdeCard.classList.add("flip");
+
+    if (!cardOne) {
+        return (cardOne = clickdeCard);
+    }
+
+    cardTwo = clickdeCard;
+    disableDeck = true;
+
+    let cardOneImg = cardOne.querySelector(".back img").src;
+    let cardTwoImg = cardTwo.querySelector(".back img").src;
+    //   console.log(cardOneImg);
+    matchCards(cardOneImg, cardTwoImg);
+    // console.log(cardOneImg, cardTwoImg);
+    }
+}
+
+
+
+//카드 확인(두개의 이미지 비교)
+function matchCards(img1, img2) {
+    //   console.log(img2);
+    if (img1 == img2) {
+    //같을 경우
+    matchedCard++;
+    // alert("이미지가 일치합니다");
+    if (matchedCard == 8) {
+        alert("게임 오버");
+        soundGoodMatch.play();
+        memoryScoreNum.innerHTML = `축하드립니다. 점수는 &lt;em&gt;${countScore}&lt;/em&gt;점 입니다 :3`
+        cardOne.removeEventListener("click", filpCard);
+        cardTwo.removeEventListener("click", filpCard);
+        soundMatch.play();
+        cardOne = cardTwo = "";
+        disableDeck = false;
+    }
+
+    cardOne.removeEventListener("click", filpCard);
+    cardTwo.removeEventListener("click", filpCard);
+    soundMatch.play();
+    cardOne = cardTwo = "";
+    disableDeck = false;
+    } else {
+    // alert("이미지가 일치하지 않습니다.");
+    //일치하지 않는경우(틀린 음악, 이미지가 좌우로 움직임)
+    setTimeout(() => {
+        cardOne.classList.add("shakeX");
+        cardTwo.classList.add("shakeX");
+    }, 500);
+
+    setTimeout(() => {
+        cardOne.classList.remove("shakeX", "flip");
+        cardTwo.classList.remove("shakeX", "flip");
+        cardOne = cardTwo = "";
+        disableDeck = false;
+    }, 1600);
+
+    countScore = countScore - 5;
+
+    if(countScore == 0){
+        setTimeout(() => {  
+        endCard()
+        }, 2000);
+        // endCard();
+    }
+    soundUnMatch.play();
+    }
+    memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
+    // memoryScoreOne.innerText = countScore;
+}
+
+//카드 섞기
+function shuffledCard() {
+    cardOne = cardTwo = "";
+    disableDeck = false;
+    matchedCard = 0;
+    memoryScoreOne.innerText = countScore;
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+    let result = arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+
+    memoryCards.forEach((card, index) => {
+    card.classList.remove("flip");
+
+    setTimeout(() => {
+        card.classList.add("flip");
+    }, 300 * index);
+
+    setTimeout(() => {  
+        card.classList.remove("flip");
+    }, 6000);
+
+    let imgTag = card.querySelector(".back img");
+    imgTag.src = `../assets/memory/0${arr[index]}.png`;
+    });
+}
+
+// shuffledCard();
+
+// 게임 끗
+function endCard(){
+    memoryStart.classList.remove("start");
+    memoryInner.classList.remove("start");
+    memoryEnd.classList.add("start");
+
+    memoryScoreNum.innerHTML = `점수는 &lt;em&gt;${countScore}&lt;/em&gt;점 입니다 :3`;
+
+}
+
+//카드 클릭 
+memoryCards.forEach((card) => {
+    card.addEventListener("click", filpCard);
+});
+
+// 리스타투
+function restartCard(){
+    cardReset()
+    satrtCard()
+    // card.addEventListener("click", filpCard);
+    memoryEnd.classList.remove("start");
+
+    // let countScore = 100;
+
+    // memoryScoreOne.innerText = countScore;
+    memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
+}
+
+// 리셋
+function cardReset() {
+    memoryStart.classList.add("start");
+    memoryEnd.classList.remove("start");
+    memoryInner.classList.remove("start");
+
+    
+    cardOne = cardTwo = "";
+    disableDeck = false;
+    matchedCard = 0;
+    countScore = 100;
+    memoryScoreNum.innerHTML = `점수 : ${countScore}점`;
+    cardOne = cardTwo = "";
+    // cardOne.removeEventListener("click", filpCard);
+    // cardTwo.removeEventListener("click", filpCard);
+    soundMatch.play();
+    disableDeck = false;
+    // cardOne.addEventListener("click", filpCard);
+    // cardTwo.addEventListener("click", filpCard);
+
+    memoryScoreOne.innerText = "0";
+
+    memoryCards.forEach((card) => {
+        card.classList.remove("flip");
+    });
+}
+
+// 버튼 이벤트
+memoryStartBtn.addEventListener("click", satrtCard); // 게임 시작
+memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</code></pre>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="footer"></div>
+          </div>
+    </div>   
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/sceen-980GAME.js"></script>
+
     <script src="../assets/js/game.js"></script>
     <script src="../assets/js/animal.js"></script>
     <script src="../assets/js/memory.js"></script>
@@ -474,11 +1161,10 @@
         });
 
         // 팝업 열기
-        const WbTn = document.querySelector(".icon6");
+        
         const MbTn = document.querySelector(".icon1");
         const GbTn = document.querySelector(".icon2");
         const MMTn = document.querySelector(".icon3");
-        const iconFrame = document.querySelector(".icon_iframe");
         const musicW = document.querySelector(".music__wrap");
         const gameDr = document.querySelector(".game__frame");
         const memoryW = document.querySelector(".memory__game");
@@ -487,9 +1173,6 @@
         const memoryEnd = memoryWrap.querySelector(".memory__end");
         const memoryInner = memoryWrap.querySelector(".memory__inner");
 
-        WbTn.addEventListener("click", () => {
-            iconFrame.classList.add("show")
-        })
         MbTn.addEventListener("click", () => {
             musicW.classList.add("show")
 
@@ -505,6 +1188,7 @@
             memoryStart.classList.add("start");
             memoryInner.classList.remove("start");
             memoryEnd.classList.remove("start");
+            cardReset()
             // resetMemory()
         })
 
@@ -593,27 +1277,7 @@
             preintAgent();
         }
 
-
-        var image = document.getElementById('image');
-        image.onload = function() {
-          var engine = new RainyDay({
-            image: this,
-            gravityAngle: Math.PI / 5       
-
-          });
-          engine.trail = engine.TRAIL_SMUDGE;
-          engine.rain([ [3, 2, 2] ], 100);
-          engine.rain(
-            [
-                [1, 0, 20], 
-                [3, 3, 1],
-                [1, 2, 19]
-            ],                       
-            100);
-         // engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
-        };
-        image.crossOrigin = 'anonymous';
-        image.src = '../assets/memory/hide02.png';
+    
 
     </script>
 </body>
