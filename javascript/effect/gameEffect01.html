@@ -111,7 +111,7 @@
                 </div>
                 <button class="use">START</button>
             </div>
-            <div class="memory__end">
+            <div class="memory__end start">
                 <div class="endTop">
                     <div>ଳ</div>
                     <h2>게임 종료 ! ! !</h2>
@@ -126,18 +126,17 @@
                 </div>
                 <button class="useEnd">RESTART</button>
             </div>
-            <div class="memory__inner ">
+            <div class="memory__inner start">
                 <div class="memory__card">
                     <!-- card -->
                     <div class="line">
                         <div class="top">
                             <div>ଳ</div>
-                            <h2>남은 시간 00 : 00</h2>
+                            <h2>카드 게임 맞추기 !</h2>
                             <div>ଳ</div>
                         </div>
                         <div class="result">
-                            <p>맞춘 갯수 : 0</p>
-                            <p>틀린 갯수 : 0</p>
+                            <p>점수 : <em>0</em>점</p>
                         </div>
                     </div>
                     <ul class="cards">
@@ -477,6 +476,10 @@
         const gameDr = document.querySelector(".game__frame");
         const memoryW = document.querySelector(".memory__game");
 
+        const memoryStart = memoryWrap.querySelector(".memory__start");
+        const memoryEnd = memoryWrap.querySelector(".memory__end");
+        const memoryInner = memoryWrap.querySelector(".memory__inner");
+
         WbTn.addEventListener("click", () => {
             iconFrame.classList.add("show")
         })
@@ -491,6 +494,10 @@
         })
         MMTn.addEventListener("click", () => {
             memoryW.classList.add("show")
+
+            memoryStart.classList.add("start");
+            memoryInner.classList.remove("start");
+            memoryEnd.classList.remove("start");
             // resetMemory()
         })
 
