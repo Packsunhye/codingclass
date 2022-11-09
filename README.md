@@ -78,3 +78,12 @@ https://packsunhye.github.io/codingclass/javascript/effect/sliderEffect07.html
 
 ## 게임 이펙트
 https://packsunhye.github.io/codingclass/javascript/effect/gameEffect01.html  
+
+### 리엑트 / 뷰 수업 예제
+<div>
+  <a href="https://reactclass030.netlify.app"> 리엑트 사이트 01(네트리파이) <a>
+  <a href="https://vueclass32.web.app/"> 뷰 사이트 01(파이어베이스) <a>
+  <br>
+  <a href="https://reactapiclass030.netlify.app/movie"> 리엑트 사이트 02(네트리파이) <a>
+  <a href=""> 뷰 사이트 02(파이어베이스) <a>
+</div>

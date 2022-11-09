@@ -1178,6 +1178,7 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             e.addEventListener("click", () => {
                 gameDr.classList.remove("show");
                 endQuiz()
+<<<<<<< HEAD
             })
         });
 
@@ -1220,6 +1221,13 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             // 드래그 팝업이 항상 위
             $(this).css('z-index', maxZIndex + 2);
             //console.log($(this).css('z-index'));
+=======
+            }
+            if (MemoryPopup.has(e.target).length === 0) {
+                MemoryPopup.removeClass("show");
+                cardReset()
+            }
+>>>>>>> bad1fb3ec88e27e196a957b86152b63035d97bfb
         });
 
         const cursor = document.querySelector(".cusor");
