@@ -4,14 +4,13 @@
 
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
-// const memoryStart = memoryWrap.querySelector(".memory__start");
-// const memoryEnd = memoryWrap.querySelector(".memory__end");
-// const memoryInner = memoryWrap.querySelector(".memory__inner");
+
 const memoryStartBtn = memoryWrap.querySelector("button.use");
 const memoryStartBtnEnd = memoryWrap.querySelector("button.useEnd");
 
 
 const memoryScoreNum = memoryWrap.querySelector(".memory__card .result p");
+const memoryScoreFine = memoryWrap.querySelector(".memory__end .endFine p:nth-child(1)");
 const memoryScoreOne = memoryWrap.querySelector(".memory__card .result p em");
 
 let cardOne, cardTwo;
@@ -69,9 +68,12 @@ function matchCards(img1, img2) {
     matchedCard++;
     // alert("이미지가 일치합니다");
     if (matchedCard == 8) {
-      alert("게임 오버");
+      // alert("게임 오버");
       soundGoodMatch.play();
-      memoryScoreNum.innerHTML = `축하드립니다. 점수는 <em>${countScore}</em>점 입니다 :3`
+      setTimeout(() => {  
+        endCard()
+      }, 2000);
+      // memoryScoreNum.innerHTML = `축하드립니다. 점수는 <em>${countScore}</em>점 입니다 :3`
       cardOne.removeEventListener("click", filpCard);
       cardTwo.removeEventListener("click", filpCard);
       soundMatch.play();
@@ -99,7 +101,7 @@ function matchCards(img1, img2) {
       disableDeck = false;
     }, 1600);
 
-    countScore = countScore - 5;
+    countScore = countScore - 10;
 
     if(countScore == 0){
       setTimeout(() => {  
@@ -147,7 +149,9 @@ function endCard(){
   memoryInner.classList.remove("start");
   memoryEnd.classList.add("start");
 
-  memoryScoreNum.innerHTML = `점수는 <em>${countScore}</em>점 입니다 :3`;
+  // alert(countScore);
+
+  memoryScoreFine.innerHTML = `점수는 <em>${countScore}</em>점 입니다 :3`;
 
 }
 

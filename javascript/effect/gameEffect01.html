@@ -12,33 +12,10 @@
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/animal.css">
     <link rel="stylesheet" href="../assets/css/meoory.css">
+    <link rel="stylesheet" href="../assets/css/tetris.css">
 
     <link rel="stylesheet" href="../assets/css/dracula.css">
     <style>
-        /* body {
-            background: url(../assets/memory/hide02.png);
-            width: 100%;
-            height: 100%;
-        } */
-        iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            width: 1200px;
-            height: 800px;
-            z-index: 3;
-        }
-
-        .icon_iframe.show {
-            display: block;
-        }
-
-        .icon_iframe {
-            display: none;
-        }
-
         #volume-control {
             transform: rotate(90deg);
             position: absolute;
@@ -49,7 +26,7 @@
 </head>
 
 <body>
-    
+
     <header id="header">
         <h1>MANYONG GAME EFFECT01</h1>
         <div class="time"></div>
@@ -59,7 +36,7 @@
     <div class="container">
         <button class="grayscaleButton">Grayscale</button>
         <p class="sliderText">
-        <input type="range" min="0" max="100" value="50" class="slider" id="slider"/>
+            <input type="range" min="0" max="100" value="50" class="slider" id="slider" />
         <div class="splash"></div>
     </div>
     <!-- rain -->
@@ -101,6 +78,19 @@
     </footer>
     <!-- footer -->
 
+    <!-- 테트리스 -->
+    <div class="tetris__wrap">
+        <div class="tetris__inner">
+            <div class="tetris___start"></div>
+            <div class="tetris___restart"></div>
+            <div class="tetris__play">
+                <div class="playground">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 메모리 게임 플레이 -->
     <div class="memory__game">
         <div class="memory__wrap">
@@ -108,7 +98,7 @@
                 <div class="top">
                     <div>ଳ</div>
                     <h2>게임 시작</h2>
-                    <div>ଳ</div>
+                    <div class="done">ଳ</div>
                 </div>
                 <div class="rul">
                     <p>가벼운 규칙 : 잘 읽고 시작해주세요 :3</p>
@@ -116,7 +106,8 @@
                         <li>1. 시간은 무제한 입니다. 틀릴 때마다 점수가 하나씩 줄어듭니다</li>
                         <li>2. 점수가 0이 될때 게임은 종료됩니다. </li>
                         <li>3. 다 맞추면 게임의 점수와 함께 게임이 종료됩니다.</li>
-                        <li>4. 다시 도전할 수 있으니 실패해도 다시 시작버튼을 눌러주세요!</li>
+                        <li>4. 카드가 뒤집힐 때는 다 뒤집히고 창이 닫힙니다. </li>
+                        <li>5. 다시 도전할 수 있으니 실패해도 다시 시작버튼을 눌러주세요!</li>
                     </ul>
                 </div>
                 <button class="use">START</button>
@@ -125,7 +116,7 @@
                 <div class="endTop">
                     <div>ଳ</div>
                     <h2>게임 종료 ! ! !</h2>
-                    <div>ଳ</div>
+                    <div class="done">ଳ</div>
                 </div>
                 <div class="endRul">
                     <p>수고하셨습니다 :3 <em>게임이 종료 되었습니다.</em></p>
@@ -143,7 +134,7 @@
                         <div class="top">
                             <div>ଳ</div>
                             <h2>카드 게임 맞추기 !</h2>
-                            <div>ଳ</div>
+                            <div class="done">ଳ</div>
                         </div>
                         <div class="result">
                             <p>점수 : <em>0</em>점</p>
@@ -343,8 +334,8 @@
                     <div class="start">버튼을 누르면 게임이 시작됩니다 ଳ</div>
                 </div>
                 <div class="search__info center">
-                    <div>찾은 속성 갯수 : <span class="num">0</span></div>
-                    <div> 현재 맞춘 갯수 : <span class="now">0</span> </div>
+                    <div>전체 갯수 : <span class="num">0</span></div>
+                    <div>현재 맞춘 갯수 : <span class="now">0</span> </div>
                 </div>
 
                 <div class="search__result">
@@ -424,18 +415,17 @@
     </div>
 
     <div class="screen">
-        
-        <div class="window">
+        <div class="screenWinds">
             <div class="title-bar">
-              <div class="minimize">
-                <div class="symbol"></div>
-              </div>
-              <div class="maximize">
-                <div class="symbol"></div>
-              </div>
-              <div class="close">
-                <div class="symbol"></div>
-              </div>
+                <div class="minimize">
+                    <div class="symbol"></div>
+                </div>
+                <div class="maximize">
+                    <div class="symbol"></div>
+                </div>
+                <div class="close">
+                    <div class="symbol"></div>
+                </div>
             </div>
             <div class="menu-bar">
                 <span class="active">Music Player</span>
@@ -443,10 +433,10 @@
                 <span>Card Game</span>
             </div>
             <div class="content-container">
-              <div class="content">
-                <div class="main">
-                    <div class="active">
-    <pre><code class="language-js"> const musicWrap = document.querySelector(".music__wrap");
+                <div class="content">
+                    <div class="main">
+                        <div class="active">
+                            <pre><code class="language-js">const musicWrap = document.querySelector(".music__wrap");
 const musicView = musicWrap.querySelector(".music__view .img img");
 const musicName = musicWrap.querySelector(".music__view .title h3");
 const musicArtist = musicWrap.querySelector(".music__view .title p");
@@ -706,9 +696,9 @@ window.addEventListener("load", ()=>{
     LoadMusic(musicIndex);  //음악 재생
     playListMusic();        //리스트 초기화
 })</code></pre>
-                    </div>
-                    <div>
-<pre><code class="language-js">const searchTime = document.querySelector(".time span");
+                        </div>
+                        <div>
+                            <pre><code class="language-js">const searchTime = document.querySelector(".time span");
 const searchList = document.querySelector(".search__list");
 const searchAnswers = document.querySelector(".search__anwers");
 const searchMissAnswers = document.querySelector(".search__MissAnwers");
@@ -898,9 +888,9 @@ searchStart.addEventListener("click", startQuiz); // 게임 시작
 searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
 $(searchResultWrap).draggable();</code></pre>
-                    </div>
-                    <div>
-<pre><code class="language-js">const memoryWrap = document.querySelector(".memory__wrap");
+                        </div>
+                        <div>
+                            <pre><code class="language-js">const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
 const memoryStartBtn = memoryWrap.querySelector("button.use");
 const memoryStartBtnEnd = memoryWrap.querySelector("button.useEnd");
@@ -1094,26 +1084,30 @@ function cardReset() {
 // 버튼 이벤트
 memoryStartBtn.addEventListener("click", satrtCard); // 게임 시작
 memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</code></pre>
+                        </div>
                     </div>
                 </div>
-              </div>
-              
+
             </div>
-            <div class="footer"></div>
-          </div>
-    </div>   
+            <!-- <div class="footer"></div> -->
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
 
     <script src="../assets/js/highlight.min.js"></script>
-    <script src="../assets/js/sceen-980GAME.js"></script>
 
     <script src="../assets/js/game.js"></script>
     <script src="../assets/js/animal.js"></script>
     <script src="../assets/js/memory.js"></script>
+    <!-- <script src="../assets/js/tetris.js"></script> -->
+    <script src="../assets/js/tetrisde.js"></script>
+    <script src="../assets/js/sceen-980GAME.js"></script>
     <script>
+
+
         $(".icon1").draggable({
             drag: function () {
                 $(".cusor img").attr("src", "../assets/img/cursor.grine.png")
@@ -1144,90 +1138,96 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
                 $(".cusor img").attr("src", "../assets/img/cursor.white.png")
             },
         });
-        $(".music__wrap").draggable({
-            drag: function () {
-                $(".cusor img").attr("src", "../assets/img/cursor.white.png")
-            },
-        });
-        $(".game__frame").draggable({
-            drag: function () {
-                $(".cusor img").attr("src", "../assets/img/cursor.white.png")
-            },
-        });
-        $(".memory__game").draggable({
-            drag: function () {
-                $(".cusor img").attr("src", "../assets/img/cursor.white.png")
-            },
-        });
 
-        // 팝업 열기
-        
-        const MbTn = document.querySelector(".icon1");
-        const GbTn = document.querySelector(".icon2");
-        const MMTn = document.querySelector(".icon3");
-        const musicW = document.querySelector(".music__wrap");
-        const gameDr = document.querySelector(".game__frame");
-        const memoryW = document.querySelector(".memory__game");
-
-        const memoryStart = memoryWrap.querySelector(".memory__start");
-        const memoryEnd = memoryWrap.querySelector(".memory__end");
-        const memoryInner = memoryWrap.querySelector(".memory__inner");
-
-        MbTn.addEventListener("click", () => {
-            musicW.classList.add("show")
-
-        })
-        GbTn.addEventListener("click", () => {
-            gameDr.classList.add("show")
-            resetQuiz()
-
-        })
-        MMTn.addEventListener("click", () => {
-            memoryW.classList.add("show")
-
-            memoryStart.classList.add("start");
-            memoryInner.classList.remove("start");
-            memoryEnd.classList.remove("start");
-            cardReset()
-            // resetMemory()
-        })
-
+        // 오디오
         const audio = document.getElementById('main-audio');
         const audioVolume = document.getElementById('volume-control');
         audioVolume.addEventListener("change", function (e) {
             audio.volume = this.value / 10;
         })
 
+        // 팝업 열기
+        const MGTn = document.querySelector(".icon__box .icon1");  //뮤직 아이콘
+        const SGTn = document.querySelector(".icon__box .icon2");  //서치게임 아이콘
+        const MBTn = document.querySelector(".icon__box .icon3");  //카드게임 아이콘
 
-        // 외부영역 클릭 시 팝업 닫기
-        $(document).mouseup(function (e) {
-            var LayerPopup = $(".icon_iframe");
-            var MusicPopup = $(".music__wrap");
-            var GamePopup = $(".game__frame");
-            var MemoryPopup = $(".memory__game");
-            if (LayerPopup.has(e.target).length === 0) {
-                LayerPopup.removeClass("show");
-            }
-            if (MusicPopup.has(e.target).length === 0) {
-                MusicPopup.removeClass("show");
-                pauseMusic()
-            }
-            if (GamePopup.has(e.target).length === 0) {
-                GamePopup.removeClass("show");
+        const closeGame = document.querySelectorAll(".game__title div")
+        const closeMemory = document.querySelectorAll(".memory__wrap .done")
+
+        const musicW = document.querySelector(".music__wrap");      //뮤직박스
+        const gameDr = document.querySelector(".game__frame");      //서치게임
+        const memoryW = document.querySelector(".memory__game");    //카드게임 
+
+        const memoryStart = memoryWrap.querySelector(".memory__start");
+        const memoryEnd = memoryWrap.querySelector(".memory__end");
+        const memoryInner = memoryWrap.querySelector(".memory__inner");
+
+        // 뮤직 팝업
+        MGTn.addEventListener("click", () => {
+            musicW.classList.toggle("show");
+            pauseMusic()
+        })
+
+        // 서치 팝업
+        SGTn.addEventListener("click", () => {
+            gameDr.classList.add("show");
+            resetQuiz();
+        })
+        // 서치 닫기
+        closeGame.forEach(e => {
+            e.addEventListener("click", () => {
+                gameDr.classList.remove("show");
                 endQuiz()
-            }
-            if (MemoryPopup.has(e.target).length === 0) {
-                MemoryPopup.removeClass("show");
-                endQuiz()
-            }
+            })
+        });
+
+        // 카드 팝업
+        MBTn.addEventListener("click", () => {
+            memoryW.classList.add("show");
+            cardReset();
+
+            memoryStart.classList.add("start")
+            memoryEnd.classList.remove("start")
+            memoryInner.classList.remove("start")
+        })
+        // 카드 닫기
+        closeMemory.forEach(e => {
+            e.addEventListener("click", () => {
+                setTimeout(() => {
+                    memoryW.classList.remove("show");
+
+                    cardReset()
+                    memoryStart.classList.add("start")
+                    memoryEnd.classList.remove("start")
+                    memoryInner.classList.remove("start")
+                }, 5000)
+            })
+        });
+
+
+        $(".music__wrap, .game__frame, .memory__game").draggable();
+
+        $('.music__wrap, .game__frame, .memory__game').mousedown(function () {
+            var maxZIndex = 0;
+            var curZIndex = 0;
+            $('.music__wrap, .game__frame, .memory__game').each(function (index) {
+                //숫자변환
+                curZIndex = parseInt($(this).css('z-index'));
+                if (maxZIndex < curZIndex) {
+                    maxZIndex = curZIndex;
+                }
+            });
+            // 드래그 팝업이 항상 위
+            $(this).css('z-index', maxZIndex + 2);
+            //console.log($(this).css('z-index'));
         });
 
         const cursor = document.querySelector(".cusor");
 
-        window.addEventListener("mousemove", (e) => {
-            gsap.to(cursor, { duration: 0.15, left: e.pageX, top: e.pageY });
+        window.addEventListener("mousemove", e => {
+            gsap.to(cursor, { duration: 0, left: e.pageX - 1, top: e.pageY - 3 })
+        })
 
-        });
 
         function printTime() {
             const clock = document.querySelector(".time");
@@ -1243,20 +1243,10 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             setTimeout("printTime()", 1000);
         }
 
-        // function printTime(){
-        //     const clock = document.querySelector(".time");
-        //     const now = new Date();
-        //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초"
-        //     //getFullYear - 년도만 갖고올 수 있다.getMonth - 0부터 시작이라 +1 해줘야지 제대로 된 월이 나온다.
-
-        //     clock.textContent = nowTime;
-        //     setTimeout("printTime()",1000);
-        // }
         function preintAgent() {
             const agent = document.querySelector(".agent")
             const os = navigator.userAgent.toLocaleLowerCase();
 
-            // agent.textContent = os;
 
             if (os.indexOf("window") >= 0) {
                 agent.textContent = "현재 윈도우를 사용하고 있습니다. 화면 크기는 넓이 : " + screen.width + " 높이 : " + screen.height + " 입니다.";
@@ -1277,7 +1267,7 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             preintAgent();
         }
 
-    
+
 
     </script>
 </body>

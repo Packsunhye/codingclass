@@ -62,13 +62,14 @@ const cssProperty = [
   { num: 61, name: "꽃게" },
   { num: 62, name: "칠게" },
   { num: 63, name: "해삼" },
-  { num: 67, name: "조개" },
+  { num: 64, name: "조개" },
 ];
 
 const searchTime = document.querySelector(".time span");
 const searchList = document.querySelector(".search__list");
 const searchAnswers = document.querySelector(".search__anwers");
 const searchMissAnswers = document.querySelector(".search__MissAnwers");
+const searchBox = document.querySelector(".search__box");
 const searchStart = document.querySelector(".search__box .start");
 const searchInput = document.querySelector("#search");
 const searchAudio = document.querySelector("#audio");
@@ -76,8 +77,8 @@ const musicPlayVar = document.querySelector(".search__audio .play");
 const musicStop = document.querySelector(".search__audio .stop");
 const searchScoreNum = document.querySelector(".search__info .num");
 const searchScoreNow = document.querySelector(".search__info .now");
-const searchResult = document.querySelector(".search__result .result");
 const searchResultWrap = document.querySelector(".search__result");
+const searchResult = document.querySelector(".search__result .result");
 const searchRestart = document.querySelector(".search__result .restart");
 
 let timeReamining = 60, // 남은 시간
@@ -110,7 +111,10 @@ function resetQuiz() {
   searchResult.style.display = "none";
 
   // 점수 계산
-  let score = 0;
+  score = 0;
+
+  timeReamining = 60
+  searchTime.innerText = displayTime()
 
   updateList();
 }
@@ -126,6 +130,7 @@ function startQuiz() {
   searchMissAnswers.innerHTML = "";
 
   // 시간 설정(1초에 한번씩 줄어듦)
+  
   timeInterval = setInterval(reduceTime, 1000);
 
   // 버튼 모습
@@ -194,7 +199,7 @@ function missAnswers() {
 // 시간 설정하기 0:00
 function reduceTime() {
   timeReamining--;
-  if (timeReamining == 0) endQuiz();
+  if (timeReamining == 0) endQuiz02();
   searchTime.innerText = displayTime();
 }
 
@@ -224,11 +229,33 @@ function endQuiz() {
   musicStop.style.display = "block";
   musicPlayVar.style.display = "none";
   searchAudio.pause();
+
+}
+
+function endQuiz02() {
+  // 시작 버튼 만들기
+  searchStart.style.display = "block";
+  searchStart.style.pointerEvents = "none";
+
+  // 오답 보여주기
+  missAnswers();
+
+  //시간정지
+  clearInterval(timeInterval);
+  
+  // 음악 끄기
+  musicStop.style.display = "block";
+  musicPlayVar.style.display = "none";
+  searchAudio.pause();
+
   // 메시지 출력
-  searchResultWrap.classList.add("show");
+  searchResultWrap.style.display = "block";
+  searchResult.style.display = "block";
+  searchRestart.style.display = "block";
   let point = Math.round((score / cssProperty.length) * 100);
   searchResult.innerHTML = `게임이 종료되었습니다.${cssProperty.length}개 중 ${score}개를 맞혔습니다. 점수는 ${point}점입니다.`;
 }
+
 // 다시 시작하기
 function restart() {
   searchResultWrap.classList.remove("show");
@@ -246,6 +273,11 @@ function restart() {
   musicStop.style.display = "none";
   musicPlay.style.display = "block";
   searchAudio.play();
+
+  // 없애기 있기
+  searchResultWrap.style.display = "none";
+  searchResult.style.display = "none";
+  searchRestart.style.display = "none";
 
   startQuiz();
 }

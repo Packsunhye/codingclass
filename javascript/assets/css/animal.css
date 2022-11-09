@@ -206,10 +206,10 @@ li {
     display: none;
 }
 
-.search__result.show {
+/* .search__result.show {
     display: block;
     margin: 0 auto;
-}
+} */
 
 .search__result .result {
     padding: 30px;

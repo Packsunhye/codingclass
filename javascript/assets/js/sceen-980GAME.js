@@ -25,15 +25,18 @@ SCbtn.forEach((el,i)=>{
 
 //나오게 하기
 const WbTn = document.querySelector(".icon6");
-const SCcont = document.querySelector(".window");
-const SCclose = document.querySelector(".window .close");
+const SCN = document.querySelector(".screen");
+const SCcont = document.querySelector(".screenWinds");
+const SCclose = document.querySelector(".screenWinds .close");
 
 WbTn.addEventListener("click", ()=> {
+    SCN.classList.add("show");
     SCcont.classList.add("show");
     SCcont.classList.remove("hide");
 });
 
 SCclose.addEventListener("click", ()=> {
+    SCN.classList.remove("show");
     SCcont.classList.add("hide");
     SCcont.classList.remove("show")
 })

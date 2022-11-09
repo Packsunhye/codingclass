@@ -58,7 +58,7 @@ body {
 
 .mac #footer {}
 
-.window #footer {}
+.screenWinds #footer {}
 
 .icon1 {
     position: absolute;
@@ -195,7 +195,7 @@ body {
     /* cursor: none; */
     user-select: none;
     pointer-events: none;
-    z-index: 1;
+    z-index: 100;
 }
 
 .cusor img {
@@ -206,56 +206,56 @@ body {
    /* screen */
         
        
-
-   .screen {
+.screen {
+    z-index: -200;
+}
+.screen.show {
     box-sizing: border-box;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;    
+}
+
+.screen__btn {
+    position: fixed;
+    bottom : 100px;
+    right: 40px;
     z-index: 10011;
 
-    
-  }
+    border: 4px ridge rgb(161, 161, 161);
+    background-color: rgb(202, 202, 202);
 
-  .screen__btn {
-      position: fixed;
-      bottom : 100px;
-      right: 40px;
-      z-index: 10011;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 7px;
+    font-family: "DungGeunMo";
+}
 
-      border: 4px ridge rgb(161, 161, 161);
-      background-color: rgb(202, 202, 202);
+.screen__btn:active {
+    background-color: rgb(161, 161, 161);
+    border: 4px ridge rgb(199, 199, 199);
+}
 
-      width: 100px;
-      height: 40px;
-      text-align: center;
-      padding-top: 7px;
-      font-family: "DungGeunMo";
-  }
+.screen .screenWinds {
+    min-width: 675px;
+    min-height: 445px;
 
-  .screen__btn:active {
-      background-color: rgb(161, 161, 161);
-      border: 4px ridge rgb(199, 199, 199);
-  }
+    background-color: #c7c7c7;
+    padding: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
 
-  .screen .window {
-      min-width: 675px;
-      min-height: 445px;
+    /* visibility: hidden; */
+    transform: scale(0);
+}
 
-      background-color: #c7c7c7;
-      padding: 4px;
-      border-left: 2px solid #FCFCFC;
-      border-top: 2px solid #FCFCFC;
-      border-right: 2px solid #2A2A2A;
-      border-bottom: 2px solid #2A2A2A;
-
-      /* visibility: hidden; */
-      transform: scale(0);
-  }
-
-  .window.show {
-      /* visibility : visible; */
+  .screenWinds.show {
+      visibility : visible;
       animation: foldIn 0.3s ease forwards;
   }
   @keyframes foldIn {
@@ -263,8 +263,8 @@ body {
       100%    {transform: scaleX(1) scaleY(1) ;}
   }
 
-  .window.hide {
-      /* visibility: hidden; */
+  .screenWinds.hide {
+      visibility: hidden;
       animation: foldOut 0.25s ease backwards;
   }
   
