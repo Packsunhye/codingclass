@@ -19,6 +19,8 @@ li {
     top: 150px;
     left: 50%;
     transform: translate(-50%, 0);
+    border: 3px solid rgb(244 224 255);
+    animation: flicker 0.5s infinite alternate;
 }
 
 .game__inner .game__audio {}
@@ -227,4 +229,24 @@ li {
     cursor: pointer;
     padding: 6px;
     margin-bottom: 20px;
+}
+
+@keyframes flicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        box-shadow:
+            0 0 0.5rem #fff,
+            inset 0 0 0.1rem #fff,
+            0 0 3rem 2px rgb(140 115 255),
+            inset 0 0 0rem 3px rgb(140 115 255),
+            0 0 0rem 3px rgb(140 115 255),
+            inset -4px -5px 3rem 2px rgb(140 115 255)
+    }
 }

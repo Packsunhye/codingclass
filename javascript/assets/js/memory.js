@@ -8,9 +8,10 @@ const memoryCards = memoryWrap.querySelectorAll(".cards li");
 const memoryStartBtn = memoryWrap.querySelector("button.use");
 const memoryStartBtnEnd = memoryWrap.querySelector("button.useEnd");
 
-
 const memoryScoreNum = memoryWrap.querySelector(".memory__card .result p");
-const memoryScoreFine = memoryWrap.querySelector(".memory__end .endFine p:nth-child(1)");
+const memoryScoreFine = memoryWrap.querySelector(
+  ".memory__end .endFine p:nth-child(1)"
+);
 const memoryScoreOne = memoryWrap.querySelector(".memory__card .result p em");
 
 let cardOne, cardTwo;
@@ -26,9 +27,8 @@ let soundMatch = new Audio(sound[1]);
 let soundUnMatch = new Audio(sound[0]);
 let soundGoodMatch = new Audio(sound[2]);
 
-
 //게임 시작하기
-function satrtCard(){
+function satrtCard() {
   memoryStart.classList.remove("start");
   memoryInner.classList.add("start");
 
@@ -58,8 +58,6 @@ function filpCard(e) {
   }
 }
 
-
-
 //카드 확인(두개의 이미지 비교)
 function matchCards(img1, img2) {
   //   console.log(img2);
@@ -70,8 +68,8 @@ function matchCards(img1, img2) {
     if (matchedCard == 8) {
       // alert("게임 오버");
       soundGoodMatch.play();
-      setTimeout(() => {  
-        endCard()
+      setTimeout(() => {
+        endCard();
       }, 2000);
       // memoryScoreNum.innerHTML = `축하드립니다. 점수는 <em>${countScore}</em>점 입니다 :3`
       cardOne.removeEventListener("click", filpCard);
@@ -103,9 +101,9 @@ function matchCards(img1, img2) {
 
     countScore = countScore - 10;
 
-    if(countScore == 0){
-      setTimeout(() => {  
-        endCard()
+    if (countScore == 0) {
+      setTimeout(() => {
+        endCard();
       }, 2000);
       // endCard();
     }
@@ -132,7 +130,7 @@ function shuffledCard() {
       card.classList.add("flip");
     }, 300 * index);
 
-    setTimeout(() => {  
+    setTimeout(() => {
       card.classList.remove("flip");
     }, 6000);
 
@@ -144,7 +142,7 @@ function shuffledCard() {
 // shuffledCard();
 
 // 게임 끗
-function endCard(){
+function endCard() {
   memoryStart.classList.remove("start");
   memoryInner.classList.remove("start");
   memoryEnd.classList.add("start");
@@ -152,18 +150,17 @@ function endCard(){
   // alert(countScore);
 
   memoryScoreFine.innerHTML = `점수는 <em>${countScore}</em>점 입니다 :3`;
-
 }
 
-//카드 클릭 
+//카드 클릭
 memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
 });
 
 // 리스타투
-function restartCard(){
-  cardReset()
-  satrtCard()
+function restartCard() {
+  cardReset();
+  satrtCard();
   // card.addEventListener("click", filpCard);
   memoryEnd.classList.remove("start");
 
@@ -179,7 +176,6 @@ function cardReset() {
   memoryEnd.classList.remove("start");
   memoryInner.classList.remove("start");
 
-  
   cardOne = cardTwo = "";
   disableDeck = false;
   matchedCard = 0;
@@ -196,7 +192,7 @@ function cardReset() {
   memoryScoreOne.innerText = "0";
 
   memoryCards.forEach((card) => {
-      card.classList.remove("flip");
+    card.classList.remove("flip");
   });
 }
 

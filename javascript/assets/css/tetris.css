@@ -1,26 +1,103 @@
 .tetris__wrap {}
 
 .tetris__inner {
-    padding: 10px;
+    padding: 15px;
+    /* padding-top: 90px; */
     width: 420px;
-    height: 725px;
+
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background: rgb(0, 0, 0);
+    border: 3px solid rgb(244 224 255);
+    animation: flicker 0.5s infinite alternate;
 }
 
-.tetris___start {}
+/* .tetris___start */
+.tetris___start {
+    display: none;
+    color: #fff;
+    height: 500px;
+    text-align: center;
+}
 
-.tetris___restart {}
+.tetris___start .top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.tetris___start .rul {
+    /* margin-top: 30px; */
+    font-size: 18px;
+    padding: 30px;
+    text-align: center;
+}
+
+.tetris___start .rul>p {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.tetris___start .rul>ul {
+    text-align: left;
+}
+
+.tetris___start .rul ul li {
+    margin-bottom: 10px;
+}
+
+.tetris___start .use {
+    padding: 10px 30px;
+    border-radius: 15px;
+    text-align: center;
+    background: #6d37ef;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.tetris___start .use:hover {
+    background: #20a0eb;
+    color: #fff;
+}
+
+/* .tetris___restart */
+.tetris___restart {
+    /* display: none; */
+    color: #fff;
+}
 
 .tetris__play {}
 
-.playground {}
+.playground {
+    display: none;
+}
+
+.playground .tetris__dec {
+    color: #fff;
+    text-align: center;
+}
+
+.dex_top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.desc_p {
+    padding: 15px;
+}
 
 .playground>ul {
-    border: 2px solid #fff;
+    border: 2px solid rgb(101, 49, 221);
 }
 
 .playground>ul>li {
@@ -37,8 +114,46 @@
     list-style: none;
     width: 35px;
     height: 35px;
-    border: 0.5px solid rgb(95, 95, 95);
+    border: 0.5px solid rgb(53, 47, 58);
 
+}
+
+
+/* tetris___restart */
+.tetris___restart {
+    text-align: center;
+}
+
+.tetris___restart .endTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.tetris___restart .endRul {
+    padding: 15px;
+    font-size: 20px;
+}
+
+.tetris___restart .endFine p {
+    margin: 10px;
+}
+
+.tetris___restart .useEnd {
+    padding: 10px 30px;
+    border-radius: 15px;
+    text-align: center;
+    background: #6d37ef;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.tetris___restart .useEnd:hover {
+    background: #20a0eb;
+    color: #fff;
 }
 
 .Tmino {
@@ -74,4 +189,24 @@
 .Imino {
     border: 6px #1aa9de outset !important;
     background-color: #009fda;
+}
+
+@keyframes flicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        box-shadow:
+            0 0 0.5rem #fff,
+            inset 0 0 0.1rem #fff,
+            0 0 3rem 2px rgb(140 115 255),
+            inset 0 0 0rem 3px rgb(140 115 255),
+            0 0 0rem 3px rgb(140 115 255),
+            inset -4px -5px 3rem 2px rgb(140 115 255)
+    }
 }

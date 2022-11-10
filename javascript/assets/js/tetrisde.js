@@ -2,6 +2,9 @@
 const tetrisWrap = document.querySelector(".tetris__wrap");
 const playGround = tetrisWrap.querySelector(".playground > ul");
 
+//
+const gameEnd = document.querySelector(".tetris___restart");
+
 // 변수 설정
 let rows = 20;
 let cols = 12;
@@ -265,15 +268,26 @@ function renderBlocks(moveType = "") {
       // 값이 없을 경우 전으로 초기화시키기 : 영역밖으로 넘어가지 않도록 setTimeout을 통해 제어
       tempMovingItem = { ...movingItem };
 
+      // 재도전
+      if (moveType === "retry") {
+        clearInterval(downInterval);
+        showGameOverText();
+      }
+
       setTimeout(() => {
-        renderBlocks();
+        renderBlocks("retry");
         if (moveType === "top") {
           seizeBlock();
         }
       }, 0);
+      // setTimeout(() => {
+      //   renderBlocks();
+      //   if (moveType === "top") {
+      //     seizeBlock();
+      //   }
+      // }, 0);
       return true;
     }
-
     // console.log({ playground }); //배열에 있는 childNodes,children 등을 이용
   });
 
@@ -288,6 +302,7 @@ function renderBlocks(moveType = "") {
 // 블럭 영역 감지하기
 function seizeBlock() {
   const movingBlocks = document.querySelectorAll(".moving");
+
   movingBlocks.forEach((moving) => {
     moving.classList.remove("moving");
     moving.classList.add("seized");
@@ -370,6 +385,11 @@ function dropBlock() {
   downInterval = setInterval(() => {
     moveBlock("top", 1);
   }, 10);
+}
+
+// 게임 종료
+function showGameOverText() {
+  // gameEnd.style.display = "block";
 }
 
 // 이벤트
