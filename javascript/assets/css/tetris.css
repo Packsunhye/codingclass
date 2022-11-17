@@ -183,38 +183,52 @@
 }
 
 .Tmino {
-    border: 6px #a042a2 outset !important;
-    background-color: #952d98;
-}
-
-.Lmino {
-    border: 6px #ff861a outset !important;
-    background-color: #ff7900;
-}
-
-.Jmino {
-    border: 6px #1a74c4 outset !important;
-    background-color: #0065bd;
-}
-
-.Zmino {
-    border: 6px #ef3e4d outset !important;
-    background-color: #ed2939;
-}
-
-.Smino {
-    border: 6px #78c53e outset !important;
-    background-color: #69be28;
-}
-
-.Omino {
-    border: 6px #fed01a outset !important;
-    background-color: #fecb00;
+    border: 1px solid #ecddff81 !important;
+    background-color: #24ca58;
+    box-shadow: 0px 0px 40px 0px #6d42a2;
 }
 
 .Imino {
-    border: 6px #1aa9de outset !important;
-    background-color: #009fda;
+    border: 1px solid #beeeff6d !important;
+    background-color: #1997c5;
+    box-shadow: 0px 0px 40px 0px #1997c5;
+}
+
+.Omino {
+    border: 1px solid #fff5d070 !important;
+    background-color: #ebc73b;
+    box-shadow: 0px 0px 40px 0px #ebc73b;
+}
+
+.Zmino {
+
+    border: 1px solid #ffd1e05e !important;
+    background-color: #d11b57;
+    box-shadow: 0px 0px 40px #d11b57;
+}
+
+.Smino {
+    border: 1px solid #dfffc673 !important;
+    background-color: #59a51e;
+    box-shadow: 0px 0px 40px #50961a;
+}
+
+.Smino {
+    border: 1px solid #ccdeff7c !important;
+    background-color: #9dd618;
+    box-shadow: 0px 0px 40px #9dd618;
+}
+
+.Jmino {
+    border: 1px solid #ffead373 !important;
+    background-color: #e78616;
+    box-shadow: 0px 0px 40px #e78616;
+}
+
+.Lmino {
+    border: 1px solid #7ca5ffba !important;
+    background-color: #3538f0;
+    box-shadow: 0px 0px 40px #686bff;
 }
 
 @keyframes flicker {
