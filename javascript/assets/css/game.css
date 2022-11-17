@@ -127,7 +127,7 @@ body {
     position: absolute;
     left: 170px;
     top: 450px;
-    width: 54px;
+    width: 86px;
 }
 
 .icon4 img {
@@ -203,24 +203,25 @@ body {
     width: 20px;
 }
 
-   /* screen */
-        
-       
+/* screen */
+
+
 .screen {
     z-index: -200;
 }
+
 .screen.show {
     box-sizing: border-box;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;    
+    z-index: 1;
 }
 
 .screen__btn {
     position: fixed;
-    bottom : 100px;
+    bottom: 100px;
     right: 40px;
     z-index: 10011;
 
@@ -254,36 +255,53 @@ body {
     transform: scale(0);
 }
 
-  .screenWinds.show {
-      visibility : visible;
-      animation: foldIn 0.3s ease forwards;
-  }
-  @keyframes foldIn {
-      0%      {transform: scaleX(0) scaleY(0.001);}
-      100%    {transform: scaleX(1) scaleY(1) ;}
-  }
+.screenWinds.show {
+    visibility: visible;
+    animation: foldIn 0.3s ease forwards;
+}
 
-  .screenWinds.hide {
-      visibility: hidden;
-      animation: foldOut 0.25s ease backwards;
-  }
-  
-  @keyframes foldOut {
-      0%      {transform: scaleX(1) scaleY(1);}
-      50%      {transform: scaleX(1) scaleY(0);}
-      100%    {transform: scaleX(0) scaleY(0.001) ;}
-  }
+@keyframes foldIn {
+    0% {
+        transform: scaleX(0) scaleY(0.001);
+    }
 
-  .title-bar {
-    background-color:     #693599;
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+.screenWinds.hide {
+    visibility: hidden;
+    animation: foldOut 0.25s ease backwards;
+}
+
+@keyframes foldOut {
+    0% {
+        transform: scaleX(1) scaleY(1);
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0);
+    }
+
+    100% {
+        transform: scaleX(0) scaleY(0.001);
+    }
+}
+
+.title-bar {
+    background-color: #693599;
     padding: 4px;
     height: 30px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
-  .title-bar > .minimize, .title-bar > .maximize, .title-bar > .close {
+}
+
+.title-bar>.minimize,
+.title-bar>.maximize,
+.title-bar>.close {
     width: 26px;
     height: 22px;
     background-color: #c7c7c7;
@@ -294,36 +312,44 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-  }
-  .title-bar > .minimize:hover, .title-bar > .maximize:hover, .title-bar > .close:hover {
+}
+
+.title-bar>.minimize:hover,
+.title-bar>.maximize:hover,
+.title-bar>.close:hover {
     background-color: #bababa;
     border-left: 2px solid #2A2A2A;
     border-top: 2px solid #2A2A2A;
     border-right: 2px solid #FCFCFC;
     border-bottom: 2px solid #FCFCFC;
-  }
-  .title-bar > .minimize {
+}
+
+.title-bar>.minimize {
     align-items: flex-end;
-  }
-  .title-bar > .minimize > .symbol {
+}
+
+.title-bar>.minimize>.symbol {
     width: 60%;
     height: 3px;
     background-color: #000000;
     margin-bottom: 2px;
-  }
-  .title-bar > .maximize > .symbol {
+}
+
+.title-bar>.maximize>.symbol {
     width: 70%;
     height: 80%;
     border: 2px solid #000000;
     border-top-width: 4px;
-  }
-  .title-bar > .close > .symbol {
+}
+
+.title-bar>.close>.symbol {
     width: 70%;
     height: 3px;
     background-color: #000000;
     transform: rotate(45deg);
-  }
-  .title-bar > .close > .symbol::after {
+}
+
+.title-bar>.close>.symbol::after {
     content: "";
     top: 0;
     left: 0;
@@ -332,54 +358,59 @@ body {
     height: 3px;
     background-color: #000000;
     transform: rotate(90deg);
-  }       
+}
 
-  .menu-bar > span {
+.menu-bar>span {
     padding: 8px;
     display: inline-block;
     cursor: pointer;
     font-family: "DungGeunMo";
     margin: 0 4px 0 4px;
-  }
-  .menu-bar > span::first-letter {
-    text-decoration: underline;
-  }
-  .menu-bar > span:hover {
-    background-color: #bababa;
-  }
-  
-  .menu-bar > span.active {
-      background-color: #bababa;
-      border-top: 4px ridge #cbcbcb;
-      border-left: 4px ridge #fbfbfb;
-      border-right: 4px ridge #dbdbdb;
-      
-      color: rgb(94, 94, 94);
-  }
+}
 
-  .content-container {
+.menu-bar>span::first-letter {
+    text-decoration: underline;
+}
+
+.menu-bar>span:hover {
+    background-color: #bababa;
+}
+
+.menu-bar>span.active {
+    background-color: #bababa;
+    border-top: 4px ridge #cbcbcb;
+    border-left: 4px ridge #fbfbfb;
+    border-right: 4px ridge #dbdbdb;
+
+    color: rgb(94, 94, 94);
+}
+
+.content-container {
     border-left: 2px solid #2A2A2A;
     border-top: 2px solid #2A2A2A;
     border-right: 2px solid #FCFCFC;
     border-bottom: 2px solid #FCFCFC;
-  }
-  .content-container > .content {
+}
+
+.content-container>.content {
     display: flex;
     height: 445px;
-    
-  }
 
-  .content-container > .content > .main {
-     width: 100%;
-     height: 100%;
-     background-color: #0f0f13;
+}
 
-     overflow :scroll;    
-    
-  }
-  .content .main .active {
-      display: block;
-  }
-  .content .main > div {
-      display: none;
-  } 
+.content-container>.content>.main {
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f13;
+
+    overflow: scroll;
+
+}
+
+.content .main .active {
+    display: block;
+}
+
+.content .main>div {
+    display: none;
+}

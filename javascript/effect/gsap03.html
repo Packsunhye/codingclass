@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .horizontalWrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .horizontalSection {
+            overscroll-behavior: none;
+            width: 500%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .section {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .section1 {
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .section2 {
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        }
+
+        .section3 {
+            background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+
+        .section4 {
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .section5 {
+            background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="horizontalWrap">
+        <div class="horizontalSection">
+            <section class="section section1"></section>
+            <section class="section section2"></section>
+            <section class="section section3"></section>
+            <section class="section section4"></section>
+            <section class="section section5"></section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const sections = gsap.utils.toArray(".section")
+
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".horizontalWrap",
+                pin: true,
+                scrub: 1,
+                // snap: 1 / (sections.length - 1), //스크롤 조금 하면 이전이나 다음 세션으로 넘어간다
+                end: "+=1500", //스피드
+                markers: true
+            }
+        })
+    </script>
+</body>
+
+</html>

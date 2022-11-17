@@ -1,9 +1,14 @@
 // 선택자
 const tetrisWrap = document.querySelector(".tetris__wrap");
 const playGround = tetrisWrap.querySelector(".playground > ul");
-
-//
-const gameEnd = document.querySelector(".tetris___restart");
+const useTetris = tetrisWrap.querySelector(".tetris___start .use");
+const tAudio = tetrisWrap.querySelector(".tetris__audio");
+const useReTetris = tetrisWrap.querySelector(".tetris___restart .useEnd");
+const scoreTTris = tetrisWrap.querySelector(".tetris__play .desc_p em");
+const LastScoreTeris = tetrisWrap.querySelector(
+  ".tetris___restart .endRul p:nth-child(1)"
+);
+const closeTetrisAll = document.querySelectorAll(".tetris__wrap .done");
 
 // 변수 설정
 let rows = 20;
@@ -12,6 +17,15 @@ let tscore = 0;
 let duration = 500;
 let downInterval;
 let tempMovingItem;
+
+let Tsound = [
+  "../assets/music/tteis.mp3",
+  "../assets/music/fail.m4a",
+  "../assets/music/ture02.m4a",
+];
+
+let TSoundBg = new Audio(Tsound[0]);
+let TSoundGood = new Audio(Tsound[2]);
 
 // 블록 정보 설정
 const movingItem = {
@@ -209,14 +223,34 @@ const blocks = {
 
 // 시작하기
 function init() {
+  tetrisSow.classList.remove("show");
+  tetrisEnd.classList.remove("show");
+  tetrisyPlay.classList.add("show");
+
   // 무빙아이템 정보 넣기
   tempMovingItem = { ...movingItem };
-
+  playGround.innerHTML = "";
   for (let i = 0; i < rows; i++) {
     prependNewLine(); //블록 라인 만들기
   }
 
+  TSoundBg.play();
+
   // console.log(tempMovingItem)
+
+  generateNewBlock(); //블록 만들기
+}
+
+// 재시작하기
+function initRe() {
+  tetrisSow.classList.remove("show");
+  tetrisEnd.classList.remove("show");
+  tetrisyPlay.classList.add("show");
+
+  // 무빙아이템 정보 넣기
+  tempMovingItem = { ...movingItem };
+
+  TSoundBg.play();
 
   generateNewBlock(); //블록 만들기
 }
@@ -326,7 +360,10 @@ function checkMatch() {
       child.remove();
       prependNewLine();
       tscore++;
+      TSoundGood.play();
+      duration = duration - 30;
     }
+    scoreTTris.innerHTML = tscore;
   });
 
   generateNewBlock();
@@ -389,7 +426,36 @@ function dropBlock() {
 
 // 게임 종료
 function showGameOverText() {
-  // gameEnd.style.display = "block";
+  tetrisSow.classList.remove("show");
+  tetrisEnd.classList.add("show");
+  tetrisyPlay.classList.remove("show");
+
+  TSoundBg.pause();
+
+  LastScoreTeris.innerHTML = `점수는  ${tscore} 입니다 ~ ଳ`;
+}
+
+// 리셋
+function reverTetris() {
+  tetrisSow.classList.add("show");
+  tetrisEnd.classList.remove("show");
+  tetrisyPlay.classList.remove("show");
+
+  // 점수 리셋
+  tscore = 0;
+
+  const tetrisMinos = playGround.querySelectorAll("li > ul > li");
+  tetrisMinos.forEach((minos) => {
+    minos.className = "";
+  });
+}
+
+// 리스타트게임
+function restartTETRIS() {
+  //리셋
+  reverTetris();
+  // 시작
+  initRe();
 }
 
 // 이벤트
@@ -416,4 +482,13 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-init();
+// 버튼 이벤트
+useTetris.addEventListener("click", init); // 게임 시작
+closeTetrisAll.forEach((e) => {
+  e.addEventListener("click", () => {
+    initRe;
+    reverTetris;
+  });
+});
+// 게임 시작
+useReTetris.addEventListener("click", restartTETRIS); // 게임 재시작

@@ -1,14 +1,20 @@
-.tetris__wrap {}
+.tetris__wrap {
+    display: none;
+}
+
+.tetris__wrap.show {
+    display: block;
+}
 
 .tetris__inner {
     padding: 15px;
     /* padding-top: 90px; */
-    width: 420px;
+    width: 460px;
 
     position: absolute;
+    top: 30px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     background: rgb(0, 0, 0);
     border: 3px solid rgb(244 224 255);
     animation: flicker 0.5s infinite alternate;
@@ -20,6 +26,10 @@
     color: #fff;
     height: 500px;
     text-align: center;
+}
+
+.tetris___start.show {
+    display: block;
 }
 
 .tetris___start .top {
@@ -69,14 +79,25 @@
 
 /* .tetris___restart */
 .tetris___restart {
-    /* display: none; */
+    display: none;
     color: #fff;
 }
 
-.tetris__play {}
+.tetris___restart.show {
+    display: block;
+}
+
+.tetris__play {
+    display: none;
+}
+
+.tetris__play.show {
+    display: block;
+}
 
 .playground {
-    display: none;
+    /* display: none; */
+
 }
 
 .playground .tetris__dec {
@@ -133,7 +154,12 @@
 
 .tetris___restart .endRul {
     padding: 15px;
+    padding-top: 30px;
     font-size: 20px;
+}
+
+.tetris___restart .endFine {
+    padding-bottom: 10px;
 }
 
 .tetris___restart .endFine p {

@@ -67,7 +67,7 @@
             </div>
             <div class="icon4">
                 <img src="../assets/img/folder.yellow.png" alt="">
-                <span>노란색</span>
+                <span>테트리스 게임</span>
             </div>
             <div class="icon5">
                 <img src="../assets/img/page.blue.png" alt="">
@@ -88,6 +88,7 @@
     <!-- 테트리스 -->
     <div class="tetris__wrap">
         <div class="tetris__inner">
+            <div class="tetris__audio"></div>
             <div class="tetris___start">
                 <div class="top">
                     <div>ଳ</div>
@@ -100,8 +101,9 @@
                         <li>1. 시간제한은 없습니다 :)</li>
                         <li>2. 줄이 채워지면 사라지고, 점수가 올라갑니다.</li>
                         <li>3. 단, 천장까지 채워질 시 게임은 종료됩니다. </li>
-                        <li>4. 게임이 종료되어도 다시 도전할 수 있습니다.</li>
-                        <li>5. 즐거운 게임 플레이 부탁드립니다 ଳ</li>
+                        <li>4. 게임 도중엔 창을 끌 수 없습니다 포기하지 마세요! </li>
+                        <li>5. 게임이 종료되어도 다시 도전할 수 있습니다.</li>
+                        <li>6. 즐거운 게임 플레이 부탁드립니다 ଳ</li>
                     </ul>
                 </div>
                 <button class="use">START</button>
@@ -115,7 +117,7 @@
                 <div class="endRul">
                     <p>수고하셨습니다 :3 <em>게임이 종료 되었습니다.</em></p>
                     <div class="endFine">
-                        <p>점수는 0 점입니다 ~ ଳ</p>
+                        <p></p>
                         <p>언제든 다시 도전할 수 있습니다.</p>
                     </div>
                 </div>
@@ -127,7 +129,7 @@
                         <div class="dex_top">
                             <div>ଳ</div>
                             <h2>TETRIS GAME</h2>
-                            <div class="done">ଳ</div>
+                            <div>ଳ</div>
                         </div>
                         <div class="desc_p">
                             점수 : <em>0</em> 점
@@ -1198,28 +1200,45 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
         const MGTn = document.querySelector(".icon__box .icon1");  //뮤직 아이콘
         const SGTn = document.querySelector(".icon__box .icon2");  //서치게임 아이콘
         const MBTn = document.querySelector(".icon__box .icon3");  //카드게임 아이콘
+        const TSTn = document.querySelector(".icon__box .icon4");  //카드게임 아이콘
 
         const closeGame = document.querySelectorAll(".game__title div")
         const closeMemory = document.querySelectorAll(".memory__wrap .done")
+        const closeTetris = document.querySelectorAll(".tetris__wrap .done")
 
         const musicW = document.querySelector(".music__wrap");      //뮤직박스
         const gameDr = document.querySelector(".game__frame");      //서치게임
         const memoryW = document.querySelector(".memory__game");    //카드게임 
+        const tetrisG = document.querySelector(".tetris__wrap");    //테트리스게임 
 
         const memoryStart = memoryWrap.querySelector(".memory__start");
         const memoryEnd = memoryWrap.querySelector(".memory__end");
         const memoryInner = memoryWrap.querySelector(".memory__inner");
 
+        const tetrisSow = document.querySelector(".tetris___start");
+        const tetrisEnd = document.querySelector(".tetris___restart");
+        const tetrisyPlay = document.querySelector(".tetris__play");
+
         // 뮤직 팝업
         MGTn.addEventListener("click", () => {
             musicW.classList.toggle("show");
             pauseMusic()
+
+            //모두 닫기
+            gameDr.classList.remove("show");
+            memoryW.classList.remove("show");
+            tetrisG.classList.remove("show");
         })
 
         // 서치 팝업
         SGTn.addEventListener("click", () => {
             gameDr.classList.add("show");
             resetQuiz();
+
+            //모두 닫기
+            musicW.classList.remove("show");
+            memoryW.classList.remove("show");
+            tetrisG.classList.remove("show");
         })
         // 서치 닫기
         closeGame.forEach(e => {
@@ -1237,6 +1256,11 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             memoryStart.classList.add("start")
             memoryEnd.classList.remove("start")
             memoryInner.classList.remove("start")
+
+            //모두 닫기
+            musicW.classList.remove("show");
+            gameDr.classList.remove("show");
+            tetrisG.classList.remove("show");
         })
         // 카드 닫기
         closeMemory.forEach(e => {
@@ -1252,13 +1276,39 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             })
         });
 
+        // 테트리스 팝업
+        TSTn.addEventListener("click", () => {
+            tetrisG.classList.add("show");
+            reverTetris()
 
-        $(".music__wrap, .game__frame, .memory__game").draggable();
+            tetrisSow.classList.add("show")
+            tetrisEnd.classList.remove("show")
+            tetrisyPlay.classList.remove("show")
 
-        $('.music__wrap, .game__frame, .memory__game').mousedown(function () {
+            //모두 닫기
+            musicW.classList.remove("show");
+            gameDr.classList.remove("show");
+            memoryW.classList.remove("show");
+        })
+        // 테트리스 팝업 닫기
+        closeTetris.forEach(e => {
+            e.addEventListener("click", () => {
+                tetrisG.classList.remove("show");
+
+                reverTetris();
+                tetrisSow.classList.add("show")
+                tetrisEnd.classList.remove("show")
+                tetrisyPlay.classList.remove("show")
+            })
+        });
+
+
+        $(".music__wrap, .game__frame, .memory__game, .tetris__wrap").draggable();
+
+        $('.music__wrap, .game__frame, .memory__game, .tetris__wrap').mousedown(function () {
             var maxZIndex = 0;
             var curZIndex = 0;
-            $('.music__wrap, .game__frame, .memory__game').each(function (index) {
+            $('.music__wrap, .game__frame, .memory__game, .tetris__wrap').each(function (index) {
                 //숫자변환
                 curZIndex = parseInt($(this).css('z-index'));
                 if (maxZIndex < curZIndex) {
@@ -1267,14 +1317,8 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
             });
             // 드래그 팝업이 항상 위
             $(this).css('z-index', maxZIndex + 2);
-            //console.log($(this).css('z-index'));
-
-            // if (memoryPopup.has(e.target).length === 0) {
-            //     memoryPopup.removeClass("show");
-            //     cardReset()
-
-            // }
         });
+
 
         const cursor = document.querySelector(".cusor");
 

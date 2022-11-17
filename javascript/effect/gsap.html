@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #contents>section {
+            min-height: 80vh;
+        }
+
+        #section1 {
+            background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+        }
+
+        #section2 {
+            background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+        }
+
+        #section3 {
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        }
+
+        #section4 {
+            background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        }
+
+        #section5 {
+            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        #section6 {
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+            border-radius: 50%;
+        }
+
+        .square2 {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+            border-radius: 50%;
+        }
+
+        .square.purple {
+            background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+        }
+
+        .pannel {
+            height: 100vh;
+            background-color: rgb(175, 183, 255);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(102, 81, 134);
+        }
+
+        .box-red {
+            background-color: rgb(46, 187, 121);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            transition: al 600ms ease-in-out;
+            background-color: rgb(112, 162, 255);
+            color: rgb(16, 72, 155);
+            text-align: center;
+        }
+
+        li {
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .not-active {
+            background-color: #fff;
+            color: #3927d8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>about</li>
+            <li>work</li>
+            <li>contact</li>
+        </ul>
+    </nav>
+    <div class="pannel">
+        Creates a new standalone ScrollTrigger instance. You don't need to put ScrollTriggers directly into animations
+        (though that's probably the most common use case). With a standalone ScrollTrigger, you can tap into the rich
+        callback system to do almost anything.
+    </div>
+    <!-- <div class="box"></div>
+    <div class="pannel"></div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+
+        ScrollTrigger.create({
+            trigger: ".panel",
+            start: "top 6%",
+            markers: true,
+            toggleClass: {
+                targets: "nav",
+                className: "not-active"
+            },
+            onEnter: () => console.log("onEnter"),
+            onLeave: () => console.log("onLeave"),
+            onEnterBack: () => console.log("onEnterBack"),
+            onLeaveBack: () => console.log("onLeaveBack"),
+        })
+
+    </script>
+    <script>
+
+        // gsap.registerPlugin(ScrollTrigger)
+        // gsap.to(".square", {
+        //     x: 1000,
+        //     duration: 0.3,
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: () => `+=${document.querySelector(".square").offsetHeight}`,
+        //         toggleActions: "restart pause resume none",
+                //              onEnter onLeave onEnterBack onLeaveBack
+                // revers : 다시 되돌아가기(스크롤 내려야지 돌아감)
+                // pause : 멈추기 (아예 확정)
+                // play, pause, resume, reset, restart, complete, revers, none
+        //         markers: true,
+        //         toggleClass: "purple"
+        //         scrub: 2, //숫자는 스무스 정도 ture도 있음(스크롤 할때마다 넘어가기)
+                // pin: true,
+                // pinSpacing: true //true는 고정하기 , flase는 넘어가기
+        //     },
+        // })
+
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         markers: true,
+        //         start: "top 80%",
+        //         end: "bottom 30%",
+        //         scrub: 2
+        //     }
+        // })
+        // tl.to(".square", { x: 1000, duration: 2, skewY: 1, ease: "bounce.out", borderRadius: 50 })
+        //     .to(".square", { y: 500, duration: 2, width: 400, skewY: 3, ease: "bounce.out", borderRadius: 0, })
+        //     .to(".square", { x: 0, duration: 2, width: 200, ease: "bounce.out", skewY: 1, })
+        //     .to(".square", { y: 0, ease: "bounce.out", duration: 2, borderRadius: 50 })
+
+        // const tl = gsap.timeline({ repeat: 2, yoyo: true });
+        // tl.to(".square", {
+        //     x: 1000,
+        //     dutation: 2,
+        //     skewY: 1,
+        //     ease: "elastic",
+        //     borderRadius: 50
+        // }, "+=1")
+        //     .to(".square", {
+        //         y: 500,
+        //         dutation: 2,
+        //         width: 400,
+        //         skewY: 3,
+        //         ease: "elastic",
+        //         borderRadius: 0,
+        //     }, "+=1")
+        //     .to(".square", {
+        //         x: 0,
+        //         dutation: 2,
+        //         width: 200,
+        //         ease: "elastic",
+        //         skewY: 1,
+        //     })
+        //     .to(".square", {
+        //         y: 0,
+        //         ease: "elastic",
+        //         dutation: 2,
+        //         borderRadius: 50
+        //     })
+    </script>
+</body>
+
+</html>

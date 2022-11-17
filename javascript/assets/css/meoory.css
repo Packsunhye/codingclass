@@ -17,8 +17,9 @@ em {
     background: rgb(0, 0, 0);
 
     position: absolute;
-    left: 450px;
-    top: 100px;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
     animation: flicker 0.5s infinite alternate;
 
 }

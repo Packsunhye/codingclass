@@ -113,8 +113,8 @@ function resetQuiz() {
   // 점수 계산
   score = 0;
 
-  timeReamining = 60
-  searchTime.innerText = displayTime()
+  timeReamining = 60;
+  searchTime.innerText = displayTime();
 
   updateList();
 }
@@ -130,7 +130,7 @@ function startQuiz() {
   searchMissAnswers.innerHTML = "";
 
   // 시간 설정(1초에 한번씩 줄어듦)
-  
+
   timeInterval = setInterval(reduceTime, 1000);
 
   // 버튼 모습
@@ -140,24 +140,25 @@ function startQuiz() {
   music();
 
   // 점수 계산
-  let score = 0;
+  score = 0;
 
   // 정답 체크
   checkAnswers();
 }
+
 // 음악 재생
 function music() {
+  searchAudio.play();
+  musicPlayVar.addEventListener("click", () => {
+    musicStop.style.display = "block";
+    musicPlayVar.style.display = "none";
+    searchAudio.pause();
+  });
   musicStop.addEventListener("click", () => {
     musicStop.style.display = "none";
     musicPlayVar.style.display = "block";
-    searchAudio.pause();
-  });
-  musicPlayVar.addEventListener("click", () => {
-    musicPlayVar.style.display = "none";
-    musicStop.style.display = "block";
     searchAudio.play();
   });
-  searchAudio.play();
 }
 
 // 인풋 체크하기
@@ -229,7 +230,6 @@ function endQuiz() {
   musicStop.style.display = "block";
   musicPlayVar.style.display = "none";
   searchAudio.pause();
-
 }
 
 function endQuiz02() {
@@ -242,7 +242,7 @@ function endQuiz02() {
 
   //시간정지
   clearInterval(timeInterval);
-  
+
   // 음악 끄기
   musicStop.style.display = "block";
   musicPlayVar.style.display = "none";
