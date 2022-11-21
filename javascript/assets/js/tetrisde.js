@@ -234,6 +234,7 @@ function init() {
     prependNewLine(); //블록 라인 만들기
   }
 
+  TSoundBg.loop = true;
   TSoundBg.play();
 
   // console.log(tempMovingItem)
@@ -246,10 +247,12 @@ function initRe() {
   tetrisSow.classList.remove("show");
   tetrisEnd.classList.remove("show");
   tetrisyPlay.classList.add("show");
+  duration = 500;
 
   // 무빙아이템 정보 넣기
   tempMovingItem = { ...movingItem };
 
+  TSoundBg.loop = true;
   TSoundBg.play();
 
   generateNewBlock(); //블록 만들기
@@ -361,7 +364,16 @@ function checkMatch() {
       prependNewLine();
       tscore++;
       TSoundGood.play();
-      duration = duration - 30;
+
+      if (duration > 150) {
+        duration = duration - 30;
+      } else {
+        clearInterval(downInterval);
+        // 점점 빨라지는 것 방지하기 위해 downInterval 만들어줌
+        downInterval = setInterval(() => {
+          moveBlock("top", 1);
+        }, duration);
+      }
     }
     scoreTTris.innerHTML = tscore;
   });

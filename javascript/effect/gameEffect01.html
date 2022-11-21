@@ -1226,8 +1226,11 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
 
             //모두 닫기
             gameDr.classList.remove("show");
+            endQuiz()
             memoryW.classList.remove("show");
+            cardReset()
             tetrisG.classList.remove("show");
+            reverTetris();
         })
 
         // 서치 팝업
@@ -1237,8 +1240,11 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
 
             //모두 닫기
             musicW.classList.remove("show");
+            pauseMusic()
             memoryW.classList.remove("show");
+            cardReset()
             tetrisG.classList.remove("show");
+            reverTetris();
         })
         // 서치 닫기
         closeGame.forEach(e => {
@@ -1259,8 +1265,11 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
 
             //모두 닫기
             musicW.classList.remove("show");
+            pauseMusic()
             gameDr.classList.remove("show");
+            endQuiz()
             tetrisG.classList.remove("show");
+            reverTetris();
         })
         // 카드 닫기
         closeMemory.forEach(e => {
@@ -1287,8 +1296,11 @@ memoryStartBtnEnd.addEventListener("click", restartCard); // 게임 재시작</c
 
             //모두 닫기
             musicW.classList.remove("show");
+            pauseMusic()
             gameDr.classList.remove("show");
+            endQuiz()
             memoryW.classList.remove("show");
+            cardReset()
         })
         // 테트리스 팝업 닫기
         closeTetris.forEach(e => {
